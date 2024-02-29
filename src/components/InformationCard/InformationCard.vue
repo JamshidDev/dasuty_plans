@@ -7,14 +7,14 @@
         <h3 class="m-0">Умумий маълумот</h3>
       </div>
       <div v-for="item in general_data" :key="item.id" class="col-6">
-        <div @click.self="control_overall($event ,item.id)" :class="[2,6].includes(item.id)? 'bg-blue-100' : 'bg-gray'" class="card_box p-3 border-round shadow-1 min-h-full"
+        <div @click="control_overall($event ,item.id)" :class="[2,6].includes(item.id)? 'bg-blue-100' : 'bg-gray'" class="card_box p-3 border-round shadow-1 min-h-full"
              >
           <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
             <div class="title font-bold">
               {{ item.value }}
             </div>
             <span>
-            <InputSwitch @change="change_map(item.show_map, item.id)" v-model="item.show_map"/>
+            <InputSwitch @click.stop @change="change_map(item.show_map, item.id)" v-model="item.show_map"/>
           </span>
           </div>
           <div v-else>

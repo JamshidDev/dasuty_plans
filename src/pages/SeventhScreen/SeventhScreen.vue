@@ -1,35 +1,36 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
-    <OldMap ref="old_map_ref"></OldMap>
+    <NewMap ref="new_map_ref"></NewMap>
 
-    <div @click="$refs.old_map_ref.drawPath()" class="btn-circle_box flex gap-2">
+    <div @click="$refs.new_map_ref.drawPath()" class="btn-circle_box flex gap-2">
       <i class='bx bx-refresh text-2xl'></i> Restart
     </div>
 
     <div class="text_card_dark py-2 px-4" style="width:360px; top:50px; right:30px;">
       <span>
-        Поездни ушбу маршрут б ўйича етиб бориш вақти <span class="text-red-600">12 сутка</span>
+        Поездни янги маршрут бўйича етиб бориш вақти
+ <span class="text-green-600 font-semibold">7-8 сутка</span>
       </span>
     </div>
     <div class="text_card_dark py-2 px-4" style="width:360px; top:120px; right:30px;">
       <span>
-        Оралиқ станциялар сони<span class="text-red-500"> 10 та</span>
+        Оралиқ станциялар сони<span class="text-green-600 font-semibold"> 6 та</span>
       </span>
     </div>
 
-    <div class="absolute text-6xl text-red-500 font-semibold" style=" top:60px; right:40%;">Аввалги ҳолат</div>
+    <div class="absolute text-6xl text-green-500 font-semibold" style=" top:60px; right:40%;">Ҳозирги ҳолат</div>
 
 
   </div>
 
 </template>
 <script>
-import OldMap from "@/components/OldMap/OldMap.vue";
+import NewMap from "@/components/NewMap/NewMap.vue";
 
 
 export default {
   components: {
-    OldMap,
+    NewMap,
   },
 
   data() {

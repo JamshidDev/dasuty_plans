@@ -38,6 +38,16 @@ export default {
           name:"fiveth-screen"
         },
 
+        {
+          index:6,
+          name:"sixth-screen"
+        },
+
+        {
+          index:7,
+          name:"seventh-screen"
+        },
+
 
 
       ],
@@ -72,6 +82,20 @@ export default {
     }
 
 
+  },
+  mounted() {
+    document.onkeydown = (e) => {
+      e = e || window.event;
+      if (e.keyCode === 38) {
+        this.next_page()
+      } else if (e.keyCode === 40) {
+        this.previous_page()
+      } else if (e.keyCode === 37) {
+        this.previous_page()
+      } else if (e.keyCode === 39) {
+        this.next_page()
+      }
+    };
   }
 
 }

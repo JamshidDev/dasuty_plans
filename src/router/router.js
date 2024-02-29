@@ -61,6 +61,20 @@ const routes = [
                     return import("../pages/FivethScreen/FivethScreen.vue");
                 },
             },
+            {
+                path: "/sixth-screen",
+                name: "sixth-screen",
+                component: function () {
+                    return import("../pages/SixthScreen/SixthScreen.vue");
+                },
+            },
+            {
+                path: "/seventh-screen",
+                name: "seventh-screen",
+                component: function () {
+                    return import("../pages/SeventhScreen/SeventhScreen.vue");
+                },
+            },
 
 
 
