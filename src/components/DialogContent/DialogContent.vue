@@ -81,7 +81,7 @@ export default {
                 },
                 {
                   id:2,
-                  label:"Манёр тепловоз ",
+                  label:"Манёвр тепловоз ",
                   value:"65 та"
                 },
                 {
@@ -179,7 +179,7 @@ export default {
                 },
                 {
                   id:2,
-                  label:"Манёр тепловоз ",
+                  label:"Манёвр тепловоз ",
                   value:"28 та"
                 },
                 {
@@ -267,7 +267,7 @@ export default {
                 },
                 {
                   id:2,
-                  label:"Манёр тепловоз ",
+                  label:"Манёвр тепловоз ",
                   value:"46 та"
                 },
               ]
@@ -360,7 +360,7 @@ export default {
                 },
                 {
                   id:2,
-                  label:"Манёр тепловоз ",
+                  label:"Манёвр тепловоз ",
                   value:"24 та"
                 },
               ]
@@ -453,7 +453,7 @@ export default {
                 },
                 {
                   id:2,
-                  label:"Манёр тепловоз ",
+                  label:"Манёвр тепловоз ",
                   value:"16 та"
                 },
               ]
@@ -531,7 +531,7 @@ export default {
                 },
                 {
                   id:2,
-                  label:"Манёр тепловоз ",
+                  label:"Манёвр тепловоз ",
                   value:"20 та"
                 },
               ]

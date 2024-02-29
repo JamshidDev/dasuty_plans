@@ -29,6 +29,17 @@ export default {
           index:3,
           name:"third-screen"
         },
+        {
+          index:4,
+          name:"fourth-screen"
+        },
+        {
+          index:5,
+          name:"fiveth-screen"
+        },
+
+
+
       ],
       page_index:0,
     }

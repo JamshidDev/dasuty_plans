@@ -14,10 +14,14 @@ import InputSwitch from 'primevue/inputswitch';
 import Dialog from 'primevue/dialog';
 import Checkbox from 'primevue/checkbox';
 
+import Donut from 'vue-css-donut-chart';
+import 'vue-css-donut-chart/dist/vcdonut.css';
+
 
 const app = createApp(App);
 app.use(PrimeVue);
 app.use(router);
+app.use(Donut);
 
 app.component(VueCountdown.name, VueCountdown);
 app.component("OverlayPanel", OverlayPanel);

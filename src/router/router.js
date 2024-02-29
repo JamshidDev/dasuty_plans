@@ -47,6 +47,20 @@ const routes = [
                     return import("../pages/ThirdScreen/ThirdScreen.vue");
                 },
             },
+            {
+                path: "/fourth-screen",
+                name: "fourth-screen",
+                component: function () {
+                    return import("../pages/FourthScreen/FourthScreen.vue");
+                },
+            },
+            {
+                path: "/fiveth-screen",
+                name: "fiveth-screen",
+                component: function () {
+                    return import("../pages/FivethScreen/FivethScreen.vue");
+                },
+            },
 
 
 
