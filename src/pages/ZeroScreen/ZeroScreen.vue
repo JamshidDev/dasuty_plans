@@ -3,21 +3,16 @@
     <div class="flex w-full absolute top-0 left-0 justify-content-end">
       <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
     </div>
-
     <div class="flex gap-4 text-lg font-normal absolute w-full text-white z-5" style="top:10px; left:10px;">
       Ўзбекистон темир йўллари харитаси</div>
     <div id="zoom-container" ref="zoom_container" class="w-full border-round relative"
          style="height:88vh; overflow: hidden;">
-
-
       <div id="trigger-zoom-element" ref="trigger_zoom_element"
            class="trigger-zoom-element border-round   shadow-1 flex justify-content-center align-items-center cursor-pointer"
            style="width:100%; height:90vh;">
         <RailwayMap ref="railway_map_ref"></RailwayMap>
       </div>
-
       <InformationCard @changeMap="change_visible($event)" v-if="general_info_show"></InformationCard>
-
     </div>
 
   </div>

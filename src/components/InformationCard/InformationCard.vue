@@ -52,12 +52,12 @@
 
   <OverlayPanel ref="overall2_ref" style="width:400px">
     <div class="grid">
-      <div v-for="item in sorted_station_list" :key="item.id" class="col-6 py-1">
+      <div v-for="item in sorted_station_list" :key="item.id" class="col-6 py-1 ">
         <div class="flex flex-column">
-          <div class="flex justify-content-between border-round min-h-full">
+          <a :href="item.path" target="_blank" class="flex justify-content-between border-round min-h-full no-underline">
             <span><i class='bx bxs-circle text-sm mr-2'></i> {{ item.label }}</span>
             <span class="font-bold">{{ item.value }}</span>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -152,16 +152,19 @@ export default {
           id: 0,
           label: "Чуқурсой",
           value: ``,
+          path:'./schema/Учкудук-1.svg',
         },
         {
           id: 1,
           label: "Хаваст",
           value: ``,
+          path:'./schema/Учкудук-1.svg',
         },
         {
           id: 2,
           label: "Қўқон",
           value: ``,
+          path:'./schema/Учкудук-1.svg',
         },
         {
           id: 3,

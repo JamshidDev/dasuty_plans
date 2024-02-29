@@ -43,7 +43,7 @@
 
         </div>
       </div>
-      <OverlayPanel ref="op">
+      <OverlayPanel style="background:#3f3f3f;" ref="op">
         <div class="p-3 max-w-20rem">
           <div v-for="(item, idx) in list" :key="idx" class="flex flex-column gap-3">
             <div>
