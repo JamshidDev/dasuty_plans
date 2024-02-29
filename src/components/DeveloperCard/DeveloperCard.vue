@@ -1,84 +1,90 @@
-
 <template>
   <div class="card-container flex w-full flex-column" :class="active_card? `active_card` : `no-active_card`">
-    <div class="card-box flex relative align-items-center shadow-1 mx-auto ">
+    <div class="card-box flex relative align-items-center mx-auto">
       <!--        <span class="user_badge shadow-1">-->
       <!--          <i class='bx bxs-shield text-yellow-600'></i>-->
       <!--          </span>-->
-      <div class="avatar-box bg-dark">
-        <img src="https://api-exodim.railway.uz/storage/cadry-photos/1073c2a9aa5062b1e97ae88a5f5085e4.jpg" alt="">
-
+      <div class="avatar-box bg-dark" :class="{active: active_card}">
+        <img :src="imgUrl" alt="">
       </div>
-      <div class="content-box bg-dark shadow-6">
+      <div class="content-box bg-dark" :class="{active: active_card}">
         <h3 class="text-center m-0 text-sm text-white py-1 font-normal bg-dark"
-            style="border-bottom:1px solid #27272a;">Jamshid Raximov</h3>
-        <h3 class="text-center m-0 text-sm text-black pt-2 pb-2 font-medium" style="color:#878787">Frontend developer</h3>
+            style="border-bottom:1px solid #27272a;">{{ name }}</h3>
+        <h3 class="text-center m-0 text-sm text-black pt-2 pb-2 font-medium" style="color:#878787">{{ desc }}</h3>
         <div class="flex justify-content-between bg-dark pt-2 pb-1 align-items-center w-full px-2 column-gap-4"
              style="border-top:1px solid #27272a;">
-          <div class="tast-title text-sm " style="color:#878787;">
+          <div class="tast-title text-sm cursor-pointer" @click="toggle" style="color:#878787;">
             Batafsil
           </div>
 
-            <vue-countdown :time="count_time" v-slot="{ days, hours, minutes, seconds }">
-              <div class="time-contaner flex column-gap-2 text-sm" style="color:#878787;">
-                <div class="flex flex-column timer-text">
-                  <div class="timer_value">{{days}}</div>
-                  <div style="font-size:8px;">KUN</div>
-                </div>
-                <div class="flex flex-column timer-text">
-                  <div class="timer_value">{{hours}}</div>
-                  <div style="font-size:8px;">SOAT</div>
-                </div>
-                <div class="flex flex-column timer-text">
-                  <div class="timer_value">{{minutes}}</div>
-                  <div style="font-size:8px;">MINUT</div>
-                </div>
-                <div class="flex flex-column timer-text">
-                  <div class="timer_value">{{seconds}}</div>
-                  <div style="font-size:8px;">SEKUND</div>
-                </div>
+          <vue-countdown :time="count_time" v-slot="{ days, hours, minutes, seconds }">
+            <div class="time-contaner flex column-gap-2 text-sm" style="color:#878787;">
+              <div class="flex flex-column timer-text">
+                <div class="timer_value">{{ days }}</div>
+                <div style="font-size:8px;">KUN</div>
               </div>
-            </vue-countdown>
+              <div class="flex flex-column timer-text">
+                <div class="timer_value">{{ hours }}</div>
+                <div style="font-size:8px;">SOAT</div>
+              </div>
+              <div class="flex flex-column timer-text">
+                <div class="timer_value">{{ minutes }}</div>
+                <div style="font-size:8px;">MINUT</div>
+              </div>
+              <div class="flex flex-column timer-text">
+                <div class="timer_value">{{ seconds }}</div>
+                <div style="font-size:8px;">SEKUND</div>
+              </div>
+            </div>
+          </vue-countdown>
 
         </div>
       </div>
+      <OverlayPanel ref="op">
+
+      </OverlayPanel>
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "DeveloperCard",
-  props: {
-    active_card: {
-      type: Boolean,
-      default: true,
-    },
-    deadline:{
-      type: String,
-      default: '2024-3-31',
-    },
-    name: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      count_time:0,
-    }
-  },
-  mounted() {
-    let current_date = new Date().getTime();
-    let finish_date =new Date(this.deadline).getTime();
-    this.count_time = finish_date - current_date;
-  }
+<script setup>
+import { defineComponent, onMounted, ref } from "vue";
+defineComponent({name: 'DeveloperCard'})
+const count_time = ref(0)
+const op = ref()
 
+function toggle(event) {
+  op.value.toggle(event)
 }
 
+const props = defineProps({
+  active_card: {
+    type: Boolean,
+    default: true,
+  },
+  deadline: {
+    type: String,
+    default: '2024-3-31',
+  },
+  name: {
+    type: String,
+    default: ''
+  },
+  desc: {
+    type: String,
+    default: ''
+  },
+  imgUrl: {
+    type: String,
+    default: ''
+  }
+})
+
+onMounted(() => {
+  let current_date = new Date().getTime();
+  let finish_date = new Date(props.deadline).getTime();
+  count_time.value = finish_date - current_date;
+})
 </script>
-
-
-
 
 
 <style scoped lang="scss">
@@ -86,8 +92,13 @@ export default {
   opacity: 1 !important;
 }
 
+.content-box, .avatar-box {
+  box-shadow: 4px 2px 16px 1px rgba(255, 255, 255, .1);
+}
+
+
 .no-active_card {
-  opacity: 0.1 !important;
+  opacity: 0.5 !important;
 }
 
 .timer-text {
@@ -95,7 +106,8 @@ export default {
   text-align: center;
   font-weight: 600;
 }
-.timer_value{
+
+.timer_value {
   color: #148ad7;
 }
 
@@ -147,7 +159,7 @@ export default {
     //background: #0000004d;
     //background-filter:blur(12px);
     border: 1px solid #27272a;
-    cursor:pointer;
+    cursor: pointer;
   }
 }
 </style>
