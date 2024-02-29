@@ -1,0 +1,78 @@
+import {
+    createRouter,
+    createWebHistory,
+} from 'vue-router';
+
+
+
+
+
+
+const routes = [
+
+
+    {
+        path: "/",
+        name: "home",
+        redirect:'/first-screen',
+        component: function () {
+            return import("../Layout/Layout.vue");
+        },
+        children:[
+            {
+                path: "/zero-screen",
+                name: "zero-screen",
+                component: function () {
+                    return import("../pages/ZeroScreen/ZeroScreen.vue");
+                },
+            },
+            {
+                path: "/first-screen",
+                name: "first-screen",
+                component: function () {
+                    return import("../pages/FirstScreen/FirstPage.vue");
+                },
+            },
+            {
+                path: "/second-screen",
+                name: "second-screen",
+                component: function () {
+                    return import("../pages/SecondScreen/SecondPage.vue");
+                },
+            },
+            {
+                path: "/third-screen",
+                name: "third-screen",
+                component: function () {
+                    return import("../pages/ThirdScreen/ThirdScreen.vue");
+                },
+            },
+
+
+
+        ]
+
+    },
+    // {
+    //     path: "/login",
+    //     name: "login",
+    //     component: function () {
+    //         return import("../Layout/LoginPage.vue");
+    //     },
+    // },
+
+    // {
+    //     path: "/:pathMatch(.*)*",
+    //     name: "NotFound",
+    //     component: function () {
+    //         return import("../views/NotFoundPage.vue");
+    //     },
+    // },
+];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+});
+
+export default router;
