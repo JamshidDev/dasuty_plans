@@ -1,0 +1,22 @@
+export const teamList = [
+  { name: 'Aliqulov Barxayotjon' },
+  { name: 'Aytmuratov Artur' },
+  { name: 'Bekmirzayev Ilxomjon' },
+  { name: 'Boboqulov Jobir' },
+  { name: 'Boltayev Avaz' },
+  { name: 'Gu’lumov Bekzod' },
+  { name: 'Mamatov Abduvali' },
+  { name: 'Muxtorov In‘omjon' },
+  { name: 'Narziyev Orzu' },
+  { name: 'Pak Valeriya' },
+  { name: 'Qorayev Farrux' },
+  { name: 'Qurbonov Shuxratjon' },
+  { name: 'Raximov Jamshid' },
+  { name: 'Toʻlqinov Akmal' },
+  { name: 'Xamdamov Jaxongir' },
+  { name: 'Xasanov Zaxriddin' },
+  { name: 'Xaytboyeva Mahliyo' },
+  { name: 'Xolmuradov Elbek' },
+  { name: 'Yakubov Quronboy' },
+  { name: 'Yodgorov Zafar' }
+]

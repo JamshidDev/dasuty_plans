@@ -56,6 +56,10 @@ export default {
     deadline:{
       type: String,
       default: '2024-3-31',
+    },
+    name: {
+      type: String,
+      default: ''
     }
   },
   data() {
@@ -108,7 +112,7 @@ export default {
 
   .bg-dark {
     background: #0000004d;
-    background-filter: blur(12px);
+    backdrop-filter: blur(12px);
   }
 
 
@@ -144,8 +148,6 @@ export default {
     //background-filter:blur(12px);
     border: 1px solid #27272a;
     cursor:pointer;
-
-
   }
 }
 </style>
