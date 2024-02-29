@@ -18,8 +18,8 @@
 
       <ChartText :content_text="'DAS UTY ERP'" :content_info="`Корхона ресурсларини режалаштириш (01.01.2025)`"  :chart_persant="21" :positionTop="8" :slide="'right'"></ChartText>
 
-      <ChartText :content_text="'TEZKOR TELEGRAF'" site_link="`https://telegraf.railwayinfra.uz/`" :content_info="`Алоқа хўжалиги (телеграммаларни тезкор юбориш) (01.11.2024)`"  :chart_persant="65" :positionTop="4" :slide="'left'"></ChartText>
-      <ChartText :content_text="'METROLOGIYA'" site_link="`https://metrolog.railwayinfra.uz/uz/admin`" :content_info="`Метрология (13.06.2024)`"  :chart_persant="74" :positionTop="1" :slide="'left'"></ChartText>
+      <ChartText :content_text="'TEZKOR TELEGRAF'" :site_link="`https://telegraf.railwayinfra.uz/`" :content_info="`Алоқа хўжалиги (телеграммаларни тезкор юбориш) (01.11.2024)`"  :chart_persant="65" :positionTop="4" :slide="'left'"></ChartText>
+      <ChartText :content_text="'METROLOGIYA'" :site_link="`https://metrolog.railwayinfra.uz/uz/admin`" :content_info="`Метрология (13.06.2024)`"  :chart_persant="74" :positionTop="1" :slide="'left'"></ChartText>
       <ChartText :content_text="'ENAKL MOBILE'" :content_info="`Юк ташиш хизмати (05.04.2024)`"  :chart_persant="12" :positionTop="10" :slide="'right'"></ChartText>
       <ChartText :content_text="'VIRTUAL OFFICE'" :content_info="`Ижтимоий хизматлар (01.08.2024)`"  :chart_persant="11" :positionTop="9" :slide="'left'"></ChartText>
 <!--      <ChartText :content_text="'AISUP'" :content_info="`Йўл хўжалиги`"  :chart_persant="81" :positionTop="4" :slide="'left'"></ChartText>-->
