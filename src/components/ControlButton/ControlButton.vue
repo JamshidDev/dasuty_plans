@@ -47,6 +47,11 @@ export default {
           index:7,
           name:"seventh-screen"
         },
+        {
+          index:8,
+          name:"eighth-screen"
+        },
+
 
 
 
