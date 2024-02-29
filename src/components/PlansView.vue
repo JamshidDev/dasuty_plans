@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#lottieContainer{
-  width:500px;
-}
+  #lottieContainer{
+    width:450px;
+  }
 </style>
