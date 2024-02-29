@@ -4,17 +4,13 @@ import {
 } from 'vue-router';
 
 
-
-
-
-
 const routes = [
 
 
     {
         path: "/",
         name: "home",
-        redirect:'/first-screen',
+        redirect:'/eighth-screen',
         component: function () {
             return import("../Layout/Layout.vue");
         },

@@ -54,7 +54,7 @@
     <div class="grid">
       <div v-for="item in sorted_station_list" :key="item.id" class="col-6 py-1 ">
         <div class="flex flex-column">
-          <a :href="item.path" target="_blank" class="flex justify-content-between border-round min-h-full no-underline">
+          <a :href="item.path" download class="flex justify-content-between border-round min-h-full no-underline">
             <span><i class='bx bxs-circle text-sm mr-2'></i> {{ item.label }}</span>
             <span class="font-bold">{{ item.value }}</span>
           </a>
@@ -152,80 +152,92 @@ export default {
           id: 0,
           label: "Чуқурсой",
           value: ``,
-          path:'./schema/Учкудук-1.svg',
+          path:'./schema/stations/Чукурсай 2.svg',
         },
         {
           id: 1,
           label: "Хаваст",
           value: ``,
-          path:'./schema/Учкудук-1.svg',
+          path:'./schema/stations/Ховос.svg',
         },
         {
           id: 2,
           label: "Қўқон",
           value: ``,
-          path:'./schema/Учкудук-1.svg',
+          path:'./schema/stations/Учкудук-1.svg',
         },
         {
           id: 3,
           label: "Бухоро",
           value: ``,
+          path: './schema/stations/Бухоро 1.svg'
         },
         {
           id: 4,
           label: "Қарши ",
           value: ``,
+          path: './schema/stations/КАРШИ.svg'
         },
         {
           id: 5,
           label: "Термез",
           value: ``,
+          path: './schema/stations/Термиз.svg'
         },
 
         {
           id: 6,
           label: "Охангарон",
           value: ``,
+          path: './schema/stations/Ховос.svg'
         },
         {
           id: 7,
           label: "Мароқанд",
           value: ``,
+          path: './schema/stations/МАРОКАНД.svg'
         },
         {
           id: 8,
           label: "Охунбобоев",
           value: ``,
+          path: './schema/stations/Охунбобоев.svg'
         },
         {
           id: 9,
           label: "Қўнғирот",
           value: ``,
+          path: './schema/stations/КУНГРАД.svg'
         },
         {
           id: 10,
           label: "Мискен",
           value: ``,
+          path: './schema/stations/Мискин.svg'
         },
         {
           id: 11,
           label: "Нукус",
           value: ``,
+          path: './schema/stations/НУКУС.svg'
         },
         {
           id: 12,
           label: "Бинокор",
           value: ``,
+          path: './schema/stations/Ховос.svg'
         },
         {
           id: 13,
           label: "Навоий",
           value: ``,
+          path: './schema/stations/Навоий (2).svg'
         },
         {
           id: 14,
           label: "Қумқўрғон",
           value: ``,
+          path: './schema/stations/Қумқўрғон.svg'
         },
       ],
       locomotive_list: [
