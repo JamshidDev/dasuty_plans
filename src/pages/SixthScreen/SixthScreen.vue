@@ -6,14 +6,14 @@
       <i class='bx bx-refresh text-2xl'></i> Restart
     </div>
 
-    <div class="text_card_dark py-2 px-4" style="width:360px; top:50px; right:30px;">
-      <span>
-        Поездни ушбу маршрут б ўйича етиб бориш вақти <span class="text-red-600">12 сутка</span>
+    <div class="text_card_dark py-4 px-4" style="width:500px; top:50px; right:30px;">
+      <span style="font-size: 24px">
+        Поездни ушбу маршрут б ўйича етиб бориш вақти <span class="text-red-500 font-semibold">12 сутка</span>
       </span>
     </div>
-    <div class="text_card_dark py-2 px-4" style="width:360px; top:120px; right:30px;">
-      <span>
-        Оралиқ станциялар сони<span class="text-red-500"> 10 та</span>
+    <div class="text_card_dark py-4 px-4" style="width:500px; top:170px; right:30px;">
+      <span style="font-size: 24px">
+        Оралиқ станциялар сони<span class="text-red-500 font-semibold"> 10 та</span>
       </span>
     </div>
 
@@ -50,8 +50,8 @@ $primary: #2700ff;
   position: absolute;
   overflow: hidden;
   cursor: pointer;
-  bottom: 200px;
-  left: 100px;
+  bottom: 150px;
+  left: 20px;
   background: url('http://api.thumbr.io/whitenoise-354x370.png?background=ffffff00&noise=ffffff&density=40&opacity=4'), rgba(white, 0.01);
   transition: 0.5s ease-in-out;
   transition-property: background, text-shadow;

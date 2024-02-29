@@ -31,7 +31,7 @@ export default {
 #lottieContainer2{
   width:600px;
   position:absolute;
-  bottom: 60px;
+  bottom: 200px;
   right: 60px;
 }
 </style>
