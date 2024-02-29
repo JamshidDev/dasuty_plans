@@ -102,12 +102,12 @@ export const teamList = [
     ]
   },
   {
-    name: 'Shermatova Lobar', position: 'UI/UX Designer', projects: [projectList.enaklM.id], tasks: [
+    name: 'Shermatova Lobar', position: 'UI/UX Designer', projects: [projectList.vOffice.id], tasks: [
       { title: 'Virtual ofis yo’riqnoma modulini yaratish', deadline: '2024-03-10' }
     ]
   },
   {
-    name: 'Xolmuradov Elbek', position: 'Backend Developer', projects: [projectList.enakl.id], tasks: [
+    name: 'Xolmuradov Elbek', position: 'Backend Developer', projects: [projectList.enakl.id , projectList.enaklM.id], tasks: [
       { title: 'Enakl mobileda Zayavka qismi uchun API larni chiqarish', deadline: '2024-03-04' }
     ]
   },

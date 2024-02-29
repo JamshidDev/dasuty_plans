@@ -43,7 +43,7 @@
 
         </div>
       </div>
-      <OverlayPanel style="background:#3f3f3f;" ref="op">
+      <OverlayPanel ref="op" style="background:#1A1A1A; border-radius: 12px">
         <div class="p-3 max-w-20rem">
           <div v-for="(item, idx) in list" :key="idx" class="flex flex-column gap-3">
             <div>
@@ -113,6 +113,11 @@ onMounted(() => {
 <style scoped lang="scss">
 .active_card {
   opacity: 1 !important;
+}
+
+.card-task {
+  background:#1A1A1A;
+  border-radius:12px;
 }
 
 .content-box, .avatar-box {

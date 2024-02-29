@@ -60,7 +60,7 @@ export default {
     },
     site_link:{
       type:String,
-      default:'https://exodim.railway.uz/',
+      default:'/',
     },
     text_icon:{
       type:String,

@@ -3,6 +3,9 @@
     <div @click="previous_page()" class="btn-circle_box">
       <i class='bx bx-chevron-left text-white text-4xl'></i>
     </div>
+    <div @click="$router.push({name : 'eighth-screen'})" class="btn-circle_box">
+      <i class='bx bx-home text-white text-4xl'></i>
+    </div>
     <div @click="next_page()" class="btn-circle_box">
       <i class='bx bx-chevron-right text-white text-4xl'></i>
     </div>
@@ -12,51 +15,45 @@
 export default {
   data() {
     return {
-      page_list:[
+      page_list: [
         {
-          index:0,
-          name:"zero-screen"
+          index: 8,
+          name: "eighth-screen"
         },
         {
-          index:1,
-          name:"first-screen"
+          index: 4,
+          name: "fourth-screen"
         },
         {
-          index:2,
-          name:"second-screen"
+          index: 5,
+          name: "fiveth-screen"
         },
         {
-          index:3,
-          name:"third-screen"
+          index: 0,
+          name: "zero-screen"
         },
         {
-          index:4,
-          name:"fourth-screen"
+          index: 6,
+          name: "sixth-screen"
         },
         {
-          index:5,
-          name:"fiveth-screen"
-        },
-
-        {
-          index:6,
-          name:"sixth-screen"
-        },
-
-        {
-          index:7,
-          name:"seventh-screen"
+          index: 7,
+          name: "seventh-screen"
         },
         {
-          index:8,
-          name:"eighth-screen"
+          index: 1,
+          name: "first-screen"
         },
-
-
-
-
+        {
+          index: 2,
+          name: "second-screen"
+        },
+        {
+          index: 3,
+          name: "third-screen"
+        }
       ],
-      page_index:0,
+      page_index: 0,
     }
   },
   methods: {
@@ -64,22 +61,22 @@ export default {
       console.log(route_name)
       this.$router.push({name: route_name})
     },
-    next_page(){
-      if(this.page_index<=this.page_list.length-2){
-        this.page_index =this.page_index +1;
+    next_page() {
+      if (this.page_index <= this.page_list.length - 2) {
+        this.page_index = this.page_index + 1;
 
-      }else{
-        this.page_index =0;
+      } else {
+        this.page_index = 0;
       }
       let route_name = this.page_list[this.page_index].name;
       this.goPusg(route_name);
     },
-    previous_page(){
-      if(this.page_index>=1){
-        this.page_index =this.page_index -1;
+    previous_page() {
+      if (this.page_index >= 1) {
+        this.page_index = this.page_index - 1;
 
-      }else{
-        this.page_index =this.page_list.length-1;
+      } else {
+        this.page_index = this.page_list.length - 1;
       }
       let route_name = this.page_list[this.page_index].name;
       this.goPusg(route_name);
@@ -155,7 +152,7 @@ $primary: #2700ff;
   right: 30px;
   //cursor: pointer;
   //border: 1px solid #27272a;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 8px;
   font-size: 24px;
   z-index: 10;
