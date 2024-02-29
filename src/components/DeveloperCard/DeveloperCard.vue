@@ -11,9 +11,12 @@
         <h3 class="text-center m-0 text-sm text-white py-1 font-normal bg-dark"
             style="border-bottom:1px solid #27272a;">{{ name }}</h3>
         <h3 class="text-center m-0 text-sm text-black pt-2 pb-2 font-medium" style="color:#878787">{{ desc }}</h3>
-        <div class="flex justify-content-between bg-dark pt-2 pb-1 align-items-center w-full px-2 column-gap-4"
-             style="border-top:1px solid #27272a;">
-          <div class="tast-title text-sm cursor-pointer" @click="toggle" style="color:#878787;">
+        <div class="flex bg-dark pt-2 pb-1 align-items-center w-full px-2 column-gap-4"
+             style="border-top:1px solid #27272a;"
+             :class="{'justify-content-between': list.length >0, 'justify-content-center': list.length === 0}"
+        >
+          <div v-if="list.length > 0" class="tast-title pl-2 hover:text-white text-sm cursor-pointer" @click="toggle"
+               style="color:#878787;">
             Batafsil
           </div>
 
@@ -41,14 +44,30 @@
         </div>
       </div>
       <OverlayPanel ref="op">
-
+        <div class="p-3 max-w-20rem">
+          <div v-for="(item, idx) in list" :key="idx" class="flex flex-column gap-3">
+            <div>
+              <h6 class="text-sm text-gray-300 font-medium m-0 mb-1">
+                Вазифа номи
+              </h6>
+              <p class="m-0 text-sm text-white">{{ item.title }}</p>
+            </div>
+            <div>
+              <h6 class="text-sm font-medium m-0 mb-1 text-gray-300">
+                Тугатиш санаси
+              </h6>
+              <p class="m-0 text-sm text-white">{{ item.deadline }}</p>
+            </div>
+          </div>
+        </div>
       </OverlayPanel>
     </div>
   </div>
 </template>
 <script setup>
 import { defineComponent, onMounted, ref } from "vue";
-defineComponent({name: 'DeveloperCard'})
+
+defineComponent({ name: 'DeveloperCard' })
 const count_time = ref(0)
 const op = ref()
 
@@ -76,6 +95,10 @@ const props = defineProps({
   imgUrl: {
     type: String,
     default: ''
+  },
+  list: {
+    type: Array,
+    default: []
   }
 })
 
@@ -127,18 +150,17 @@ onMounted(() => {
     backdrop-filter: blur(12px);
   }
 
-
   .avatar-box {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     overflow: hidden;
     border-radius: 50%;
-    border: 4px solid #2f2f31;
+    border: 3px solid #5c5b5b;
     cursor: pointer;
     position: absolute;
     z-index: 2;
 
-    left: 0px;
+    left: -5px;
 
     & > img {
       width: 100%;
@@ -162,4 +184,5 @@ onMounted(() => {
     cursor: pointer;
   }
 }
+
 </style>

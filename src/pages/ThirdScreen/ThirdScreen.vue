@@ -11,6 +11,7 @@
           :key="item.id"
           :name="item.title"
           :img-url="`/images/${item.imgUrl}`"
+          :desc="item.desc"
         />
       </div>
       <div class="mx-auto mb-6">
@@ -18,6 +19,7 @@
           name="Boboqulov Jobir"
           desc="Backend Developer (Team Lead)"
           img-url="/images/Boboqulov-Jobir.jpg"
+          deadline="2025-01-01"
         />
       </div>
       <TransitionGroup
@@ -29,7 +31,9 @@
           <DeveloperCard
             :name="item.name"
             :desc="item.position"
+            :list="item.tasks"
             :img-url="`/images/${item.name.replace(/ /g,'-')}.jpg`"
+            :deadline="item.tasks.length ? item.tasks[0].deadline : undefined"
           />
         </li>
       </TransitionGroup>
