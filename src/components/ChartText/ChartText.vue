@@ -11,7 +11,7 @@
             thickness="20"
             :sections="[{ value:chart_persant, color:detect_color(chart_persant) }]"
             :thickness="100">
-          <div class="text-sm text-center font-bold" :style="{color:detect_color(chart_persant)}">{{chart_persant}} %</div>
+          <div class="text-sm text-center font-bold" :style="{color:detect_color(chart_persant)}">{{chart_persant}}%</div>
         </vc-donut>
       </div>
       <div class="text-element flex flex-column  text-4xl uppercase">
@@ -23,6 +23,7 @@
            {{content_info}}
         </div>
 
+
       </div>
       <div v-if="slide === 'left'" class="chart-element">
         <vc-donut
@@ -31,7 +32,7 @@
             thickness="20"
             :sections="[{ value:chart_persant, color:detect_color(chart_persant)}]"
             :thickness="100">
-          <div class="text-base text-center font-bold" :style="{color:detect_color(chart_persant)}">{{chart_persant}} %</div>
+          <div class="text-base text-center font-bold" :style="{color:detect_color(chart_persant)}">{{chart_persant}}%</div>
         </vc-donut>
       </div>
     </div>
@@ -97,9 +98,9 @@ export default {
 
 
 <style scoped lang="scss">
-  $distance_width:300px;
+  $distance_width:350px;
   $zero_top:260px;
-  $distance_top:100px;
+  $distance_top:115px;
 
 
   .left_slide {
@@ -127,9 +128,29 @@ export default {
   }
 
   .top-8{
-    top:calc($zero_top + 5*$distance_top);
+    top:calc($zero_top + 4*$distance_top);
     left:calc(50%);
     transform: translateX(-50%);
-
   }
+
+  .top-9{
+    top:calc($zero_top + 4*$distance_top);
+  }
+  .top-10{
+    top:calc($zero_top + 4*$distance_top);
+  }
+
+  .top-11{
+    top:calc($zero_top - $distance_top) ;
+    left:calc(50%);
+    transform: translateX(-50%);
+  }
+
+  .top-12{
+    top:calc($zero_top - $distance_top);
+  }
+  .top-13{
+    top:calc($zero_top - $distance_top);
+  }
+
 </style>
