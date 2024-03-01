@@ -164,10 +164,17 @@ const routes = [
                 meta:{
                     pageNUmber:1,
                 }
+            },
+            {
+                path: "/nst-infra",
+                name: "nst-infra",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/SixScreen.vue");
+                },
+                meta:{
+                    pageNUmber:1,
+                }
             }
-
-
-
         ]
 
     },
