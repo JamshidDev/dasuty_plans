@@ -7,7 +7,7 @@ export default {
         {
           id: 1,
           path: "fourth-screen",
-          text: " 2023 ЙИЛДА АМАЛГА ОШИРИЛГАН ИСЛОХОТЛАР (1)."
+          text: "“ЎЗБЕКИСТОН ТЕМИР ЙЎЛЛАРИ” АКЦИЯДОРЛИК ЖАМИЯТИДА ТРАНСФОРМАЦИЯ ЖАРАЁНЛАРИНИНГ НАТИЖАДОРЛИГИ"
         },
         {
           id: 2,
@@ -17,7 +17,7 @@ export default {
         {
           id: 3,
           path: "zero-screen",
-          text: " ЕДЦ ХАҚИДА МАЪЛУМОТ."
+          text: " Ягона диспечирлик маркази."
         },
         {
           id: 4,
@@ -62,9 +62,19 @@ export default {
 
 <template>
 
-  <div class="absolute left_100 flex flex-column row-gap-4 bg-blur-box shadow-6">
-    <div v-for="item in text_list" @click="redirect(item.path)" :id="item.id" class="flex text-white font-bold cursor-pointer" style="font-size:22px">
-      <i class='bx bxs-circle mr-4'></i>{{ item.text }}
+  <div class="absolute left_100 flex flex-column row-gap-4 bg-blur-box shadow-4">
+    <div v-for="item in text_list" @click="redirect(item.path)" :id="item.id"
+         class="flex align-items-center text-white font-bold cursor-pointer" style="font-size:16px">
+      <div class="flex justify-content-center align-items-center border-1" style="width:100px;">
+<!--        <i class='bx bxs-circle' style="color:#2F5597;"></i>-->
+        <i class='bx bx-check-circle text-4xl' style="color:#2F5597;"></i>
+      </div>
+      <div class=" flex align-items-center justify-content-center px-4 py-1 font-medium border-round shadow-1 uppercase" style="background: #2F5597; height:50px; width:calc(100% - 100px)">
+        {{ item.text }}
+      </div>
+      <div  style="width:100px;" class="flex justify-content-center align-items-center">
+        <i   style="color:#2F5597;" class='bx bx-right-arrow-alt text-6xl font-medium'></i>
+      </div>
     </div>
 
 
@@ -78,11 +88,11 @@ export default {
   transform: translateX(-50%);
   //right: calc(50% - 200px);
   width: 50%;
-  top: 150px;
+  top: 100px;
 }
 
 .bg-blur-box {
-  background: rgba(13, 32, 122, 0.69);
+  //background: #2F5597;
   background-filter: blur(12px);
   //border: 1px solid #27272a;
   padding: 20px;

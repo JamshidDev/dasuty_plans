@@ -270,7 +270,7 @@ export default {
 
 
 .screen_container{
-  border:1px dashed #3f3f3f;
+  border:2px dashed rgba(157, 217, 250, 0.43);
   max-width:1900px;
   width: 100%;
   height:900px;

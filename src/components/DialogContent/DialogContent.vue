@@ -6,7 +6,8 @@
       <i @click="close_dialog()" class='bx bx-x text-4xl cursor-pointer'></i>
     </div>
     <div class="body grid pt-4">
-      <div v-for="item in selected_mtu_list.data" :key="item.id" class="col-6"  @click="control_overall2($event,item.iscollapse, item?.nodes_list)">
+      <template v-for="item in selected_mtu_list.data" :key="item.id">
+        <div  class="col-6"  @click="control_overall2($event,item.iscollapse, item?.nodes_list)">
         <div class="card_box p-3 border-round shadow-1 min-h-full" :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
           <div class="title font-bold">
             {{item.value}}
@@ -19,9 +20,11 @@
           </div>
         </div>
       </div>
-    </div>
+      </template>
 
+    </div>
   </div>
+
   </span>
 
   <OverlayPanel ref="overall2_ref" style="width:400px">
@@ -341,12 +344,12 @@ export default {
               value: `1491,7 км`,
               iscollapse:false,
             },
-            {
-              id: 1,
-              label: `Электрлаштирилган йўл `,
-              value: `0 км`,
-              iscollapse:false,
-            },
+            // {
+            //   id: 1,
+            //   label: `Электрлаштирилган йўл `,
+            //   value: 'hidden',
+            //   iscollapse:false,
+            // },
             {
               id: 2,
               label: `Бириктирилган локомотивлар сони`,

@@ -54,7 +54,11 @@ export default {
         {
           index: 3,
           name: "third-screen"
-        }
+        },
+        {
+          index: 9,
+          name: "tenth-screen"
+        },
       ],
       page_index: 0,
     }

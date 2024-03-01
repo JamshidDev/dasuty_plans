@@ -78,6 +78,13 @@ const routes = [
                     return import("../pages/EighthScreen/EighthScreen.vue");
                 },
             },
+            {
+                path: "/tenth-screen",
+                name: "tenth-screen",
+                component: function () {
+                    return import("../pages/TenScreen/TenthScreen.vue");
+                },
+            },
 
 
 

@@ -1,6 +1,6 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
-    <TitleText :title="`2023 йилда амалга оширилган ислохотлар`"></TitleText>
+    <TitleText :title="`ТАҚДИМОТ МУНДАРИЖАСИ`"></TitleText>
     <PlanPresentation></PlanPresentation>
   </div>
 </template>
