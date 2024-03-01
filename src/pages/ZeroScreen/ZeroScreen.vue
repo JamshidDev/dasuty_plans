@@ -3,8 +3,10 @@
     <div class="flex w-full absolute top-0 left-0 justify-content-end">
       <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
     </div>
-    <div class="flex gap-4 text-lg font-normal absolute w-full text-white z-5" style="top:10px; left:10px;">
-      Ўзбекистон темир йўллари харитаси</div>
+    <div class="flex gap-4 text-lg font-normal absolute w-full z-5" style="top:10px; left:10px;">
+      Ўзбекистон темир йўллари харитаси
+<!--    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}-->
+    </div>
     <div id="zoom-container" ref="zoom_container" class="w-full border-round relative"
          style="height:88vh; overflow: hidden;">
       <div id="trigger-zoom-element" ref="trigger_zoom_element"
@@ -12,7 +14,7 @@
            style="width:100%; height:90vh;">
         <RailwayMap ref="railway_map_ref"></RailwayMap>
       </div>
-      <InformationCard @changeMap="change_visible($event)" v-if="general_info_show"></InformationCard>
+      <InformationCard @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" v-if="general_info_show"></InformationCard>
     </div>
 
   </div>
@@ -45,10 +47,10 @@ export default {
         x: 0,
         y: 0,
       },
-
       zoo_element: null,
       zoo_element_container: null,
       general_info_show:true,
+      active_map:true,
 
     }
   },
@@ -64,8 +66,18 @@ export default {
       this.$refs.railway_map_ref.change_visible(id);
     },
 
-    change_map(){
-      this.current_schema = this.current_schema +1;
+    change_card(map){
+      this.active_map = map;
+      if(map){
+        this.go_push_element(-28, -80, 1.2);
+        this.$refs.railway_map_ref.clear_marked();
+      }
+      this.$refs.railway_map_ref.all_hidden();
+    },
+
+    listen_map(data){
+      this.$refs.railway_map_ref.uchastkaControl(data.id);
+      this.go_push_element(data.x, data.y, data.zoom);
     },
 
     closed_modal() {
@@ -152,40 +164,51 @@ export default {
     let toshkentRJU = document.getElementById("toshkentRJU");
     let kokandRJU = document.getElementById("kokandRJU");
     qongirotRJU.addEventListener("click", () => {
-      this.general_info_show=false;
-      this.go_push_element(-420, -227, 2.3);
-      this.$refs.dialog_ref.open_dialog(3)
+      if(this.active_map){
+        this.general_info_show=false;
+        this.go_push_element(-420, -227, 2.3);
+        this.$refs.dialog_ref.open_dialog(3);
+      }
+
     })
     buxoroRJU.addEventListener("click", () => {
-      this.general_info_show=false;
-      this.go_push_element(-911, -419, 2);
-      this.$refs.dialog_ref.open_dialog(2)
+      if(this.active_map){
+        this.general_info_show=false;
+        this.go_push_element(-911, -419, 2);
+        this.$refs.dialog_ref.open_dialog(2)
+      }
+
     })
     qarshiRJU.addEventListener("click", () => {
-      this.general_info_show=false;
-      this.go_push_element(-2731, -1729, 3.5);
-      this.$refs.dialog_ref.open_dialog(4)
+      if(this.active_map){
+        this.general_info_show=false;
+        this.go_push_element(-2731, -1729, 3.5);
+        this.$refs.dialog_ref.open_dialog(4)
+      }
+
     })
     termizRJU.addEventListener("click", () => {
-      this.general_info_show=false;
-      this.go_push_element(-3031, -1999, 3.5);
-      this.$refs.dialog_ref.open_dialog(5)
+      if(this.active_map){
+        this.general_info_show=false;
+        this.go_push_element(-3031, -1999, 3.5);
+        this.$refs.dialog_ref.open_dialog(5)
+      }
+
     })
     toshkentRJU.addEventListener("click", () => {
-      this.general_info_show=false;
-      this.go_push_element(-2365, -561, 2.5);
-      this.$refs.dialog_ref.open_dialog(0)
+      if(this.active_map){
+        this.general_info_show=false;
+        this.go_push_element(-2365, -561, 2.5);
+        this.$refs.dialog_ref.open_dialog(0)
+      }
     })
     kokandRJU.addEventListener("click", () => {
-      this.general_info_show=false;
-      this.go_push_element(-3603, -778, 3);
-      this.$refs.dialog_ref.open_dialog(1)
+      if(this.active_map){
+        this.general_info_show=false;
+        this.go_push_element(-3603, -778, 3);
+        this.$refs.dialog_ref.open_dialog(1)
+      }
     })
-
-
-
-
-
 
 
     this.go_push_element(-28, -80, 1.2);

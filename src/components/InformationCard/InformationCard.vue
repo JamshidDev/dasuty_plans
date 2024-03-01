@@ -3,47 +3,51 @@
 
   <div class="information-card shadow-2 px-4 py-2 overflow-y-auto overflow-x-hidden">
     <div class="grid">
-      <div class="col-12 flex justify-content-between align-items-center">
-        <div class="m-0 font-bold">Умумий маълумот</div>
+      <div class="col-12 flex justify-content-between align-items-center border-bottom-1 border-200">
+        <div class="m-0 font-bold">{{active_card? 'Умумий маълумот' : '14 диспетчерских участков'}}</div>
         <div>
-          <i class='bx bx-refresh text-4xl cursor-pointer'></i>
+          <i @click="change_card()" class='bx bx-refresh text-4xl cursor-pointer'></i>
         </div>
       </div>
 
-       <div class="col-12" v-if="active_card">
-         <div class="grid">
-           <div v-for="item in general_data" :key="item.id" class="col-4">
-             <div @click="control_overall($event ,item.id)" :class="[2,6].includes(item.id)? 'bg-blue-100' : 'bg-gray'"
-                  class="card_box p-2 border-round shadow-1 min-h-full"
-             >
-               <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
-                 <div class="title font-bold">
-                   {{ item.value }}
-                 </div>
-                 <span>
+      <div class="col-12" v-if="active_card">
+        <div class="grid">
+          <div v-for="item in general_data" :key="item.id" class="col-4">
+            <div @click="control_overall($event ,item.id)" :class="[2,6].includes(item.id)? 'bg-blue-100' : 'bg-gray'"
+                 class="card_box p-2 border-round shadow-1 min-h-full"
+            >
+              <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
+                <div class="title font-bold">
+                  {{ item.value }}
+                </div>
+                <span>
             <InputSwitch @click.stop @change="change_map(item.show_map, item.id)" v-model="item.show_map"/>
           </span>
-               </div>
-               <div v-else>
-                 <div class="title font-bold">
-                   {{ item.value }}
-                 </div>
-               </div>
-               <div class="my-3">
+              </div>
+              <div v-else>
+                <div class="title font-bold">
+                  {{ item.value }}
+                </div>
+              </div>
+              <div class="my-3">
 
-               </div>
-               <div class="text-sm">
-                 {{ item.label }}
-               </div>
+              </div>
+              <div class="text-sm">
+                {{ item.label }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12" v-else>
+        <div class="grid pt-2 pb-6 ">
+          <div v-for="item in station_line_list" :key="item" class="col-12">
+            <div class="flex w-full gap-6 align-items-center justify-content-between">
+             <div class="flex gap-6 align-items-center">
+               <div class="dashshed_line shadow-2" :style="{  'border-bottom': `4px solid ${item.color}`}"></div>
+               <div>{{ item.name }}</div>
              </div>
-           </div>
-         </div>
-       </div>
-      <div class="col-12" v-else >
-        <div class="grid">
-          <div v-for="item in station_line_list" :key="line" class="col-12" >
-            <div class="flex w-full gap-6">
-              <div class="dashshed_line" ></div> <div>{{item.name}}</div>
+              <Checkbox @change="change_checkbox($event, item.map.x, item.map.y, item.map.zoom,)" v-model="selected_id"   :value="item.id" />
             </div>
           </div>
         </div>
@@ -285,51 +289,154 @@ export default {
 
       ],
       overall_list: [],
-      sorted_station: false,
+      selected_id: null,
       selected_data_id: null,
       status: false,
-      active_card:true,
+      active_card: true,
+      sorted_station:false,
+
 
       station_line_list: [
         {
-          id: '1',
-          name: 'Кунград - Каракалпакстан',
-          color: '#6600cc'
+          id: 'uchas11',
+          name: '- узел Узбекистан - Сарыагач',
+          color: '#996633',
+          map:{
+            x:-3665,
+            y:-987,
+            zoom:4,
+          }
         },
         {
-          id: '1',
-          name: 'Кунград - Каракалпакстан',
-          color: '#6600cc'
-        }, {
-          id: '1',
-          name: 'Кунград - Каракалпакстан',
-          color: '#6600cc'
-        }, {
-          id: '1',
-          name: 'Кунград - Каракалпакстан',
-          color: '#6600cc'
-        }, {
-          id: '1',
-          name: 'Кунград - Каракалпакстан',
-          color: '#6600cc'
-        }, {
-          id: '1',
-          name: 'Кунград - Каракалпакстан',
-          color: '#6600cc'
-        }, {
-          id: '1',
-          name: 'Кунград - Каракалпакстан',
-          color: '#6600cc'
-        }, {
-          id: '1',
-          name: 'Кунград - Каракалпакстан',
-          color: '#6600cc'
-        }, {
-          id: '1',
-          name: 'Кунград - Каракалпакстан',
-          color: '#6600cc'
+          id: 'uchas10',
+          name: '- Даштабад - Узбекистан - Далагузар и Дустлик',
+          color: '#cccccc',
+          map:{
+            x:-2818,
+            y:-1088,
+            zoom:3.6,
+          }
+        },
+        {
+          id: 'uchas12',
+          name: '- центр Салар - Ходжикент, Тукимачи - Ангрен',
+          color: '#faff81',
+          map:{
+            x:-4155,
+            y:-997,
+            zoom:4.3,
+          }
+        },
+        {
+          id: 'uchas9',
+          name: '- Мароканд - Даштабад',
+          color: '#ff99cc',
+          map:{
+            x:-4273,
+            y:-2183,
+            zoom:5,
+          }
+        },
+        {
+          id: 'uchas13',
+          name: '- Ангрен-Пап Коканд-Хаваст',
+          color: '#000000',
+          map:{
+            x:-2627,
+            y:-791,
+            zoom:3,
+          }
+        },
+        {
+          id: 'uchas14',
+          name: '- узел Коканд (Коканд - Андижан - Карасу)',
+          color: '#9933cc',
+          map:{
+            x:-5030,
+            y:-1329,
+            zoom:4.3,
+          }
+        },
+        {
+          id: 'uchas5',
+          name: '- Фарап - Навои - Мароканд',
+          color: '#ffcc00',
+          map:{
+            x:-1430,
+            y:-1170,
+            zoom:3,
+          }
+        },
+        {
+          id: 'uchas3',
+          name: '- Мискен - Учкудук - Тинчлик',
+          color: '#cc3399',
+          map:{
+            x:-1175,
+            y:-825,
+            zoom:3,
+          }
+        },
+        {
+          id: 'uchas2',
+          name: '- Кунград - Мискен - Ургенч',
+          color: '#00ccff',
+          map:{
+            x:-554,
+            y:-551,
+            zoom:3,
+          }
+        },
+        {
+          id: 'uchas1',
+          name: '- Кунград - Каракалпакстан',
+          color: '#6600cc',
+          map:{
+            x:-183,
+            y:-272,
+            zoom:3,
+          }
+        },
+        {
+          id: 'uchas6',
+          name: '- Бухара - Карши - Мароканд - Ташгузар',
+          color: '#33cc66',
+          map:{
+            x:-2140,
+            y:-1592,
+            zoom:3.6,
+          }
         },
 
+          {
+          id: 'uchas7',
+          name: '- Ташгузар-Кумгурган',
+          color: '#6699ff',
+            map:{
+              x:-2444,
+              y:-1891,
+              zoom:3.6,
+            }
+        }, {
+          id: 'uchas8',
+          name: '- Болдырь -Термез Кудукли и Талимарждан - Карши',
+          color: '#ff0000',
+          map:{
+            x:-2459,
+            y:-1991,
+            zoom:3.6,
+          }
+        },
+        {
+          id: 'uchas4',
+          name: '- Бухара - Мискин',
+          color: '#000066',
+          map:{
+            x:-1539,
+            y:-1273,
+            zoom:3.6,
+          }
+        },
 
       ]
     }
@@ -359,26 +466,42 @@ export default {
     control_overall2(event) {
       this.$refs.overall2_ref.toggle(event);
 
-      if (this.sorted_station) {
-        this.$emit("changeMap", 'sorts');
-      } else {
-        this.$emit("changeMap", 'mains');
+      this.$emit("changeMap", 'sorts');
+    },
+
+    change_card() {
+      console.log("pl")
+      this.active_card = !this.active_card;
+      this.$emit("changeCard",this.active_card );
+
+      if(!this.active_card){
+            this.selected_id = null;
+      }else{
+        this.general_data[4].show_map = false;
+        this.general_data[5].show_map = false;
       }
+
+
+    },
+    change_checkbox(value, x,y,zoom){
+      let data ={
+        id:value.target.value,
+        x,
+        y,
+        zoom,
+      }
+      this.selected_id = [value.target.value];
+      this.$emit('listenMap', data)
     },
 
     change_map(event, id) {
-      if (!event) {
-        this.$emit("changeMap", 'mains');
-      } else {
-        if (id === 4) {
-          this.$emit("changeMap", 'tchs');
-        } else if (id === 5) {
-          this.$emit("changeMap", 'vchds');
-        } else if (id === 3) {
-          this.$emit("changeMap", 'stiks');
-        }
+      if (id === 4) {
+        this.$emit("changeMap", 'tchs');
+      } else if (id === 5) {
+        this.$emit("changeMap", 'vchds');
+      } else if (id === 3) {
+        this.$emit("changeMap", 'stiks');
       }
-
     }
 
 
@@ -408,10 +531,9 @@ export default {
   background: #F5F5F5
 }
 
-.dashshed_line{
-  width:100px;
-  height:0;
+.dashshed_line {
+  width: 100px;
+  height: 0;
   background: white;
-  border-bottom:10px solid indianred;
 }
 </style>
