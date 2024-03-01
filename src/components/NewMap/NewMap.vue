@@ -1323,7 +1323,7 @@ export default {
           var location = document.getElementById(array_locations2[i]);
           location.style.visibility = 'visible';
           await new Promise(resolve => {
-            this.second_timeout = setTimeout(resolve, 700);
+            this.second_timeout = setTimeout(resolve, 300);
             return this.second_timeout;
           });
 
@@ -1337,12 +1337,12 @@ export default {
             path.style.transition = path.style.WebkitTransition = 'none';
             path.style.strokeDashoffset = length;
             path.getBoundingClientRect();
-            path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset 2s ease-in-out';
+            path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset 0.3s ease-in-out';
             path.style.visibility = 'visible';
             path.style.strokeDashoffset = '0';
 
             await new Promise(resolve => {
-              this.third_timeout =setTimeout(resolve, 2000);
+              this.third_timeout =setTimeout(resolve, 300);
               return this.third_timeout;
             });
           }
