@@ -32,7 +32,7 @@ const routes = [
                     return import("../pages/FirstScreen/FirstPage.vue");
                 },
                 meta:{
-                    pageNUmber:15,
+                    pageNUmber:14,
                 }
             },
             {
@@ -42,7 +42,7 @@ const routes = [
                     return import("../pages/SecondScreen/SecondPage.vue");
                 },
                 meta:{
-                    pageNUmber:16,
+                    pageNUmber:15
                 }
             },
             {
@@ -52,7 +52,7 @@ const routes = [
                     return import("../pages/ThirdScreen/ThirdScreen.vue");
                 },
                 meta:{
-                    pageNUmber:17,
+                    pageNUmber:16,
                 }
             },
             {
@@ -112,7 +112,7 @@ const routes = [
                     return import("../pages/TenScreen/TenthScreen.vue");
                 },
                 meta:{
-                    pageNUmber:14,
+                    pageNUmber:13,
                 }
             },
             {
@@ -182,19 +182,19 @@ const routes = [
                     return import("../pages/MinFinPresenScreen/SixScreen.vue");
                 },
                 meta:{
-                    pageNUmber:18,
+                    pageNUmber:17,
                 }
             },
-            {
-                path: "/eticket",
-                name: "eticket",
-                component: function () {
-                    return import("../pages/MinFinPresenScreen/EticketScreen.vue");
-                },
-                meta:{
-                    pageNUmber:13,
-                }
-            }
+            // {
+            //     path: "/eticket",
+            //     name: "eticket",
+            //     component: function () {
+            //         return import("../pages/MinFinPresenScreen/EticketScreen.vue");
+            //     },
+            //     meta:{
+            //         pageNUmber:13,
+            //     }
+            // }
         ]
 
     },
