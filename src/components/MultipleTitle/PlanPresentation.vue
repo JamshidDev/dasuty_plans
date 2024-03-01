@@ -35,17 +35,17 @@ export default {
           text: " ЮК ЕТКАЗИШ ХОЛАТЛАРИ (ХОЗИРГИ)."
         },
         {
-          id: 6,
+          id: 7,
           path: "first-screen",
           text: " ИТ ЦЕНТЕР."
         },
         {
-          id: 6,
+          id: 8,
           path: "second-screen",
           text: " (2025 ГАЧА БЎЛГАН ПЛАН ГРАФИК) ИТ ЦЕНТЕР."
         },
         {
-          id: 6,
+          id: 9,
           path: "third-screen",
           text: " ИТ ЦЕНТЕР ХОДИМЛАРИ."
         },
@@ -73,7 +73,7 @@ export default {
         {{ item.text }}
       </div>
       <div  style="width:100px;" class="flex justify-content-center align-items-center">
-        <i   style="color:#2F5597;" class='bx bx-right-arrow-alt text-6xl font-medium'></i>
+        <div  style="color:#2F5597;" class=' text-2xl font-medium'>{{item.id}}</div>
       </div>
     </div>
   </div>

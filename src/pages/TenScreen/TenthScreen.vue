@@ -9,12 +9,11 @@
 </template>
 <script>
 import TitleText from "@/components/TitleText/TitleText.vue";
-import DeveloperCard from "@/components/DeveloperCard/DeveloperCard.vue";
 
 
 export default {
   components: {
-    DeveloperCard,
+
     TitleText,
 
   },

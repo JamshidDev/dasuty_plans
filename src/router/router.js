@@ -21,6 +21,9 @@ const routes = [
                 component: function () {
                     return import("../pages/ZeroScreen/ZeroScreen.vue");
                 },
+                meta:{
+                    pageNUmber:1,
+                }
             },
             {
                 path: "/first-screen",
@@ -28,6 +31,9 @@ const routes = [
                 component: function () {
                     return import("../pages/FirstScreen/FirstPage.vue");
                 },
+                meta:{
+                    pageNUmber:2,
+                }
             },
             {
                 path: "/second-screen",
@@ -35,6 +41,9 @@ const routes = [
                 component: function () {
                     return import("../pages/SecondScreen/SecondPage.vue");
                 },
+                meta:{
+                    pageNUmber:3,
+                }
             },
             {
                 path: "/third-screen",
@@ -42,6 +51,9 @@ const routes = [
                 component: function () {
                     return import("../pages/ThirdScreen/ThirdScreen.vue");
                 },
+                meta:{
+                    pageNUmber:4,
+                }
             },
             {
                 path: "/fourth-screen",
@@ -49,6 +61,9 @@ const routes = [
                 component: function () {
                     return import("../pages/FourthScreen/FourthScreen.vue");
                 },
+                meta:{
+                    pageNUmber:5,
+                }
             },
             {
                 path: "/fiveth-screen",
@@ -56,6 +71,9 @@ const routes = [
                 component: function () {
                     return import("../pages/FivethScreen/FivethScreen.vue");
                 },
+                meta:{
+                    pageNUmber:6,
+                }
             },
             {
                 path: "/sixth-screen",
@@ -63,6 +81,9 @@ const routes = [
                 component: function () {
                     return import("../pages/SixthScreen/SixthScreen.vue");
                 },
+                meta:{
+                    pageNUmber:1,
+                }
             },
             {
                 path: "/seventh-screen",
@@ -70,6 +91,9 @@ const routes = [
                 component: function () {
                     return import("../pages/SeventhScreen/SeventhScreen.vue");
                 },
+                meta:{
+                    pageNUmber:1,
+                }
             },
             {
                 path: "/eighth-screen",
@@ -77,6 +101,9 @@ const routes = [
                 component: function () {
                     return import("../pages/EighthScreen/EighthScreen.vue");
                 },
+                meta:{
+                    pageNUmber:1,
+                }
             },
             {
                 path: "/tenth-screen",
@@ -84,6 +111,9 @@ const routes = [
                 component: function () {
                     return import("../pages/TenScreen/TenthScreen.vue");
                 },
+                meta:{
+                    pageNUmber:1,
+                }
             },
 
 

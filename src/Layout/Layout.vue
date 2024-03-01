@@ -6,6 +6,7 @@
     <div class="w-full min-h-screen relative overflow-hidden">
       <ControlButton></ControlButton>
 
+
       <div class="screen_container">
         <router-view v-slot="{ Component }">
           <transition name="slide-right" mode="out-in">

@@ -1,4 +1,7 @@
 <template>
+  <div class="page_number_box">
+    <span>{{page_number}}</span>
+  </div>
   <div class="fixed flex gap-4 control_button_panel">
     <div @click="previous_page()" class="premium_bg" style="width: 80px;
   height: 40px;">
@@ -61,6 +64,17 @@ export default {
         },
       ],
       page_index: 0,
+      page_number:1,
+    }
+  },
+  watch: {
+    '$route': {
+      handler: function(route) {
+        console.log(route)
+      this.page_number = route.meta.pageNUmber;
+      },
+      deep: true,
+      immediate: true
     }
   },
   methods: {
@@ -112,7 +126,23 @@ export default {
 
 
 <style scoped lang="scss">
-
+.page_number_box{
+  position:absolute;
+  top: 90px;
+  right:0px;
+  width:80px;
+  height: 40px;
+  background: #2F5597;
+  z-index: 12;
+  font-size:20px;
+  color: white;
+  display:flex;
+  font-weight: bold;
+  justify-content:center;
+  align-items:center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
 
 .control_button_panel {
   bottom: 20px;
