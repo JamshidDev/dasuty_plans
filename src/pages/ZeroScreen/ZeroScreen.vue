@@ -198,7 +198,7 @@ export default {
 .trigger-zoom-element {
   transform-origin: 0 0;
   transform: scale(1) translate(0px, 0px);
-  transition: all 0.4s ease-out;
+  transition: all 0.5s ease-out;
   cursor: grab;
 
 }

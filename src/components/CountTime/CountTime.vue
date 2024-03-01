@@ -4,38 +4,38 @@
       <div class="flex gap-2">
 
         <div class="flex flex-column">
-          <div class="button_content text-white font-bold shadow-2">
+          <div class="button_content font-bold shadow-2">
             {{ days }}
           </div>
-          <div class="content-value text-center text-white mt-2 text-sm">
+          <div class="content-value text-center font-bold  mt-2 text-sm">
             КУН
           </div>
         </div>
 
         <div class="flex flex-column">
-          <div class="button_content text-white font-bold shadow-2">
+          <div class="button_content  font-bold shadow-2">
             {{ hours }}
           </div>
-          <div class="content-value text-center text-white mt-2 text-sm">
+          <div class="content-value text-center font-bold  mt-2 text-sm">
             СОАТ
           </div>
         </div>
 
 
         <div class="flex flex-column">
-          <div class="button_content text-white font-bold shadow-2">
+          <div class="button_content  font-bold shadow-2">
             {{ minutes }}
           </div>
-          <div class="content-value text-center text-white mt-2 text-sm">
+          <div class="content-value text-center font-bold  mt-2 text-sm">
             МИНУТ
           </div>
         </div>
 
         <div class="flex flex-column">
-          <div class="button_content text-white font-bold shadow-2">
+          <div class="button_content font-bold shadow-2">
             {{ seconds }}
           </div>
-          <div class="content-value text-center text-white mt-2 text-sm">
+          <div class="content-value text-center font-bold  mt-2 text-sm">
             СЕКУНД
           </div>
         </div>
@@ -65,7 +65,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .button_content {
-  background: #0000004d;
+  background: rgba(13, 32, 122, 0.69);
   background-filter: blur(12px);
   border: 1px solid #27272a;
   padding: 10px 20px;

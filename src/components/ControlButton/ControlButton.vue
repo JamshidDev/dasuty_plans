@@ -1,12 +1,15 @@
 <template>
   <div class="fixed flex gap-4 control_button_panel">
-    <div @click="previous_page()" class="btn-circle_box">
+    <div @click="previous_page()" class="premium_bg" style="width: 80px;
+  height: 40px;">
       <i class='bx bx-chevron-left text-white text-4xl'></i>
     </div>
-    <div @click="$router.push({name : 'eighth-screen'})" class="btn-circle_box">
+    <div @click="$router.push({name : 'eighth-screen'})" class="premium_bg" style="width: 80px;
+  height: 40px;">
       <i class='bx bx-home text-white text-4xl'></i>
     </div>
-    <div @click="next_page()" class="btn-circle_box">
+    <div @click="next_page()" class="premium_bg " style="width: 80px;
+  height: 40px;">
       <i class='bx bx-chevron-right text-white text-4xl'></i>
     </div>
   </div>
@@ -105,47 +108,7 @@ export default {
 
 
 <style scoped lang="scss">
-$primary: #2700ff;
-.btn-circle_box {
-  width: 80px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-
-  background: url('http://api.thumbr.io/whitenoise-354x370.png?background=ffffff00&noise=ffffff&density=40&opacity=4'), rgba(white, 0.01);
-  transition: 0.5s ease-in-out;
-  transition-property: background, text-shadow;
-
-  backdrop-filter: blur(0.333em);
-  border-radius: 1em;
-
-  font-family: inherit;
-  text-align: center;
-  letter-spacing: 0.05em;
-  color: white;
-
-  //text-shadow: 0 0.01em 0.2em rgba(#e3deff, 0.333),
-  //0 0.01em 0.5em rgba(#e3deff, 0.25),;
-  box-shadow: inset 0 0.01em 0.4em rgb(154, 152, 152), inset 0 0.04em 0.18em rgba(203, 203, 211, 0.84), inset 0 0.98em 1em rgb(175, 102, 246), inset 0 -0.82em 0.68em -0.64em rgba(98, 9, 250, 0.3), inset 0 0.07em 0.11em -0.04em white, inset 0 0.39em 0.56em -0.36em rgba(255, 255, 255, 0.5);
-
-  &:hover,
-  &:focus {
-    background: rgba($primary, 0.25);
-    text-shadow: 0 0.01em 0.2em rgba(lighten($primary, 32), 1),
-    0 0.01em 1em rgba(lighten($primary, 32), 1),;
-
-    &:before {
-      transform: translate3d(100%, 0, 0) scale3d(1, 1, 1);
-    }
-  }
-
-
-}
 
 .control_button_panel {
   bottom: 20px;

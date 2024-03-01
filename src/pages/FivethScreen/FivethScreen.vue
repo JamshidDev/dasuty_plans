@@ -1,7 +1,7 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
 
-    <img style="width:1600px;" src="@/assets/img/page_2.png" alt="">
+    <img style="width:1400px;" src="@/assets/img/page_2.png" alt="">
 
 
   </div>

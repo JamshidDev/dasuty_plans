@@ -1,35 +1,49 @@
 <template>
 
 
-  <div class="information-card shadow-1 px-4 py-2 overflow-y-auto overflow-x-hidden">
+  <div class="information-card shadow-2 px-4 py-2 overflow-y-auto overflow-x-hidden">
     <div class="grid">
-      <div class="col-12">
-        <h3 class="m-0">Умумий маълумот</h3>
-      </div>
-      <div v-for="item in general_data" :key="item.id" class="col-4">
-        <div @click="control_overall($event ,item.id)" :class="[2,6].includes(item.id)? 'bg-blue-100' : 'bg-gray'" class="card_box p-2 border-round shadow-1 min-h-full"
-             >
-          <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
-            <div class="title font-bold">
-              {{ item.value }}
-            </div>
-            <span>
-            <InputSwitch @click.stop @change="change_map(item.show_map, item.id)" v-model="item.show_map"/>
-          </span>
-          </div>
-          <div v-else>
-            <div class="title font-bold">
-              {{ item.value }}
-            </div>
-          </div>
-          <div class="my-3">
-
-          </div>
-          <div class="text-sm">
-            {{ item.label }}
-          </div>
+      <div class="col-12 flex justify-content-between align-items-center">
+        <div class="m-0 font-bold">Умумий маълумот</div>
+        <div>
+          <i class='bx bx-refresh text-4xl cursor-pointer'></i>
         </div>
       </div>
+
+       <div class="col-12" v-if="active_card">
+         <div class="grid">
+           <div v-for="item in general_data" :key="item.id" class="col-4">
+             <div @click="control_overall($event ,item.id)" :class="[2,6].includes(item.id)? 'bg-blue-100' : 'bg-gray'"
+                  class="card_box p-2 border-round shadow-1 min-h-full"
+             >
+               <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
+                 <div class="title font-bold">
+                   {{ item.value }}
+                 </div>
+                 <span>
+            <InputSwitch @click.stop @change="change_map(item.show_map, item.id)" v-model="item.show_map"/>
+          </span>
+               </div>
+               <div v-else>
+                 <div class="title font-bold">
+                   {{ item.value }}
+                 </div>
+               </div>
+               <div class="my-3">
+
+               </div>
+               <div class="text-sm">
+                 {{ item.label }}
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+      <div class="col-12" v-else>
+
+      </div>
+
+
     </div>
   </div>
 
@@ -40,10 +54,10 @@
           <div class="flex justify-content-between border-round min-h-full">
             <span><i class='bx bxs-circle text-sm mr-2'></i>
               <Checkbox @change="control_overall2"
-                                                                       class="mr-2 p-inputtext-sm"
-                                                                       v-if="item.id ===1 && selected_data_id ===6"
-                                                                       v-model="sorted_station"
-                                                                       :binary="true"/> {{ item.label }}</span>
+                        class="mr-2 p-inputtext-sm"
+                        v-if="item.id ===1 && selected_data_id ===6"
+                        v-model="sorted_station"
+                        :binary="true"/> {{ item.label }}</span>
             <span class="font-bold">{{ item.value }}</span>
           </div>
         </div>
@@ -153,19 +167,19 @@ export default {
           id: 0,
           label: "Чуқурсой",
           value: ``,
-          path:'./schema/stations/Чукурсай 2.svg',
+          path: './schema/stations/Чукурсай 2.svg',
         },
         {
           id: 1,
           label: "Хаваст",
           value: ``,
-          path:'./schema/stations/Ховос.svg',
+          path: './schema/stations/Ховос.svg',
         },
         {
           id: 2,
           label: "Қўқон",
           value: ``,
-          path:'./schema/stations/Учкудук-1.svg',
+          path: './schema/stations/Учкудук-1.svg',
         },
         {
           id: 3,
@@ -267,6 +281,50 @@ export default {
       sorted_station: false,
       selected_data_id: null,
       status: false,
+      active_card:true,
+
+      station_line_list: [
+        {
+          id: '1',
+          name: 'Кунград - Каракалпакстан',
+          color: '#6600cc'
+        },
+        {
+          id: '1',
+          name: 'Кунград - Каракалпакстан',
+          color: '#6600cc'
+        }, {
+          id: '1',
+          name: 'Кунград - Каракалпакстан',
+          color: '#6600cc'
+        }, {
+          id: '1',
+          name: 'Кунград - Каракалпакстан',
+          color: '#6600cc'
+        }, {
+          id: '1',
+          name: 'Кунград - Каракалпакстан',
+          color: '#6600cc'
+        }, {
+          id: '1',
+          name: 'Кунград - Каракалпакстан',
+          color: '#6600cc'
+        }, {
+          id: '1',
+          name: 'Кунград - Каракалпакстан',
+          color: '#6600cc'
+        }, {
+          id: '1',
+          name: 'Кунград - Каракалпакстан',
+          color: '#6600cc'
+        }, {
+          id: '1',
+          name: 'Кунград - Каракалпакстан',
+          color: '#6600cc'
+        },
+
+
+      ]
     }
   },
   methods: {
@@ -281,7 +339,7 @@ export default {
         this.$refs.overal_ref.toggle(event);
       }
 
-      if(id === 4){
+      if (id === 4) {
         let anchorTag = document.createElement('a');
         anchorTag.setAttribute('href', 'https://uzdepo.uz/uzel/lokomotiv.php?depo=%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD');
         anchorTag.setAttribute('target', '_blank');
@@ -294,9 +352,9 @@ export default {
     control_overall2(event) {
       this.$refs.overall2_ref.toggle(event);
 
-      if(this.sorted_station){
+      if (this.sorted_station) {
         this.$emit("changeMap", 'sorts');
-      }else{
+      } else {
         this.$emit("changeMap", 'mains');
       }
     },
@@ -309,8 +367,7 @@ export default {
           this.$emit("changeMap", 'tchs');
         } else if (id === 5) {
           this.$emit("changeMap", 'vchds');
-        }
-        else if (id === 3) {
+        } else if (id === 3) {
           this.$emit("changeMap", 'stiks');
         }
       }
@@ -331,15 +388,16 @@ export default {
   transform-origin: 0 0;
   transform: scale(1) translate(0px, 0px);
   bottom: 0;
-  left: 0;
-  border: 1px solid green;
+  left: 20px;
+  border: 1px solid #d3d3d3;
   z-index: 10;
   background: #ffffff;
   background-filter: blur(12px);
   border-radius: 12px;
 
 }
-.bg-gray{
-  background:#F5F5F5
+
+.bg-gray {
+  background: #F5F5F5
 }
 </style>
