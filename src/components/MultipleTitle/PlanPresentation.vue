@@ -60,6 +60,11 @@ export default {
           text: "ЮК ЕТКАЗИШ ХОЛАТЛАРИ (ХОЗИРГИ)"
         },
         {
+          id: 6,
+          path: "eticket",
+          text: "ЙЎЛОВЧИ ТАШИШ ХОЛАТЛАРИ (АВВАЛГИ ВА ХОЗИРГИ)"
+        },
+        {
           id: 2,
           path: "tenth-screen",
           text: "РАҚАМЛАШТИРИШДА АМАЛГА ОШИРИЛАЁТГАН ИШЛАР"
@@ -122,7 +127,7 @@ export default {
   transform: translateX(-50%);
   //right: calc(50% - 200px);
   width: 70%;
-  top: 80px;
+  top: 60px;
 }
 
 .bg-blur-box {

@@ -174,6 +174,16 @@ const routes = [
                 meta:{
                     pageNUmber:1,
                 }
+            },
+            {
+                path: "/eticket",
+                name: "eticket",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/EticketScreen.vue");
+                },
+                meta:{
+                    pageNUmber:1,
+                }
             }
         ]
 
