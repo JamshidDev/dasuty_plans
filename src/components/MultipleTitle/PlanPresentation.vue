@@ -76,8 +76,6 @@ export default {
         <i   style="color:#2F5597;" class='bx bx-right-arrow-alt text-6xl font-medium'></i>
       </div>
     </div>
-
-
   </div>
 </template>
 
