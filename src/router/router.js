@@ -92,13 +92,14 @@ const routes = [
     //     },
     // },
 
-    // {
-    //     path: "/:pathMatch(.*)*",
-    //     name: "NotFound",
-    //     component: function () {
-    //         return import("../views/NotFoundPage.vue");
-    //     },
-    // },
+    {
+        path: "/:pathMatch(.*)*",
+        name: "NotFound",
+        redirect:'/eighth-screen',
+        component: function () {
+            return import("../pages/EighthScreen/EighthScreen.vue");
+        },
+    },
 ];
 
 const router = createRouter({

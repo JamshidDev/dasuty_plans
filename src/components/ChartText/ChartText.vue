@@ -7,7 +7,7 @@
       <div v-if="slide === 'right'" class="chart-element">
         <vc-donut
             size="60"
-            background="#181818"
+            background="#ffffff"
             thickness="20"
             :sections="[{ value:chart_persant, color:detect_color(chart_persant) }]"
             :thickness="100">
@@ -28,7 +28,7 @@
       <div v-if="slide === 'left'" class="chart-element">
         <vc-donut
             size="60"
-            background="#181818"
+            background="#ffffff"
             thickness="20"
             :sections="[{ value:chart_persant, color:detect_color(chart_persant)}]"
             :thickness="100">
@@ -75,9 +75,9 @@ export default {
   data(){
     return{
       colors:{
-        green:'#63bf37',
-        yellow:'#c1ab38',
-        red:'#ff7b7f',
+        green:'#418a1e',
+        yellow:'#c5ab18',
+        red:'#fc6266',
       }
     }
   },

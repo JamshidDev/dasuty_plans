@@ -51,7 +51,7 @@ export default {
 <template>
 
   <div class="absolute left_100 flex flex-column row-gap-4 bg-blur-box">
-    <div v-for="item in text_list" :id="item.id" class="flex gradient-background" style="font-size:22px">
+    <div v-for="item in text_list" :id="item.id" class="flex font-bold text-white" style="font-size:22px">
       <i class='bx bxs-circle mr-4'></i> {{item.text}}
 <!--      <span> {{item.deadline}}</span>-->
     </div>
@@ -69,9 +69,9 @@ export default {
   top:100px;
 }
 .bg-blur-box{
-  background: #0000004d;
+  background: rgba(13, 32, 122, 0.69);
   background-filter:blur(12px);
-  border: 1px solid #27272a;
+  border: 2px solid #eaeaea;
   padding:20px;
   border-radius:12px;
 }
