@@ -3,22 +3,40 @@
 .gradient-background {
   font-size:26px;
   font-weight:700;
+  //background: linear-gradient(
+  //                90deg,
+  //                #fbfcff,
+  //                #c5c6ce,
+  //                #a19fa6,
+  //                #aaa8ad,
+  //                #8d8a8d,
+  //                #8a8585,
+  //                #1d59c2,
+  //                #706d6d,
+  //                #a9a5a3,
+  //                #c7c3c0,
+  //                #e3dfdc,
+  //                #e5e4e3,
+  //                #ffffff
+  //);
+
   background: linear-gradient(
                   90deg,
-                  #fbfcff,
-                  #c5c6ce,
-                  #a19fa6,
-                  #aaa8ad,
-                  #8d8a8d,
-                  #8a8585,
-                  #1d59c2,
-                  #706d6d,
-                  #a9a5a3,
-                  #c7c3c0,
-                  #e3dfdc,
-                  #e5e4e3,
-                  #ffffff
+                  #050505,
+                  #151515,
+                  #1f1f1f,
+                  #2a2a2a,
+                  #3b3b3b,
+                  #414141,
+                  #8602ff,
+                  #565555,
+                  #383838,
+                  #232323,
+                  #212121,
+                  #181818,
+                  #000000
   );
+
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

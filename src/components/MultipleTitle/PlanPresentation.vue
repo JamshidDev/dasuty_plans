@@ -62,7 +62,7 @@ export default {
 
 <template>
 
-  <div class="absolute left_100 flex flex-column row-gap-4 bg-blur-box">
+  <div class="absolute left_100 flex flex-column row-gap-4 bg-blur-box shadow-6">
     <div v-for="item in text_list" @click="redirect(item.path)" :id="item.id" class="flex gradient-background cursor-pointer" style="font-size:22px">
       <i class='bx bxs-circle mr-4'></i>{{ item.text }}
     </div>
@@ -82,9 +82,9 @@ export default {
 }
 
 .bg-blur-box {
-  background: #0000004d;
+  background: rgba(199, 199, 199, 0.3);
   background-filter: blur(12px);
-  border: 1px solid #27272a;
+  //border: 1px solid #27272a;
   padding: 20px;
   border-radius: 12px;
 }

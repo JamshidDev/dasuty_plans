@@ -131,7 +131,7 @@ $primary: #2700ff;
 
   //text-shadow: 0 0.01em 0.2em rgba(#e3deff, 0.333),
   //0 0.01em 0.5em rgba(#e3deff, 0.25),;
-  box-shadow: inset 0 0.01em 0.4em rgba(227, 222, 255, 0.2), inset 0 0.04em 0.18em rgba(154, 146, 210, 0.3), inset 0 0.98em 1em rgb(24 24 24), inset 0 -0.82em 0.68em -0.64em rgba(96, 68, 144, 0.3), inset 0 0.07em 0.11em -0.04em white, inset 0 0.39em 0.56em -0.36em rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0.01em 0.4em rgb(154, 152, 152), inset 0 0.04em 0.18em rgba(203, 203, 211, 0.84), inset 0 0.98em 1em rgb(175, 102, 246), inset 0 -0.82em 0.68em -0.64em rgba(98, 9, 250, 0.3), inset 0 0.07em 0.11em -0.04em white, inset 0 0.39em 0.56em -0.36em rgba(255, 255, 255, 0.5);
 
   &:hover,
   &:focus {
