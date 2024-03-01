@@ -115,6 +115,56 @@ const routes = [
                     pageNUmber:1,
                 }
             },
+            {
+                path: "/min-fin-one",
+                name: "min-fin-one",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/OneScreen.vue");
+                },
+                meta:{
+                    pageNUmber:1,
+                }
+            },
+            {
+                path: "/min-fin-two",
+                name: "min-fin-two",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/TwoScreen.vue");
+                },
+                meta:{
+                    pageNUmber:1,
+                }
+            },
+            {
+                path: "/min-fin-three",
+                name: "min-fin-three",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/ThreeScreen.vue");
+                },
+                meta:{
+                    pageNUmber:1,
+                }
+            },
+            {
+                path: "/min-fin-four",
+                name: "min-fin-four",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/FourScreen.vue");
+                },
+                meta:{
+                    pageNUmber:1,
+                }
+            },
+            {
+                path: "/min-fin-five",
+                name: "min-fin-five",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/FiveScreen.vue");
+                },
+                meta:{
+                    pageNUmber:1,
+                }
+            }
 
 
 

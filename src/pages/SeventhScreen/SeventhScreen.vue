@@ -2,7 +2,10 @@
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
     <NewMap style="transform:translateX(240px);" ref="new_map_ref"></NewMap>
 
-    <div @click="$refs.new_map_ref.drawPath()" class="btn-circle_box premium_bg  flex gap-2 py-2 px-4">
+    <div @click="$refs.new_map_ref.drawPath()" class="btn-circle_box premium_bg flex gap-2 py-2 px-4">
+      <i class='bx bx-refresh text-2xl'></i> Restart
+    </div>
+    <div @click="$refs.new_map_ref.drawPath()" class="btn-circle_box premium_bg flex gap-2 py-2 px-4">
       <i class='bx bx-refresh text-2xl'></i> Restart
     </div>
 
