@@ -39,7 +39,14 @@
            </div>
          </div>
        </div>
-      <div class="col-12" v-else>
+      <div class="col-12" v-else >
+        <div class="grid">
+          <div v-for="item in station_line_list" :key="line" class="col-12" >
+            <div class="flex w-full gap-6">
+              <div class="dashshed_line" ></div> <div>{{item.name}}</div>
+            </div>
+          </div>
+        </div>
 
       </div>
 
@@ -399,5 +406,12 @@ export default {
 
 .bg-gray {
   background: #F5F5F5
+}
+
+.dashshed_line{
+  width:100px;
+  height:0;
+  background: white;
+  border-bottom:10px solid indianred;
 }
 </style>
