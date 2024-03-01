@@ -65,7 +65,7 @@ export default {
   <div class="absolute left_100 flex flex-column row-gap-4 bg-blur-box shadow-4">
     <div v-for="item in text_list" @click="redirect(item.path)" :id="item.id"
          class="flex align-items-center text-white font-bold cursor-pointer" style="font-size:16px">
-      <div class="flex justify-content-center align-items-center border-1" style="width:100px;">
+      <div class="flex justify-content-center align-items-center border-1" style="width:60px;">
 <!--        <i class='bx bxs-circle' style="color:#2F5597;"></i>-->
         <i class='bx bx-check-circle text-4xl' style="color:#2F5597;"></i>
       </div>
