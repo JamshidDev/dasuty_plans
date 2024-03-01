@@ -6,8 +6,8 @@
       <div class="col-12">
         <h3 class="m-0">Умумий маълумот</h3>
       </div>
-      <div v-for="item in general_data" :key="item.id" class="col-6">
-        <div @click="control_overall($event ,item.id)" :class="[2,6].includes(item.id)? 'bg-blue-100' : 'bg-gray'" class="card_box p-3 border-round shadow-1 min-h-full"
+      <div v-for="item in general_data" :key="item.id" class="col-4">
+        <div @click="control_overall($event ,item.id)" :class="[2,6].includes(item.id)? 'bg-blue-100' : 'bg-gray'" class="card_box p-2 border-round shadow-1 min-h-full"
              >
           <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
             <div class="title font-bold">
@@ -38,7 +38,8 @@
       <div v-for="item in overall_list" :key="item.id" class="col-12 py-1">
         <div class="flex flex-column">
           <div class="flex justify-content-between border-round min-h-full">
-            <span><i class='bx bxs-circle text-sm mr-2'></i> <Checkbox @change="control_overall2"
+            <span><i class='bx bxs-circle text-sm mr-2'></i>
+              <Checkbox @change="control_overall2"
                                                                        class="mr-2 p-inputtext-sm"
                                                                        v-if="item.id ===1 && selected_data_id ===6"
                                                                        v-model="sorted_station"
@@ -324,13 +325,13 @@ export default {
 <style scoped lang="scss">
 
 .information-card {
-  width: 500px;
-  height: 520px;
+  width: 800px;
+  height: 340px;
   position: absolute;
-  transform-origin: 0px 0px;
+  transform-origin: 0 0;
   transform: scale(1) translate(0px, 0px);
-  bottom: 0px;
-  left: 0px;
+  bottom: 0;
+  left: 0;
   border: 1px solid green;
   z-index: 10;
   background: #ffffff;

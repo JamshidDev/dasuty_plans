@@ -70,7 +70,7 @@ export default {
 
     closed_modal() {
       this.general_info_show=true;
-      this.go_push_element(238, -64, 1);
+      this.go_push_element(-28, -80, 1.2);
     }
   },
 
@@ -84,7 +84,6 @@ export default {
     this.zoo_element = this.$refs.trigger_zoom_element;
     this.zoo_element_container = this.$refs.zoom_container;
 
-    console.log(zoo_element)
     zoo_element.addEventListener('mousedown', (event) => {
       event.preventDefault();
       this.start = {
@@ -189,7 +188,7 @@ export default {
 
 
 
-    this.go_push_element(238, -64, 1);
+    this.go_push_element(-28, -80, 1.2);
     // this.go_push_element(-1000, -1000, 1);
 
   }
@@ -197,7 +196,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .trigger-zoom-element {
-  transform-origin: 0px 0px;
+  transform-origin: 0 0;
   transform: scale(1) translate(0px, 0px);
   transition: all 0.4s ease-out;
   cursor: grab;

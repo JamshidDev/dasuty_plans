@@ -310,7 +310,8 @@ export default {
   stroke-dasharray : 100, 10, 200, 10;
   stroke-dashoffset: 1000;
   stroke-width: 1px;
-  stroke: #333;
+  //stroke: #333;
+  stroke: #cfcfcf;
   fill: none;
 }
 .path-01 {

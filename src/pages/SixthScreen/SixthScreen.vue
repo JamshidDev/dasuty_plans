@@ -80,7 +80,8 @@ $primary: #2700ff;
   position: absolute;
   overflow: hidden;
   cursor: pointer;
-  background: url('http://api.thumbr.io/whitenoise-354x370.png?background=ffffff00&noise=ffffff&density=40&opacity=4'), rgba(white, 0.01);
+  background: #5191fa;
+  //background: url('http://api.thumbr.io/whitenoise-354x370.png?background=ffffff00&noise=ffffff&density=40&opacity=4'), rgba(white, 0.01);
   transition: all 0.5s ease-in-out;
   transition-property: background, text-shadow;
   backdrop-filter: blur(0.333em);
@@ -89,7 +90,7 @@ $primary: #2700ff;
   text-align: center;
   letter-spacing: 0.05em;
   color: white;
-  box-shadow: inset 0 0.01em 0.4em rgba(227, 222, 255, 0.2), inset 0 0.04em 0.18em rgba(154, 146, 210, 0.3), inset 0 0.98em 1em rgb(24 24 24), inset 0 -0.82em 0.68em -0.64em rgba(96, 68, 144, 0.3), inset 0 0.07em 0.11em -0.04em white, inset 0 0.39em 0.56em -0.36em rgba(255, 255, 255, 0.5);
+  //box-shadow: inset 0 0.01em 0.4em rgba(227, 222, 255, 0.2), inset 0 0.04em 0.18em rgba(154, 146, 210, 0.3), inset 0 0.98em 1em rgb(24 24 24), inset 0 -0.82em 0.68em -0.64em rgba(96, 68, 144, 0.3), inset 0 0.07em 0.11em -0.04em white, inset 0 0.39em 0.56em -0.36em rgba(255, 255, 255, 0.5);
 
   //opacity: 0;
   //transform: translateY(100px);

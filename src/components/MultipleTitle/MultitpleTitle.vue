@@ -6,7 +6,8 @@ export default {
       text_list: [
         {
           id: 1,
-          text: " ЙЎЛОВЧИ ТАШИШНИ БОШҚАРИШНИНГ АВТОМАТЛАШТИРИЛГАН МИЛЛИЙ ТИЗИМИ."
+          text: " ЙЎЛОВЧИ ТАШИШНИ БОШҚАРИШНИНГ АВТОМАТЛАШТИРИЛГАН МИЛЛИЙ ТИЗИМИ.",
+          deadline : "03.04.2024"
         },
         {
           id: 2,
@@ -51,8 +52,10 @@ export default {
 
   <div class="absolute left_100 flex flex-column row-gap-4 bg-blur-box">
     <div v-for="item in text_list" :id="item.id" class="flex gradient-background" style="font-size:22px">
-      <i class='bx bxs-circle mr-4'></i>{{item.text}}
+      <i class='bx bxs-circle mr-4'></i> {{item.text}}
+<!--      <span> {{item.deadline}}</span>-->
     </div>
+
 
 
   </div>
