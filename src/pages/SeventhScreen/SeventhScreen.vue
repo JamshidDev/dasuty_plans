@@ -5,8 +5,8 @@
     <div @click="$refs.new_map_ref.drawPath()" class="btn-circle_box premium_bg flex gap-2 py-2 px-4">
       <i class='bx bx-refresh text-2xl'></i> Restart
     </div>
-    <div @click="$refs.new_map_ref.drawPath()" class="btn-circle_box premium_bg flex gap-2 py-2 px-4">
-      <i class='bx bx-refresh text-2xl'></i> Restart
+    <div  class="btn-circle_box2 premium_bg flex gap-2 py-2 px-4">
+      <i class='bx bx-refresh text-2xl'></i> <a href="http://192.168.53.20:8080/pvAnalyz/" target="_blank"> Аналитика </a>
     </div>
 
     <div class="text_card_dark py-4 px-4 bg-yellow-300 border-1 border-yellow-500 shadow-4" style="width:500px; top:80px; right:30px;">
@@ -47,11 +47,16 @@ export default {
 $primary: #2700ff;
 
 .btn-circle_box {
-
   cursor: pointer;
   position:absolute;
   bottom: 40px;
   left: 20px;
+}
+.btn-circle_box2 {
+  cursor: pointer;
+  position:absolute;
+  bottom: 40px;
+  left: 200px;
 }
 
 

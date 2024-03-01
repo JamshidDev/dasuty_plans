@@ -70,10 +70,10 @@ export default {
           index: 9,
           name: "seventh-screen"
         },
-        {
-          index: 9,
-          name: "eticket"
-        },
+        // {
+        //   index: 9,
+        //   name: "eticket"
+        // },
         {
           index: 9,
           name: "tenth-screen"
@@ -104,7 +104,9 @@ export default {
       handler: function(route) {
         console.log(route)
       this.page_number = route.meta.pageNUmber;
-      },
+        this.page_index = route.meta.pageNUmber - 1;
+
+        },
       deep: true,
       immediate: true
     }
