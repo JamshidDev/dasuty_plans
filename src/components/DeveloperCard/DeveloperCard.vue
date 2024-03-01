@@ -4,25 +4,24 @@
       <!--        <span class="user_badge shadow-1">-->
       <!--          <i class='bx bxs-shield text-yellow-600'></i>-->
       <!--          </span>-->
-      <div class="avatar-box bg-dark" :class="{active: active_card}">
+      <div class="avatar-box bg-dark shadow-5" :class="{active: active_card}">
         <img :src="imgUrl" alt="">
       </div>
-      <div class="content-box bg-dark" :class="{active: active_card}">
-        <h3 class="text-center m-0 text-sm text-white py-1 font-normal bg-dark"
+      <div class="content-box bg-dark shadow-5" :class="{active: active_card}">
+        <h3 class="text-center m-0 text-sm py-1 font-bold bg-dark"
             style="border-bottom:1px solid #27272a;">{{ name }}</h3>
-        <h3 class="text-center m-0 text-sm text-black pt-2 pb-2 font-medium" style="color:#878787">{{ desc }}</h3>
+        <h3 class="text-center m-0 text-sm text-black pt-2 pb-2 font-medium">{{ desc }}</h3>
         <div class="flex bg-dark pt-2 pb-1 align-items-center w-full px-2 column-gap-4"
              style="border-top:1px solid #27272a;"
              :class="{'justify-content-between': list.length >0, 'justify-content-center': list.length === 0}"
         >
-          <div v-if="list.length > 0" class="tast-title pl-2 hover:text-white text-sm cursor-pointer" @click="toggle"
-               style="color:#878787;">
+          <div v-if="list.length > 0" class="tast-title pl-2 hover:text-white text-sm cursor-pointer" @click="toggle">
             Batafsil
           </div>
 
           <vue-countdown :time="count_time" v-slot="{ days, hours, minutes, seconds }">
-            <div class="time-contaner flex column-gap-2 text-sm" style="color:#878787;">
-              <div class="flex flex-column timer-text">
+            <div class="time-contaner flex column-gap-2 text-sm">
+              <div class="flex flex-column">
                 <div class="timer_value">{{ days }}</div>
                 <div style="font-size:8px;">KUN</div>
               </div>
@@ -65,9 +64,9 @@
   </div>
 </template>
 <script setup>
-import { defineComponent, onMounted, ref } from "vue";
+import {defineComponent, onMounted, ref} from "vue";
 
-defineComponent({ name: 'DeveloperCard' })
+defineComponent({name: 'DeveloperCard'})
 const count_time = ref(0)
 const op = ref()
 
@@ -116,12 +115,12 @@ onMounted(() => {
 }
 
 .card-task {
-  background:#1A1A1A;
-  border-radius:12px;
+  background: #e8e3e3;
+  border-radius: 12px;
 }
 
 .content-box, .avatar-box {
-  box-shadow: 4px 2px 16px 1px rgba(255, 255, 255, .1);
+  box-shadow: 4px 2px 16px 1px rgba(246, 241, 241, 0.1);
 }
 
 
@@ -151,7 +150,7 @@ onMounted(() => {
   }
 
   .bg-dark {
-    background: #0000004d;
+    background: rgba(241, 240, 240, 0.9);
     backdrop-filter: blur(12px);
   }
 
@@ -160,7 +159,7 @@ onMounted(() => {
     height: 70px;
     overflow: hidden;
     border-radius: 50%;
-    border: 3px solid #5c5b5b;
+    border: 3px solid rgba(232, 232, 232, 0.9);
     cursor: pointer;
     position: absolute;
     z-index: 2;
@@ -185,7 +184,7 @@ onMounted(() => {
     z-index: 1;
     //background: #0000004d;
     //background-filter:blur(12px);
-    border: 1px solid #27272a;
+    //border: 1px solid #27272a;
     cursor: pointer;
   }
 }

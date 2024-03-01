@@ -63,7 +63,7 @@ export default {
 <template>
 
   <div class="absolute left_100 flex flex-column row-gap-4 bg-blur-box shadow-6">
-    <div v-for="item in text_list" @click="redirect(item.path)" :id="item.id" class="flex gradient-background cursor-pointer" style="font-size:22px">
+    <div v-for="item in text_list" @click="redirect(item.path)" :id="item.id" class="flex gradient-background cursor-pointer" style="font-size:28Lpx">
       <i class='bx bxs-circle mr-4'></i>{{ item.text }}
     </div>
 
