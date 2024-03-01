@@ -54,6 +54,11 @@ export default {
           path: "third-screen",
           text: "РАҚАМЛАШТИРИШ ХОДИМЛАРИ"
         },
+        {
+          id: 10,
+          path: "nst-infra",
+          text: "ИНФРАТУЗИЛМА"
+        },
       ]
     }
   },
@@ -67,14 +72,14 @@ export default {
 
 <template>
 
-  <div class="absolute left_100 flex flex-column row-gap-4 bg-blur-box shadow-4">
+  <div class="absolute left_100 flex flex-column row-gap-2 bg-blur-box shadow-4">
     <div v-for="item in text_list" @click="redirect(item.path)" :id="item.id"
          class="flex align-items-center text-white font-bold cursor-pointer" style="font-size:16px">
       <div class="flex justify-content-center align-items-center border-1" style="width:60px;">
 <!--        <i class='bx bxs-circle' style="color:#2F5597;"></i>-->
         <i class='bx bx-check-circle text-4xl' style="color:#2F5597;"></i>
       </div>
-      <div class=" flex align-items-center justify-content-center px-4 py-1 font-medium border-round shadow-1 uppercase" style="background: #2F5597; height:50px; width:calc(100% - 100px)">
+      <div class=" flex align-items-center justify-content-center px-4 py-1 font-medium border-round shadow-1 uppercase" style="background: #2F5597; height:45px; width:calc(100% - 100px)">
         {{ item.text }}
       </div>
       <div  style="width:100px;" class="flex justify-content-center align-items-center">
