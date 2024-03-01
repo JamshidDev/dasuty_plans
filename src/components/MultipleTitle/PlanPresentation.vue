@@ -15,6 +15,31 @@ export default {
           text: "ОПЕРАЦИОН САМАРАДОРЛИК"
         },
         {
+          id: 2,
+          path: "min-fin-one",
+          text: "ЙЎЛОВЧИ ТАШУВЛАРИ ВА ВОКЗАЛЛАРДА ХУСУСИЙ ШЕРИКЧИЛИКНИ ЖОРИЙ ЭТИШ "
+        },
+        {
+          id: 2,
+          path: "min-fin-two",
+          text: "“ТЕМИРЙЎЛКАРГО” АЖ КОМПАНИЯСИ ТАШКИЛ ЭТИЛДИ"
+        },
+        {
+          id: 2,
+          path: "min-fin-three",
+          text: "ЗАМОНАВИЙ ХАЛҚАРО СТАНДАРТЛАРГА МОС ЛОГИСТИКА МАРКАЗЛАРИНИ ТАШКИЛ ЭТИШ"
+        },
+        {
+          id: 2,
+          path: "min-fin-four",
+          text: "САНОАТ КОРХОНАЛАРНИ РИВОЖЛАНТИРИШ ВА ВАГОН ПАРКИНИ ЯНГИЛАШ ЛОЙИҲАЛАРИ"
+        },
+        {
+          id: 2,
+          path: "min-fin-five",
+          text: "2024 ЙИЛДА АМАЛГА ОШИРИЛИШИ РЕЖАЛАШТИРИЛГАН ИШЛАР"
+        },
+        {
           id: 3,
           path: "zero-screen",
           text: "Ягона диспечирлик маркази"
@@ -79,7 +104,8 @@ export default {
 <!--        <i class='bx bxs-circle' style="color:#2F5597;"></i>-->
         <i class='bx bx-check-circle text-4xl' style="color:#2F5597;"></i>
       </div>
-      <div class=" flex align-items-center justify-content-center px-4 py-1 font-medium border-round shadow-1 uppercase" style="background: #2F5597; height:45px; width:calc(100% - 100px)">
+      <div class=" flex align-items-center justify-content-center px-4 py-1 font-medium border-round shadow-1 uppercase"
+           style="background: #2F5597; height:40px; width:calc(100% - 100px)">
         {{ item.text }}
       </div>
       <div  style="width:100px;" class="flex justify-content-center align-items-center">
@@ -95,15 +121,15 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   //right: calc(50% - 200px);
-  width: 50%;
-  top: 100px;
+  width: 70%;
+  top: 80px;
 }
 
 .bg-blur-box {
   //background: #2F5597;
   background-filter: blur(12px);
   //border: 1px solid #27272a;
-  padding: 20px;
+  padding: 15px;
   border-radius: 12px;
 }
 </style>
