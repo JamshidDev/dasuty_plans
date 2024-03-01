@@ -66,8 +66,6 @@ export default {
     <div v-for="item in text_list" @click="redirect(item.path)" :id="item.id" class="flex text-white font-bold cursor-pointer" style="font-size:22px">
       <i class='bx bxs-circle mr-4'></i>{{ item.text }}
     </div>
-
-
   </div>
 </template>
 
