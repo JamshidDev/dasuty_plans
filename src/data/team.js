@@ -8,12 +8,12 @@ export const teamList = [
     ]
   },
   {
-    name: 'Aytmuratov Artur', position: 'Backend Developer', projects: [projectList.enakl.id], tasks: [
+    name: 'Aytmuratov Artur', position: 'Backend Developer', projects: [projectList.enakl.id, projectList.erp.id], tasks: [
       { title: 'SMGS ga ustunlarni qo’shish', deadline: '2024-03-04' }
     ]
   },
   {
-    name: 'Bekmirzayev Ilxomjon', position: 'System Admin', projects: [projectList.enakl.id], tasks: [
+    name: 'Bekmirzayev Ilxomjon', position: 'System Admin', projects: [projectList.enakl.id, projectList.erp.id], tasks: [
       { title: 'Temir yo’l kartasini optimizatsiya qilish', deadline: '2024-03-11' }
     ]
   },
@@ -25,13 +25,13 @@ export const teamList = [
   {
     name: 'Gu’lumov Bekzod',
     position: 'Project Manager',
-    projects: [projectList.vOffice.id, projectList.utyFace.id],
+    projects: [projectList.vOffice.id, projectList.utyFace.id, projectList.erp.id],
     tasks: [
       { title: 'Elektron bashmak qurilmasini yaratish', deadline: '2024-03-29' }
     ]
   },
   {
-    name: 'Yodgorov Zafar', position: 'Frontend Developer', projects: [projectList.vOffice.id], tasks: [
+    name: 'Yodgorov Zafar', position: 'Frontend Developer', projects: [projectList.vOffice.id, projectList.erp.id], tasks: [
       { title: 'Virtual ofis yo’riqnoma modulini yaratish', deadline: '2024-03-10' }
     ]
   },
@@ -44,24 +44,24 @@ export const teamList = [
     ]
   },
   {
-    name: 'Muxtorov In‘omjon', position: 'Mobile Developer', projects: [projectList.enaklM.id],
+    name: 'Muxtorov In‘omjon', position: 'Mobile Developer', projects: [projectList.enaklM.id, projectList.erp.id],
     tasks: [
       { title: 'Enakl mobile Zayavka qismini yakunlash', deadline: '2024-03-06' }
     ]
   },
   {
-    name: 'Narziyev Orzu', position: 'Backend Developer', projects: [projectList.vOffice.id],
+    name: 'Narziyev Orzu', position: 'Backend Developer', projects: [projectList.vOffice.id, projectList.erp.id],
     tasks: [
       { title: 'Virtual ofis yo’riqnoma modulini yaratish', deadline: '2024-03-10' }
     ]
   },
   {
-    name: 'Pak Valeriya', position: 'Backend Developer', projects: [projectList.utyFace.id], tasks: [
+    name: 'Pak Valeriya', position: 'Backend Developer', projects: [projectList.utyFace.id, projectList.erp.id], tasks: [
       { title: 'Stream orqali xodimni aniqlash ', deadline: '2024-03-07' }
     ]
   },
   {
-    name: 'Qorayev Farrux', position: 'Backend Developer', projects: [projectList.vOffice.id], tasks: [
+    name: 'Qorayev Farrux', position: 'Backend Developer', projects: [projectList.vOffice.id, projectList.erp.id], tasks: [
       { title: 'Virtual ofis yo’riqnoma modulini yaratish', deadline: '2024-03-10' }
     ]
   },
@@ -97,12 +97,12 @@ export const teamList = [
     ]
   },
   {
-    name: 'Xaytboyeva Mahliyo', position: 'UI/UX Designer', projects: [projectList.enaklM.id], tasks: [
+    name: 'Xaytboyeva Mahliyo', position: 'UI/UX Designer', projects: [projectList.enaklM.id, projectList.erp.id], tasks: [
       { title: 'Enakl mobile Zayavka qismi dizaynini yakunlash', deadline: '2024-03-04' }
     ]
   },
   {
-    name: 'Shermatova Lobar', position: 'UI/UX Designer', projects: [projectList.vOffice.id], tasks: [
+    name: 'Shermatova Lobar', position: 'UI/UX Designer', projects: [projectList.vOffice.id, projectList.erp.id], tasks: [
       { title: 'Virtual ofis yo’riqnoma modulini yaratish', deadline: '2024-03-10' }
     ]
   },

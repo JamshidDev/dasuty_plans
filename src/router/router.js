@@ -22,7 +22,7 @@ const routes = [
                     return import("../pages/ZeroScreen/ZeroScreen.vue");
                 },
                 meta:{
-                    pageNUmber:1,
+                    pageNUmber:10,
                 }
             },
             {
@@ -32,7 +32,7 @@ const routes = [
                     return import("../pages/FirstScreen/FirstPage.vue");
                 },
                 meta:{
-                    pageNUmber:2,
+                    pageNUmber:14,
                 }
             },
             {
@@ -42,7 +42,7 @@ const routes = [
                     return import("../pages/SecondScreen/SecondPage.vue");
                 },
                 meta:{
-                    pageNUmber:3,
+                    pageNUmber:15
                 }
             },
             {
@@ -52,7 +52,7 @@ const routes = [
                     return import("../pages/ThirdScreen/ThirdScreen.vue");
                 },
                 meta:{
-                    pageNUmber:4,
+                    pageNUmber:16,
                 }
             },
             {
@@ -62,7 +62,7 @@ const routes = [
                     return import("../pages/FourthScreen/FourthScreen.vue");
                 },
                 meta:{
-                    pageNUmber:5,
+                    pageNUmber:2,
                 }
             },
             {
@@ -72,7 +72,7 @@ const routes = [
                     return import("../pages/FivethScreen/FivethScreen.vue");
                 },
                 meta:{
-                    pageNUmber:6,
+                    pageNUmber:3,
                 }
             },
             {
@@ -82,7 +82,7 @@ const routes = [
                     return import("../pages/SixthScreen/SixthScreen.vue");
                 },
                 meta:{
-                    pageNUmber:1,
+                    pageNUmber:11,
                 }
             },
             {
@@ -92,7 +92,7 @@ const routes = [
                     return import("../pages/SeventhScreen/SeventhScreen.vue");
                 },
                 meta:{
-                    pageNUmber:1,
+                    pageNUmber:12,
                 }
             },
             {
@@ -112,12 +112,89 @@ const routes = [
                     return import("../pages/TenScreen/TenthScreen.vue");
                 },
                 meta:{
-                    pageNUmber:1,
+                    pageNUmber:13,
                 }
             },
-
-
-
+            {
+                path: "/min-fin-one",
+                name: "min-fin-one",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/OneScreen.vue");
+                },
+                meta:{
+                    pageNUmber:4,
+                }
+            },
+            {
+                path: "/min-fin-two",
+                name: "min-fin-two",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/TwoScreen.vue");
+                },
+                meta:{
+                    pageNUmber:5,
+                }
+            },
+            {
+                path: "/min-fin-three",
+                name: "min-fin-three",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/ThreeScreen.vue");
+                },
+                meta:{
+                    pageNUmber:6,
+                }
+            },
+            {
+                path: "/min-fin-four",
+                name: "min-fin-four",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/FourScreen.vue");
+                },
+                meta:{
+                    pageNUmber:7,
+                }
+            },
+            {
+                path: "/min-fin-five",
+                name: "min-fin-five",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/FiveScreen.vue");
+                },
+                meta:{
+                    pageNUmber:8,
+                }
+            },
+            {
+                path: "/min-fin-seven",
+                name: "min-fin-seven",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/SevenScreen.vue");
+                },
+                meta:{
+                    pageNUmber:9,
+                }
+            },
+            {
+                path: "/nst-infra",
+                name: "nst-infra",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/SixScreen.vue");
+                },
+                meta:{
+                    pageNUmber:17,
+                }
+            },
+            // {
+            //     path: "/eticket",
+            //     name: "eticket",
+            //     component: function () {
+            //         return import("../pages/MinFinPresenScreen/EticketScreen.vue");
+            //     },
+            //     meta:{
+            //         pageNUmber:13,
+            //     }
+            // }
         ]
 
     },

@@ -19,7 +19,7 @@
           <i v-if="slide === 'right'" :class="text_icon" class='bx text-5xl'></i> {{content_text}}
           <i v-if="slide === 'left'" :class="text_icon" class='bx text-5xl'></i>
         </div>
-        <div :class="slide === 'left'? 'text-right' : 'text-left'" class="font-semibold" :style="{color:detect_color(chart_persant)}" style="height:12px; font-size:12px">
+        <div :class="slide === 'left'? 'text-right' : 'text-left'" class="font-bold" :style="{color:detect_color(chart_persant)}" style="height:12px; font-size:12px">
            {{content_info}}
         </div>
 

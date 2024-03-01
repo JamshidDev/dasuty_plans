@@ -36,31 +36,63 @@ export default {
         },
         {
           index: 0,
-          name: "zero-screen"
+          name: "min-fin-one"
         },
         {
           index: 6,
-          name: "sixth-screen"
+          name: "min-fin-two"
         },
         {
           index: 7,
-          name: "seventh-screen"
+          name: "min-fin-three"
         },
         {
           index: 1,
-          name: "first-screen"
+          name: "min-fin-four"
         },
         {
           index: 2,
-          name: "second-screen"
+          name: "min-fin-five"
+        },
+        {
+          index: 2,
+          name: "min-fin-seven"
         },
         {
           index: 3,
+          name: "zero-screen"
+        },
+        {
+          index: 9,
+          name: "sixth-screen"
+        },
+        {
+          index: 9,
+          name: "seventh-screen"
+        },
+        // {
+        //   index: 9,
+        //   name: "eticket"
+        // },
+        {
+          index: 9,
+          name: "tenth-screen"
+        },
+        {
+          index: 9,
+          name: "first-screen"
+        },
+        {
+          index: 9,
+          name: "second-screen"
+        },
+        {
+          index: 9,
           name: "third-screen"
         },
         {
           index: 9,
-          name: "tenth-screen"
+          name: "nst-infra"
         },
       ],
       page_index: 0,
@@ -72,7 +104,9 @@ export default {
       handler: function(route) {
         console.log(route)
       this.page_number = route.meta.pageNUmber;
-      },
+        this.page_index = route.meta.pageNUmber - 1;
+
+        },
       deep: true,
       immediate: true
     }

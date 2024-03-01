@@ -2,7 +2,7 @@
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
     <TitleText :title="`Дастурчилар Жамоаси`"></TitleText>
     <div class="scroll_container">
-      <div class="custom px-2 mb-8 gap-4">
+      <div class="custom px-2 mb-4 gap-2">
         <DeveloperCard
           :active_card="activeProject ? activeProject === item.id : true"
           :deadline="item.deadline"
@@ -14,7 +14,7 @@
           :desc="item.desc"
         />
       </div>
-      <div class="mx-auto mb-6">
+      <div class="mx-auto mb-3">
         <DeveloperCard
           name="Boboqulov Jobir"
           desc="Backend Developer (Team Lead)"
