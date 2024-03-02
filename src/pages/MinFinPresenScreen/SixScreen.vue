@@ -1,6 +1,6 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
-    <img style="width:1500px;" src="@/assets/img/nst3.png" alt="">
+    <img style="width:1500px;" src="@/assets/img/nst4.png" alt="">
     
     <div class="visible-button" @click="$router.push({name:'vols'})"></div>
   </div>
