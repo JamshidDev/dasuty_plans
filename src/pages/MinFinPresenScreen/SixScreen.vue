@@ -27,11 +27,11 @@ export default {
 
 .visible-button{
   position: absolute;
-  bottom: 50px;
+  top: 110px;
   left: 226px;
   //background: rgba(134, 201, 255, 0.44);
-  width: 240px;
-  height: 150px;
+  width: 320px;
+  height: 160px;
   border-radius:12px;
   cursor:pointer;
 }
