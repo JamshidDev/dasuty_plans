@@ -46,16 +46,6 @@ const routes = [
                 }
             },
             {
-                path: "/third-screen",
-                name: "third-screen",
-                component: function () {
-                    return import("../pages/ThirdScreen/ThirdScreen.vue");
-                },
-                meta:{
-                    pageNUmber:17,
-                }
-            },
-            {
                 path: "/fourth-screen",
                 name: "fourth-screen",
                 component: function () {
@@ -182,7 +172,7 @@ const routes = [
                     return import("../pages/MinFinPresenScreen/SixScreen.vue");
                 },
                 meta:{
-                    pageNUmber:18,
+                    pageNUmber:17,
                 }
             },
             {
@@ -193,6 +183,26 @@ const routes = [
                 },
                 meta:{
                     pageNUmber:13,
+                }
+            },
+            {
+                path: "/vols",
+                name: "vols",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/VolsScreen.vue");
+                },
+                meta:{
+                    pageNUmber:18,
+                }
+            },
+            {
+                path: "/third-screen",
+                name: "third-screen",
+                component: function () {
+                    return import("../pages/ThirdScreen/ThirdScreen.vue");
+                },
+                meta:{
+                    pageNUmber:19,
                 }
             },
             // {

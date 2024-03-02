@@ -92,11 +92,15 @@ export default {
         },
         {
           index: 9,
-          name: "third-screen"
+          name: "nst-infra"
         },
         {
           index: 9,
-          name: "nst-infra"
+          name: "vols"
+        },
+        {
+          index: 9,
+          name: "third-screen"
         },
       ],
       page_index: 0,

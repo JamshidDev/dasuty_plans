@@ -1,8 +1,6 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
-    <img style="width:1500px;" src="@/assets/img/nst2.png" alt="">
-    
-    <div class="visible-button" @click="$router.push({name:'vols'})"></div>
+    <img style="width:1500px;" src="@/assets/img/vols.jpg" alt="">
   </div>
 
 </template>
@@ -24,17 +22,6 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-
-.visible-button{
-  position: absolute;
-  bottom: 50px;
-  left: 226px;
-  //background: rgba(134, 201, 255, 0.44);
-  width: 240px;
-  height: 150px;
-  border-radius:12px;
-  cursor:pointer;
-}
 .scroll_container{
   margin-top: 100px;
   padding-top: 20px;
