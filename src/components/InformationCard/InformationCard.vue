@@ -4,7 +4,7 @@
   <div class="information-card shadow-2 px-4 py-2 overflow-y-auto overflow-x-hidden">
     <div class="grid">
       <div class="col-12 flex justify-content-between align-items-center border-bottom-1 border-200">
-        <div class="m-0 font-bold">{{active_card? 'Умумий маълумот' : '14 диспетчерских участков'}}</div>
+        <div class="m-0 font-bold">{{active_card? 'Умумий маълумот' : '14 та диспетчерлик участкалари'}}</div>
         <div>
           <i @click="change_card()" class='bx bx-refresh text-4xl cursor-pointer'></i>
         </div>

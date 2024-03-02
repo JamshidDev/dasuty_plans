@@ -12,7 +12,7 @@
     <div class="text_card_dark py-4 px-4 bg-yellow-300 border-1 border-yellow-500 shadow-4" style="width:500px; top:80px; right:30px;">
       <span style="font-size: 24px">
         Поездни янги маршрут бўйича етиб бориш вақти
- <span class="text-green-500 font-bold">7-8 сутка</span>
+ <span class="text-green-500 font-bold">5 сутка</span>
       </span>
     </div>
     <div class="text_card_dark py-4 px-4 bg-yellow-300 border-1 border-yellow-500 shadow-4" style="width:500px; top:200px; right:30px;">
