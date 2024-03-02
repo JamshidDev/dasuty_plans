@@ -70,6 +70,10 @@ export default {
           index: 9,
           name: "seventh-screen"
         },
+        {
+          index: 9,
+          name: "gruz"
+        },
         // {
         //   index: 9,
         //   name: "eticket"

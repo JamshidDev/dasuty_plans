@@ -32,7 +32,7 @@ const routes = [
                     return import("../pages/FirstScreen/FirstPage.vue");
                 },
                 meta:{
-                    pageNUmber:14,
+                    pageNUmber:15,
                 }
             },
             {
@@ -42,7 +42,7 @@ const routes = [
                     return import("../pages/SecondScreen/SecondPage.vue");
                 },
                 meta:{
-                    pageNUmber:15
+                    pageNUmber:16
                 }
             },
             {
@@ -52,7 +52,7 @@ const routes = [
                     return import("../pages/ThirdScreen/ThirdScreen.vue");
                 },
                 meta:{
-                    pageNUmber:16,
+                    pageNUmber:17,
                 }
             },
             {
@@ -112,7 +112,7 @@ const routes = [
                     return import("../pages/TenScreen/TenthScreen.vue");
                 },
                 meta:{
-                    pageNUmber:13,
+                    pageNUmber:14,
                 }
             },
             {
@@ -182,7 +182,17 @@ const routes = [
                     return import("../pages/MinFinPresenScreen/SixScreen.vue");
                 },
                 meta:{
-                    pageNUmber:17,
+                    pageNUmber:18,
+                }
+            },
+            {
+                path: "/gruz",
+                name: "gruz",
+                component: function () {
+                    return import("../pages/MinFinPresenScreen/GruzScreen.vue");
+                },
+                meta:{
+                    pageNUmber:13,
                 }
             },
             // {
