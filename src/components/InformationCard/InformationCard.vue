@@ -296,21 +296,21 @@ export default {
       wagon_list: [
         {
           id: 0,
-          label: "Вчд Бухоро ",
+          label: "ВЧД Бухоро ",
           value: `6430 та`,
         },
         {
           id: 1,
-          label: "Вчд Карши",
+          label: "ВЧД Карши",
           value: `5295 та`,
         },
         {
           id: 2,
-          label: "Вчд Коканд",
+          label: "ВЧД Коканд",
           value: `4331 та`,
         }, {
           id: 4,
-          label: "Вчд Тошкент ",
+          label: "ВЧД Тошкент ",
           value: `2980 та`,
         },
 
