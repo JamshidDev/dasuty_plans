@@ -170,7 +170,7 @@ export default {
 <style scoped lang="scss">
 .page_number_box{
   position:absolute;
-  top: 90px;
+  top: 160px;
   right:0px;
   width:80px;
   height: 40px;

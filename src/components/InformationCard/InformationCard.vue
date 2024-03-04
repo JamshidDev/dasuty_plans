@@ -13,7 +13,7 @@
       <div class="col-12" v-if="active_card">
         <div class="grid">
           <div v-for="item in general_data" :key="item.id" class="col-4">
-            <div @click="control_overall($event ,item.id)" :class="[2,6].includes(item.id)? 'bg-blue-100' : 'bg-gray'"
+            <div @click="control_overall($event ,item.id)" :class="[2,6,8].includes(item.id)? 'bg-blue-100' : 'bg-gray'"
                  class="card_box p-2 border-round shadow-1 min-h-full"
             >
               <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
@@ -136,6 +136,11 @@ export default {
           id: 7,
           label: `Ходимлар сони `,
           value: `71140 нафар`,
+        },
+        {
+          id: 8,
+          label: `Мавжуд вагонлар сони `,
+          value: `19036 та`,
         },
 
 
@@ -285,6 +290,28 @@ export default {
           id: 4,
           label: "Электропоездлар ",
           value: `14 та`,
+        },
+
+      ],
+      wagon_list: [
+        {
+          id: 0,
+          label: "Вчд Бухоро ",
+          value: `6430 та`,
+        },
+        {
+          id: 1,
+          label: "Вчд Карши",
+          value: `5295 та`,
+        },
+        {
+          id: 2,
+          label: "Вчд Коканд",
+          value: `4331 та`,
+        }, {
+          id: 4,
+          label: "Вчд Тошкент ",
+          value: `2980 та`,
         },
 
       ],
@@ -450,6 +477,9 @@ export default {
         this.$refs.overal_ref.toggle(event);
       } else if (id === 2) {
         this.overall_list = this.locomotive_list;
+        this.$refs.overal_ref.toggle(event);
+      } else if(id === 8){
+        this.overall_list = this.wagon_list;
         this.$refs.overal_ref.toggle(event);
       }
 
