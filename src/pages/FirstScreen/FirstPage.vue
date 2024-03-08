@@ -4,7 +4,7 @@
     <div class="w-full min-h-full relative flex justify-content-center align-items-center">
 <!--      title-->
       <TitleText :title='`"ЎЗБЕКИСТОН ТЕМИР ЙЎЛЛАРИ" АЖДА`' :subtitle="`РАҚАМЛАШТИРИШНИНГ ЖОРИЙ ҲОЛАТИ`"></TitleText>
-
+      <img class="shadow-2 border-round" style="width:1700px;" src="@/assets/img/page_3.png" alt="">
       <PlansView></PlansView>
       <ChartText :content_text="'E-NAKL'" :site_link="`https://e-nakl.railway.uz`" :content_info="`Юк ташиш хизмати (31.05.2024)`" :chart_persant="92" :positionTop="12" :slide="'right'"></ChartText>
       <ChartText :content_text="'E-TICKET'" :site_link="`https://eticket.railway.uz`"  :content_info="`Йўловчи ташиш`" :chart_persant="100" :positionTop="1" :slide="'right'"></ChartText>
@@ -25,7 +25,6 @@
 <!--      <ChartText :content_text="'AISUP'" :content_info="`Йўл хўжалиги`"  :chart_persant="81" :positionTop="4" :slide="'left'"></ChartText>-->
 
     </div>
-
 </template>
 <script>
 import ChartText from "@/components/ChartText/ChartText.vue";
