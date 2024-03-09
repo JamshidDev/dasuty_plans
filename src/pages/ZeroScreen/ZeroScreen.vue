@@ -1,8 +1,8 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
-    <div class="flex w-full absolute top-0 left-0 justify-content-end">
-      <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
-    </div>
+<!--    <div class="flex w-full absolute top-0 left-0 justify-content-end">-->
+<!--      -->
+<!--    </div>-->
     <div class="flex gap-4 text-lg font-normal absolute w-full z-5" style="top:10px; left:10px;">
       Ўзбекистон темир йўллари харитаси
 <!--    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}-->
@@ -13,9 +13,13 @@
            class="trigger-zoom-element border-round   shadow-1 flex justify-content-center align-items-center cursor-pointer"
            style="width:100%; height:90vh;">
         <RailwayMap ref="railway_map_ref"></RailwayMap>
+        <LottieIcon class="potok2_icon icon_position"></LottieIcon>
       </div>
-      <InformationCard @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" v-if="general_info_show"></InformationCard>
+
     </div>
+
+    <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
+    <InformationCard @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" v-if="general_info_show"></InformationCard>
 
   </div>
 
@@ -26,6 +30,7 @@ import RailwayMap from "@/components/MapSVG/RailwayMap.vue";
 import DialogContent from "@/components/DialogContent/DialogContent.vue";
 import InformationCard from "@/components/InformationCard/InformationCard.vue";
 import Schema_One from "@/components/StationSchema/Schema_One.vue";
+import LottieIcon from "@/components/LottieIcon/LottieIcon.vue";
 
 
 export default {
@@ -34,6 +39,7 @@ export default {
     InformationCard,
     RailwayMap,
     DialogContent,
+    LottieIcon,
 
   },
 
@@ -83,11 +89,21 @@ export default {
     closed_modal() {
       this.general_info_show=true;
       this.go_push_element(-28, -80, 1.2);
+    },
+
+    watch_potok(){
+      let element_dot = document.getElementById('g_container');
+      let element_icon = document.querySelector('.potok2_icon');
+      // element_dot.insertBefore(element_icon, element_dot.firstChild);
+      element_dot.appendChild(element_icon);
+      console.log(element_dot)
+
     }
   },
 
   mounted() {
 
+    // this.watch_potok();
 
 
     // let zoo_element = this.$refs.trigger_zoom_element;
@@ -223,7 +239,12 @@ export default {
   transform: scale(1) translate(0px, 0px);
   transition: all 0.5s ease-out;
   cursor: grab;
-
+}
+.icon_position{
+  position: absolute !important;
+  z-index:999 !important;
+  top:216px;
+  right:674px;
 }
 
 

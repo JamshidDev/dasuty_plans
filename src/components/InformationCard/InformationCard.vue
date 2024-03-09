@@ -1,57 +1,67 @@
 <template>
 
 
-  <div class="information-card shadow-2 px-4 py-2 overflow-y-auto overflow-x-hidden">
+  <div class="information-card shadow-2 px-4 py-2  overflow-hidden">
     <div class="grid">
+
       <div class="col-12 flex justify-content-between align-items-center border-bottom-1 border-200">
-        <div class="m-0 font-bold">{{active_card? 'Умумий маълумот' : '14 та диспетчерлик участкалари'}}</div>
+        <div class="m-0 font-bold text-sm">{{ active_card ? 'Умумий маълумот' : '14 та диспетчерлик участкалари' }}
+        </div>
         <div>
-          <i @click="change_card()" class='bx bx-refresh text-4xl cursor-pointer'></i>
+          <i @click="change_card()" class='bx bx-refresh text-2xl cursor-pointer font-bold'></i>
         </div>
       </div>
 
-      <div class="col-12" v-if="active_card">
-        <div class="grid">
-          <div v-for="item in general_data" :key="item.id" class="col-4">
-            <div @click="control_overall($event ,item.id)" :class="[2,6,8].includes(item.id)? 'bg-blue-100' : 'bg-gray'"
-                 class="card_box p-2 border-round shadow-1 min-h-full"
-            >
-              <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
-                <div class="title font-bold">
-                  {{ item.value }}
-                </div>
-                <span>
+
+      <div class="col-12">
+        <div class="grid overflow-y-auto overflow-x-hidden px-1" style="height:330px">
+          <div class="col-12 px-0 pb-2" v-if="active_card">
+            <div class="grid">
+              <div v-for="item in general_data" :key="item.id" class="col-4 cursor-pointer">
+                <div @click="control_overall($event ,item.id)"
+                     :class="[2,6,8, 7].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
+                     class="card_box p-2 border-round shadow-1 min-h-full "
+                >
+                  <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
+                    <div class="title font-bold">
+                      <NumberAnimation :amount="item.value"></NumberAnimation> <span>{{item.extension_value}}</span>
+                    </div>
+                    <span>
             <InputSwitch @click.stop @change="change_map(item.show_map, item.id)" v-model="item.show_map"/>
           </span>
-              </div>
-              <div v-else>
-                <div class="title font-bold">
-                  {{ item.value }}
+                  </div>
+                  <div v-else>
+                    <div class="title text-sm font-bold">
+                      <NumberAnimation :amount="item.value"></NumberAnimation> <span>{{item.extension_value}}</span>
+                    </div>
+                  </div>
+<!--                  <div class="my-1">-->
+
+<!--                  </div>-->
+                  <div class="text-sm">
+                    {{ item.label }}
+                  </div>
                 </div>
               </div>
-              <div class="my-3">
-
-              </div>
-              <div class="text-sm">
-                {{ item.label }}
-              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-12" v-else>
-        <div class="grid pt-2 pb-6 ">
-          <div v-for="item in station_line_list" :key="item" class="col-12">
-            <div class="flex w-full gap-6 align-items-center justify-content-between">
-             <div class="flex gap-6 align-items-center">
-               <div class="dashshed_line shadow-2" :style="{  'border-bottom': `4px solid ${item.color}`}"></div>
-               <div>{{ item.name }}</div>
-             </div>
-              <Checkbox @change="change_checkbox($event, item.map.x, item.map.y, item.map.zoom,)" v-model="selected_id"   :value="item.id" />
+          <div class="col-12" v-else>
+            <div class="grid pt-2 pb-6">
+              <div v-for="item in station_line_list" :key="item" class="col-12">
+                <div class="flex w-full gap-2 align-items-center justify-content-between">
+                  <div class="flex gap-6 align-items-center">
+                    <div class="dashshed_line shadow-2" :style="{  'border-bottom': `3px solid ${item.color}`}"></div>
+                    <div class="text-sm font-bold">{{ item.name }}</div>
+                  </div>
+                  <Checkbox @change="change_checkbox($event, item.map.x, item.map.y, item.map.zoom,)"
+                            v-model="selected_id" :value="item.id"/>
+                </div>
+              </div>
             </div>
+
+
           </div>
         </div>
-
       </div>
 
 
@@ -88,59 +98,128 @@
       </div>
     </div>
   </OverlayPanel>
+
+  <OverlayPanel ref="overall3_ref" style="width:600px">
+    <div class="grid w-full">
+      <div class="col-6">
+        <div class="shadow-1 bg-gray p-2 border-round">
+          <div class="flex justify-content-between">
+            <div class="text-sm ">Олий малумотли</div>
+            <div class="text-sm font-bold mb-1 ">123123</div>
+          </div>
+          <div class="flex justify-content-between">
+            <div class="text-sm">ўрта малумотли</div>
+            <div class="text-sm font-bold mb-1">123123</div>
+          </div>
+          <div class="flex justify-content-between">
+            <div class="text-sm">ўрта махсус малумотли</div>
+            <div class="text-sm font-bold mb-1">123123</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="shadow-1 bg-gray p-2 border-round">
+          <div class="flex justify-content-between">
+            <div class="text-sm ">31 yoshgacha</div>
+            <div class="text-sm font-bold mb-1">13602</div>
+          </div>
+          <div class="flex justify-content-between">
+            <div class="text-sm ">32 yoshdan 45 yoshgacha</div>
+            <div class="text-sm font-bold mb-1">24795</div>
+          </div>
+          <div class="flex justify-content-between">
+            <div class="text-sm ">46 yoshdan kattalar</div>
+            <div class="text-sm font-bold mb-1">14172</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="shadow-1 bg-gray p-2 border-round">
+          <div class="flex justify-content-between">
+            <div class="text-sm ">Erkaklar</div>
+            <div class="text-sm font-bold mb-1"> 43 549</div>
+          </div>
+          <div class="flex justify-content-between">
+            <div class="text-sm">Ayollar</div>
+            <div class="text-sm font-bold mb-1">9 020</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 flex justify-content-end align-items-end pb-3">
+        <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i class='bx bx-right-top-arrow-circle ml-2'></i></a>
+      </div>
+    </div>
+  </OverlayPanel>
 </template>
 
 <script>
+import NumberAnimation from "@/components/NumberAnimation/NumberAnimation.vue";
 export default {
   name: "InformationCard",
+  components:{
+    NumberAnimation
+  },
   data() {
     return {
       general_data: [
         {
           id: 0,
           label: `Мавжуд темир йўл узунлиги`,
-          value: `7488,9 км`,
+          value: 7488.9,
+          extension_value:'км'
         },
         {
           id: 1,
           label: `Электрлаштирилган йўл `,
-          value: `3328,73 км (45%)`,
+          value: 3328.73,
+          extension_value:'км (45%)'
         },
         {
           id: 2,
           label: `Мавжуд локомотивлар сони `,
-          value: `471 та`,
+          value: 471,
+          extension_value:'та'
         },
         {
           id: 6,
           label: `Станциялар сони `,
-          value: `270 та`,
+          value: 270,
+          extension_value:'та'
         },
         {
           id: 3,
           label: `Давлатлараро чегара пункти `,
-          value: `14 та`,
+          value: 14,
+          extension_value:'та'
         },
         {
           id: 4,
           label: `Локомотив деполар сони `,
-          value: `8 та`,
+          value: 8,
           show_map: false,
+          extension_value:'та'
         }, {
           id: 5,
           label: `Вагон деполари сони `,
-          value: `6 та`,
+          value: 6,
           show_map: false,
-        },
-        {
-          id: 7,
-          label: `Ходимлар сони `,
-          value: `71140 нафар`,
+          extension_value:'та'
+
         },
         {
           id: 8,
           label: `Мавжуд вагонлар сони `,
-          value: `19036 та`,
+          value: 19036,
+          extension_value:'та',
+        },
+        {
+          id: 7,
+          label: `Ходимлар сони `,
+          value: 70979,
+          extension_value:'нафар',
+
         },
 
 
@@ -320,7 +399,7 @@ export default {
       selected_data_id: null,
       status: false,
       active_card: true,
-      sorted_station:false,
+      sorted_station: false,
 
 
       station_line_list: [
@@ -328,140 +407,140 @@ export default {
           id: 'uchas11',
           name: '- узел Узбекистан - Сарыагач',
           color: '#996633',
-          map:{
-            x:-3665,
-            y:-987,
-            zoom:4,
+          map: {
+            x: -3665,
+            y: -987,
+            zoom: 4,
           }
         },
         {
           id: 'uchas10',
           name: '- Даштабад - Узбекистан - Далагузар и Дустлик',
           color: '#cccccc',
-          map:{
-            x:-2818,
-            y:-1088,
-            zoom:3.6,
+          map: {
+            x: -2818,
+            y: -1088,
+            zoom: 3.6,
           }
         },
         {
           id: 'uchas12',
           name: '- центр Салар - Ходжикент, Тукимачи - Ангрен',
           color: '#faff81',
-          map:{
-            x:-4155,
-            y:-997,
-            zoom:4.3,
+          map: {
+            x: -4155,
+            y: -997,
+            zoom: 4.3,
           }
         },
         {
           id: 'uchas9',
           name: '- Мароканд - Даштабад',
           color: '#ff99cc',
-          map:{
-            x:-4273,
-            y:-2183,
-            zoom:5,
+          map: {
+            x: -4273,
+            y: -2183,
+            zoom: 5,
           }
         },
         {
           id: 'uchas13',
           name: '- Ангрен-Пап Коканд-Хаваст',
           color: '#000000',
-          map:{
-            x:-2627,
-            y:-791,
-            zoom:3,
+          map: {
+            x: -2627,
+            y: -791,
+            zoom: 3,
           }
         },
         {
           id: 'uchas14',
           name: '- узел Коканд (Коканд - Андижан - Карасу)',
           color: '#9933cc',
-          map:{
-            x:-5030,
-            y:-1329,
-            zoom:4.3,
+          map: {
+            x: -5030,
+            y: -1329,
+            zoom: 4.3,
           }
         },
         {
           id: 'uchas5',
           name: '- Фарап - Навои - Мароканд',
           color: '#ffcc00',
-          map:{
-            x:-1430,
-            y:-1170,
-            zoom:3,
+          map: {
+            x: -1430,
+            y: -1170,
+            zoom: 3,
           }
         },
         {
           id: 'uchas3',
           name: '- Мискен - Учкудук - Тинчлик',
           color: '#cc3399',
-          map:{
-            x:-1175,
-            y:-825,
-            zoom:3,
+          map: {
+            x: -1175,
+            y: -825,
+            zoom: 3,
           }
         },
         {
           id: 'uchas2',
           name: '- Кунград - Мискен - Ургенч',
           color: '#00ccff',
-          map:{
-            x:-554,
-            y:-551,
-            zoom:3,
+          map: {
+            x: -554,
+            y: -551,
+            zoom: 3,
           }
         },
         {
           id: 'uchas1',
           name: '- Кунград - Каракалпакстан',
           color: '#6600cc',
-          map:{
-            x:-183,
-            y:-272,
-            zoom:3,
+          map: {
+            x: -183,
+            y: -272,
+            zoom: 3,
           }
         },
         {
           id: 'uchas6',
           name: '- Бухара - Карши - Мароканд - Ташгузар',
           color: '#33cc66',
-          map:{
-            x:-2140,
-            y:-1592,
-            zoom:3.6,
+          map: {
+            x: -2140,
+            y: -1592,
+            zoom: 3.6,
           }
         },
 
-          {
+        {
           id: 'uchas7',
           name: '- Ташгузар-Кумгурган',
           color: '#6699ff',
-            map:{
-              x:-2444,
-              y:-1891,
-              zoom:3.6,
-            }
+          map: {
+            x: -2444,
+            y: -1891,
+            zoom: 3.6,
+          }
         }, {
           id: 'uchas8',
           name: '- Болдырь -Термез Кудукли и Талимарждан - Карши',
           color: '#ff0000',
-          map:{
-            x:-2459,
-            y:-1991,
-            zoom:3.6,
+          map: {
+            x: -2459,
+            y: -1991,
+            zoom: 3.6,
           }
         },
         {
           id: 'uchas4',
           name: '- Бухара - Мискин',
           color: '#000066',
-          map:{
-            x:-1539,
-            y:-1273,
-            zoom:3.6,
+          map: {
+            x: -1539,
+            y: -1273,
+            zoom: 3.6,
           }
         },
 
@@ -478,9 +557,11 @@ export default {
       } else if (id === 2) {
         this.overall_list = this.locomotive_list;
         this.$refs.overal_ref.toggle(event);
-      } else if(id === 8){
+      } else if (id === 8) {
         this.overall_list = this.wagon_list;
         this.$refs.overal_ref.toggle(event);
+      } else if (id === 7) {
+        this.$refs.overall3_ref.toggle(event);
       }
 
       if (id === 4) {
@@ -502,20 +583,20 @@ export default {
     change_card() {
       console.log("pl")
       this.active_card = !this.active_card;
-      this.$emit("changeCard",this.active_card );
+      this.$emit("changeCard", this.active_card);
 
-      if(!this.active_card){
-            this.selected_id = null;
-      }else{
+      if (!this.active_card) {
+        this.selected_id = null;
+      } else {
         this.general_data[4].show_map = false;
         this.general_data[5].show_map = false;
       }
 
 
     },
-    change_checkbox(value, x,y,zoom){
-      let data ={
-        id:value.target.value,
+    change_checkbox(value, x, y, zoom) {
+      let data = {
+        id: value.target.value,
         x,
         y,
         zoom,
@@ -542,13 +623,13 @@ export default {
 <style scoped lang="scss">
 
 .information-card {
-  width: 800px;
-  height: 340px;
+  width: 600px;
+  height: 320px;
   position: absolute;
   transform-origin: 0 0;
   transform: scale(1) translate(0px, 0px);
-  bottom: 0;
-  left: 20px;
+  bottom: 10px;
+  left: 10px;
   border: 1px solid #d3d3d3;
   z-index: 10;
   background: #ffffff;
