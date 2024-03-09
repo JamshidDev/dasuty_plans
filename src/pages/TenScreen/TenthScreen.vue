@@ -5,7 +5,7 @@ import CountTime from "../../components/CountTime/CountTime.vue";
 
 const animated = ref(false)
 const el = ref(false)
-const totalP = ref(80)
+const totalP = ref(65)
 
 const arr1 = [
   { offset: -12, name: 'KPI Тизими', value: 40, rate: 40 },
