@@ -104,49 +104,23 @@
   <OverlayPanel ref="overall3_ref" style="width:600px">
     <div class="grid w-full">
       <div class="col-6">
-        <div class="shadow-1 bg-gray p-2 border-round">
-          <div class="flex justify-content-between">
-            <div class="text-sm ">Олий малумотли</div>
-            <div class="text-sm font-bold mb-1 ">123123</div>
-          </div>
-          <div class="flex justify-content-between">
-            <div class="text-sm">ўрта малумотли</div>
-            <div class="text-sm font-bold mb-1">123123</div>
-          </div>
-          <div class="flex justify-content-between">
-            <div class="text-sm">ўрта махсус малумотли</div>
-            <div class="text-sm font-bold mb-1">123123</div>
-          </div>
-
+        <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
+          <EducationChart :color="`green`" :amount="9288" :title="`Олий малумотли`" :percent="18"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="26329" :title="`ўрта малумотли`" :percent="50"></EducationChart>
+          <EducationChart :color="`blue`" :amount="16713" :title="`ўрта махсус малумотли`" :percent="32"></EducationChart>
         </div>
       </div>
       <div class="col-6">
-        <div class="shadow-1 bg-gray p-2 border-round">
-          <div class="flex justify-content-between">
-            <div class="text-sm ">31 yoshgacha</div>
-            <div class="text-sm font-bold mb-1">13602</div>
-          </div>
-          <div class="flex justify-content-between">
-            <div class="text-sm ">32 yoshdan 45 yoshgacha</div>
-            <div class="text-sm font-bold mb-1">24795</div>
-          </div>
-          <div class="flex justify-content-between">
-            <div class="text-sm ">46 yoshdan kattalar</div>
-            <div class="text-sm font-bold mb-1">14172</div>
-          </div>
-
+        <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
+          <EducationChart :color="`green`" :amount="13598" :title="`31 ёшгача`" :percent="26"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="24797" :title="`32 ёшдан 45 ёшгача`" :percent="47"></EducationChart>
+          <EducationChart :color="`blue`" :amount="14174" :title="`46 ёшдан катталар`" :percent="27"></EducationChart>
         </div>
       </div>
       <div class="col-6">
-        <div class="shadow-1 bg-gray p-2 border-round">
-          <div class="flex justify-content-between">
-            <div class="text-sm ">Erkaklar</div>
-            <div class="text-sm font-bold mb-1"> 43 549</div>
-          </div>
-          <div class="flex justify-content-between">
-            <div class="text-sm">Ayollar</div>
-            <div class="text-sm font-bold mb-1">9 020</div>
-          </div>
+        <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
+          <EducationChart :color="`green`" :amount="43549" :title="`Эркаклар`" :percent="82"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="9020" :title="`Аёллар`" :percent="18"></EducationChart>
         </div>
       </div>
       <div class="col-6 flex justify-content-end align-items-end pb-3">
@@ -157,8 +131,10 @@
   </OverlayPanel>
 
   <span v-if="stik_dialog" >
-    <div class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden">
-      <h2 class="w-full text-center my-0 text-500 font-bold bg-blue-800 text-white  pt-1 pb-1">Келес</h2>
+    <div :class="active_stik_dialog && 'active_dialog'" class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden " >
+      <h2 class="w-full text-center my-0 text-500 font-bold  pt-1 pb-1 relative">{{selected_stik.name}}
+        <i  class='bx bx-x absolute top-0 right-0 mt-1 mr-2 text-3xl cursor-pointer' @click="close_dialog"></i>
+      </h2>
       <table class="w-full">
         <thead>
           <tr style="border-bottom:10px solid transparent">
@@ -178,83 +154,25 @@
                 Поезд <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
               </div>
             </th>
-
-
-<!--            <th style="width:200px">-->
-<!--              <div class="bg-gray p-2 border-1 border-200  border-round text-500">-->
-<!--                Вагон-->
-<!--              </div>-->
-<!--            </th>-->
-<!--            <th style="width:200px">-->
-<!--              <div class="bg-gray p-2 border-1 border-200 border-round text-500">-->
-<!--                Поезд-->
-<!--              </div>-->
-<!--            </th>-->
           </tr>
         </thead>
         <tbody>
-            <tr>
-              <td>
+            <tr v-for="item in selected_stik.data" :id="item.id">
+              <td v-for="sub_item in item.data" :key="sub_item.name">
                  <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
-                    <div class="font-bold mb-2 text-blue-600">33 956 265 <span
+                    <div class="font-bold mb-2 text-blue-600">{{ sub_item.count}}<span
                         class="text-sm font-medium"></span></div>
-                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2022 й.</div>
-              </div>
-              </td>
-              <td>
-                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
-                    <div class="font-bold mb-2 text-blue-600">33 956 265 <span
-                        class="text-sm font-medium"></span></div>
-                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2022 й.</div>
-              </div>
-              </td>
-               <td>
-                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
-                    <div class="font-bold mb-2 text-blue-600">33 956 265 <span
-                        class="text-sm font-medium"></span></div>
-                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2022 й.</div>
-              </div>
-              </td>
-            </tr>
-         <tr>
-              <td>
-                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
-                    <div class="font-bold mb-2 text-blue-600">33 956 265 </div>
-                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2023 й.</div>
-              </div>
-              </td>
-              <td>
-                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
-                    <div class="font-bold mb-2 text-blue-600">33 956 265 </div>
-                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2023 й.</div>
-              </div>
-              </td>
-               <td>
-                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
-                    <div class="font-bold mb-2 text-blue-600">33 956 265 </div>
-                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2023 й.</div>
+                    <div class="text-sm font-bold w-full text-right text-500 font-italic">{{item.year}}</div>
               </div>
               </td>
             </tr>
         <tr>
               <td colspan="3">
-                 <div class=" p-2 border-1 border-300 shadow-1 border-round bg-green-100 py-2">
-                    <div class="font-bold mb-2 text-green-600 text-center text-xl">+12% <i class='bx bxs-arrow-from-bottom'></i></div>
-<!--                    <div class="text-sm font-medium w-full text-right text-500"></div>-->
+                 <div :class="selected_stik.is_increment? 'bg-green-100' : 'bg-red-100'" class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
+                    <div :class="selected_stik.is_increment? 'text-green-600' : 'text-red-600'"  class="font-bold mb-2  text-center text-xl">{{selected_stik.percent}} <i class='bx bxs-arrow-from-bottom'></i></div>
+
               </div>
               </td>
-<!--              <td>-->
-<!--                 <div class=" p-2 border-1 border-300 shadow-1 border-round bg-green-100">-->
-<!--                     <div class="font-bold mb-2 text-green-600 text-center text-xl">+34% <i class='bx bxs-arrow-from-bottom'></i></div>-->
-<!--                    <div class="text-sm font-medium w-full text-right text-500"></div>-->
-<!--              </div>-->
-<!--              </td>-->
-<!--               <td>-->
-<!--                 <div class=" p-2 border-1 border-300 shadow-1 border-round bg-green-100">-->
-<!--                     <div class="font-bold mb-2 text-green-500 text-center text-xl">+56% <i class='bx bxs-arrow-from-bottom'></i></div>-->
-<!--                    <div class="text-sm font-medium w-full text-right text-500"></div>-->
-<!--              </div>-->
-<!--              </td>-->
             </tr>
         </tbody>
       </table>
@@ -264,11 +182,13 @@
 
 <script>
 import NumberAnimation from "@/components/NumberAnimation/NumberAnimation.vue";
+import EducationChart from "@/components/InformationCard/EducationChart.vue";
 
 export default {
   name: "InformationCard",
   components: {
-    NumberAnimation
+    NumberAnimation,
+    EducationChart,
   },
   data() {
     return {
@@ -510,6 +430,7 @@ export default {
       active_card: true,
       sorted_station: false,
       stik_dialog:false,
+      active_stik_dialog:false,
 
 
       station_line_list: [
@@ -654,7 +575,680 @@ export default {
           }
         },
 
-      ]
+      ],
+      stik_data_list:[
+        {
+          id:'stik1',
+          name:'Келес',
+          percent:'+23%',
+          is_increment:true,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:32232341,
+                },
+                {
+                  name:'Вагон',
+                  count:546311,
+                },
+                {
+                  name:'Поезд',
+                  count:9584,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:39598991,
+                },
+                {
+                  name:'Вагон',
+                  count:671169,
+                },
+                {
+                  name:'Поезд',
+                  count:11775,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik2',
+          name:'Рзд 154',
+          percent:'0%',
+          is_increment:true,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:0,
+                },
+                {
+                  name:'Вагон',
+                  count:0,
+                },
+                {
+                  name:'Поезд',
+                  count:0,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:0,
+                },
+                {
+                  name:'Вагон',
+                  count:0,
+                },
+                {
+                  name:'Поезд',
+                  count:0,
+                },
+              ]
+            },
+          ]
+        },
+
+        {
+          id:'stik3',
+          name:'Ходжадавлет',
+          percent:'-15%',
+          is_increment:false,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:2274864,
+                },
+                {
+                  name:'Вагон',
+                  count:38557,
+                },
+                {
+                  name:'Поезд',
+                  count:676,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:1940506,
+                },
+                {
+                  name:'Вагон',
+                  count:32889,
+                },
+                {
+                  name:'Поезд',
+                  count:577,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik4',
+          name:'Сувонобод',
+          percent:'-55%',
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:151838,
+                },
+                {
+                  name:'Вагон',
+                  count:2573,
+                },
+                {
+                  name:'Поезд',
+                  count:45,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:66682,
+                },
+                {
+                  name:'Вагон',
+                  count:1130,
+                },
+                {
+                  name:'Поезд',
+                  count:20,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik5',
+          name:'Сувонобод',
+          percent:'+92%',
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:79880,
+                },
+                {
+                  name:'Вагон',
+                  count:1353,
+                },
+                {
+                  name:'Поезд',
+                  count:24,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:154101,
+                },
+                {
+                  name:'Вагон',
+                  count:2611,
+                },
+                {
+                  name:'Поезд',
+                  count:46,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik6',
+          name:'Кудукли',
+          percent:'+31%',
+          is_increment:true,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:2633839,
+                },
+                {
+                  name:'Вагон',
+                  count:44641,
+                },
+                {
+                  name:'Поезд',
+                  count:783,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:3464705,
+                },
+                {
+                  name:'Вагон',
+                  count:58723,
+                },
+                {
+                  name:'Поезд',
+                  count:1030,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik7',
+          name:'Сурханобод',
+          percent:'+20%',
+          is_increment:true,
+
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:439117,
+                },
+                {
+                  name:'Вагон',
+                  count:7443,
+                },
+                {
+                  name:'Поезд',
+                  count:131,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:522676,
+                },
+                {
+                  name:'Вагон',
+                  count:8858,
+                },
+                {
+                  name:'Поезд',
+                  count:155,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik8',
+          name:'Каракалпакия',
+          percent:'+10%',
+          is_increment:true,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:2447322,
+                },
+                {
+                  name:'Вагон',
+                  count:41480,
+                },
+                {
+                  name:'Поезд',
+                  count:728,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:2694630,
+                },
+                {
+                  name:'Вагон',
+                  count:45671,
+                },
+                {
+                  name:'Поезд',
+                  count:801,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik9',
+          name:'Галаба',
+          percent:'+2%',
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:4058174,
+                },
+                {
+                  name:'Вагон',
+                  count:68782,
+                },
+                {
+                  name:'Поезд',
+                  count:1207,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:4154021,
+                },
+                {
+                  name:'Вагон',
+                  count:70407,
+                },
+                {
+                  name:'Поезд',
+                  count:1235,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik10',
+          name:'Сырдарьинская',
+          percent:'-7%',
+          is_increment:false,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:16836,
+                },
+                {
+                  name:'Вагон',
+                  count:285,
+                },
+                {
+                  name:'Поезд',
+                  count:5,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:15680,
+                },
+                {
+                  name:'Вагон',
+                  count:266,
+                },
+                {
+                  name:'Поезд',
+                  count:5,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik11',
+          name:'Амузанг',
+          percent:'+7%',
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:142518,
+                },
+                {
+                  name:'Вагон',
+                  count:2415,
+                },
+                {
+                  name:'Поезд',
+                  count:42,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:152939,
+                },
+                {
+                  name:'Вагон',
+                  count:2592,
+                },
+                {
+                  name:'Поезд',
+                  count:45,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik12',
+          name:'Сувонобод',
+          percent:'-57%',
+          is_increment:false,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:151838,
+                },
+                {
+                  name:'Вагон',
+                  count:2573,
+                },
+                {
+                  name:'Поезд',
+                  count:45,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:66682,
+                },
+                {
+                  name:'Вагон',
+                  count:1130,
+                },
+                {
+                  name:'Поезд',
+                  count:20,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik13',
+          name:'Учкурган',
+          percent:'+72%',
+          is_increment:true,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:284507,
+                },
+                {
+                  name:'Вагон',
+                  count:4822,
+                },
+                {
+                  name:'Поезд',
+                  count:85,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:489416,
+                },
+                {
+                  name:'Вагон',
+                  count:8295,
+                },
+                {
+                  name:'Поезд',
+                  count:146,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik14',
+          name:'Учкурган',
+          percent:'0%',
+          is_increment:true,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:0,
+                },
+                {
+                  name:'Вагон',
+                  count:0,
+                },
+                {
+                  name:'Поезд',
+                  count:85,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:0,
+                },
+                {
+                  name:'Вагон',
+                  count:0,
+                },
+                {
+                  name:'Поезд',
+                  count:0,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik15',
+          name:'Бекабад',
+          percent:'+2%',
+          is_increment:true,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:4204113,
+                },
+                {
+                  name:'Вагон',
+                  count:71256,
+                },
+                {
+                  name:'Поезд',
+                  count:1250,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:4263648,
+                },
+                {
+                  name:'Вагон',
+                  count:72265,
+                },
+                {
+                  name:'Поезд',
+                  count:1267,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id:'stik15',
+          name:'Савай',
+          percent:'+50%',
+          is_increment:true,
+          data:[
+            {
+              year:'2022 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:1238571,
+                },
+                {
+                  name:'Вагон',
+                  count:20992,
+                },
+                {
+                  name:'Поезд',
+                  count:368,
+                },
+              ]
+            },
+            {
+              year:'2023 й.',
+              data:[
+                {
+                  name:'Юк',
+                  count:1847310,
+                },
+                {
+                  name:'Вагон',
+                  count:31310,
+                },
+                {
+                  name:'Поезд',
+                  count:549,
+                },
+              ]
+            },
+          ]
+        },
+      ],
+      selected_stik:null,
     }
   },
   methods: {
@@ -723,9 +1317,30 @@ export default {
       } else if (id === 3) {
         this.$emit("changeMap", 'stiks');
       }
-    }
+    },
+
+    show_dialog(stik_id){
+      this.selected_stik = this.stik_data_list.filter((item)=> item.id ===stik_id)[0];
 
 
+      this.stik_dialog=true;
+      setTimeout(()=>{
+        this.active_stik_dialog = true;
+      },100)
+    },
+    close_dialog(){
+      this.$emit("closeInfoMap")
+      this.active_stik_dialog=false;
+      setTimeout(()=>{
+        this.stik_dialog = false;
+      },300)
+    },
+
+
+
+  },
+  mounted() {
+    // this.show_dialog('stik1')
   }
 }
 </script>
@@ -762,7 +1377,14 @@ export default {
   min-width: 400px;
   position: fixed;
   top: 0;
-  left: 50%;
+  right: 0;
+  opacity: 0;
+  transition:all 0.225s linear;
+  transform:translateY(-100px);
+}
 
+.active_dialog{
+  opacity: 1;
+  transform:translateY(0px);
 }
 </style>

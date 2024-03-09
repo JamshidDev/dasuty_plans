@@ -1,7 +1,7 @@
 <template>
-  <div class="page_number_box">
-    <span>{{page_number}}</span>
-  </div>
+<!--  <div class="page_number_box">-->
+<!--    <span>{{page_number}}</span>-->
+<!--  </div>-->
   <div class="fixed flex gap-4 control_button_panel">
     <div @click="previous_page()" class="premium_bg" style="width: 80px;
   height: 40px;">

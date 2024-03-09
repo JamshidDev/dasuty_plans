@@ -2054,7 +2054,8 @@
         </div>
       </div>
       <div class="col-6 flex justify-content-end align-items-end pb-3">
-        <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i class='bx bx-right-top-arrow-circle ml-2'></i></a>
+        <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i
+            class='bx bx-right-top-arrow-circle ml-2'></i></a>
       </div>
     </div>
   </OverlayPanel>
@@ -2065,13 +2066,13 @@
 <script>
 export default {
   name: "RailwayMap",
-  data(){
-    return{
-      elementIdList:['mains', 'sorts', 'stiks', 'tchs', 'vchds'],
-      text_element_list:[],
-      line_element_list:[],
-      active_id_list:[],
-      uchastkaIdList : [
+  data() {
+    return {
+      elementIdList: ['mains', 'sorts', 'stiks', 'tchs', 'vchds'],
+      text_element_list: [],
+      line_element_list: [],
+      active_id_list: [],
+      uchastkaIdList: [
         'uchas1',
         'uchas2',
         'uchas3',
@@ -2087,7 +2088,7 @@ export default {
         'uchas13',
         'uchas14',
       ],
-      potoks_id_list :[
+      potoks_id_list: [
         'potok1',
         'potok2',
         'potok3',
@@ -2104,38 +2105,188 @@ export default {
         'potok14',
         'potok15',
       ],
-      stik_id_list:[
-        'stik1',
-        'stik2',
-        'stik3',
-        'stik4',
-        'stik5',
-        'stik6',
-        'stik7',
-        'stik8',
-        'stik9',
-        'stik10',
-        'stik11',
-        'stik12',
-        'stik13',
-        'stik14',
-        'stik15',
+      stik_id_list: [
+        {
+          id: 'stik1',
+          name:'Keles',
+          cordinate: {
+            x: -5186,
+            y: -1344,
+            zoom: 6,
+          }
+        },
+        {
+          id: 'stik2',
+          name:'Rzd 154',
+          cordinate: {
+            x: -3551,
+            y: -3478,
+            zoom: 6.2,
+          }
+        },
+
+        {
+          id: 'stik3',
+          name:'Xojidavlat',
+          cordinate: {
+            x: -1639,
+            y: -1857,
+            zoom: 4.2,
+          }
+        },
+
+        {
+          id: 'stik4',
+          name:'Istiqlol',
+          cordinate: {
+            x: -1134,
+            y: -1302,
+            zoom: 4.3,
+          }
+        },
+        {
+          id:'stik5',
+          name:"Naymanko'l",
+          cordinate:{
+            x:-362,
+            y:-855,
+            zoom:4.3,
+          }
+        },
+
+        {
+          id:'stik6',
+          name:"Quduqli",
+          cordinate:{
+            x:-3042,
+            y:-2100,
+            zoom:4.3,
+          }
+        },
+        {
+          id:'stik7',
+          name:"Surxonobod",
+          cordinate:{
+            x:-3662,
+            y:-3285,
+            zoom:5.15,
+          }
+        },
+
+        {
+          id:'stik8',
+          name:"Qoraqolpog'iston",
+          cordinate:{
+            x:162,
+            y:-280,
+            zoom:4.3,
+          }
+        },
+        {
+          id:'stik9',
+          name:"G'alaba",
+          cordinate:{
+            x:-3662,
+            y:-3285,
+            zoom:5.15,
+          }
+        },
+        {
+          id:'stik10',
+          name:'Sirdaryo',
+          cordinate:{
+            x:-4797,
+            y:-1805,
+            zoom:6,
+          }
+        },
+        {
+          id:'stik11',
+          name:"Amuzang",
+          cordinate:{
+            x:-3662,
+            y:-3285,
+            zoom:5.15,
+          }
+        },{
+          id:'stik12',
+          name:'Suvonobod',
+          cordinate:{
+            x:-5935,
+            y:-1980,
+            zoom:6,
+          }
+        },
+        {
+          id:'stik13',
+          name:"Uchqo'rg'on",
+          cordinate:{
+            x:-4545,
+            y:-882,
+            zoom:4.3,
+          }
+        },
+        {
+          id:'stik14',
+          cordinate:{
+            x:0,
+            y:0,
+            zoom:1,
+          }
+        },
+        {
+          id:'stik15',
+          name:'Bekobod',
+          cordinate:{
+            x:-5504,
+            y:-2272,
+            zoom:6,
+          }
+        },
+        {
+          id:'stik16',
+          name:'Savay',
+          cordinate:{
+            x:-7533,
+            y:-2049,
+            zoom:6.2,
+          }
+        },
+
+
+
+
+
+
+
+
+
       ]
     }
   },
   methods: {
 
-    stik_event_listen(){
-
+    stik_event_listen(id) {
+      let element = document.getElementById(id);
+      element.addEventListener('click', (event) => {
+        console.dir(id);
+        let cordinate_data = this.stik_id_list.filter((item)=> item.id === id)[0].cordinate;
+        this.$emit("moveMap", {
+          id:id,
+          x: cordinate_data.x,
+          y: cordinate_data.y,
+          zoom: cordinate_data.zoom,
+        })
+      })
     },
     change_visible(element_id) {
 
       // this.all_hidden()
       let element = document.getElementById(element_id);
-      if(this.active_id_list.includes(element_id)){
+      if (this.active_id_list.includes(element_id)) {
         element.style.visibility = 'hidden';
-        this.active_id_list = this.active_id_list.filter(id=> id !== element_id);
-      }else{
+        this.active_id_list = this.active_id_list.filter(id => id !== element_id);
+      } else {
         element.style.visibility = 'visible';
         this.active_id_list.push(element_id)
       }
@@ -2143,63 +2294,54 @@ export default {
     },
 
 
-
-
-
-
-
-
-    all_visible(){
-      for(let element of this.elementIdList){
+    all_visible() {
+      for (let element of this.elementIdList) {
         document.getElementById(element).style.visibility = 'visible'
       }
     },
-    all_hidden(){
-      for(let element of this.elementIdList){
+    all_hidden() {
+      for (let element of this.elementIdList) {
         document.getElementById(element).style.visibility = 'hidden'
       }
     },
-    clear_marked(){
-      this.text_element_list.forEach((element)=>{
+    clear_marked() {
+      this.text_element_list.forEach((element) => {
         element.classList.remove('animated-text')
       });
-      this.line_element_list.forEach((element)=>{
+      this.line_element_list.forEach((element) => {
         element.classList.remove('animated-svg')
       })
     },
-    uchastkaControl(element_id){
-     this.clear_marked();
-      let  element = document.getElementById(element_id);
+    uchastkaControl(element_id) {
+      this.clear_marked();
+      let element = document.getElementById(element_id);
       let childNodes = element.childNodes
 
-      for(let childElement of childNodes){
+      for (let childElement of childNodes) {
 
-        if(childElement.id.toString().includes('line')){
+        if (childElement.id.toString().includes('line')) {
           childElement.classList.add('animated-svg');
           this.line_element_list.push(childElement)
           console.log(childElement)
 
-          for(let path of childElement.childNodes){
+          for (let path of childElement.childNodes) {
             path.classList.add('animated-svg');
             this.line_element_list.push(path)
           }
-        }
-
-        else if(childElement.id.toString().includes('text')){
+        } else if (childElement.id.toString().includes('text')) {
           let dot_list = childElement.childNodes;
 
-          for(let text_box of dot_list){
+          for (let text_box of dot_list) {
 
-            if(text_box.nodeName === 'text'){
+            if (text_box.nodeName === 'text') {
               text_box.classList.add('animated-text');
               this.text_element_list.push(text_box)
-            }else if( text_box.nodeName === 'g'){
-              for(let text of text_box.childNodes){
+            } else if (text_box.nodeName === 'g') {
+              for (let text of text_box.childNodes) {
                 text.classList.add('animated-text');
                 this.text_element_list.push(text)
               }
-            }
-            else if( text_box.nodeName === 'path'){
+            } else if (text_box.nodeName === 'path') {
               text_box.classList.add('animated-text');
               this.text_element_list.push(text_box)
             }
@@ -2212,7 +2354,7 @@ export default {
       }
 
     },
-    watch_potok(){
+    watch_potok() {
 
       let id = this.potoks_id_list[0];
       let element = document.getElementById(id);
@@ -2223,14 +2365,17 @@ export default {
   },
   mounted() {
     this.all_hidden();
-    // this.watch_potok();
+
+    for(let i=0; i<this.stik_id_list.length; i++){
+      let element = this.stik_id_list[i];
+      this.stik_event_listen(element.id);
+    }
+
   }
 }
 </script>
 
 <style scoped lang="scss">
-
-
 
 
 .animated-svg {
@@ -2239,33 +2384,32 @@ export default {
   animation: opacity_keyframe 1s infinite;
 }
 
-.animated-text{
+.animated-text {
   fill: #dc1818 !important;
 }
 
 @keyframes opacity_keyframe {
   0% {
     //stroke: #0012cc;
-    opacity:0;
+    opacity: 0;
   }
   50% {
     //stroke: #efe513;
-    opacity:1;
+    opacity: 1;
   }
   50% {
     //stroke: #efe513;
-    opacity:0;
+    opacity: 0;
   }
   50% {
     //stroke: #efe513;
-    opacity:1;
+    opacity: 1;
   }
   100% {
     //stroke: #0012cc;
-    opacity:0;
+    opacity: 0;
   }
 }
-
 
 
 //#qongirotRJU:hover {
@@ -2273,105 +2417,468 @@ export default {
 //}
 
 
+@font-face {
+  font-family: "Arial";
+  font-variant: normal;
+  font-style: normal;
+  font-weight: bold;
+  src: url("#FontID1") format(svg)
+}
 
+@font-face {
+  font-family: "Arial";
+  font-variant: normal;
+  font-weight: normal;
+  src: url("#FontID0") format(svg)
+}
 
+.str24 {
+  stroke: #FF6600;
+  stroke-width: 26.46;
+  stroke-miterlimit: 22.9256
+}
 
+.str23 {
+  stroke: #FF6600;
+  stroke-width: 26.46;
+  stroke-miterlimit: 22.9256
+}
 
+.str31 {
+  stroke: blue;
+  stroke-width: 26.5;
+  stroke-miterlimit: 22.9256
+}
 
+.str27 {
+  stroke: #990000;
+  stroke-width: 26.5;
+  stroke-miterlimit: 22.9256
+}
 
+.str29 {
+  stroke: red;
+  stroke-width: 26.5;
+  stroke-miterlimit: 22.9256
+}
 
+.str25 {
+  stroke: red;
+  stroke-width: 26.5;
+  stroke-miterlimit: 22.9256
+}
 
+.str0 {
+  stroke: #FFEC2D;
+  stroke-width: 4.3;
+  stroke-miterlimit: 22.9256
+}
 
+.str35 {
+  stroke: black;
+  stroke-width: 105.83;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str7 {
+  stroke: black;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str11 {
+  stroke: #000066;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str10 {
+  stroke: #00CCFF;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str22 {
+  stroke: #33CC66;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str3 {
+  stroke: #6600CC;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str12 {
+  stroke: #6699FF;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str14 {
+  stroke: #9933CC;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str16 {
+  stroke: #996633;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str19 {
+  stroke: #CC3399;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str20 {
+  stroke: #CCCCCC;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str15 {
+  stroke: #FAFF81;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str13 {
+  stroke: red;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
-@font-face { font-family:"Arial";font-variant:normal;font-style:normal;font-weight:bold;src:url("#FontID1") format(svg)}
-@font-face { font-family:"Arial";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
-.str24 {stroke:#FF6600;stroke-width:26.46;stroke-miterlimit:22.9256}
-.str23 {stroke:#FF6600;stroke-width:26.46;stroke-miterlimit:22.9256}
-.str31 {stroke:blue;stroke-width:26.5;stroke-miterlimit:22.9256}
-.str27 {stroke:#990000;stroke-width:26.5;stroke-miterlimit:22.9256}
-.str29 {stroke:red;stroke-width:26.5;stroke-miterlimit:22.9256}
-.str25 {stroke:red;stroke-width:26.5;stroke-miterlimit:22.9256}
-.str0 {stroke:#FFEC2D;stroke-width:4.3;stroke-miterlimit:22.9256}
-.str35 {stroke:black;stroke-width:105.83;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str7 {stroke:black;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str11 {stroke:#000066;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str10 {stroke:#00CCFF;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str22 {stroke:#33CC66;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str3 {stroke:#6600CC;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str12 {stroke:#6699FF;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str14 {stroke:#9933CC;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str16 {stroke:#996633;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str19 {stroke:#CC3399;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str20 {stroke:#CCCCCC;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str15 {stroke:#FAFF81;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str13 {stroke:red;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str17 {stroke:#FF99CC;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str18 {stroke:#FFCC00;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str32 {stroke:blue;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str33 {stroke:blue;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str28 {stroke:#990000;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str30 {stroke:red;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str26 {stroke:red;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str2 {stroke:#C7C7C7;stroke-width:17.64;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str4 {stroke:black;stroke-width:7.62;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256}
-.str21 {stroke:#1A1A1A;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;stroke-dasharray:70.560000 105.840000}
-.str5 {stroke:#1A1A1A;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;stroke-dasharray:70.560000 105.840000}
-.str1 {stroke:#1A1A1A;stroke-width:35.28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;stroke-dasharray:176.400000 105.840000 35.280000 105.840000}
-.str6 {stroke:#1A1A1A;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;stroke-dasharray:100.000000 100.000000}
-.str34 {stroke:#B3B3B3;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;stroke-dasharray:100.000000 60.000000 20.000000 60.000000}
-.str8 {stroke:#1A1A1A;stroke-width:17.64;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;stroke-dasharray:17.640000 52.920000}
-.str9 {stroke:#1A1A1A;stroke-width:17.64;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;stroke-dasharray:35.280000 52.920000}
-.fil9 {fill:none}
-.fil20 {fill:black}
-.fil25 {fill:black}
-.fil14 {fill:black}
-.fil27 {fill:black}
-.fil28 {fill:blue}
-.fil22 {fill:lime}
-.fil10 {fill:#1A1A1A}
-.fil3 {fill:#707070}
-.fil4 {fill:#94DAFF}
-.fil29 {fill:#99FF00}
-.fil8 {fill:#9CDCFF}
-.fil5 {fill:#A8E5FF}
-.fil2 {fill:#ADD6FF}
-.fil6 {fill:#B0E1FF}
-.fil7 {fill:#B5DBFF}
-.fil26 {fill:red}
-.fil24 {fill:white}
-.fil13 {fill:white}
-.fil19 {fill:black;fill-rule:nonzero}
-.fil12 {fill:black;fill-rule:nonzero}
-.fil0 {fill:#00ABC2;fill-rule:nonzero}
-.fil21 {fill:lime;fill-rule:nonzero}
-.fil11 {fill:#1A1A1A;fill-rule:nonzero}
-.fil17 {fill:#2D7AE1;fill-rule:nonzero}
-.fil16 {fill:#949494;fill-rule:nonzero}
-.fil1 {fill:#FFEC2D;fill-rule:nonzero}
-.fil23 {fill:white;fill-rule:nonzero}
-.fil18 {fill:white;fill-rule:nonzero}
-.fil15 {fill:white;fill-rule:nonzero}
-.fnt3 {font-weight:bold;font-size:141.11px;font-family:'Arial'}
-.fnt2 {font-weight:bold;font-size:176.39px;font-family:'Arial'}
-.fnt5 {font-weight:bold;font-size:211.66px;font-family:'Arial'}
-.fnt1 {font-weight:bold;font-size:211.67px;font-family:'Arial'}
-.fnt4 {font-weight:bold;font-size:246.94px;font-family:'Arial'}
-.fnt0 {font-weight:normal;font-size:352.78px;font-family:'Arial'}
+.str17 {
+  stroke: #FF99CC;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str18 {
+  stroke: #FFCC00;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str32 {
+  stroke: blue;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
 
+.str33 {
+  stroke: blue;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
+
+.str28 {
+  stroke: #990000;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
+
+.str30 {
+  stroke: red;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
+
+.str26 {
+  stroke: red;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
+
+.str2 {
+  stroke: #C7C7C7;
+  stroke-width: 17.64;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
+
+.str4 {
+  stroke: black;
+  stroke-width: 7.62;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256
+}
+
+.str21 {
+  stroke: #1A1A1A;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256;
+  stroke-dasharray: 70.560000 105.840000
+}
+
+.str5 {
+  stroke: #1A1A1A;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256;
+  stroke-dasharray: 70.560000 105.840000
+}
+
+.str1 {
+  stroke: #1A1A1A;
+  stroke-width: 35.28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256;
+  stroke-dasharray: 176.400000 105.840000 35.280000 105.840000
+}
+
+.str6 {
+  stroke: #1A1A1A;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256;
+  stroke-dasharray: 100.000000 100.000000
+}
+
+.str34 {
+  stroke: #B3B3B3;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256;
+  stroke-dasharray: 100.000000 60.000000 20.000000 60.000000
+}
+
+.str8 {
+  stroke: #1A1A1A;
+  stroke-width: 17.64;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256;
+  stroke-dasharray: 17.640000 52.920000
+}
+
+.str9 {
+  stroke: #1A1A1A;
+  stroke-width: 17.64;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 22.9256;
+  stroke-dasharray: 35.280000 52.920000
+}
+
+.fil9 {
+  fill: none
+}
+
+.fil20 {
+  fill: black
+}
+
+.fil25 {
+  fill: black
+}
+
+.fil14 {
+  fill: black
+}
+
+.fil27 {
+  fill: black
+}
+
+.fil28 {
+  fill: blue
+}
+
+.fil22 {
+  fill: lime
+}
+
+.fil10 {
+  fill: #1A1A1A
+}
+
+.fil3 {
+  fill: #707070
+}
+
+.fil4 {
+  fill: #94DAFF
+}
+
+.fil29 {
+  fill: #99FF00
+}
+
+.fil8 {
+  fill: #9CDCFF
+}
+
+.fil5 {
+  fill: #A8E5FF
+}
+
+.fil2 {
+  fill: #ADD6FF
+}
+
+.fil6 {
+  fill: #B0E1FF
+}
+
+.fil7 {
+  fill: #B5DBFF
+}
+
+.fil26 {
+  fill: red
+}
+
+.fil24 {
+  fill: white
+}
+
+.fil13 {
+  fill: white
+}
+
+.fil19 {
+  fill: black;
+  fill-rule: nonzero
+}
+
+.fil12 {
+  fill: black;
+  fill-rule: nonzero
+}
+
+.fil0 {
+  fill: #00ABC2;
+  fill-rule: nonzero
+}
+
+.fil21 {
+  fill: lime;
+  fill-rule: nonzero
+}
+
+.fil11 {
+  fill: #1A1A1A;
+  fill-rule: nonzero
+}
+
+.fil17 {
+  fill: #2D7AE1;
+  fill-rule: nonzero
+}
+
+.fil16 {
+  fill: #949494;
+  fill-rule: nonzero
+}
+
+.fil1 {
+  fill: #FFEC2D;
+  fill-rule: nonzero
+}
+
+.fil23 {
+  fill: white;
+  fill-rule: nonzero
+}
+
+.fil18 {
+  fill: white;
+  fill-rule: nonzero
+}
+
+.fil15 {
+  fill: white;
+  fill-rule: nonzero
+}
+
+.fnt3 {
+  font-weight: bold;
+  font-size: 141.11px;
+  font-family: 'Arial'
+}
+
+.fnt2 {
+  font-weight: bold;
+  font-size: 176.39px;
+  font-family: 'Arial'
+}
+
+.fnt5 {
+  font-weight: bold;
+  font-size: 211.66px;
+  font-family: 'Arial'
+}
+
+.fnt1 {
+  font-weight: bold;
+  font-size: 211.67px;
+  font-family: 'Arial'
+}
+
+.fnt4 {
+  font-weight: bold;
+  font-size: 246.94px;
+  font-family: 'Arial'
+}
+
+.fnt0 {
+  font-weight: normal;
+  font-size: 352.78px;
+  font-family: 'Arial'
+}
 
 
 </style>

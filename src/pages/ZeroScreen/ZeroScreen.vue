@@ -3,7 +3,7 @@
 <!--    <div class="flex w-full absolute top-0 left-0 justify-content-end">-->
 <!--      -->
 <!--    </div>-->
-    <div class="flex gap-4 text-lg font-normal absolute w-full z-5" style="top:10px; left:10px;">
+    <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">
 <!--      Ўзбекистон темир йўллари харитаси-->
     X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}
     </div>
@@ -13,7 +13,7 @@
            class="trigger-zoom-element border-round   shadow-1  cursor-pointer"
            style="width:100%; height:90vh;">
 <!--        flex justify-content-center align-items-center-->
-        <RailwayMap ref="railway_map_ref"></RailwayMap>
+        <RailwayMap ref="railway_map_ref" @moveMap="move_map($event)"></RailwayMap>
         <LottieIcon class="potok1_icon icon_position" :style="{visibility:show_patok_icon? 'visible':'hidden'}"></LottieIcon>
         <LottieIcon class="potok2_icon icon_position" :style="{visibility:show_patok_icon? 'visible':'hidden'}"></LottieIcon>
         <LottieIcon class="potok3_icon icon_position" :style="{visibility:show_patok_icon? 'visible':'hidden'}"></LottieIcon>
@@ -29,7 +29,7 @@
         <LottieIcon class="potok13_icon icon_position" :style="{visibility:show_patok_icon? 'visible':'hidden'}"></LottieIcon>
         <LottieIcon class="potok14_icon icon_position" :style="{visibility:show_patok_icon? 'visible':'hidden'}"></LottieIcon>
         <LottieIcon class="potok15_icon icon_position" :style="{visibility:show_patok_icon? 'visible':'hidden'}"></LottieIcon>
-        <RiplleIcon class="ripple1_icon"></RiplleIcon>
+<!--        <RiplleIcon class="ripple1_icon"></RiplleIcon>-->
 
 
       </div>
@@ -37,7 +37,7 @@
     </div>
 
     <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
-    <InformationCard @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" v-if="general_info_show"></InformationCard>
+    <InformationCard ref="information_modal_ref" @closeInfoMap="close_info_map()"  @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" v-if="general_info_show"></InformationCard>
 
   </div>
 
@@ -98,7 +98,7 @@ export default {
     change_card(map){
       this.active_map = map;
       if(map){
-        this.go_push_element(-28, -80, 1.2);
+        this.go_push_element(38.6, -103, 1.2);
         this.$refs.railway_map_ref.clear_marked();
       }
       this.$refs.railway_map_ref.all_hidden();
@@ -109,17 +109,15 @@ export default {
     },
     closed_modal() {
       this.general_info_show=true;
-      this.go_push_element(-28, -80, 1.2);
+      this.go_push_element(38.6, -103, 1.2);
     },
-
-    watch_potok(){
-      let element_dot = document.getElementById('g_container');
-      let element_icon = document.querySelector('.potok2_icon');
-      // element_dot.insertBefore(element_icon, element_dot.firstChild);
-      element_dot.appendChild(element_icon);
-      console.log(element_dot)
-
-    }
+    move_map(data){
+      this.go_push_element(data.x, data.y, data.zoom);
+      this.$refs.information_modal_ref.show_dialog(data.id);
+    },
+    close_info_map(){
+      this.go_push_element(38.6, -103, 1.2);
+    },
   },
 
   mounted() {
@@ -248,7 +246,8 @@ export default {
     })
 
 
-    this.go_push_element(-28, -80, 1.2);
+
+    this.go_push_element(38.6, -103, 1.2);
     // this.go_push_element(-1000, -1000, 1);
 
   }
