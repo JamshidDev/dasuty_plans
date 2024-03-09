@@ -18,6 +18,7 @@ import ProgressBar from "primevue/progressbar";
 import Donut from 'vue-css-donut-chart';
 import 'vue-css-donut-chart/dist/vcdonut.css';
 import CircleProgress from 'vue3-circle-progress'
+import Vue3Autocounter from 'vue3-autocounter';
 
 
 const app = createApp(App);
@@ -32,5 +33,6 @@ app.component("Dialog", Dialog);
 app.component("Checkbox", Checkbox);
 app.component("ProgressBar", ProgressBar);
 app.component('CircleProgress', CircleProgress)
+app.component('AutoCounter', Vue3Autocounter)
 
 app.mount('#app')

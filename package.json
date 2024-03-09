@@ -17,6 +17,7 @@
     "vue": "^3.4.21",
     "vue-css-donut-chart": "^2.0.0",
     "vue-router": "^4.3.0",
+    "vue3-autocounter": "^1.0.6",
     "vue3-circle-progress": "^1.0.7"
   },
   "devDependencies": {
