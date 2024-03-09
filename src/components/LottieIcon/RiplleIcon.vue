@@ -1,10 +1,10 @@
 <template>
-  <div id="lottieJSON" ref="lottieJSON"></div>
+  <div id="rippleJSON" ref="rippleJSON"></div>
 </template>
 
 
 <script>
-import animationData from '../LottieJSON/arrow.json';
+import animationData from '../LottieJSON/ripple.json';
 import lottie from 'lottie-web';
 export default {
   mounted() {
@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     createAnimation() {
-      const container = this.$refs.lottieJSON;
+      const container = this.$refs.rippleJSON;
 
       lottie.loadAnimation({
         container: container,
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#lottieJSON{
-  width:30px;
+#rippleJSON{
+  width:60px;
 }
 </style>

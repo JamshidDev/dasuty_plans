@@ -27,6 +27,8 @@
 
   </span>
 
+
+
 <!--  <span v-if="!dialog_visible">-->
 <!--    <div class="map_info_card">-->
 <!--    </div>-->

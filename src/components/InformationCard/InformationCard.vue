@@ -24,7 +24,8 @@
                 >
                   <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
                     <div class="title font-bold">
-                      <NumberAnimation :amount="item.value"></NumberAnimation> <span>{{item.extension_value}}</span>
+                      <NumberAnimation :amount="item.value"></NumberAnimation>
+                      <span>{{ item.extension_value }}</span>
                     </div>
                     <span>
             <InputSwitch @click.stop @change="change_map(item.show_map, item.id)" v-model="item.show_map"/>
@@ -32,12 +33,13 @@
                   </div>
                   <div v-else>
                     <div class="title text-sm font-bold">
-                      <NumberAnimation :amount="item.value"></NumberAnimation> <span>{{item.extension_value}}</span>
+                      <NumberAnimation :amount="item.value"></NumberAnimation>
+                      <span>{{ item.extension_value }}</span>
                     </div>
                   </div>
-<!--                  <div class="my-1">-->
+                  <!--                  <div class="my-1">-->
 
-<!--                  </div>-->
+                  <!--                  </div>-->
                   <div class="text-sm">
                     {{ item.label }}
                   </div>
@@ -148,17 +150,124 @@
         </div>
       </div>
       <div class="col-6 flex justify-content-end align-items-end pb-3">
-        <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i class='bx bx-right-top-arrow-circle ml-2'></i></a>
+        <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i
+            class='bx bx-right-top-arrow-circle ml-2'></i></a>
       </div>
     </div>
   </OverlayPanel>
+
+  <span v-if="stik_dialog" >
+    <div class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden">
+      <h2 class="w-full text-center my-0 text-500 font-bold bg-blue-800 text-white  pt-1 pb-1">Келес</h2>
+      <table class="w-full">
+        <thead>
+          <tr style="border-bottom:10px solid transparent">
+            <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                ЮК <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >тонна</span>
+              </div>
+            </th>
+
+             <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Вагон <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
+              </div>
+            </th>
+             <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Поезд <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
+              </div>
+            </th>
+
+
+<!--            <th style="width:200px">-->
+<!--              <div class="bg-gray p-2 border-1 border-200  border-round text-500">-->
+<!--                Вагон-->
+<!--              </div>-->
+<!--            </th>-->
+<!--            <th style="width:200px">-->
+<!--              <div class="bg-gray p-2 border-1 border-200 border-round text-500">-->
+<!--                Поезд-->
+<!--              </div>-->
+<!--            </th>-->
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
+                    <div class="font-bold mb-2 text-blue-600">33 956 265 <span
+                        class="text-sm font-medium"></span></div>
+                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2022 й.</div>
+              </div>
+              </td>
+              <td>
+                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
+                    <div class="font-bold mb-2 text-blue-600">33 956 265 <span
+                        class="text-sm font-medium"></span></div>
+                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2022 й.</div>
+              </div>
+              </td>
+               <td>
+                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
+                    <div class="font-bold mb-2 text-blue-600">33 956 265 <span
+                        class="text-sm font-medium"></span></div>
+                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2022 й.</div>
+              </div>
+              </td>
+            </tr>
+         <tr>
+              <td>
+                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
+                    <div class="font-bold mb-2 text-blue-600">33 956 265 </div>
+                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2023 й.</div>
+              </div>
+              </td>
+              <td>
+                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
+                    <div class="font-bold mb-2 text-blue-600">33 956 265 </div>
+                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2023 й.</div>
+              </div>
+              </td>
+               <td>
+                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
+                    <div class="font-bold mb-2 text-blue-600">33 956 265 </div>
+                    <div class="text-sm font-bold w-full text-right text-500 font-italic">2023 й.</div>
+              </div>
+              </td>
+            </tr>
+        <tr>
+              <td colspan="3">
+                 <div class=" p-2 border-1 border-300 shadow-1 border-round bg-green-100 py-2">
+                    <div class="font-bold mb-2 text-green-600 text-center text-xl">+12% <i class='bx bxs-arrow-from-bottom'></i></div>
+<!--                    <div class="text-sm font-medium w-full text-right text-500"></div>-->
+              </div>
+              </td>
+<!--              <td>-->
+<!--                 <div class=" p-2 border-1 border-300 shadow-1 border-round bg-green-100">-->
+<!--                     <div class="font-bold mb-2 text-green-600 text-center text-xl">+34% <i class='bx bxs-arrow-from-bottom'></i></div>-->
+<!--                    <div class="text-sm font-medium w-full text-right text-500"></div>-->
+<!--              </div>-->
+<!--              </td>-->
+<!--               <td>-->
+<!--                 <div class=" p-2 border-1 border-300 shadow-1 border-round bg-green-100">-->
+<!--                     <div class="font-bold mb-2 text-green-500 text-center text-xl">+56% <i class='bx bxs-arrow-from-bottom'></i></div>-->
+<!--                    <div class="text-sm font-medium w-full text-right text-500"></div>-->
+<!--              </div>-->
+<!--              </td>-->
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </span>
 </template>
 
 <script>
 import NumberAnimation from "@/components/NumberAnimation/NumberAnimation.vue";
+
 export default {
   name: "InformationCard",
-  components:{
+  components: {
     NumberAnimation
   },
   data() {
@@ -168,57 +277,57 @@ export default {
           id: 0,
           label: `Мавжуд темир йўл узунлиги`,
           value: 7488.9,
-          extension_value:'км'
+          extension_value: 'км'
         },
         {
           id: 1,
           label: `Электрлаштирилган йўл `,
           value: 3328.73,
-          extension_value:'км (45%)'
+          extension_value: 'км (45%)'
         },
         {
           id: 2,
           label: `Мавжуд локомотивлар сони `,
           value: 471,
-          extension_value:'та'
+          extension_value: 'та'
         },
         {
           id: 6,
           label: `Станциялар сони `,
           value: 270,
-          extension_value:'та'
+          extension_value: 'та'
         },
         {
           id: 3,
           label: `Давлатлараро чегара пункти `,
-          value: 14,
-          extension_value:'та'
+          value: 18,
+          extension_value: 'та'
         },
         {
           id: 4,
           label: `Локомотив деполар сони `,
           value: 8,
           show_map: false,
-          extension_value:'та'
+          extension_value: 'та'
         }, {
           id: 5,
           label: `Вагон деполари сони `,
           value: 6,
           show_map: false,
-          extension_value:'та'
+          extension_value: 'та'
 
         },
         {
           id: 8,
           label: `Мавжуд вагонлар сони `,
           value: 19036,
-          extension_value:'та',
+          extension_value: 'та',
         },
         {
           id: 7,
           label: `Ходимлар сони `,
           value: 70979,
-          extension_value:'нафар',
+          extension_value: 'нафар',
 
         },
 
@@ -400,6 +509,7 @@ export default {
       status: false,
       active_card: true,
       sorted_station: false,
+      stik_dialog:false,
 
 
       station_line_list: [
@@ -646,5 +756,13 @@ export default {
   width: 100px;
   height: 0;
   background: white;
+}
+
+.stiks_dialog {
+  min-width: 400px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+
 }
 </style>

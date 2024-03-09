@@ -2005,6 +2005,59 @@
  </g>
 </svg>
 
+  <OverlayPanel ref="overall3_ref" style="width:600px">
+    <div class="grid w-full">
+      <div class="col-6">
+        <div class="shadow-1 bg-gray p-2 border-round">
+          <div class="flex justify-content-between">
+            <div class="text-sm ">Олий малумотли</div>
+            <div class="text-sm font-bold mb-1 ">123123</div>
+          </div>
+          <div class="flex justify-content-between">
+            <div class="text-sm">ўрта малумотли</div>
+            <div class="text-sm font-bold mb-1">123123</div>
+          </div>
+          <div class="flex justify-content-between">
+            <div class="text-sm">ўрта махсус малумотли</div>
+            <div class="text-sm font-bold mb-1">123123</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="shadow-1 bg-gray p-2 border-round">
+          <div class="flex justify-content-between">
+            <div class="text-sm ">31 yoshgacha</div>
+            <div class="text-sm font-bold mb-1">13602</div>
+          </div>
+          <div class="flex justify-content-between">
+            <div class="text-sm ">32 yoshdan 45 yoshgacha</div>
+            <div class="text-sm font-bold mb-1">24795</div>
+          </div>
+          <div class="flex justify-content-between">
+            <div class="text-sm ">46 yoshdan kattalar</div>
+            <div class="text-sm font-bold mb-1">14172</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="shadow-1 bg-gray p-2 border-round">
+          <div class="flex justify-content-between">
+            <div class="text-sm ">Erkaklar</div>
+            <div class="text-sm font-bold mb-1"> 43 549</div>
+          </div>
+          <div class="flex justify-content-between">
+            <div class="text-sm">Ayollar</div>
+            <div class="text-sm font-bold mb-1">9 020</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 flex justify-content-end align-items-end pb-3">
+        <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i class='bx bx-right-top-arrow-circle ml-2'></i></a>
+      </div>
+    </div>
+  </OverlayPanel>
 
 </template>
 
@@ -2051,10 +2104,31 @@ export default {
         'potok14',
         'potok15',
       ],
+      stik_id_list:[
+        'stik1',
+        'stik2',
+        'stik3',
+        'stik4',
+        'stik5',
+        'stik6',
+        'stik7',
+        'stik8',
+        'stik9',
+        'stik10',
+        'stik11',
+        'stik12',
+        'stik13',
+        'stik14',
+        'stik15',
+      ]
     }
   },
   methods: {
-    change_visible(element_id,) {
+
+    stik_event_listen(){
+
+    },
+    change_visible(element_id) {
 
       // this.all_hidden()
       let element = document.getElementById(element_id);
@@ -2067,6 +2141,10 @@ export default {
       }
 
     },
+
+
+
+
 
 
 
