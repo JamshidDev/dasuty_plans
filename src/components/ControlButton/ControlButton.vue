@@ -106,12 +106,12 @@ export default {
           index: 8,
           name: "nst-infra"
         },
+        // {
+        //   index: 9,
+        //   name: "vols"
+        // },
         {
           index: 9,
-          name: "vols"
-        },
-        {
-          index: 10,
           name: "third-screen"
         },
       ],
