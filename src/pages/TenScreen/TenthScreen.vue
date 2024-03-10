@@ -13,18 +13,18 @@ const arr1 = [
   { offset: 6, name: 'Омборлар', value: 50, rate: 50 },
   { offset: 7.5, name: 'Ижтимоий хизматлар', value: 90, rate: 60 },
   { offset: 5, name: 'Статистика ва хисобга олиш', value: 30, rate: 0 },
-  { offset: -2, name: 'Йул хужалиги', value: 50, rate: 30 },
+  { offset: -2, name: 'Сигналлаштириш ва алока', value: 50, rate: 30 },
   { offset: -16, name: 'Мехнат мухофазаси', value: 15, rate: 15 },
 ]
 
 const arr2 = [
-  { offset: -12, name: 'Ташиш жараёни', value: 45, rate: 17 },
-  { offset: 0, name: 'Йуловчи ташиш', value: 62, rate: 32 },
-  { offset: 6, name: 'Харакат хавфсизлиги', value: 43, rate: 25 },
-  { offset: 7.5, name: 'Юк ташиш хизмати', value: 50, rate: 50 },
-  { offset: 5, name: 'Локомотив хужалиги', value: 80, rate: 70 },
-  { offset: -2, name: 'Вагон хужалиги', value: 70, rate: 10 },
-  { offset: -16, name: 'Сигналлаштириш ва алока', value: 15, rate: 0 },
+  { offset: -12, name: 'Юк ташиш хизмати', value: 92, rate: 17 },
+  { offset: 0, name: 'Ташиш жараёни', value: 91, rate: 32 },
+  { offset: 6, name: 'Йуловчи ташиш ', value: 88, rate: 25 },
+  { offset: 7.5, name: 'Локомотив хужалиги', value: 82, rate: 50 },
+  { offset: 5, name: 'Йул хужалиги', value: 80, rate: 70 },
+  { offset: -2, name: 'Харакат хавфсизлиги ', value: 70, rate: 10 },
+  { offset: -16, name: 'Вагон хужалиги', value: 15, rate: 0 },
 ]
 
 onMounted(() => {
@@ -42,10 +42,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full min-h-full relative flex flex-column justify-content-center align-items-center">
+  <div class="w-full min-h-full relative flex flex-column justify-content-center align-items-center mt-0">
     <TitleText :title='`"ЎЗБЕКИСТОН ТЕМИР ЙЎЛЛАРИ" АЖДА`' :subtitle="`РАҚАМЛАШТИРИШНИНГ ЖОРИЙ ҲОЛАТИ`" />
     <div class='wrapper'>
-      <div class='left-side flex align-items-end flex-column gap-6'>
+      <div class='left-side flex align-items-end flex-column gap-6 mb-8'>
         <div v-for='item in arr1' class='project-item' :style='{right: `${item.offset}%`}'>
           <h4 class='text-right'>{{ item.name }}</h4>
           <div class='relative'>
@@ -58,13 +58,13 @@ onMounted(() => {
             </div>
             <progress-bar
               class='flex-grow-1 custom-progress-bar'
-              :class='{primary: item.value > 85, warning: item.value > 70, danger: item.value < 71}'
+              :class='{primary: item.value > 72, warning: item.value > 56 && item.value < 72, danger: item.value < 56}'
               :value='animated ? item.value : 0'
             />
           </div>
         </div>
       </div>
-      <div class='center-side flex justify-content-center align-items-center' ref='el'>
+      <div class='center-side flex justify-content-center align-items-center mb-8' ref='el'>
         <div class='relative'>
           <div class='fake-thumb flex justify-content-center align-items-center' />
           <div v-if='el' class='thumb-container' :style='{zIndex: totalP > 90 ? 15 : 1}'>
@@ -88,7 +88,7 @@ onMounted(() => {
           />
         </div>
       </div>
-      <div class='right-side flex align-items-start flex-column gap-6'>
+      <div class='right-side flex align-items-start flex-column gap-6 mb-8'>
         <div v-for='item in arr2' class='project-item' :style='{left: `${item.offset}%`}'>
           <h4 class='text-left'>{{ item.name }}</h4>
           <div class='relative'>
@@ -101,7 +101,7 @@ onMounted(() => {
             <progress-bar
               class='flex-grow-1 custom-progress-bar'
               :value='animated ? item.value: 0'
-              :class='{primary: item.value > 85, warning: item.value > 70, danger: item.value < 71}'
+              :class='{primary: item.value > 72, warning: item.value > 56 && item.value < 72, danger: item.value < 56}'
             />
           </div>
         </div>
@@ -115,7 +115,7 @@ onMounted(() => {
 $blue: #234699;
 
 .special-countTime {
-  bottom: -50px !important;
+  bottom: -20px !important;
 
   .button_content {
     color: #fff;
