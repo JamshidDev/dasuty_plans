@@ -27,6 +27,13 @@
 
   </span>
 
+
+
+<!--  <span v-if="!dialog_visible">-->
+<!--    <div class="map_info_card">-->
+<!--    </div>-->
+<!--  </span>-->
+
   <OverlayPanel ref="overall2_ref" style="width:400px">
     <div class="grid">
       <div v-for="item in selected_overall_list" :key="item.id" class="col-12 py-1">
@@ -49,6 +56,7 @@ export default {
       switchOne: false,
       switchTwo: true,
       dialog_visible: false,
+      map_info_visible:true,
       active_dialog: false,
       mtu_data: [
         {
@@ -147,6 +155,12 @@ export default {
               value: `8045 нафар`,
               iscollapse:false,
             },
+            {
+              id: 7,
+              label: `Мавжуд вагонлар сони`,
+              value: `8045 та`,
+              iscollapse:false,
+            },
           ]
         },
         {
@@ -233,6 +247,12 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `6076 нафар`,
+              iscollapse:false,
+            },
+            {
+              id: 7,
+              label: `Мавжуд вагонлар сони`,
+              value: `8045 та`,
               iscollapse:false,
             },
           ]
@@ -333,6 +353,12 @@ export default {
               value: `9812 нафар`,
               iscollapse:false,
             },
+            {
+              id: 7,
+              label: `Мавжуд вагонлар сони`,
+              value: `8045 та`,
+              iscollapse:false,
+            },
           ]
         },
         {
@@ -421,6 +447,12 @@ export default {
               value: `5560 нафар`,
               iscollapse:false,
             },
+            {
+              id: 7,
+              label: `Мавжуд вагонлар сони`,
+              value: `8045 та`,
+              iscollapse:false,
+            },
           ]
         },
         {
@@ -497,6 +529,12 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `4469  нафар`,
+              iscollapse:false,
+            },
+            {
+              id: 7,
+              label: `Мавжуд вагонлар сони`,
+              value: `8045 та`,
               iscollapse:false,
             },
           ]
@@ -582,6 +620,12 @@ export default {
               value: `3591  нафар`,
               iscollapse:false,
             },
+            {
+              id: 7,
+              label: `Мавжуд вагонлар сони`,
+              value: `8045 та`,
+              iscollapse:false,
+            },
           ]
         },
 
@@ -644,6 +688,7 @@ export default {
   transition: all 0.2s ease-out;
 }
 
+
 .open_dialog {
   transform: translateY(0px);
   opacity: 1;
@@ -651,5 +696,24 @@ export default {
 
 .gray-bg{
   background:#F5F5F5;
+}
+.map_info_card{
+  width: 600px;
+  height:300px;
+  min-height: 100px;
+  padding: 20px;
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  background: #ffffff;
+  background-filter: blur(12px);
+  border: 1px solid rgba(120, 122, 126, 0.16);
+  z-index: 1000;
+  border-radius: 12px;
+
+  transform: translateY(-100px);
+  opacity: 1;
+  transition: all 0.2s ease-out;
+
 }
 </style>
