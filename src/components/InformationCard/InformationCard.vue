@@ -169,7 +169,7 @@
         <tr>
               <td colspan="3">
                  <div :class="selected_stik.is_increment? 'bg-green-100' : 'bg-red-100'" class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
-                    <div :class="selected_stik.is_increment? 'text-green-600' : 'text-red-600'"  class="font-bold mb-2  text-center text-xl">{{selected_stik.percent}} <i class='bx bxs-arrow-from-bottom'></i></div>
+                    <div :class="selected_stik.is_increment? 'text-green-600' : 'text-red-600'"  class="font-bold mb-2  text-center text-xl">{{selected_stik.percent}} <i :class="selected_stik.is_increment? 'bxs-arrow-from-bottom' : 'bxs-arrow-from-top'" class='bx  text-xl'></i></div>
 
               </div>
               </td>
@@ -708,6 +708,7 @@ export default {
           id:'stik4',
           name:'Сувонобод',
           percent:'-55%',
+          is_increment:false,
           data:[
             {
               year:'2022 й.',
@@ -749,6 +750,7 @@ export default {
           id:'stik5',
           name:'Сувонобод',
           percent:'+92%',
+          is_increment:true,
           data:[
             {
               year:'2022 й.',
@@ -917,6 +919,7 @@ export default {
           id:'stik9',
           name:'Галаба',
           percent:'+2%',
+          is_increment:true,
           data:[
             {
               year:'2022 й.',
@@ -1000,6 +1003,7 @@ export default {
           id:'stik11',
           name:'Амузанг',
           percent:'+7%',
+          is_increment:true,
           data:[
             {
               year:'2022 й.',
@@ -1206,7 +1210,7 @@ export default {
           ]
         },
         {
-          id:'stik15',
+          id:'stik16',
           name:'Савай',
           percent:'+50%',
           is_increment:true,
@@ -1321,6 +1325,7 @@ export default {
 
     show_dialog(stik_id){
       this.selected_stik = this.stik_data_list.filter((item)=> item.id ===stik_id)[0];
+      console.log(this.selected_stik)
 
 
       this.stik_dialog=true;
