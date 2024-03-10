@@ -4,8 +4,8 @@
 <!--      -->
 <!--    </div>-->
     <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">
-<!--      Ўзбекистон темир йўллари харитаси-->
-    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}
+      Ўзбекистон темир йўллари харитаси
+<!--    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}-->
     </div>
     <div id="zoom-container" ref="zoom_container" class="w-full border-round relative"
          style="height:88vh; overflow: hidden;">
@@ -201,7 +201,7 @@ export default {
     qongirotRJU.addEventListener("click", () => {
       if(this.active_map){
         this.general_info_show=false;
-        this.go_push_element(-420, -227, 2.3);
+        this.go_push_element(196, -60, 2);
         this.$refs.dialog_ref.open_dialog(3);
       }
 
@@ -209,7 +209,7 @@ export default {
     buxoroRJU.addEventListener("click", () => {
       if(this.active_map){
         this.general_info_show=false;
-        this.go_push_element(-911, -419, 2);
+        this.go_push_element(-468, -353, 2);
         this.$refs.dialog_ref.open_dialog(2)
       }
 
@@ -217,7 +217,7 @@ export default {
     qarshiRJU.addEventListener("click", () => {
       if(this.active_map){
         this.general_info_show=false;
-        this.go_push_element(-2731, -1729, 3.5);
+        this.go_push_element(-1848, -1574, 3.4);
         this.$refs.dialog_ref.open_dialog(4)
       }
 
@@ -225,7 +225,7 @@ export default {
     termizRJU.addEventListener("click", () => {
       if(this.active_map){
         this.general_info_show=false;
-        this.go_push_element(-3031, -1999, 3.5);
+        this.go_push_element(-2320, -1898, 3.5);
         this.$refs.dialog_ref.open_dialog(5)
       }
 
@@ -233,14 +233,14 @@ export default {
     toshkentRJU.addEventListener("click", () => {
       if(this.active_map){
         this.general_info_show=false;
-        this.go_push_element(-2365, -561, 2.5);
+        this.go_push_element(-1580, -428, 2.5);
         this.$refs.dialog_ref.open_dialog(0)
       }
     })
     kokandRJU.addEventListener("click", () => {
       if(this.active_map){
         this.general_info_show=false;
-        this.go_push_element(-3603, -778, 3);
+        this.go_push_element(-3706, -866, 3.5);
         this.$refs.dialog_ref.open_dialog(1)
       }
     })

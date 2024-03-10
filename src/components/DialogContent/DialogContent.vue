@@ -8,7 +8,22 @@
     <div class="body grid pt-4">
       <template v-for="item in selected_mtu_list.data" :key="item.id">
         <div  class="col-6"  @click="control_overall2($event,item.iscollapse, item?.nodes_list)">
-        <div class="card_box p-3 border-round shadow-1 min-h-full" :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
+          <div v-if="item?.multiple_label" class="card_box p-3 border-round shadow-1 min-h-full" :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
+          <div class="title font-bold">
+            {{item.labels.value1}}
+          </div>
+          <div class="text-sm">
+            {{item.labels.label1}}
+          </div>
+             <div class="title font-bold mt-2">
+            {{item.labels.value2}}
+          </div>
+          <div class="text-sm">
+            {{item.labels.label2}}
+          </div>
+        </div>
+
+        <div v-else class="card_box p-3 border-round shadow-1 min-h-full" :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
           <div class="title font-bold">
             {{item.value}}
           </div>
@@ -104,8 +119,14 @@ export default {
             },
             {
               id: 3,
-              label: `Саралаш станциялар сони`,
-              value: `3 та`,
+              multiple_label:true,
+              labels:{
+                label1: `Саралаш станциялар сони`,
+                value1: `3 та`,
+                label2:'Умумий стансиялар сони',
+                value2: `3 та`,
+              },
+
               iscollapse:true,
               nodes_list:[
                 {
@@ -153,13 +174,7 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `8045 нафар`,
-              iscollapse:false,
-            },
-            {
-              id: 7,
-              label: `Мавжуд вагонлар сони`,
-              value: `8045 та`,
-              iscollapse:false,
+
             },
           ]
         },
@@ -247,12 +262,6 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `6076 нафар`,
-              iscollapse:false,
-            },
-            {
-              id: 7,
-              label: `Мавжуд вагонлар сони`,
-              value: `8045 та`,
               iscollapse:false,
             },
           ]
@@ -353,12 +362,6 @@ export default {
               value: `9812 нафар`,
               iscollapse:false,
             },
-            {
-              id: 7,
-              label: `Мавжуд вагонлар сони`,
-              value: `8045 та`,
-              iscollapse:false,
-            },
           ]
         },
         {
@@ -445,12 +448,6 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `5560 нафар`,
-              iscollapse:false,
-            },
-            {
-              id: 7,
-              label: `Мавжуд вагонлар сони`,
-              value: `8045 та`,
               iscollapse:false,
             },
           ]
@@ -618,12 +615,6 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `3591  нафар`,
-              iscollapse:false,
-            },
-            {
-              id: 7,
-              label: `Мавжуд вагонлар сони`,
-              value: `8045 та`,
               iscollapse:false,
             },
           ]
