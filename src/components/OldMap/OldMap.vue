@@ -2593,36 +2593,7 @@
 export default {
   data() {
     return {
-      array_lines: [
-        'route1',
-        'route2',
-        'route3',
-        'route4',
-        'route5',
-        'route6',
-        'route7',
-        'route8',
-        'route9',
-        'route10',
-        'route11'
-      ],
-      array_locations: [
-        'loc0',
-        'loc1',
-        'loc2',
-        'loc3',
-        'loc4',
-        'loc5',
-        'loc6',
-        'loc7',
-        'loc8',
-        'loc9',
-        'loc10',
-        'loc11',
-      ],
       modal: null,
-
-
       first_timeout: null,
       second_timeout: null,
       third_timeout: null,
@@ -2636,92 +2607,13 @@ export default {
   },
 
   methods: {
-    async hiddenMap() {
-      let array_lines = this.array_lines;
-      let array_locations = this.array_locations;
 
-      for (var i = 0; i < array_locations.length; i++) {
-        var location = document.getElementById(array_locations[i]);
-        location.style.visibility = 'hidden';
-      }
 
-      for (var i = 0; i < array_lines.length; i++) {
-        var location = document.getElementById(array_lines[i]);
-        location.style.visibility = 'hidden';
-      }
-    },
-    async drawPath() {
-
-      await this.hiddenMap()
-      // clearTimeout(this.first_timeout);
-      // clearTimeout(this.second_timeout);
-      // clearTimeout(this.third_timeout);
-      try {
-        let array_lines = this.array_lines;
-        let array_locations = this.array_locations;
-        await new Promise(resolve => {
-          this.first_timeout = setTimeout(resolve, 400);
-          return this.first_timeout
-        });
-
-        for (var i = 0; i < array_locations.length; i++) {
-
-          var location = document.getElementById(array_locations[i]);
-          location.style.visibility = 'visible';
-
-          await new Promise(resolve => {
-            this.second_timeout = setTimeout(resolve, 300);
-            return this.second_timeout;
-          });
-
-          if (i != array_locations.length - 1) {
-
-            var path = document.getElementById(array_lines[i]);
-            var length = path.getTotalLength();
-
-            path.style.strokeDasharray = length;
-            path.style.strokeDashoffset = length;
-            path.style.transition = path.style.WebkitTransition = 'none';
-            path.style.strokeDashoffset = length;
-            path.getBoundingClientRect();
-            path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset 0.3s ease-in-out';
-            path.style.visibility = 'visible';
-            path.style.strokeDashoffset = '0';
-
-            await new Promise(resolve => {
-              this.third_timeout = setTimeout(resolve, 300);
-              return this.third_timeout;
-            });
-          }
-        }
-
-        // modal.style.visibility = 'visible';
-      } catch (error) {
-        console.log(error);
-      }
-    },
-
-    autoHide() {
-      let modal = this.modal;
-      let array_locations = this.array_locations;
-      let array_lines = this.array_lines;
-      // modal.style.visibility = 'hidden';
-      for (var i = 0; i < array_locations.length; i++) {
-        var location = document.getElementById(array_locations[i]);
-        location.style.visibility = 'hidden';
-      }
-      for (var i = 0; i < array_lines.length; i++) {
-        var location = document.getElementById(array_lines[i]);
-        // location.style.visibility = 'hidden';
-      }
-
-    },
 
 
     detect_element_id(){
-      let parent = document.getElementById('oldroute');
-      for (let item of parent.childNodes){
-
+      let old_parent = document.getElementById('oldroute');
+      for (let item of old_parent.childNodes){
       //   line element list
         if(item.id.toString().includes('oldrouteline')){
           let path_list = item.childNodes
@@ -2730,7 +2622,6 @@ export default {
           //   do action here
           }
         }
-
         // g element list
         if(item.id.toString().includes('oldrouteloc')){
           let loc_list = item.childNodes
@@ -2739,21 +2630,148 @@ export default {
             //   do action here
           }
         }
-        // this.old_g_element_list =  this.old_g_element_list.reverse();
-        this.old_path_element_list =  this.old_path_element_list.reverse();
 
-        console.log(this.old_path_element_list);
-        console.log(this.old_g_element_list);
+      }
+      this.old_g_element_list =  this.old_g_element_list.reverse();
+      this.old_path_element_list =  this.old_path_element_list.reverse();
+
+
+      let new_parent = document.getElementById('newroute');
+      for (let item of new_parent.childNodes){
+        //   line element list
+        if(item.id.toString().includes('newrouteline')){
+          let path_list = item.childNodes
+          for(let path_element of path_list){
+            this.new_path_element_list.push(path_element.id);
+            //   do action here
+          }
+        }
+        // g element list
+        if(item.id.toString().includes('newrouteloc')){
+          let loc_list = item.childNodes
+          for(let g_element of loc_list){
+            this.new_g_element_list.push(g_element.id);
+            //   do action here
+          }
+        }
+
+      }
+      this.new_g_element_list =  this.new_g_element_list.reverse();
+      this.new_path_element_list =  this.new_path_element_list.reverse();
+
+    },
+    clear_all(){
+
+      clearTimeout(this.first_timeout);
+      clearTimeout(this.second_timeout);
+      clearTimeout(this.third_timeout);
+
+      for (let path_id of this.old_path_element_list) {
+        let location = document.getElementById(path_id);
+        location.style.visibility = 'hidden';
+      }
+      for (let g_id of this.old_g_element_list) {
+        let location = document.getElementById(g_id);
+        location.style.visibility = 'hidden';
       }
 
-    }
+
+      for (let path_id of this.new_path_element_list) {
+        let location = document.getElementById(path_id);
+        location.style.visibility = 'hidden';
+      }
+      for (let g_id of this.new_g_element_list) {
+        let location = document.getElementById(g_id);
+        location.style.visibility = 'hidden';
+      }
+    },
+    async old_draw_train(){
+      this.clear_all();
+
+      // load wait time
+      await new Promise(resolve => {
+        this.first_timeout = setTimeout(resolve, 400);
+        return this.first_timeout
+      });
+
+      for(let i=0;  i<this.old_g_element_list.length; i++){
+
+        // draw location
+        let location = document.getElementById(this.old_g_element_list[i]);
+        location.style.visibility = 'visible';
+
+        await new Promise(resolve => {
+          this.second_timeout = setTimeout(resolve, 300);
+          return this.second_timeout;
+        });
+
+        //   draw line
+        if(i != this.old_g_element_list.length - 1){
+          let path_element = document.getElementById(this.old_path_element_list[i]);
+          let element_length = path_element.getTotalLength();
+          path_element.style.strokeDasharray = element_length;
+          path_element.style.strokeDashoffset = element_length;
+          path_element.style.transition = path_element.style.WebkitTransition = 'none';
+          path_element.style.strokeDashoffset = element_length;
+          path_element.getBoundingClientRect();
+          path_element.style.transition = path_element.style.WebkitTransition = 'stroke-dashoffset 0.3s ease-in-out';
+          path_element.style.visibility = 'visible';
+          path_element.style.strokeDashoffset = '0';
+          await new Promise(resolve => {
+            this.second_timeout = setTimeout(resolve, 300);
+            return this.second_timeout;
+          });
+        }
+
+      }
+    },
+    async new_draw_train(){
+      this.clear_all();
+
+      // load wait time
+      await new Promise(resolve => {
+        this.first_timeout = setTimeout(resolve, 400);
+        return this.first_timeout
+      });
+
+      for(let i=0;  i<this.new_g_element_list.length; i++){
+
+        // draw location
+        let location = document.getElementById(this.new_g_element_list[i]);
+        location.style.visibility = 'visible';
+
+        await new Promise(resolve => {
+          this.second_timeout = setTimeout(resolve, 300);
+          return this.second_timeout;
+        });
+
+        //   draw line
+        if(i != this.new_g_element_list.length - 1){
+          let path_element = document.getElementById(this.new_path_element_list[i]);
+          let element_length = path_element.getTotalLength();
+          path_element.style.strokeDasharray = element_length;
+          path_element.style.strokeDashoffset = element_length;
+          path_element.style.transition = path_element.style.WebkitTransition = 'none';
+          path_element.style.strokeDashoffset = element_length;
+          path_element.getBoundingClientRect();
+          path_element.style.transition = path_element.style.WebkitTransition = 'stroke-dashoffset 0.3s ease-in-out';
+          path_element.style.visibility = 'visible';
+          path_element.style.strokeDashoffset = '0';
+          await new Promise(resolve => {
+            this.second_timeout = setTimeout(resolve, 300);
+            return this.second_timeout;
+          });
+        }
+
+      }
+    },
   },
   mounted() {
-    this.modal = document.getElementById('modal');
-    // this.autoHide();
-    // this.drawPath();
-    // this.hiddenMap();
     this.detect_element_id();
+    this.clear_all();
+    // this.old_draw_train();
+    this.new_draw_train();
+
   }
 }
 </script>

@@ -38,7 +38,29 @@
 
     <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
     <InformationCard ref="information_modal_ref" @closeInfoMap="close_info_map()"  @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" v-if="general_info_show"></InformationCard>
+    <div v-if="$route.name ==='zero-screen'" class="fixed flex gap-2 absolute" style="bottom:10px; left:620px; z-index:10">
+      <div @click="$refs.railway_map_ref.clear_all()"  class="surface-card border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 60px;
+  height: 40px;">
+        <!--      Олдинги ҳолат-->
+        <i class='bx bx-hide text-500 text-4xl'></i>
 
+      </div>
+      <div @click="$refs.railway_map_ref.old_draw_train()"    class="surface-card border-1 text-500 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
+  height: 40px;">
+        Олдинги ҳолат
+        <i class='bx bx-show text-500 text-4xl'></i>
+      </div>
+      <div @click="$refs.railway_map_ref.new_draw_train()"   class="surface-card text-500 border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
+  height: 40px;">
+        Ҳозирги ҳолат
+        <i class='bx bx-show text-500 text-4xl'></i>
+      </div>
+      <div @click="$refs.railway_map_ref.test_draw_train()"   class="surface-card text-500 border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
+  height: 40px;">
+        тест ҳолат
+        <i class='bx bx-show text-500 text-4xl'></i>
+      </div>
+    </div>
   </div>
 
 </template>

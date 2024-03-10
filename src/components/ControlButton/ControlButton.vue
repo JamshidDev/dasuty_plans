@@ -16,6 +16,11 @@
       <i class='bx bx-chevron-right text-white text-4xl'></i>
     </div>
   </div>
+
+
+
+
+
 </template>
 <script>
 export default {
@@ -144,6 +149,10 @@ export default {
       let route_name = this.page_list[this.page_index].name;
       this.goPusg(route_name);
 
+    },
+
+    change_event(id){
+      this.$emit("eventButton", id)
     }
 
 
@@ -161,6 +170,7 @@ export default {
         this.next_page()
       }
     };
+
   }
 
 }
