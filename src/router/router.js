@@ -208,13 +208,23 @@ const routes = [
                 }
             },
             {
+                path: "/tenth-screen",
+                name: "tenth-screen",
+                component: function () {
+                    return import("../pages/TenScreen/TenthScreen.vue");
+                },
+                meta:{
+                    pageNUmber:21,
+                }
+            },
+            {
                 path: "/eleventh-screen",
                 name: "eleventh-screen",
                 component: function () {
                     return import("../pages/EleventhScreen/EleventhScreen.vue");
                 },
                 meta:{
-                    pageNUmber:20,
+                    pageNUmber:22,
                 }
             },
             {
@@ -224,7 +234,7 @@ const routes = [
                     return import("../pages/TwelfthScreen/TwelfthScreen.vue");
                 },
                 meta:{
-                    pageNUmber:21,
+                    pageNUmber:23,
                 }
             },
             {
@@ -234,9 +244,10 @@ const routes = [
                     return import("../pages/ThirteenScreen/ThirteenScreen.vue");
                 },
                 meta:{
-                    pageNUmber:21,
+                    pageNUmber:24,
                 }
             },
+
             // {
             //     path: "/eticket",
             //     name: "eticket",

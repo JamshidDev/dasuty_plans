@@ -63,7 +63,7 @@ onMounted(() => {
 $blue: #234699;
 
 .wrapper {
-  margin-top: -4%
+  //margin-top: -4%
 }
 
 .box {
