@@ -4,6 +4,7 @@ import PulseAnimation from "../../components/PulseAnimation/PulseAnimation.vue";
 import PulseCenter from "../../components/PulseAnimation/PulseCenter.vue";
 import { onMounted, ref } from "vue";
 import MobileDevice from "../../components/IconSvg/MobileDevice.vue";
+import TitleText from "@/components/TitleText/TitleText.vue";
 
 const animated = ref(false)
 const totalP = ref(45)
@@ -24,7 +25,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full wrapper min-h-full relative flex flex-column justify-content-center align-items-center relative">
+  <div class="w-full min-h-full relative flex flex-column justify-content-center align-items-center relative">
+    <TitleText :title="`Рақамлаштришдан кейинги ҳолат`"></TitleText>
     <PulseAnimation class='custom-pulse-animation overflow-visible' />
     <PulseCenter class='pulse'>
       <MobileDevice />
