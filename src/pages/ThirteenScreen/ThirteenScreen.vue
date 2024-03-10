@@ -24,7 +24,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full wrapper min-h-full relative flex flex-column justify-content-center align-items-center relative">
+  <div class="w-full min-h-full relative flex flex-column justify-content-center align-items-center relative">
     <PulseAnimation class='custom-pulse-animation overflow-visible' />
     <PulseCenter class='pulse'>
       <MobileDevice />

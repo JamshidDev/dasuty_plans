@@ -32,7 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full wrapper min-h-full flex flex-column justify-content-center align-items-center relative">
+  <div class="w-full min-h-full flex flex-column justify-content-center align-items-center relative">
 <!--    <div class='text-xl p-4 bg-white border-round-2xl border-2' style="top:10px">-->
 <!--      <span class="font-bold">Рақамлаштришдан олдинги ҳолат</span>-->
 <!--    </div>-->
