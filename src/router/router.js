@@ -2,6 +2,8 @@ import {
     createRouter,
     createWebHistory,
 } from 'vue-router';
+import 'aos/dist/aos.css';
+import AOS from "aos";
 
 
 const routes = [
@@ -205,6 +207,36 @@ const routes = [
                     pageNUmber:19,
                 }
             },
+            {
+                path: "/eleventh-screen",
+                name: "eleventh-screen",
+                component: function () {
+                    return import("../pages/EleventhScreen/EleventhScreen.vue");
+                },
+                meta:{
+                    pageNUmber:20,
+                }
+            },
+            {
+                path: "/twelfth-screen",
+                name: "twelfth-screen",
+                component: function () {
+                    return import("../pages/TwelfthScreen/TwelfthScreen.vue");
+                },
+                meta:{
+                    pageNUmber:21,
+                }
+            },
+            {
+                path: "/thirteen-screen",
+                name: "thirteen-screen",
+                component: function () {
+                    return import("../pages/ThirteenScreen/ThirteenScreen.vue");
+                },
+                meta:{
+                    pageNUmber:21,
+                }
+            },
             // {
             //     path: "/eticket",
             //     name: "eticket",
@@ -240,5 +272,10 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
 });
+
+router.beforeEach((to,from, next) => {
+    AOS.init()
+    next()
+})
 
 export default router;
