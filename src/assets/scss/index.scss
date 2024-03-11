@@ -1,4 +1,4 @@
-
+$blue: #234699;
 
 .gradient-background {
   font-size:26px;
@@ -106,6 +106,37 @@ $primary: #2700ff;
       transform: translate3d(100%, 0, 0) scale3d(1, 1, 1);
     }
   }
+}
 
+.custom-progress-bar {
+  height: 28px;
+  border-radius: 14px;
 
+  &.primary {
+    .p-progressbar-value {
+      background-color: var(--primary-500) !important;
+    }
+  }
+
+  &.warning {
+    .p-progressbar-value {
+      background-color: var(--yellow-500) !important;
+    }
+  }
+
+  &.danger {
+    .p-progressbar-value {
+      background-color: var(--red-500) !important;
+    }
+  }
+}
+
+.special-countTime {
+  bottom: -20px !important;
+
+  .button_content {
+    color: #fff;
+    background-color: $blue !important;
+    border: 0;
+  }
 }

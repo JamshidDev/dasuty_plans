@@ -22,7 +22,6 @@ defineProps({
   height: 300px;
   box-shadow: 0 7.5px 106.6875px 16.875px #0787F34D;
   border-radius: 50%;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;

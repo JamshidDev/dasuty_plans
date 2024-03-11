@@ -18,7 +18,7 @@ const { push } = useRouter()
     <div data-aos='fade' data-aos-duration='1500' class='px-6 flex justify-content-between align-items-center'>
       <div class='text-center cursor-pointer text-xl p-4 bg-white border-round-2xl border-2 before'
            @click='push("/twelfth-screen")'>
-        <span class="font-bold">Рақамлаштришдан олдинги ҳолат</span>
+        <span class="font-bold">Рақамлаштиришдан олдинги ҳолат</span>
       </div>
       <ArrowLeftTwoColor class='ml-6 mr-3 w-5rem' />
       <PulseCenter caption='Мижоз'>
@@ -27,7 +27,7 @@ const { push } = useRouter()
       <ArrowRightTwoColor class='mr-6 ml-3 w-5rem' />
       <div class='text-center cursor-pointer text-xl p-4 bg-white after border-round-2xl border-2'
            @click='push("/thirteen-screen")'>
-        <span class="font-bold">Рақамлаштришдан кейинги ҳолат</span>
+        <span class="font-bold">Рақамлаштиришдан кейинги ҳолат</span>
       </div>
     </div>
   </div>
