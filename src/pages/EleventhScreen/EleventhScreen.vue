@@ -6,12 +6,14 @@ import PersonSvg from "../../components/IconSvg/PersonSvg.vue";
 import ArrowLeftTwoColor from "../../components/IconSvg/ArrowLeftTwoColor.vue";
 import ArrowRightTwoColor from "../../components/IconSvg/ArrowRightTwoColor.vue";
 import PulseCenter from "../../components/PulseAnimation/PulseCenter.vue";
+import TitleText from "../../components/TitleText/TitleText.vue";
 
 const { push } = useRouter()
 </script>
 
 <template>
   <div class="w-full min-h-full relative flex flex-column justify-content-center align-items-center relative">
+    <TitleText class='heading' title='ЮК ТАШИШ СОҲАСИДА ХИЗМАТЛАР КЎРСАТИШ БЎЙИЧА МИЖОЗЛАР БИЛАН МУНОСАБАТ'></TitleText>
     <PulseAnimation />
     <div data-aos='fade' data-aos-duration='1500' class='px-6 flex justify-content-between align-items-center'>
       <div class='text-center cursor-pointer text-xl p-4 bg-white border-round-2xl border-2 before'
@@ -31,7 +33,7 @@ const { push } = useRouter()
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .before {
   border-color: #A90B0B;
   color: #A90B0B;
@@ -41,4 +43,11 @@ const { push } = useRouter()
   border-color: #066CC3;
   color: #066CC3;
 }
+
+.heading {
+ .title {
+   max-width: 75% !important;
+ }
+}
+
 </style>
