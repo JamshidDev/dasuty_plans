@@ -2919,7 +2919,6 @@ export default {
             zoom: 6.2,
           }
         },
-
         {
           id: 'stik3',
           name:'Xojidavlat',
@@ -2929,7 +2928,6 @@ export default {
             zoom: 4.2,
           }
         },
-
         {
           id: 'stik4',
           name:'Istiqlol',
@@ -2948,7 +2946,6 @@ export default {
             zoom:4.3,
           }
         },
-
         {
           id:'stik6',
           name:"Quduqli",
@@ -2967,7 +2964,6 @@ export default {
             zoom:5.15,
           }
         },
-
         {
           id:'stik8',
           name:"Qoraqolpog'iston",
@@ -3003,7 +2999,8 @@ export default {
             y:-3285,
             zoom:5.15,
           }
-        },{
+        },
+        {
           id:'stik12',
           name:'Suvonobod',
           cordinate:{
@@ -3023,6 +3020,7 @@ export default {
         },
         {
           id:'stik14',
+          name:"Quvasoy",
           cordinate:{
             x:0,
             y:0,
@@ -3047,15 +3045,6 @@ export default {
             zoom:6.2,
           }
         },
-
-
-
-
-
-
-
-
-
       ],
 
 

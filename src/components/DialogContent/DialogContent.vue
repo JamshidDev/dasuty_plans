@@ -2,36 +2,38 @@
   <span v-if="dialog_visible">
      <div class="dialog-container shadow-2" :class="active_dialog && 'open_dialog'">
     <div class="header flex justify-content-between align-items-center">
-      <span class="text-2xl font-semibold">{{selected_mtu_list.name}}</span>
+      <span class="text-2xl font-semibold">{{ selected_mtu_list.name }}</span>
       <i @click="close_dialog()" class='bx bx-x text-4xl cursor-pointer'></i>
     </div>
     <div class="body grid pt-4">
       <template v-for="item in selected_mtu_list.data" :key="item.id">
-        <div  class="col-6"  @click="control_overall2($event,item.iscollapse, item?.nodes_list)">
-          <div v-if="item?.multiple_label" class="card_box p-3 border-round shadow-1 min-h-full" :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
+        <div class="col-6" @click="control_overall2($event,item.iscollapse, item?.nodes_list)">
+          <div v-if="item?.multiple_label" class="card_box p-3 border-round shadow-1 min-h-full"
+               :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
           <div class="title font-bold">
-            {{item.labels.value1}}
+            {{ item.labels.value1 }}
           </div>
           <div class="text-sm">
-            {{item.labels.label1}}
+            {{ item.labels.label1 }}
           </div>
              <div class="title font-bold mt-2">
-            {{item.labels.value2}}
+            {{ item.labels.value2 }}
           </div>
           <div class="text-sm">
-            {{item.labels.label2}}
+            {{ item.labels.label2 }}
           </div>
         </div>
 
-        <div v-else class="card_box p-3 border-round shadow-1 min-h-full" :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
+        <div v-else class="card_box p-3 border-round shadow-1 min-h-full"
+             :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
           <div class="title font-bold">
-            {{item.value}}
+            {{ item.value }}
           </div>
           <div class="my-3">
 
           </div>
           <div class="text-sm">
-            {{item.label}}
+            {{ item.label }}
           </div>
         </div>
       </div>
@@ -43,11 +45,34 @@
   </span>
 
 
-
 <!--  <span v-if="!dialog_visible">-->
-<!--    <div class="map_info_card">-->
-<!--    </div>-->
-<!--  </span>-->
+<!--      <div class="map_info_card shadow-1 border-1 border-blue-200" @click="show_animation=!show_animation">-->
+<!--         <div class="relative overflow-hidden w-full min-h-full">-->
+<!--           <Transition name="slide-up">-->
+<!--                <div v-if="show_animation" class="absolute left-0 top-0 w-full flex">-->
+<!--                  <Timeline class="w-full" :value="timeline_one">-->
+<!--              <template #opposite="slotProps">-->
+<!--        <small class="p-text-secondary">{{ slotProps.item.date }}</small>-->
+<!--    </template>-->
+<!--    <template #content="slotProps">-->
+<!--        {{ slotProps.item.status }}-->
+<!--    </template>-->
+<!--          </Timeline>-->
+<!--                </div>-->
+<!--            <div v-else class="absolute left-0 top-0 w-full flex">-->
+<!--                     <Timeline :value="timeline_two">-->
+<!--              <template #opposite="slotProps">-->
+<!--        <small class="p-text-secondary">{{ slotProps.item.date }}</small>-->
+<!--    </template>-->
+<!--    <template #content="slotProps">-->
+<!--        {{ slotProps.item.status }}-->
+<!--    </template>-->
+<!--          </Timeline>-->
+<!--                </div>-->
+<!--         </Transition>-->
+<!--         </div>-->
+<!--      </div>-->
+<!--    </span>-->
 
   <OverlayPanel ref="overall2_ref" style="width:400px">
     <div class="grid">
@@ -71,78 +96,89 @@ export default {
       switchOne: false,
       switchTwo: true,
       dialog_visible: false,
-      map_info_visible:true,
+      map_info_visible: true,
       active_dialog: false,
+      show_animation: false,
+      timeline_one: [
+        {status: 'Ахтачи', date: '15/10/2020 10:30', icon: 'pi pi-shopping-cart', color: '#9C27B0'},
+        {status: 'Қоқон', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: '#673AB7'},
+        {status: 'Поп', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: '#FF9800'},
+      ],
+      timeline_two: [
+        {status: 'Мароканд', date: '15/10/2020 10:30', icon: 'pi pi-shopping-cart', color: '#9C27B0'},
+        {status: 'Хаваст', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: '#673AB7'},
+        {status: 'Мискин', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: '#FF9800'},
+      ],
       mtu_data: [
         {
-          name:'Тошкент МТУ',
-          data:[
+          name: 'Тошкент МТУ',
+          data: [
             {
               id: 0,
               label: `Мавжуд темир йўл узунлиги `,
               value: `1654,6 км`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 1,
               label: `Электрлаштирилган йўл `,
               value: `1327,8 км  (80%)`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 2,
               label: `Бириктирилган локомотивлар сони`,
               value: `174 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Электровозлар ",
-                  value:"93 та"
+                  id: 0,
+                  label: "Электровозлар ",
+                  value: "93 та"
                 },
                 {
-                  id:1,
-                  label:"Магистрал тепловоз  ",
-                  value:"3 та"
+                  id: 1,
+                  label: "Магистрал тепловоз  ",
+                  value: "3 та"
                 },
                 {
-                  id:2,
-                  label:"Манёвр тепловоз ",
-                  value:"65 та"
+                  id: 2,
+                  label: "Манёвр тепловоз ",
+                  value: "65 та"
                 },
                 {
-                  id:3,
-                  label:"Электропоездлар ",
-                  value:"13 та"
+                  id: 3,
+                  label: "Электропоездлар ",
+                  value: "13 та"
                 },
               ]
             },
             {
               id: 3,
-              multiple_label:true,
-              labels:{
+              multiple_label: true,
+              labels: {
                 label1: `Саралаш станциялар сони`,
                 value1: `3 та`,
-                label2:'Умумий стансиялар сони',
+                label2: 'Умумий стансиялар сони',
                 value2: `3 та`,
               },
 
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Чуқурсой ",
-                  value:""
+                  id: 0,
+                  label: "Чуқурсой ",
+                  value: ""
                 },
                 {
-                  id:1,
-                  label:"Хаваст",
-                  value:""
+                  id: 1,
+                  label: "Хаваст",
+                  value: ""
                 },
                 {
-                  id:2,
-                  label:"Охангарон",
-                  value:""
+                  id: 2,
+                  label: "Охангарон",
+                  value: ""
                 },
               ]
             },
@@ -150,17 +186,17 @@ export default {
               id: 4,
               label: `Локомотив деполар сони`,
               value: `2 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Тошкент ",
-                  value:""
+                  id: 0,
+                  label: "Тошкент ",
+                  value: ""
                 },
                 {
-                  id:1,
-                  label:"Тинчлик",
-                  value:""
+                  id: 1,
+                  label: "Тинчлик",
+                  value: ""
                 },
               ]
             },
@@ -168,7 +204,7 @@ export default {
               id: 5,
               label: `Вагон деполари сони`,
               value: `1 та`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 6,
@@ -179,45 +215,45 @@ export default {
           ]
         },
         {
-          name:'Қўқон МТУ ',
-          data:[
+          name: 'Қўқон МТУ ',
+          data: [
             {
               id: 0,
               label: `Мавжуд темир йўл узунлиги `,
               value: `981,7 км`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 1,
               label: `Электрлаштирилган йўл `,
               value: `587,31 км (60%)`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 2,
               label: `Бириктирилган локомотивлар сони`,
               value: `63 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Электровозлар ",
-                  value:"25 та"
+                  id: 0,
+                  label: "Электровозлар ",
+                  value: "25 та"
                 },
                 {
-                  id:1,
-                  label:"Магистрал тепловоз  ",
-                  value:"9 та"
+                  id: 1,
+                  label: "Магистрал тепловоз  ",
+                  value: "9 та"
                 },
                 {
-                  id:2,
-                  label:"Манёвр тепловоз ",
-                  value:"28 та"
+                  id: 2,
+                  label: "Манёвр тепловоз ",
+                  value: "28 та"
                 },
                 {
-                  id:3,
-                  label:"Электропоездлар ",
-                  value:"1 та"
+                  id: 3,
+                  label: "Электропоездлар ",
+                  value: "1 та"
                 },
               ]
             },
@@ -225,17 +261,17 @@ export default {
               id: 3,
               label: `Саралаш станциялар сони`,
               value: `2 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Қўқон  ",
-                  value:""
+                  id: 0,
+                  label: "Қўқон  ",
+                  value: ""
                 },
                 {
-                  id:1,
-                  label:"Охунбобоев",
-                  value:""
+                  id: 1,
+                  label: "Охунбобоев",
+                  value: ""
                 },
               ]
             },
@@ -243,12 +279,12 @@ export default {
               id: 4,
               label: `Локомотив деполар сони`,
               value: `1 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Андижон ",
-                  value:""
+                  id: 0,
+                  label: "Андижон ",
+                  value: ""
                 },
               ]
             },
@@ -256,51 +292,51 @@ export default {
               id: 5,
               label: `Вагон деполари сони`,
               value: `1 та`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 6,
               label: `Ходимлар сони`,
               value: `6076 нафар`,
-              iscollapse:false,
+              iscollapse: false,
             },
           ]
         },
         {
-          name:'Бухоро МТУ ',
-          data:[
+          name: 'Бухоро МТУ ',
+          data: [
             {
               id: 0,
               label: `Мавжуд темир йўл узунлиги `,
               value: `2037,2 км`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 1,
               label: `Электрлаштирилган йўл `,
               value: `728,92 км (35,7%)`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 2,
               label: `Бириктирилган локомотивлар сони`,
               value: `90 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Электровозлар ",
-                  value:"7 та"
+                  id: 0,
+                  label: "Электровозлар ",
+                  value: "7 та"
                 },
                 {
-                  id:1,
-                  label:"Магистрал тепловоз  ",
-                  value:"37 та"
+                  id: 1,
+                  label: "Магистрал тепловоз  ",
+                  value: "37 та"
                 },
                 {
-                  id:2,
-                  label:"Манёвр тепловоз ",
-                  value:"46 та"
+                  id: 2,
+                  label: "Манёвр тепловоз ",
+                  value: "46 та"
                 },
               ]
             },
@@ -308,27 +344,27 @@ export default {
               id: 3,
               label: `Саралаш станциялар сони`,
               value: `4 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Бухоро  ",
-                  value:""
+                  id: 0,
+                  label: "Бухоро  ",
+                  value: ""
                 },
                 {
-                  id:1,
-                  label:"Мароқанд",
-                  value:""
+                  id: 1,
+                  label: "Мароқанд",
+                  value: ""
                 },
                 {
-                  id:2,
-                  label:"Навоий",
-                  value:""
+                  id: 2,
+                  label: "Навоий",
+                  value: ""
                 },
                 {
-                  id:3,
-                  label:"Бинокор",
-                  value:""
+                  id: 3,
+                  label: "Бинокор",
+                  value: ""
                 },
               ]
             },
@@ -336,17 +372,17 @@ export default {
               id: 4,
               label: `Локомотив деполар сони`,
               value: `2 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Бухоро ",
-                  value:""
+                  id: 0,
+                  label: "Бухоро ",
+                  value: ""
                 },
                 {
-                  id:1,
-                  label:"Тинчлик ",
-                  value:""
+                  id: 1,
+                  label: "Тинчлик ",
+                  value: ""
                 },
               ]
             },
@@ -354,24 +390,24 @@ export default {
               id: 5,
               label: `Вагон деполари сони`,
               value: `1 та`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 6,
               label: `Ходимлар сони`,
               value: `9812 нафар`,
-              iscollapse:false,
+              iscollapse: false,
             },
           ]
         },
         {
-          name:'Қўнғирод МТУ',
-          data:[
+          name: 'Қўнғирод МТУ',
+          data: [
             {
               id: 0,
               label: `Мавжуд темир йўл узунлиги `,
               value: `1491,7 км`,
-              iscollapse:false,
+              iscollapse: false,
             },
             // {
             //   id: 1,
@@ -383,17 +419,17 @@ export default {
               id: 2,
               label: `Бириктирилган локомотивлар сони`,
               value: `59 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:1,
-                  label:"Магистрал тепловоз  ",
-                  value:"35 та"
+                  id: 1,
+                  label: "Магистрал тепловоз  ",
+                  value: "35 та"
                 },
                 {
-                  id:2,
-                  label:"Манёвр тепловоз ",
-                  value:"24 та"
+                  id: 2,
+                  label: "Манёвр тепловоз ",
+                  value: "24 та"
                 },
               ]
             },
@@ -401,22 +437,22 @@ export default {
               id: 3,
               label: `Саралаш станциялар сони`,
               value: `3 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Мискен  ",
-                  value:""
+                  id: 0,
+                  label: "Мискен  ",
+                  value: ""
                 },
                 {
-                  id:1,
-                  label:"Қўнғирот",
-                  value:""
+                  id: 1,
+                  label: "Қўнғирот",
+                  value: ""
                 },
                 {
-                  id:2,
-                  label:"Нукус",
-                  value:""
+                  id: 2,
+                  label: "Нукус",
+                  value: ""
                 },
               ]
             },
@@ -424,17 +460,17 @@ export default {
               id: 4,
               label: `Локомотив деполар сони`,
               value: `2 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Ургенч ",
-                  value:""
+                  id: 0,
+                  label: "Ургенч ",
+                  value: ""
                 },
                 {
-                  id:1,
-                  label:"Кунграт ",
-                  value:""
+                  id: 1,
+                  label: "Кунграт ",
+                  value: ""
                 },
               ]
             },
@@ -442,51 +478,51 @@ export default {
               id: 5,
               label: `Вагон деполари сони`,
               value: `1 та`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 6,
               label: `Ходимлар сони`,
               value: `5560 нафар`,
-              iscollapse:false,
+              iscollapse: false,
             },
           ]
         },
         {
-          name:'Қарши МТУ ',
-          data:[
+          name: 'Қарши МТУ ',
+          data: [
             {
               id: 0,
               label: `Мавжуд темир йўл узунлиги `,
               value: `722,8 км`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 1,
               label: `Электрлаштирилган йўл `,
               value: `440,3 км (61%)`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 2,
               label: `Бириктирилган локомотивлар сони`,
               value: `40 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Электровозлар   ",
-                  value:"18 та"
+                  id: 0,
+                  label: "Электровозлар   ",
+                  value: "18 та"
                 },
                 {
-                  id:1,
-                  label:"Магистрал тепловоз  ",
-                  value:"6 та"
+                  id: 1,
+                  label: "Магистрал тепловоз  ",
+                  value: "6 та"
                 },
                 {
-                  id:2,
-                  label:"Манёвр тепловоз ",
-                  value:"16 та"
+                  id: 2,
+                  label: "Манёвр тепловоз ",
+                  value: "16 та"
                 },
               ]
             },
@@ -494,12 +530,12 @@ export default {
               id: 3,
               label: `Саралаш станциялар сони`,
               value: `1 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Қарши  ",
-                  value:""
+                  id: 0,
+                  label: "Қарши  ",
+                  value: ""
                 },
               ]
             },
@@ -507,12 +543,12 @@ export default {
               id: 4,
               label: `Локомотив деполар сони`,
               value: `1 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Қарши ",
-                  value:""
+                  id: 0,
+                  label: "Қарши ",
+                  value: ""
                 },
               ]
             },
@@ -520,57 +556,57 @@ export default {
               id: 5,
               label: `Вагон деполари сони`,
               value: `1 та`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 6,
               label: `Ходимлар сони`,
               value: `4469  нафар`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 7,
               label: `Мавжуд вагонлар сони`,
               value: `8045 та`,
-              iscollapse:false,
+              iscollapse: false,
             },
           ]
         },
         {
-          name:'Термез МТУ ',
-          data:[
+          name: 'Термез МТУ ',
+          data: [
             {
               id: 0,
               label: `Мавжуд темир йўл узунлиги `,
               value: `600,9 км`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 1,
               label: `Электрлаштирилган йўл `,
               value: `244,4 км`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 2,
               label: `Бириктирилган локомотивлар сони`,
               value: `45 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Электровозлар ",
-                  value:"11 та"
+                  id: 0,
+                  label: "Электровозлар ",
+                  value: "11 та"
                 },
                 {
-                  id:1,
-                  label:"Магистрал тепловоз  ",
-                  value:"14 та"
+                  id: 1,
+                  label: "Магистрал тепловоз  ",
+                  value: "14 та"
                 },
                 {
-                  id:2,
-                  label:"Манёвр тепловоз ",
-                  value:"20 та"
+                  id: 2,
+                  label: "Манёвр тепловоз ",
+                  value: "20 та"
                 },
               ]
             },
@@ -578,17 +614,17 @@ export default {
               id: 3,
               label: `Саралаш станциялар сони`,
               value: `2 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Термез ",
-                  value:""
+                  id: 0,
+                  label: "Термез ",
+                  value: ""
                 },
                 {
-                  id:1,
-                  label:"Қумқўрғон",
-                  value:""
+                  id: 1,
+                  label: "Қумқўрғон",
+                  value: ""
                 },
               ]
             },
@@ -596,12 +632,12 @@ export default {
               id: 4,
               label: `Локомотив деполар сони`,
               value: `1 та`,
-              iscollapse:true,
-              nodes_list:[
+              iscollapse: true,
+              nodes_list: [
                 {
-                  id:0,
-                  label:"Термез ",
-                  value:""
+                  id: 0,
+                  label: "Термез ",
+                  value: ""
                 },
               ]
             },
@@ -609,21 +645,21 @@ export default {
               id: 5,
               label: `Вагон деполари сони`,
               value: `1 та`,
-              iscollapse:false,
+              iscollapse: false,
             },
             {
               id: 6,
               label: `Ходимлар сони`,
               value: `3591  нафар`,
-              iscollapse:false,
+              iscollapse: false,
             },
           ]
         },
 
 
       ],
-      selected_mtu_list :[],
-      selected_overall_list:[],
+      selected_mtu_list: [],
+      selected_overall_list: [],
     }
   },
   methods: {
@@ -631,7 +667,7 @@ export default {
       this.$refs.overall_content.toggle(event);
     },
     control_overall2(event, isShow, list) {
-      if(isShow){
+      if (isShow) {
         this.selected_overall_list = list;
         this.$refs.overall2_ref.toggle(event);
       }
@@ -651,9 +687,15 @@ export default {
         this.$emit("closeDialog")
       }, 300)
     },
+    timeline_start() {
+      setInterval(() => {
+        this.show_animation = !this.show_animation
+      }, 1000)
+    }
   },
   mounted() {
     this.selected_mtu_list = this.mtu_data[0];
+    // this.timeline_start();
   }
 }
 </script>
@@ -676,7 +718,7 @@ export default {
 
   transform: translateY(-100px);
   opacity: 0;
-  transition: all 0.2s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 
@@ -685,16 +727,17 @@ export default {
   opacity: 1;
 }
 
-.gray-bg{
-  background:#F5F5F5;
+.gray-bg {
+  background: #F5F5F5;
 }
-.map_info_card{
-  width: 600px;
-  height:300px;
+
+.map_info_card {
+  width: 400px;
+  height: 200px;
   min-height: 100px;
   padding: 20px;
   position: fixed;
-  top: 50px;
+  bottom: 20px;
   right: 20px;
   background: #ffffff;
   background-filter: blur(12px);
@@ -706,5 +749,21 @@ export default {
   opacity: 1;
   transition: all 0.2s ease-out;
 
+}
+
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.2s ease-in;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-60px);
 }
 </style>

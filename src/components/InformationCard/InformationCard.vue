@@ -661,7 +661,6 @@ export default {
             },
           ]
         },
-
         {
           id:'stik3',
           name:'Ходжадавлет',
@@ -706,7 +705,7 @@ export default {
         },
         {
           id:'stik4',
-          name:'Сувонобод',
+          name:'Истиқлол',
           percent:'-55%',
           is_increment:false,
           data:[
@@ -748,7 +747,7 @@ export default {
         },
         {
           id:'stik5',
-          name:'Сувонобод',
+          name:'Найманкўл',
           percent:'+92%',
           is_increment:true,
           data:[
@@ -1127,7 +1126,7 @@ export default {
         },
         {
           id:'stik14',
-          name:'Учкурган',
+          name:'Қувасой',
           percent:'0%',
           is_increment:true,
           data:[
