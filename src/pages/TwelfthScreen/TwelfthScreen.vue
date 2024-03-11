@@ -4,6 +4,7 @@ import PulseAnimation from "../../components/PulseAnimation/PulseAnimation.vue";
 import PulseCenter from "../../components/PulseAnimation/PulseCenter.vue";
 import PersonSvg from "../../components/IconSvg/PersonSvg.vue";
 import { onMounted, ref } from "vue";
+import TitleText from "@/components/TitleText/TitleText.vue";
 
 const animated = ref(false)
 const totalP = ref(70)
@@ -31,7 +32,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full wrapper min-h-full relative flex flex-column justify-content-center align-items-center relative">
+  <div class="w-full wrapper min-h-full flex flex-column justify-content-center align-items-center relative">
+<!--    <div class='text-xl p-4 bg-white border-round-2xl border-2' style="top:10px">-->
+<!--      <span class="font-bold">Рақамлаштришдан олдинги ҳолат</span>-->
+<!--    </div>-->
     <PulseAnimation class='custom-pulse-animation overflow-visible' />
     <PulseCenter class='pulse'>
       <PersonSvg />
@@ -70,7 +74,7 @@ onMounted(() => {
 $blue: #234699;
 
 .wrapper {
-  margin-top: -4%
+  //margin-top: -4%
 }
 
 .box {
@@ -87,7 +91,6 @@ $blue: #234699;
     font-size: 20px;
     color: #A8111B;
   }
-
   p {
     margin: 0;
   }

@@ -2,7 +2,7 @@
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
     <OldMap style="transform:translateX(230px);" ref="old_map_ref"></OldMap>
 
-    <div @click="$refs.old_map_ref.drawPath()" class="btn-circle_box premium_bg flex gap-2 py-2 px-4">
+    <div @click="$refs.old_map_ref.old_draw_train()" class="btn-circle_box premium_bg flex gap-2 py-2 px-4">
       <i class='bx bx-refresh text-2xl'></i> Restart
     </div>
 

@@ -1,9 +1,9 @@
 <template>
-<!--  <div class="page_number_box">-->
-<!--    <span>{{page_number}}</span>-->
-<!--  </div>-->
+  <!--  <div class="page_number_box">-->
+  <!--    <span>{{page_number}}</span>-->
+  <!--  </div>-->
   <div class="fixed flex gap-4 control_button_panel">
-    <div @click="previous_page()" class="premium_bg" style="width: 80px;
+    <div @click="previous_page()" v-if="this.prevBtn" class="premium_bg" style="width: 80px;
   height: 40px;">
       <i class='bx bx-chevron-left text-white text-4xl'></i>
     </div>
@@ -11,11 +11,16 @@
   height: 40px;">
       <i class='bx bx-home text-white text-4xl'></i>
     </div>
-    <div @click="next_page()" class="premium_bg " style="width: 80px;
+    <div @click="next_page()" v-if="this.nextBtn" class="premium_bg " style="width: 80px;
   height: 40px;">
       <i class='bx bx-chevron-right text-white text-4xl'></i>
     </div>
   </div>
+
+
+
+
+
 </template>
 <script>
 export default {
@@ -23,75 +28,87 @@ export default {
     return {
       page_list: [
         {
-          index: 8,
+          index: 0,
           name: "eighth-screen"
         },
-        {
-          index: 4,
-          name: "fourth-screen"
-        },
-        {
-          index: 5,
-          name: "fiveth-screen"
-        },
-        {
-          index: 0,
-          name: "min-fin-one"
-        },
-        {
-          index: 6,
-          name: "min-fin-two"
-        },
-        {
-          index: 7,
-          name: "min-fin-three"
-        },
+        // {
+        //   index: 4,
+        //   name: "fourth-screen"
+        // },
+        // {
+        //   index: 5,
+        //   name: "fiveth-screen"
+        // },
+        // {
+        //   index: 0,
+        //   name: "min-fin-one"
+        // },
+        // {
+        //   index: 6,
+        //   name: "min-fin-two"
+        // },
+        // {
+        //   index: 7,
+        //   name: "min-fin-three"
+        // },
+        // {
+        //   index: 1,
+        //   name: "min-fin-four"
+        // },
+        // {
+        //   index: 2,
+        //   name: "min-fin-five"
+        // },
+        // {
+        //   index: 2,
+        //   name: "min-fin-seven"
+        // },
         {
           index: 1,
-          name: "min-fin-four"
-        },
-        {
-          index: 2,
-          name: "min-fin-five"
-        },
-        {
-          index: 2,
-          name: "min-fin-seven"
-        },
-        {
-          index: 3,
           name: "zero-screen"
         },
-        {
-          index: 9,
-          name: "sixth-screen"
-        },
-        {
-          index: 9,
-          name: "seventh-screen"
-        },
-        {
-          index: 9,
-          name: "gruz"
-        },
+        // {
+        //   index: 9,
+        //   name: "sixth-screen"
+        // },
+        // {
+        //   index: 9,
+        //   name: "seventh-screen"
+        // },
+        // {
+        //   index: 9,
+        //   name: "gruz"
+        // },
         // {
         //   index: 9,
         //   name: "eticket"
         // },
         {
-          index: 9,
+          index: 2,
           name: "tenth-screen"
         },
         {
-          index: 9,
+          index: 3,
+          name: "eleventh-screen"
+        },
+        {
+          index: 4,
+          name: "twelfth-screen"
+        },
+        {
+          index: 5,
+          name: "thirteen-screen"
+        },
+        {
+          index: 6,
           name: "first-screen"
         },
         {
-          index: 9,
+          index: 7,
           name: "second-screen"
         },
         {
-          index: 9,
+          index: 8,
           name: "nst-infra"
         },
         {
@@ -99,51 +116,58 @@ export default {
           name: "vols"
         },
         {
-          index: 9,
+          index: 10,
           name: "third-screen"
         },
       ],
       page_index: 0,
-      page_number:1,
+      page_number: 1,
+      nextBtn: true,
+      prevBtn: true,
+      nextRouteName: '',
+      prevRouteName: ''
     }
   },
   watch: {
     '$route': {
-      handler: function(route) {
-        console.log(route)
-      this.page_number = route.meta.pageNUmber;
+      handler: function (route) {
+        this.page_number = route.meta.pageNUmber;
         this.page_index = route.meta.pageNUmber - 1;
 
-        },
+        let routeName = route.name
+        let currentRoute = this.page_list.filter(function (el) {
+          return el.name === routeName;
+        });
+
+        this.nextRouteName = this.page_list.filter(function (el) {
+          return el.index === currentRoute[0].index + 1;
+        })[0]?.name;
+
+        this.prevRouteName = this.page_list.filter(function (el) {
+          return el.index === currentRoute[0].index - 1;
+        })[0]?.name;
+
+        this.nextBtn = !!this.nextRouteName
+        this.prevBtn = !!this.prevRouteName
+      },
       deep: true,
       immediate: true
     }
   },
   methods: {
     goPusg(route_name) {
-      console.log(route_name)
       this.$router.push({name: route_name})
     },
     next_page() {
-      if (this.page_index <= this.page_list.length - 2) {
-        this.page_index = this.page_index + 1;
-
-      } else {
-        this.page_index = 0;
-      }
-      let route_name = this.page_list[this.page_index].name;
-      this.goPusg(route_name);
+      this.goPusg(this.nextRouteName);
     },
     previous_page() {
-      if (this.page_index >= 1) {
-        this.page_index = this.page_index - 1;
+      this.goPusg(this.prevRouteName);
 
-      } else {
-        this.page_index = this.page_list.length - 1;
-      }
-      let route_name = this.page_list[this.page_index].name;
-      this.goPusg(route_name);
+    },
 
+    change_event(id){
+      this.$emit("eventButton", id)
     }
 
 
@@ -161,6 +185,7 @@ export default {
         this.next_page()
       }
     };
+
   }
 
 }
@@ -168,20 +193,20 @@ export default {
 
 
 <style scoped lang="scss">
-.page_number_box{
-  position:absolute;
+.page_number_box {
+  position: absolute;
   top: 160px;
-  right:0px;
-  width:80px;
+  right: 0;
+  width: 80px;
   height: 40px;
   background: #2F5597;
   z-index: 12;
-  font-size:20px;
+  font-size: 20px;
   color: white;
-  display:flex;
+  display: flex;
   font-weight: bold;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
