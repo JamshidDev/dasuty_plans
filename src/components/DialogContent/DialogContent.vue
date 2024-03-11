@@ -45,34 +45,33 @@
   </span>
 
 
-<!--  <span v-if="!dialog_visible">-->
-<!--      <div class="map_info_card shadow-1 border-1 border-blue-200" @click="show_animation=!show_animation">-->
-<!--         <div class="relative overflow-hidden w-full min-h-full">-->
-<!--           <Transition name="slide-up">-->
-<!--                <div v-if="show_animation" class="absolute left-0 top-0 w-full flex">-->
-<!--                  <Timeline class="w-full" :value="timeline_one">-->
-<!--              <template #opposite="slotProps">-->
-<!--        <small class="p-text-secondary">{{ slotProps.item.date }}</small>-->
-<!--    </template>-->
-<!--    <template #content="slotProps">-->
-<!--        {{ slotProps.item.status }}-->
-<!--    </template>-->
-<!--          </Timeline>-->
-<!--                </div>-->
-<!--            <div v-else class="absolute left-0 top-0 w-full flex">-->
-<!--                     <Timeline :value="timeline_two">-->
-<!--              <template #opposite="slotProps">-->
-<!--        <small class="p-text-secondary">{{ slotProps.item.date }}</small>-->
-<!--    </template>-->
-<!--    <template #content="slotProps">-->
-<!--        {{ slotProps.item.status }}-->
-<!--    </template>-->
-<!--          </Timeline>-->
-<!--                </div>-->
-<!--         </Transition>-->
-<!--         </div>-->
-<!--      </div>-->
-<!--    </span>-->
+  <span v-if="time_line_dialog">
+      <div class="map_info_card shadow-1 border-1 border-blue-200" @click="show_animation=!show_animation">
+         <div class="relative overflow-hidden w-full min-h-full">
+            <Timeline v-if="is_show_one" class="w-full" :value="timeline_one">
+              <template #opposite="slotProps">
+        <small class="text-blue-600 font-bold">{{ slotProps.item.date }}</small>
+    </template>
+    <template #content="slotProps" class="h-3rem">
+        <div class="flex justify-content-between w-full px-2 align-items-center border-round"  :class="slotProps.item.show? 'bg-blue-100' : 'bg-transparent'">
+          <span>{{ slotProps.item.status }}</span> <i class='bx bxs-left-arrow-circle text-lg' :class="slotProps.item.show? 'text-primary' : 'text-white'"></i>
+        </div>
+    </template>
+          </Timeline>
+            <Timeline v-else class="w-full" :value="timeline_two">
+              <template #opposite="slotProps">
+        <small class="text-blue-600 font-bold">{{ slotProps.item.date }}</small>
+    </template>
+    <template #content="slotProps" class="h-3rem">
+        <div class="flex justify-content-between w-full px-2 align-items-center border-round"  :class="slotProps.item.show? 'bg-blue-100' : 'bg-transparent'">
+          <span>{{ slotProps.item.status }}</span> <i class='bx bxs-left-arrow-circle text-lg' :class="slotProps.item.show? 'text-primary' : 'text-white'"></i>
+        </div>
+    </template>
+          </Timeline>
+
+         </div>
+      </div>
+    </span>
 
   <OverlayPanel ref="overall2_ref" style="width:400px">
     <div class="grid">
@@ -100,14 +99,28 @@ export default {
       active_dialog: false,
       show_animation: false,
       timeline_one: [
-        {status: 'Ахтачи', date: '15/10/2020 10:30', icon: 'pi pi-shopping-cart', color: '#9C27B0'},
-        {status: 'Қоқон', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: '#673AB7'},
-        {status: 'Поп', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: '#FF9800'},
+        {status: 'Ахтачи', date: '0 дақиқа', icon: 'pi pi-shopping-cart', show: false},
+        {status: 'Охунбобоев', date: '25 соат', icon: 'pi pi-cog', show: false},
+        {status: 'Қўқон', date: '13 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Поп', date: '50 дақиқа', icon: 'pi pi-shopping-cart', show: false},
+        {status: 'Ангрен', date: '1 соат', icon: 'pi pi-cog',show: false},
+        {status: 'Оҳангарон', date: '1 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Ўзбекистон', date: '1 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Хаваст', date: '22 соат', icon: 'pi pi-cog',show: false},
+        {status: 'Мароканд', date: '8 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Бухоро', date: '20 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Мискин', date: '1 соат 20 дақиқа', icon: 'pi pi-cog',show: false},
+        {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
       ],
       timeline_two: [
-        {status: 'Мароканд', date: '15/10/2020 10:30', icon: 'pi pi-shopping-cart', color: '#9C27B0'},
-        {status: 'Хаваст', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: '#673AB7'},
-        {status: 'Мискин', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: '#FF9800'},
+        {status: 'Ахтачи', date: '0 дақиқа', icon: 'pi pi-shopping-cart', show: false},
+        {status: 'Охунбобоев', date: '40 дақиқа', icon: 'pi pi-cog', show: false},
+        {status: 'Поп', date: '50 дақиқа', icon: 'pi pi-shopping-cart', show: false},
+        {status: 'Ангрен', date: '1 соат', icon: 'pi pi-cog',show: false},
+        {status: 'Мароканд', date: '8 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Бухоро', date: '20 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Мискин', date: '1 соат 20 дақиқа', icon: 'pi pi-cog',show: false},
+        {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
       ],
       mtu_data: [
         {
@@ -160,7 +173,7 @@ export default {
                 label1: `Саралаш станциялар сони`,
                 value1: `3 та`,
                 label2: 'Умумий стансиялар сони',
-                value2: `3 та`,
+                value2: `58 та`,
               },
 
               iscollapse: true,
@@ -259,8 +272,13 @@ export default {
             },
             {
               id: 3,
-              label: `Саралаш станциялар сони`,
-              value: `2 та`,
+              multiple_label: true,
+              labels: {
+                label1: `Саралаш станциялар сони`,
+                value1: `2 та`,
+                label2: 'Умумий стансиялар сони',
+                value2: `38 та`,
+              },
               iscollapse: true,
               nodes_list: [
                 {
@@ -342,8 +360,14 @@ export default {
             },
             {
               id: 3,
-              label: `Саралаш станциялар сони`,
-              value: `4 та`,
+              multiple_label: true,
+              labels: {
+                label1: `Саралаш станциялар сони`,
+                value1: `4 та`,
+                label2: 'Умумий стансиялар сони',
+                value2: `69 та`,
+              },
+
               iscollapse: true,
               nodes_list: [
                 {
@@ -435,8 +459,15 @@ export default {
             },
             {
               id: 3,
-              label: `Саралаш станциялар сони`,
-              value: `3 та`,
+
+              multiple_label: true,
+              labels: {
+                label1: `Саралаш станциялар сони`,
+                value1: `3 та`,
+                label2: 'Умумий стансиялар сони',
+                value2: `49 та`,
+              },
+
               iscollapse: true,
               nodes_list: [
                 {
@@ -528,8 +559,13 @@ export default {
             },
             {
               id: 3,
-              label: `Саралаш станциялар сони`,
-              value: `1 та`,
+              multiple_label: true,
+              labels: {
+                label1: `Саралаш станциялар сони`,
+                value1: `1 та`,
+                label2: 'Умумий стансиялар сони',
+                value2: `30 та`,
+              },
               iscollapse: true,
               nodes_list: [
                 {
@@ -612,8 +648,13 @@ export default {
             },
             {
               id: 3,
-              label: `Саралаш станциялар сони`,
-              value: `2 та`,
+              multiple_label: true,
+              labels: {
+                label1: `Саралаш станциялар сони`,
+                value1: `2 та`,
+                label2: 'Умумий стансиялар сони',
+                value2: `26 та`,
+              },
               iscollapse: true,
               nodes_list: [
                 {
@@ -660,6 +701,9 @@ export default {
       ],
       selected_mtu_list: [],
       selected_overall_list: [],
+      timeline_timeout :null,
+      is_show_one:true,
+      time_line_dialog:false,
     }
   },
   methods: {
@@ -687,21 +731,79 @@ export default {
         this.$emit("closeDialog")
       }, 300)
     },
-    timeline_start() {
-      setInterval(() => {
-        this.show_animation = !this.show_animation
-      }, 1000)
-    }
+    async old_timeline_start() {
+      this.time_line_dialog = true;
+      this.is_show_one = true;
+      for(let i=0; i<this.timeline_one.length; i++){
+        this.timeline_one[i].show=false;
+      }
+      clearTimeout(this.timeline_timeout);
+      this.show_animation = true;
+
+      for(let i=0; i<this.timeline_one.length; i++){
+
+        if(i>0){
+          this.timeline_one[i-1].show=false;
+        }
+        this.timeline_one[i].show=true;
+          await new Promise(resolve => {
+            this.timeline_timeout = setTimeout(resolve, 600);
+            return this.timeline_timeout;
+          });
+
+
+
+
+
+      }
+      // setInterval(() => {
+      //   this.show_animation = !this.show_animation
+      // }, 6000)
+    },
+    async new_timeline_start() {
+      this.time_line_dialog = true;
+      this.is_show_one = false;
+      for(let i=0; i<this.timeline_two.length; i++){
+        this.timeline_two[i].show=false;
+      }
+      clearTimeout(this.timeline_timeout);
+      this.show_animation = true;
+
+      for(let i=0; i<this.timeline_two.length; i++){
+
+        if(i>0){
+          this.timeline_two[i-1].show=false;
+        }
+        this.timeline_two[i].show=true;
+        await new Promise(resolve => {
+          this.timeline_timeout = setTimeout(resolve, 600);
+          return this.timeline_timeout;
+        });
+
+
+
+
+
+      }
+      // setInterval(() => {
+      //   this.show_animation = !this.show_animation
+      // }, 6000)
+    },
+    async close_timeline() {
+      this.time_line_dialog = false;
+    },
+
   },
   mounted() {
     this.selected_mtu_list = this.mtu_data[0];
-    // this.timeline_start();
+
+
   }
 }
 </script>
 
 
-<style scoped lang="scss">
+<style  lang="scss">
 
 .dialog-container {
   width: 500px;
@@ -721,6 +823,10 @@ export default {
   transition: all 0.4s ease-out;
 }
 
+.p-timeline-event {
+  min-height: 20px;
+}
+
 
 .open_dialog {
   transform: translateY(0px);
@@ -733,11 +839,10 @@ export default {
 
 .map_info_card {
   width: 400px;
-  height: 200px;
-  min-height: 100px;
-  padding: 20px;
+  min-height: 200px;
+  padding: 10px 20px;
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   right: 20px;
   background: #ffffff;
   background-filter: blur(12px);

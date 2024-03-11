@@ -436,7 +436,7 @@ export default {
       station_line_list: [
         {
           id: 'uchas11',
-          name: '- узел Узбекистан - Сарыагач',
+          name: 'Сарыагаш-Узбекистон-Тукимачи-Келес',
           color: '#996633',
           map: {
             x: -3665,
@@ -446,7 +446,7 @@ export default {
         },
         {
           id: 'uchas10',
-          name: '- Даштабад - Узбекистан - Далагузар и Дустлик',
+          name: 'Узбекистон-Хаваст-Жиззах',
           color: '#cccccc',
           map: {
             x: -2818,
@@ -456,7 +456,7 @@ export default {
         },
         {
           id: 'uchas12',
-          name: '- центр Салар - Ходжикент, Тукимачи - Ангрен',
+          name: 'Ходжикент-Тошкент-Ангрен',
           color: '#faff81',
           map: {
             x: -4155,
@@ -466,7 +466,7 @@ export default {
         },
         {
           id: 'uchas9',
-          name: '- Мароканд - Даштабад',
+          name: 'Хаваст-Жиззах-Мараканд',
           color: '#ff99cc',
           map: {
             x: -4273,
@@ -486,7 +486,7 @@ export default {
         },
         {
           id: 'uchas14',
-          name: '- узел Коканд (Коканд - Андижан - Карасу)',
+          name: 'Коканд-Маргилон-Андижон',
           color: '#9933cc',
           map: {
             x: -5030,
@@ -496,7 +496,7 @@ export default {
         },
         {
           id: 'uchas5',
-          name: '- Фарап - Навои - Мароканд',
+          name: 'Фарап-Мараканд',
           color: '#ffcc00',
           map: {
             x: -1430,
@@ -506,7 +506,7 @@ export default {
         },
         {
           id: 'uchas3',
-          name: '- Мискен - Учкудук - Тинчлик',
+          name: 'Тинчлик-Учкудук-Мискен',
           color: '#cc3399',
           map: {
             x: -1175,
@@ -516,7 +516,7 @@ export default {
         },
         {
           id: 'uchas2',
-          name: '- Кунград - Мискен - Ургенч',
+          name: 'Кунград-Тахиаташ-Нукус-Мискен-Обод-Газоджак',
           color: '#00ccff',
           map: {
             x: -554,
@@ -526,7 +526,7 @@ export default {
         },
         {
           id: 'uchas1',
-          name: '- Кунград - Каракалпакстан',
+          name: 'Кунград - Каракалпакстан',
           color: '#6600cc',
           map: {
             x: -183,
@@ -536,7 +536,7 @@ export default {
         },
         {
           id: 'uchas6',
-          name: '- Бухара - Карши - Мароканд - Ташгузар',
+          name: 'Бухоро-Карши-Мараканд-Китоб',
           color: '#33cc66',
           map: {
             x: -2140,
@@ -547,7 +547,7 @@ export default {
 
         {
           id: 'uchas7',
-          name: '- Ташгузар-Кумгурган',
+          name: 'Тошгузор-Бойсун-Кумкурган',
           color: '#6699ff',
           map: {
             x: -2444,
@@ -556,7 +556,7 @@ export default {
           }
         }, {
           id: 'uchas8',
-          name: '- Болдырь -Термез Кудукли и Талимарждан - Карши',
+          name: 'Карши-Талимарджан-Рзд.161-Термез-Кудукли-Галаба',
           color: '#ff0000',
           map: {
             x: -2459,
@@ -566,7 +566,7 @@ export default {
         },
         {
           id: 'uchas4',
-          name: '- Бухара - Мискин',
+          name: 'Бухара - Мискин',
           color: '#000066',
           map: {
             x: -1539,
@@ -588,15 +588,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:32232341,
+                  count:'32 232 341',
                 },
                 {
                   name:'Вагон',
-                  count:546311,
+                  count:'546 311',
                 },
                 {
                   name:'Поезд',
-                  count:9584,
+                  count:'9 584',
                 },
               ]
             },
@@ -605,15 +605,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:39598991,
+                  count:'39 598 991',
                 },
                 {
                   name:'Вагон',
-                  count:671169,
+                  count:'671 169',
                 },
                 {
                   name:'Поезд',
-                  count:11775,
+                  count:'11 775',
                 },
               ]
             },
@@ -672,15 +672,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:2274864,
+                  count:'2 274 864',
                 },
                 {
                   name:'Вагон',
-                  count:38557,
+                  count:'38 557',
                 },
                 {
                   name:'Поезд',
-                  count:676,
+                  count:'676',
                 },
               ]
             },
@@ -689,15 +689,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:1940506,
+                  count:'1 940 506',
                 },
                 {
                   name:'Вагон',
-                  count:32889,
+                  count:'32 889',
                 },
                 {
                   name:'Поезд',
-                  count:577,
+                  count:'577',
                 },
               ]
             },
@@ -714,15 +714,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:151838,
+                  count:'151 838',
                 },
                 {
                   name:'Вагон',
-                  count:2573,
+                  count:'2 573',
                 },
                 {
                   name:'Поезд',
-                  count:45,
+                  count:'45',
                 },
               ]
             },
@@ -731,15 +731,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:66682,
+                  count:'66 682',
                 },
                 {
                   name:'Вагон',
-                  count:1130,
+                  count:'1 130',
                 },
                 {
                   name:'Поезд',
-                  count:20,
+                  count:'20',
                 },
               ]
             },
@@ -756,15 +756,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:79880,
+                  count:'79 880',
                 },
                 {
                   name:'Вагон',
-                  count:1353,
+                  count:'1 353',
                 },
                 {
                   name:'Поезд',
-                  count:24,
+                  count:'24',
                 },
               ]
             },
@@ -773,15 +773,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:154101,
+                  count:'154 101',
                 },
                 {
                   name:'Вагон',
-                  count:2611,
+                  count:'2 611',
                 },
                 {
                   name:'Поезд',
-                  count:46,
+                  count:'46',
                 },
               ]
             },
@@ -798,15 +798,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:2633839,
+                  count:'2 633 839',
                 },
                 {
                   name:'Вагон',
-                  count:44641,
+                  count:'44 641',
                 },
                 {
                   name:'Поезд',
-                  count:783,
+                  count:'783',
                 },
               ]
             },
@@ -815,15 +815,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:3464705,
+                  count:'3 464 705',
                 },
                 {
                   name:'Вагон',
-                  count:58723,
+                  count:'58 723',
                 },
                 {
                   name:'Поезд',
-                  count:1030,
+                  count:'1 030',
                 },
               ]
             },
@@ -841,15 +841,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:439117,
+                  count:'439 117',
                 },
                 {
                   name:'Вагон',
-                  count:7443,
+                  count:'7 443',
                 },
                 {
                   name:'Поезд',
-                  count:131,
+                  count:'131',
                 },
               ]
             },
@@ -858,15 +858,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:522676,
+                  count:'522 676',
                 },
                 {
                   name:'Вагон',
-                  count:8858,
+                  count:'8 858',
                 },
                 {
                   name:'Поезд',
-                  count:155,
+                  count:'155',
                 },
               ]
             },
@@ -883,15 +883,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:2447322,
+                  count:'2 447 322',
                 },
                 {
                   name:'Вагон',
-                  count:41480,
+                  count:'41 480',
                 },
                 {
                   name:'Поезд',
-                  count:728,
+                  count:'728',
                 },
               ]
             },
@@ -900,15 +900,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:2694630,
+                  count:'2 694 630',
                 },
                 {
                   name:'Вагон',
-                  count:45671,
+                  count:'45 671',
                 },
                 {
                   name:'Поезд',
-                  count:801,
+                  count:'801',
                 },
               ]
             },
@@ -925,15 +925,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:4058174,
+                  count:'4 058 174',
                 },
                 {
                   name:'Вагон',
-                  count:68782,
+                  count:'68 782',
                 },
                 {
                   name:'Поезд',
-                  count:1207,
+                  count:'1 207',
                 },
               ]
             },
@@ -942,15 +942,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:4154021,
+                  count:'4 154 021',
                 },
                 {
                   name:'Вагон',
-                  count:70407,
+                  count:'70 407',
                 },
                 {
                   name:'Поезд',
-                  count:1235,
+                  count:'1 235',
                 },
               ]
             },
@@ -967,15 +967,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:16836,
+                  count:'16 836',
                 },
                 {
                   name:'Вагон',
-                  count:285,
+                  count:'285',
                 },
                 {
                   name:'Поезд',
-                  count:5,
+                  count:'5',
                 },
               ]
             },
@@ -984,15 +984,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:15680,
+                  count:'15 680',
                 },
                 {
                   name:'Вагон',
-                  count:266,
+                  count:'266',
                 },
                 {
                   name:'Поезд',
-                  count:5,
+                  count:'5',
                 },
               ]
             },
@@ -1009,15 +1009,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:142518,
+                  count:'142 518',
                 },
                 {
                   name:'Вагон',
-                  count:2415,
+                  count:'2 415',
                 },
                 {
                   name:'Поезд',
-                  count:42,
+                  count:'42',
                 },
               ]
             },
@@ -1026,15 +1026,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:152939,
+                  count:'152 939',
                 },
                 {
                   name:'Вагон',
-                  count:2592,
+                  count:'2 592',
                 },
                 {
                   name:'Поезд',
-                  count:45,
+                  count:'45',
                 },
               ]
             },
@@ -1051,15 +1051,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:151838,
+                  count:'151 838',
                 },
                 {
                   name:'Вагон',
-                  count:2573,
+                  count:'2 573',
                 },
                 {
                   name:'Поезд',
-                  count:45,
+                  count:'45',
                 },
               ]
             },
@@ -1068,15 +1068,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:66682,
+                  count:'66 682',
                 },
                 {
                   name:'Вагон',
-                  count:1130,
+                  count:'1 130',
                 },
                 {
                   name:'Поезд',
-                  count:20,
+                  count:'20',
                 },
               ]
             },
@@ -1093,15 +1093,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:284507,
+                  count:'284 507',
                 },
                 {
                   name:'Вагон',
-                  count:4822,
+                  count:'4 822',
                 },
                 {
                   name:'Поезд',
-                  count:85,
+                  count:'85',
                 },
               ]
             },
@@ -1110,15 +1110,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:489416,
+                  count:'489 416',
                 },
                 {
                   name:'Вагон',
-                  count:8295,
+                  count:'8 295',
                 },
                 {
                   name:'Поезд',
-                  count:146,
+                  count:'146',
                 },
               ]
             },
@@ -1177,15 +1177,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:4204113,
+                  count:'4 204 113',
                 },
                 {
                   name:'Вагон',
-                  count:71256,
+                  count:'71 256',
                 },
                 {
                   name:'Поезд',
-                  count:1250,
+                  count:'1 250',
                 },
               ]
             },
@@ -1194,15 +1194,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:4263648,
+                  count:'4 263 648',
                 },
                 {
                   name:'Вагон',
-                  count:72265,
+                  count:'72 265',
                 },
                 {
                   name:'Поезд',
-                  count:1267,
+                  count:'1 267',
                 },
               ]
             },
@@ -1219,11 +1219,11 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:1238571,
+                  count:'1 238 571',
                 },
                 {
                   name:'Вагон',
-                  count:20992,
+                  count:'20 992',
                 },
                 {
                   name:'Поезд',
@@ -1236,11 +1236,11 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:1847310,
+                  count:'1 847 310',
                 },
                 {
                   name:'Вагон',
-                  count:31310,
+                  count:'31 310',
                 },
                 {
                   name:'Поезд',

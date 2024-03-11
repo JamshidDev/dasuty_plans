@@ -39,23 +39,23 @@
     <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
     <InformationCard ref="information_modal_ref" @closeInfoMap="close_info_map()"  @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" v-if="general_info_show"></InformationCard>
     <div v-if="$route.name ==='zero-screen'" class="fixed flex gap-2 absolute" style="bottom:10px; left:620px; z-index:10">
-      <div @click="$refs.railway_map_ref.clear_all()"  class="surface-card border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 60px;
+      <div @click="clear_all_train()"  class="surface-card border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 60px;
   height: 40px;">
         <!--      Олдинги ҳолат-->
         <i class='bx bx-hide text-500 text-4xl'></i>
 
       </div>
-      <div @click="$refs.railway_map_ref.old_draw_train()"    class="surface-card border-1 text-500 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
+      <div @click="draw_old_train()"    class="surface-card border-1 text-500 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
   height: 40px;">
         Олдинги ҳолат
         <i class='bx bx-show text-500 text-4xl'></i>
       </div>
-      <div @click="$refs.railway_map_ref.new_draw_train()"   class="surface-card text-500 border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
+      <div @click="draw_new_train()"   class="surface-card text-500 border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
   height: 40px;">
         Ҳозирги ҳолат
         <i class='bx bx-show text-500 text-4xl'></i>
       </div>
-      <div @click="$refs.railway_map_ref.test_draw_train()"   class="surface-card text-500 border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
+      <div @click="draw_test_train()"   class="surface-card text-500 border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
   height: 40px;">
         тест ҳолат
         <i class='bx bx-show text-500 text-4xl'></i>
@@ -140,6 +140,24 @@ export default {
     close_info_map(){
       this.go_push_element(38.6, -103, 1.2);
     },
+
+    draw_old_train(){
+      this.$refs.railway_map_ref.old_draw_train();
+      this.$refs.dialog_ref.old_timeline_start();
+    },
+    draw_new_train(){
+      this.$refs.railway_map_ref.new_draw_train();
+      this.$refs.dialog_ref.new_timeline_start();
+
+    },
+    draw_test_train(){
+      this.$refs.railway_map_ref.test_draw_train();
+      this.$refs.dialog_ref.close_timeline();
+    },
+    clear_all_train(){
+      this.$refs.dialog_ref.close_timeline();
+      this.$refs.railway_map_ref.clear_all();
+    }
   },
 
   mounted() {
