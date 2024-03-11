@@ -32,8 +32,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full min-h-full flex flex-column justify-content-center align-items-center relative">
-    <TitleText class='heading' title='Рақамлаштришдан олдинги ҳолат'></TitleText>
+  <div class="w-full min-h-full flex flex-column justify-content-center align-items-center">
+    <TitleText class='heading' title='Рақамлаштиришдан олдинги ҳолат'></TitleText>
     <PulseAnimation class='custom-pulse-animation overflow-visible' />
     <PulseCenter class='pulse'>
       <PersonSvg />

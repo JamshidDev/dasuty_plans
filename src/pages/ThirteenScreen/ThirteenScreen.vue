@@ -3,7 +3,6 @@
 import PulseAnimation from "../../components/PulseAnimation/PulseAnimation.vue";
 import PulseCenter from "../../components/PulseAnimation/PulseCenter.vue";
 import { onMounted, ref } from "vue";
-import MobileDevice from "../../components/IconSvg/MobileDevice.vue";
 import TitleText from "../../components/TitleText/TitleText.vue";
 
 const animated = ref(false)
@@ -27,11 +26,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full wrapper min-h-full relative flex flex-column justify-content-center align-items-center relative">
-    <TitleText class='heading' title='Рақамлаштришдан кейинги ҳолат'></TitleText>
+  <div class="w-full wrapper min-h-full flex flex-column justify-content-center align-items-center">
+    <TitleText class='heading' title='Рақамлаштиришдан кейинги ҳолат'></TitleText>
     <PulseAnimation class='custom-pulse-animation overflow-visible' />
-    <PulseCenter class='pulse'>
-      <MobileDevice />
+    <PulseCenter class='pulse relative'>
+      <!--      <MobileDevice />-->
+      <div class='relative text'>
+        <div class="typing-demo">
+          E-NAKL
+        </div>
+      </div>
+      <img class='oneid absolute' src='/images/one-id.png' alt='one-id'>
+      <img class='tax absolute' src='/images/soliq.png' alt='one-id'>
+      <img class='bank absolute' src='/images/milliy-bank.png' alt='one-id'>
+      <img class='railway absolute' src='/images/temir-yol-kengashi.png' alt='one-id'>
+      <img class='customs absolute' src='/images/bojxona.png' alt='one-id'>
     </PulseCenter>
     <div class='outline-wrapper'>
       <div class='relative'>
@@ -63,39 +72,22 @@ onMounted(() => {
     <div class='p-3 border-round-2xl border-3 bg-white absolute total-info' style='border-color: #11A832;'>
       <div class='text-2xl font-medium'>
         “Ягона дарча” ахборот тизими <br />фойдаланувчилари сони – <span class='text-3xl font-semibold'
-                                                                         style='color: #11A832'>8836</span> нафар.
+                                                                         style='color: #11A832'>18354</span> нафар.
       </div>
-      <ul class='text-xl'>
-        <li class='py-1'>юридик шахс - <span class='font-medium' style='color: #11A832'>8074</span></li>
-        <li class='py-1'>жисмоний шахс - <span class='font-medium' style='color: #11A832'>688</span></li>
-        <li class='py-1'>якка тартибдаги тадбиркор - <span class='font-medium' style='color: #11A832'>74</span></li>
-      </ul>
-      <div class='text-2xl font-medium'>
+      <div class='text-2xl font-medium mb-2'>
         Умумий сарфланган вақт <span style='color:#11A832' class='text-4xl font-semibold'>12</span> соатни <br /> ташкил
         қилади
       </div>
     </div>
-    <div class='p-3 border-round-2xl border-3 bg-white absolute flex flex-column gap-1 integration-info' style='border-color: #11A832;'>
-      <div class='text-2xl font-medium mb-2'>Yagona darcha integratsiyalar</div>
-      <div class='flex align-items-center justify-content-between text-lg'>
-        ONE ID
-        <img class='h-2rem w-auto' src='/images/one-id.png' alt='one-id'>
+    <div class='p-3 border-round-2xl border-3 bg-white absolute flex flex-column gap-1 integration-info'
+         style='border-color: #11A832;'>
+
+      <div class='text-xl font-medium mb-2'>
+        Экспорт учун мурожаатлар <span style='color:#11A832' class='text-3xl font-semibold'>2742</span>
       </div>
-      <div class='flex align-items-center justify-content-between text-lg'>
-        Марказий банк
-        <img class='h-2rem w-auto' src='/images/milliy-bank.png' alt='markaziy-bank.png'>
-      </div>
-      <div class='flex align-items-center justify-content-between text-lg'>
-        Давлат солиқ қўмитаси
-        <img class='h-2rem w-auto' src='/images/soliq.png' alt='one-id'>
-      </div>
-      <div class='flex align-items-center justify-content-between text-lg'>
-        Темир йўл транспорти кенгаши
-        <img class='h-2rem w-auto' src='/images/temir-yol-kengashi.png' alt='one-id'>
-      </div>
-      <div class='flex align-items-center justify-content-between text-lg'>
-        Давлат божхона қўмитаси
-        <img class='h-2rem w-auto' src='/images/bojxona.png' alt='one-id'>
+
+      <div class='text-xl font-medium mb-2'>
+        Маҳаллий ташувларда мурожаатлар <span style='color:#11A832' class='text-3xl font-semibold'>16862</span>
       </div>
     </div>
   </div>
@@ -103,12 +95,95 @@ onMounted(() => {
 
 <style scoped lang="scss">
 
+.pulse {
+  justify-content: flex-start;
+}
+
+.text {
+  font-size: 40px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-top: -65px;
+  place-items: center;
+}
+
+.typing-demo {
+  animation: typing 2s steps(22);
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 2px;
+
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.oneid {
+  left: 38%;
+  top: 45%;
+  width: 80px;
+  height: auto;
+  z-index: 10;
+  animation: zoom-in-zoom-out 2s ease-out infinite;
+  filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .3));
+}
+
+.tax {
+  left: 30%;
+  top: 15%;
+  width: 75px;
+  height: auto;
+  animation: zoom-in-zoom-out 2s ease-out infinite;
+  animation-delay: 0.5s;
+  filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .3));
+}
+
+.railway {
+  left: 10%;
+  top: 50%;
+  width: 70px;
+  height: auto;
+  animation: zoom-in-zoom-out 2s ease-out infinite;
+  animation-delay: 0.75s;
+  filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .3));
+}
+
+.customs {
+  left: 50%;
+  top: 65%;
+  width: 75px;
+  height: auto;
+  animation: zoom-in-zoom-out 4s ease-out infinite;
+  animation-delay: 1s;
+  filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .3));
+}
+
+.bank {
+  left: 70%;
+  top: 30%;
+  width: 70px;
+  height: auto;
+  animation: zoom-in-zoom-out 2s ease-out infinite;
+  animation-delay: 1.5s;
+  filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .3));
+}
+
 .integration-info {
   right: 50px;
   bottom: 50px;
   animation: 1.5s fadeIn forwards;
   opacity: 0;
   animation-delay: 5s;
+
 }
 
 .total-info {

@@ -111,18 +111,8 @@ onMounted(() => {
   </div>
 
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 $blue: #234699;
-
-.special-countTime {
-  bottom: -20px !important;
-
-  .button_content {
-    color: #fff;
-    background-color: $blue;
-    border: 0;
-  }
-}
 
 .progress-rate {
   position: absolute;
