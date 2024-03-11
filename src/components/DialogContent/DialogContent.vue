@@ -47,6 +47,15 @@
 
   <span v-if="time_line_dialog">
       <div class="map_info_card shadow-1 border-1 border-blue-200" @click="show_animation=!show_animation">
+        <div class="mt-0 text-500 mb-2">
+          <div class="text-red-500 font-bold w-full text-center" v-if="is_show_one">Олдинги ҳолат</div>
+          <div class="text-green-600 font-bold w-full text-center" v-else>Ҳозирги ҳолат</div>
+          <div class="flex justify-content-evenly text-900 font-bold mt-1">
+            <span>Ахтачи</span>
+            <span><i class='bx bx-right-arrow-alt'></i></span>
+            <span>Нукус</span>
+          </div>
+        </div>
          <div class="relative overflow-hidden w-full min-h-full">
             <Timeline v-if="is_show_one" class="w-full" :value="timeline_one">
               <template #opposite="slotProps">
@@ -70,6 +79,11 @@
           </Timeline>
 
          </div>
+        <div class="flex justify-content-evenly text-sm mt-3 font-bold">
+          <span class="pl-4">Умумий вақт</span>
+          <span v-if="is_show_one" class=" pl-4">73 соат 10 дақиқа</span>
+          <span v-else class=" pl-4">31 соат 50 дақиқа</span>
+        </div>
       </div>
     </span>
 
@@ -99,7 +113,7 @@ export default {
       active_dialog: false,
       show_animation: false,
       timeline_one: [
-        {status: 'Ахтачи', date: '0 дақиқа', icon: 'pi pi-shopping-cart', show: false},
+        // {status: 'Ахтачи', date: '0 дақиқа', icon: 'pi pi-shopping-cart', show: false},
         {status: 'Охунбобоев', date: '25 соат', icon: 'pi pi-cog', show: false},
         {status: 'Қўқон', date: '13 соат', icon: 'pi pi-shopping-cart',show: false},
         {status: 'Поп', date: '50 дақиқа', icon: 'pi pi-shopping-cart', show: false},
@@ -110,17 +124,17 @@ export default {
         {status: 'Мароканд', date: '8 соат', icon: 'pi pi-shopping-cart',show: false},
         {status: 'Бухоро', date: '20 соат', icon: 'pi pi-shopping-cart',show: false},
         {status: 'Мискин', date: '1 соат 20 дақиқа', icon: 'pi pi-cog',show: false},
-        {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
+        // {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
       ],
       timeline_two: [
-        {status: 'Ахтачи', date: '0 дақиқа', icon: 'pi pi-shopping-cart', show: false},
+        // {status: 'Ахтачи', date: '0 дақиқа', icon: 'pi pi-shopping-cart', show: false},
         {status: 'Охунбобоев', date: '40 дақиқа', icon: 'pi pi-cog', show: false},
         {status: 'Поп', date: '50 дақиқа', icon: 'pi pi-shopping-cart', show: false},
         {status: 'Ангрен', date: '1 соат', icon: 'pi pi-cog',show: false},
         {status: 'Мароканд', date: '8 соат', icon: 'pi pi-shopping-cart',show: false},
         {status: 'Бухоро', date: '20 соат', icon: 'pi pi-shopping-cart',show: false},
         {status: 'Мискин', date: '1 соат 20 дақиқа', icon: 'pi pi-cog',show: false},
-        {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
+        // {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
       ],
       mtu_data: [
         {
@@ -740,6 +754,12 @@ export default {
       clearTimeout(this.timeline_timeout);
       this.show_animation = true;
 
+
+      await new Promise(resolve => {
+        this.timeline_timeout = setTimeout(resolve, 600);
+        return this.timeline_timeout;
+      });
+
       for(let i=0; i<this.timeline_one.length; i++){
 
         if(i>0){
@@ -768,6 +788,11 @@ export default {
       }
       clearTimeout(this.timeline_timeout);
       this.show_animation = true;
+
+      await new Promise(resolve => {
+        this.timeline_timeout = setTimeout(resolve, 600);
+        return this.timeline_timeout;
+      });
 
       for(let i=0; i<this.timeline_two.length; i++){
 
