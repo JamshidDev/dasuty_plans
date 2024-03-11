@@ -4,13 +4,16 @@ import PulseAnimation from "../../components/PulseAnimation/PulseAnimation.vue";
 import PulseCenter from "../../components/PulseAnimation/PulseCenter.vue";
 import { onMounted, ref } from "vue";
 import MobileDevice from "../../components/IconSvg/MobileDevice.vue";
+import TitleText from "../../components/TitleText/TitleText.vue";
 
 const animated = ref(false)
 const totalP = ref(45)
 
 const arr = [
-  { r: 90, desc: 'Мижоз\n' +
-      '"https://enakl.railway.uz" сайтдан рўйхатдан ўтади', icon: 'desktop.png' },
+  {
+    r: 90, desc: 'Мижоз\n' +
+      '"https://enakl.railway.uz" сайтдан рўйхатдан ўтади', icon: 'desktop.png'
+  },
   { r: 180, desc: 'Шартнома асосида онлайн тўлов амалга   оширилади', icon: 'credit-card.png' },
   { r: 270, desc: 'Онлайн ариза топширади', icon: 'success.png' },
 ]
@@ -25,6 +28,7 @@ onMounted(() => {
 
 <template>
   <div class="w-full wrapper min-h-full relative flex flex-column justify-content-center align-items-center relative">
+    <TitleText class='heading' title='Рақамлаштришдан кейинги ҳолат'></TitleText>
     <PulseAnimation class='custom-pulse-animation overflow-visible' />
     <PulseCenter class='pulse'>
       <MobileDevice />
@@ -37,7 +41,7 @@ onMounted(() => {
               <img :src='`/images/${item.icon}`'>
             </div>
             <div class='absolute box' :class='`box-${idx + 1}`'>
-              <h6>{{ `Боскич-${idx + 1}` }}</h6>
+              <h6>{{ `${idx + 1}-Босқич` }}</h6>
               <p>{{ item.desc }}</p>
             </div>
           </div>
@@ -56,14 +60,63 @@ onMounted(() => {
         </div>
       </div>
     </div>
+    <div class='p-3 border-round-2xl border-3 bg-white absolute total-info' style='border-color: #11A832;'>
+      <div class='text-2xl font-medium'>
+        “Ягона дарча” ахборот тизими <br />фойдаланувчилари сони – <span class='text-3xl font-semibold'
+                                                                         style='color: #11A832'>8836</span> нафар.
+      </div>
+      <ul class='text-xl'>
+        <li class='py-1'>юридик шахс - <span class='font-medium' style='color: #11A832'>8074</span></li>
+        <li class='py-1'>жисмоний шахс - <span class='font-medium' style='color: #11A832'>688</span></li>
+        <li class='py-1'>якка тартибдаги тадбиркор - <span class='font-medium' style='color: #11A832'>74</span></li>
+      </ul>
+      <div class='text-2xl font-medium'>
+        Умумий сарфланган вақт <span style='color:#11A832' class='text-4xl font-semibold'>12</span> соатни <br /> ташкил
+        қилади
+      </div>
+    </div>
+    <div class='p-3 border-round-2xl border-3 bg-white absolute flex flex-column gap-1 integration-info' style='border-color: #11A832;'>
+      <div class='text-2xl font-medium mb-2'>Yagona darcha integratsiyalar</div>
+      <div class='flex align-items-center justify-content-between text-lg'>
+        ONE ID
+        <img class='h-2rem w-auto' src='/images/one-id.png' alt='one-id'>
+      </div>
+      <div class='flex align-items-center justify-content-between text-lg'>
+        Марказий банк
+        <img class='h-2rem w-auto' src='/images/milliy-bank.png' alt='markaziy-bank.png'>
+      </div>
+      <div class='flex align-items-center justify-content-between text-lg'>
+        Давлат солиқ қўмитаси
+        <img class='h-2rem w-auto' src='/images/soliq.png' alt='one-id'>
+      </div>
+      <div class='flex align-items-center justify-content-between text-lg'>
+        Темир йўл транспорти кенгаши
+        <img class='h-2rem w-auto' src='/images/temir-yol-kengashi.png' alt='one-id'>
+      </div>
+      <div class='flex align-items-center justify-content-between text-lg'>
+        Давлат божхона қўмитаси
+        <img class='h-2rem w-auto' src='/images/bojxona.png' alt='one-id'>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-$blue: #234699;
 
-.wrapper {
-  //margin-top: -4%
+.integration-info {
+  right: 50px;
+  bottom: 50px;
+  animation: 1.5s fadeIn forwards;
+  opacity: 0;
+  animation-delay: 5s;
+}
+
+.total-info {
+  bottom: 50px;
+  left: 50px;
+  animation: 1.5s fadeIn forwards;
+  opacity: 0;
+  animation-delay: 5s;
 }
 
 .box {
@@ -91,8 +144,8 @@ $blue: #234699;
   }
 
   &.box-2 {
-    left: 75%;
-    bottom: calc(100% + 175px);
+    left: 72%;
+    bottom: calc(100% + 160px);
     animation-delay: 2s;
     transform: rotate(-90deg);
   }
@@ -103,7 +156,6 @@ $blue: #234699;
     animation-delay: 4.6s;
     transform: rotate(-180deg);
   }
-
 }
 
 .outline-wrapper {

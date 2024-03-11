@@ -13,7 +13,7 @@ const { push } = useRouter()
 
 <template>
   <div class="w-full min-h-full relative flex flex-column justify-content-center align-items-center relative">
-    <TitleText class='heading' title='ЮК ТАШИШ СОҲАСИДА ХИЗМАТЛАР КЎРСАТИШ БЎЙИЧА МИЖОЗЛАР БИЛАН МУНОСАБАТ'></TitleText>
+    <TitleText class='heading' title='ЮК ТАШИШ СОҲАСИДА ХИЗМАТЛАР КЎРСАТИШ БЎЙИЧА' subtitle='МИЖОЗЛАР БИЛАН МУНОСАБАТ'></TitleText>
     <PulseAnimation />
     <div data-aos='fade' data-aos-duration='1500' class='px-6 flex justify-content-between align-items-center'>
       <div class='text-center cursor-pointer text-xl p-4 bg-white border-round-2xl border-2 before'
@@ -21,7 +21,7 @@ const { push } = useRouter()
         <span class="font-bold">Рақамлаштришдан олдинги ҳолат</span>
       </div>
       <ArrowLeftTwoColor class='ml-6 mr-3 w-5rem' />
-      <PulseCenter caption='Клиент'>
+      <PulseCenter caption='Мижоз'>
         <PersonSvg />
       </PulseCenter>
       <ArrowRightTwoColor class='mr-6 ml-3 w-5rem' />
@@ -45,8 +45,8 @@ const { push } = useRouter()
 }
 
 .heading {
- .title {
-   max-width: 75% !important;
+ .subtitle {
+   font-size: 32px !important;
  }
 }
 
