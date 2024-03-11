@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <div v-else class="card_box p-3 border-round shadow-1 min-h-full"
+        <div @click="open_overal_worker($event, item.id)" v-else class="card_box p-3 border-round shadow-1 min-h-full"
              :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
           <div class="title font-bold">
             {{ item.value }}
@@ -100,10 +100,27 @@
     </div>
   </OverlayPanel>
 
+  <OverlayPanel ref="overall12_ref" style="width:600px">
+    <div class="grid w-full">
+      <div class="col-6">
+        <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
+          <EducationChart :color="`green`" :amount="9288" :title="`Олий малумотли`" :percent="18"></EducationChart>
+        </div>
+      </div>
+      <div class="col-6 flex justify-content-end align-items-end pb-3">
+        <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i
+            class='bx bx-right-top-arrow-circle ml-2'></i></a>
+      </div>
+    </div>
+  </OverlayPanel>
+
 </template>
 
 <script>
+import EducationChart from "@/components/InformationCard/EducationChart.vue";
+
 export default {
+  components: {EducationChart},
   data() {
     return {
       switchOne: false,
@@ -237,7 +254,7 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `8045 нафар`,
-
+              iscollapse: true,
             },
           ]
         },
@@ -330,7 +347,8 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `6076 нафар`,
-              iscollapse: false,
+              iscollapse: true,
+
             },
           ]
         },
@@ -434,7 +452,7 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `9812 нафар`,
-              iscollapse: false,
+              iscollapse: true,
             },
           ]
         },
@@ -529,7 +547,7 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `5560 нафар`,
-              iscollapse: false,
+              iscollapse: true,
             },
           ]
         },
@@ -618,7 +636,7 @@ export default {
               id: 7,
               label: `Мавжуд вагонлар сони`,
               value: `8045 та`,
-              iscollapse: false,
+              iscollapse: true,
             },
           ]
         },
@@ -706,7 +724,7 @@ export default {
               id: 6,
               label: `Ходимлар сони`,
               value: `3591  нафар`,
-              iscollapse: false,
+              iscollapse: true,
             },
           ]
         },
@@ -718,6 +736,60 @@ export default {
       timeline_timeout :null,
       is_show_one:true,
       time_line_dialog:false,
+      mtu_worker_list:[
+        {
+          id:1,
+          name:'MTU 1',
+          data:[
+            {
+              chart_list:[
+                {
+                  label:'Олий малумотли',
+                  value:0,
+                },
+                {
+                  label:'Ўрта малумотли',
+                  value:0,
+                },
+                {
+                  label:'Ўрта махсус малумотли',
+                  value:0,
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'31 ёшгача',
+                  value:0,
+                },
+                {
+                  label:'32 ёшдан 45 ёшгача',
+                  value:0,
+                },
+                {
+                  label:'46 ёшдан катталар',
+                  value:0,
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'Эркаклар',
+                  value:0,
+                },
+                {
+                  label:'Аёллар',
+                  value:0,
+                },
+              ]
+            },
+
+
+          ]
+        }
+      ],
     }
   },
   methods: {
@@ -731,6 +803,14 @@ export default {
       }
 
     },
+
+    open_overal_worker(event, id){
+
+      if(id ===6){
+        this.$refs.overall12_ref.toggle(event);
+      }
+    },
+
     open_dialog(mtu_number) {
       this.selected_mtu_list = this.mtu_data[mtu_number];
       this.dialog_visible = true;

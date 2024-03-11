@@ -75,12 +75,12 @@
       <div v-for="item in overall_list" :key="item.id" class="col-12 py-1">
         <div class="flex flex-column">
           <div class="flex justify-content-between border-round min-h-full">
-            <span><i class='bx bxs-circle text-sm mr-2'></i>
+            <span :class="item.id ===15 && 'text-blue-500'" @click="open_modal($event, item.id)" ><i class='bx bxs-circle text-sm mr-2'></i>
               <Checkbox @change="control_overall2"
                         class="mr-2 p-inputtext-sm"
                         v-if="item.id ===1 && selected_data_id ===6"
                         v-model="sorted_station"
-                        :binary="true"/> {{ item.label }}</span>
+                        :binary="true"/> <span class="cursor-pointer">{{ item.label }}</span></span>
             <span class="font-bold">{{ item.value }}</span>
           </div>
         </div>
@@ -126,6 +126,19 @@
       <div class="col-6 flex justify-content-end align-items-end pb-3">
         <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i
             class='bx bx-right-top-arrow-circle ml-2'></i></a>
+      </div>
+    </div>
+  </OverlayPanel>
+
+  <OverlayPanel ref="overall4_ref" style="width:400px">
+    <div class="grid">
+      <div v-for="item in other_wagon_list" :key="item.id" class="col-12 py-1 ">
+        <div class="flex flex-column">
+          <div class="flex justify-content-between border-round min-h-full no-underline">
+            <span><i class='bx bxs-circle text-sm mr-2'></i> {{ item.label }}</span>
+            <span class="font-bold">{{ item.value }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </OverlayPanel>
@@ -240,7 +253,7 @@ export default {
         {
           id: 8,
           label: `Мавжуд вагонлар сони `,
-          value: 19036,
+          value: 22256,
           extension_value: 'та',
         },
         {
@@ -404,24 +417,82 @@ export default {
       wagon_list: [
         {
           id: 0,
-          label: "ВЧД Бухоро ",
-          value: `6430 та`,
+          label: "Ёпиқ вагон",
+          value: `4921 та`,
         },
         {
           id: 1,
-          label: "ВЧД Карши",
-          value: `5295 та`,
+          label: "Платформа",
+          value: `818 та`,
         },
         {
           id: 2,
-          label: "ВЧД Коканд",
-          value: `4331 та`,
+          label: "Полувагон",
+          value: `6260 та`,
         }, {
           id: 4,
-          label: "ВЧД Тошкент ",
-          value: `2980 та`,
+          label: "Цистерна",
+          value: `3511 та`,
+        },
+        {
+          id: 6,
+          label: "Рефрижератор вагонлар",
+          value: `1145 та`,
+        },
+        {
+          id: 15,
+          label: "Бошқа турдаги вагонлар",
+          value: `5601 та`,
         },
 
+
+      ],
+      other_wagon_list:[
+        {
+          id:0,
+          label:"Зерновоз",
+          value:1355,
+        },
+        {
+          id:1,
+          label:"Цементовоз",
+          value:1922,
+        },
+        {
+          id:2,
+          label:"Менераловоз",
+          value:385,
+        },
+        {
+          id:3,
+          label:"Фитингли платформа",
+          value:1081,
+        },
+        {
+          id:4,
+          label:"Хоппер-дозатор",
+          value:219,
+        },
+        {
+          id:5,
+          label:"Думпкар",
+          value:172,
+        },
+        {
+          id:6,
+          label:"Автомобиловоз",
+          value:228,
+        },
+        {
+          id:7,
+          label:"Транспортер",
+          value:57,
+        },
+        {
+          id:8,
+          label:"Қолган бошқа турдаги вагонлар",
+          value:182,
+        },
       ],
       overall_list: [],
       selected_id: null,
@@ -1281,6 +1352,11 @@ export default {
       }
     },
 
+    open_modal( event ,id){
+      if(id===15){
+        this.$refs.overall4_ref.toggle(event);
+      }
+    },
     control_overall2(event) {
       this.$refs.overall2_ref.toggle(event);
 
