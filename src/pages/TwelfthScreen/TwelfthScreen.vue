@@ -32,10 +32,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full wrapper min-h-full flex flex-column justify-content-center align-items-center relative">
-<!--    <div class='text-xl p-4 bg-white border-round-2xl border-2' style="top:10px">-->
-<!--      <span class="font-bold">Рақамлаштришдан олдинги ҳолат</span>-->
-<!--    </div>-->
+  <div class="w-full min-h-full flex flex-column justify-content-center align-items-center relative">
+    <TitleText class='heading' title='Рақамлаштришдан олдинги ҳолат'></TitleText>
     <PulseAnimation class='custom-pulse-animation overflow-visible' />
     <PulseCenter class='pulse'>
       <PersonSvg />
@@ -48,7 +46,7 @@ onMounted(() => {
               <img :src='`/images/${item.icon}`'>
             </div>
             <div class='absolute box' :class='`box-${idx + 1}`'>
-              <h6>{{ `Боскич-${idx + 1}` }}</h6>
+              <h6>{{ `${idx + 1}-Босқич` }}</h6>
               <p>{{ item.desc }}</p>
             </div>
           </div>
@@ -67,14 +65,23 @@ onMounted(() => {
         </div>
       </div>
     </div>
+    <div class='p-3 text-2xl font-medium border-round-2xl border-3 bg-white absolute total-info'
+         style='border-color: #A8111B;'>
+      Умумий сарфланган вақт <br /> <span style='color:#A8111B' class='text-4xl font-semibold'>72</span> соатни ташкил
+      қилади
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 $blue: #234699;
 
-.wrapper {
-  //margin-top: -4%
+.total-info {
+  bottom: 50px;
+  left: 50px;
+  animation: 1.5s fadeIn forwards;
+  opacity: 0;
+  animation-delay: 8.5s;
 }
 
 .box {
@@ -91,13 +98,14 @@ $blue: #234699;
     font-size: 20px;
     color: #A8111B;
   }
+
   p {
     margin: 0;
   }
 
   &.box-1 {
-    left: calc(100% + 20px);
-    top: 15px;
+    left: calc(100% + 15px);
+    top: 55px;
     transform: rotate(45deg);
     animation-delay: 0.5s;
   }
@@ -109,36 +117,36 @@ $blue: #234699;
   }
 
   &.box-3 {
-    left: 95%;
-    bottom: calc(100% + 130px);
+    left: 92%;
+    bottom: calc(100% + 115px);
     animation-delay: 2.5s;
     transform: rotate(-45deg);
   }
 
   &.box-4 {
-    left: 75%;
-    bottom: calc(100% + 175px);
+    left: 70%;
+    bottom: calc(100% + 160px);
     animation-delay: 3s;
     transform: rotate(-90deg);
   }
 
   &.box-5 {
-    left: calc(100% + 30px);
-    top: calc(100% + 50px);
+    left: calc(100% - 50px);
+    top: calc(100% + 150px);
     animation-delay: 4s;
     transform: rotate(-135deg);
   }
 
   &.box-6 {
-    left: calc(100% + 40px);
-    bottom: -60px;
+    left: calc(100% + 35px);
+    bottom: -135px;
     animation-delay: 5s;
     transform: rotate(-180deg);
   }
 
   &.box-7 {
-    left: calc(100% + 40px);
-    bottom: calc(100% + 30px);
+    left: calc(100% + 15px);
+    bottom: calc(100% + 60px);
     animation-delay: 8s;
     transform: rotate(-225deg);
   }
