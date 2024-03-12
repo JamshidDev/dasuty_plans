@@ -7,7 +7,7 @@
     </div>
     <div class="body grid pt-4">
       <template v-for="item in selected_mtu_list.data" :key="item.id">
-        <div class="col-6" @click="control_overall2($event,item.iscollapse, item?.nodes_list)">
+        <div class="col-6" @click="control_overall2($event,item.iscollapse, item?.nodes_list, item.id)">
           <div v-if="item?.multiple_label" class="card_box p-3 border-round shadow-1 min-h-full"
                :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
           <div class="title font-bold">
@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <div @click="open_overal_worker($event, item.id)" v-else class="card_box p-3 border-round shadow-1 min-h-full"
+        <div @click="open_overal_worker($event,item.id, selected_mtu_list.index)"  v-else class="card_box p-3 border-round shadow-1 min-h-full"
              :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
           <div class="title font-bold">
             {{ item.value }}
@@ -88,7 +88,7 @@
     </span>
 
   <OverlayPanel ref="overall2_ref" style="width:400px">
-    <div class="grid">
+    <div class="grid" >
       <div v-for="item in selected_overall_list" :key="item.id" class="col-12 py-1">
         <div class="flex flex-column">
           <div class="flex justify-content-between border-round min-h-full">
@@ -101,10 +101,10 @@
   </OverlayPanel>
 
   <OverlayPanel ref="overall12_ref" style="width:600px">
-    <div class="grid w-full">
-      <div class="col-6">
+    <div class="grid w-full" v-if="selected_mtu">
+      <div class="col-6" v-for="item in selected_mtu.data" :key="item">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="9288" :title="`Олий малумотли`" :percent="18"></EducationChart>
+          <EducationChart v-for="sub_item in item.chart_list" :key="sub_item" :color="sub_item.color" :amount="sub_item.value" :title="sub_item.label" :percent="sub_item.percent"></EducationChart>
         </div>
       </div>
       <div class="col-6 flex justify-content-end align-items-end pb-3">
@@ -115,7 +115,6 @@
   </OverlayPanel>
 
 </template>
-
 <script>
 import EducationChart from "@/components/InformationCard/EducationChart.vue";
 
@@ -156,6 +155,7 @@ export default {
       mtu_data: [
         {
           name: 'Тошкент МТУ',
+          index:0,
           data: [
             {
               id: 0,
@@ -260,6 +260,7 @@ export default {
         },
         {
           name: 'Қўқон МТУ ',
+          index:1,
           data: [
             {
               id: 0,
@@ -354,6 +355,7 @@ export default {
         },
         {
           name: 'Бухоро МТУ ',
+          index:2,
           data: [
             {
               id: 0,
@@ -458,6 +460,7 @@ export default {
         },
         {
           name: 'Қўнғирод МТУ',
+          index:3,
           data: [
             {
               id: 0,
@@ -553,6 +556,7 @@ export default {
         },
         {
           name: 'Қарши МТУ ',
+          index:4,
           data: [
             {
               id: 0,
@@ -642,6 +646,7 @@ export default {
         },
         {
           name: 'Термез МТУ ',
+          index:5,
           data: [
             {
               id: 0,
@@ -728,8 +733,6 @@ export default {
             },
           ]
         },
-
-
       ],
       selected_mtu_list: [],
       selected_overall_list: [],
@@ -745,15 +748,21 @@ export default {
               chart_list:[
                 {
                   label:'Олий малумотли',
-                  value:0,
+                  value:1562,
+                  percent:20,
+                  color:'green',
                 },
                 {
                   label:'Ўрта малумотли',
-                  value:0,
+                  value:3981,
+                  percent:50,
+                  color:'yellow',
                 },
                 {
                   label:'Ўрта махсус малумотли',
-                  value:0,
+                  value:2404,
+                  percent:30,
+                  color:'blue',
                 },
               ]
             },
@@ -761,15 +770,23 @@ export default {
               chart_list:[
                 {
                   label:'31 ёшгача',
-                  value:0,
+                  value:1790,
+                  percent:22,
+                  color:'green',
+
                 },
                 {
                   label:'32 ёшдан 45 ёшгача',
-                  value:0,
+                  value:4162,
+                  percent:52,
+                  color:'yellow',
+
                 },
                 {
                   label:'46 ёшдан катталар',
-                  value:0,
+                  value:2049,
+                  percent:26,
+                  color:'blue',
                 },
               ]
             },
@@ -777,38 +794,397 @@ export default {
               chart_list:[
                 {
                   label:'Эркаклар',
-                  value:0,
+                  value:6748,
+                  percent:84,
+                  color:'green',
                 },
                 {
                   label:'Аёллар',
-                  value:0,
+                  value:1253,
+                  percent:16,
+                  color:'yellow',
                 },
               ]
             },
 
 
           ]
-        }
+        },
+        {
+          id:2,
+          name:'Қўқон МТУ ',
+          data:[
+            {
+              chart_list:[
+                {
+                  label:'Олий малумотли',
+                  value:986,
+                  percent:16,
+                  color:'green',
+                },
+                {
+                  label:'Ўрта малумотли',
+                  value:3394,
+                  percent:56,
+                  color:'yellow',
+                },
+                {
+                  label:'Ўрта махсус малумотли',
+                  value:1669,
+                  percent:28,
+                  color:'blue',
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'31 ёшгача',
+                  value:2016,
+                  percent:33,
+                  color:'green',
+
+                },
+                {
+                  label:'32 ёшдан 45 ёшгача',
+                  value:2576,
+                  percent:43,
+                  color:'yellow',
+
+                },
+                {
+                  label:'46 ёшдан катталар',
+                  value:1466,
+                  percent:24,
+                  color:'blue',
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'Эркаклар',
+                  value:5352,
+                  percent:88,
+                  color:'green',
+                },
+                {
+                  label:'Аёллар',
+                  value:709,
+                  percent:12,
+                  color:'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
+        {
+          id:3,
+          name:'Бухоро МТУ  ',
+          data:[
+            {
+              chart_list:[
+                {
+                  label:'Олий малумотли',
+                  value:1424,
+                  percent:15,
+                  color:'green',
+                },
+                {
+                  label:'Ўрта малумотли',
+                  value:6035,
+                  percent:62,
+                  color:'yellow',
+                },
+                {
+                  label:'Ўрта махсус малумотли',
+                  value:2322,
+                  percent:24,
+                  color:'blue',
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'31 ёшгача',
+                  value:2597,
+                  percent:26,
+                  color:'green',
+
+                },
+                {
+                  label:'32 ёшдан 45 ёшгача',
+                  value:5215,
+                  percent:53,
+                  color:'yellow',
+
+                },
+                {
+                  label:'46 ёшдан катталар',
+                  value:1990,
+                  percent:20,
+                  color:'blue',
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'Эркаклар',
+                  value:8409,
+                  percent:86,
+                  color:'green',
+                },
+                {
+                  label:'Аёллар',
+                  value:1393,
+                  percent:14,
+                  color:'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
+        {
+          id:4,
+          name:'Қўнғирод МТУ',
+          data:[
+            {
+              chart_list:[
+                {
+                  label:'Олий малумотли',
+                  value:847,
+                  percent:15,
+                  color:'green',
+                },
+                {
+                  label:'Ўрта малумотли',
+                  value:2807,
+                  percent:51,
+                  color:'yellow',
+                },
+                {
+                  label:'Ўрта махсус малумотли',
+                  value:1889,
+                  percent:34,
+                  color:'blue',
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'31 ёшгача',
+                  value:1223,
+                  percent:22,
+                  color:'green',
+
+                },
+                {
+                  label:'32 ёшдан 45 ёшгача',
+                  value:2958,
+                  percent:53,
+                  color:'yellow',
+
+                },
+                {
+                  label:'46 ёшдан катталар',
+                  value:1376,
+                  percent:25,
+                  color:'blue',
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'Эркаклар',
+                  value:4751,
+                  percent:85,
+                  color:'green',
+                },
+                {
+                  label:'Аёллар',
+                  value:806,
+                  percent:15,
+                  color:'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
+        {
+          id:5,
+          name:'Қарши МТУ',
+          data:[
+            {
+              chart_list:[
+                {
+                  label:'Олий малумотли',
+                  value:1002,
+                  percent:22,
+                  color:'green',
+                },
+                {
+                  label:'Ўрта малумотли',
+                  value:1684,
+                  percent:38,
+                  color:'yellow',
+                },
+                {
+                  label:'Ўрта махсус малумотли',
+                  value:1753,
+                  percent:39,
+                  color:'blue',
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'31 ёшгача',
+                  value:765,
+                  percent:17,
+                  color:'green',
+
+                },
+                {
+                  label:'32 ёшдан 45 ёшгача',
+                  value:2448,
+                  percent:55,
+                  color:'yellow',
+
+                },
+                {
+                  label:'46 ёшдан катталар',
+                  value:1247,
+                  percent:28,
+                  color:'blue',
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'Эркаклар',
+                  value:4029,
+                  percent:90,
+                  color:'green',
+                },
+                {
+                  label:'Аёллар',
+                  value:431,
+                  percent:10,
+                  color:'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
+        {
+          id:6,
+          name:'Термез МТУ',
+          data:[
+            {
+              chart_list:[
+                {
+                  label:'Олий малумотли',
+                  value:920,
+                  percent:26,
+                  color:'green',
+                },
+                {
+                  label:'Ўрта малумотли',
+                  value:1642,
+                  percent:46,
+                  color:'yellow',
+                },
+                {
+                  label:'Ўрта махсус малумотли',
+                  value:1019,
+                  percent:28,
+                  color:'blue',
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'31 ёшгача',
+                  value:654,
+                  percent:18,
+                  color:'green',
+
+                },
+                {
+                  label:'32 ёшдан 45 ёшгача',
+                  value:2125,
+                  percent:59,
+                  color:'yellow',
+
+                },
+                {
+                  label:'46 ёшдан катталар',
+                  value:806,
+                  percent:22,
+                  color:'blue',
+                },
+              ]
+            },
+            {
+              chart_list:[
+                {
+                  label:'Эркаклар',
+                  value:3232,
+                  percent:90,
+                  color:'green',
+                },
+                {
+                  label:'Аёллар',
+                  value:353,
+                  percent:10,
+                  color:'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
       ],
+      selected_mtu:null,
     }
   },
   methods: {
     control_dialog(event) {
       this.$refs.overall_content.toggle(event);
     },
-    control_overall2(event, isShow, list) {
-      if (isShow) {
+    control_overall2(event, isShow, list, id) {
+      if (isShow && id!==6) {
         this.selected_overall_list = list;
         this.$refs.overall2_ref.toggle(event);
       }
 
     },
 
-    open_overal_worker(event, id){
+    open_overal_worker(event,id, index){
+        if(id===6){
+          console.log(index)
+          this.selected_mtu = this.mtu_worker_list[index];
+          console.log(this.selected_mtu)
 
-      if(id ===6){
-        this.$refs.overall12_ref.toggle(event);
-      }
+          this.$refs.overall12_ref.toggle(event);
+        }
+
     },
 
     open_dialog(mtu_number) {

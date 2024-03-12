@@ -105,22 +105,22 @@
     <div class="grid w-full">
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="9288" :title="`Олий малумотли`" :percent="18"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="26329" :title="`ўрта малумотли`" :percent="50"></EducationChart>
-          <EducationChart :color="`blue`" :amount="16713" :title="`ўрта махсус малумотли`" :percent="32"></EducationChart>
+          <EducationChart :color="`green`" :amount="13171" :title="`Олий малумотли`" :percent="19"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="35763" :title="`ўрта малумотли`" :percent="50"></EducationChart>
+          <EducationChart :color="`blue`" :amount="21615" :title="`ўрта махсус малумотли`" :percent="30"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="13598" :title="`31 ёшгача`" :percent="26"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="24797" :title="`32 ёшдан 45 ёшгача`" :percent="47"></EducationChart>
-          <EducationChart :color="`blue`" :amount="14174" :title="`46 ёшдан катталар`" :percent="27"></EducationChart>
+          <EducationChart :color="`green`" :amount="15086" :title="`31 ёшгача`" :percent="21"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="36169" :title="`32 ёшдан 45 ёшгача`" :percent="51"></EducationChart>
+          <EducationChart :color="`blue`" :amount="19678" :title="`46 ёшдан катталар`" :percent="28"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="43549" :title="`Эркаклар`" :percent="82"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="9020" :title="`Аёллар`" :percent="18"></EducationChart>
+          <EducationChart :color="`green`" :amount="57855" :title="`Эркаклар`" :percent="82"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="13078" :title="`Аёллар`" :percent="18"></EducationChart>
         </div>
       </div>
       <div class="col-6 flex justify-content-end align-items-end pb-3">
@@ -259,7 +259,7 @@ export default {
         {
           id: 7,
           label: `Ходимлар сони `,
-          value: 70979,
+          value: 70933,
           extension_value: 'нафар',
 
         },
