@@ -69,25 +69,37 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <div class='p-3 border-round-2xl border-3 bg-white absolute total-info' style='border-color: #11A832;'>
-      <div class='text-2xl font-medium'>
-        “Ягона дарча” ахборот тизими <br />фойдаланувчилари сони – <span class='text-3xl font-semibold'
-                                                                         style='color: #11A832'>18354</span> нафар.
-      </div>
-      <div class='text-2xl font-medium mb-2'>
-        Умумий сарфланган вақт <span style='color:#11A832' class='text-4xl font-semibold'>12</span> соатни <br /> ташкил
-        қилади
-      </div>
-    </div>
-    <div class='p-3 border-round-2xl border-3 bg-white absolute flex flex-column gap-1 integration-info'
+    <div class='p-3 border-round-2xl border-3 bg-white flex flex-column gap-2 absolute total-info'
          style='border-color: #11A832;'>
-
-      <div class='text-xl font-medium mb-2'>
-        Экспорт учун мурожаатлар <span style='color:#11A832' class='text-3xl font-semibold'>2742</span>
+      <div class='text-2xl font-medium flex align-items-center gap-2'>
+        <img src='/images/users-success.png' alt='users' />
+        <span>
+          Фойдаланувчилар сони – <span style='color:#11A832' class='font-semibold'>18 354</span> нафар
+        </span>
       </div>
-
-      <div class='text-xl font-medium mb-2'>
-        Маҳаллий ташувларда мурожаатлар <span style='color:#11A832' class='text-3xl font-semibold'>16862</span>
+      <div class='text-2xl font-medium flex align-items-center gap-2'>
+        <img src='/images/user-type-success.png' alt='user-type'/>
+        <span>
+          Фойдаланувчилар тури – <span style='color:#11A832' class='font-semibold'>97</span>
+        </span>
+      </div>
+      <div class='text-2xl font-medium flex align-items-center gap-2'>
+        <img src='/images/client-success.png' alt='client' />
+        <span>
+          Мижозлар сони – <span style='color:#11A832' class='font-semibold'>8 836</span> нафар
+        </span>
+      </div>
+      <div class='text-2xl font-medium flex align-items-center gap-2'>
+        <img src='/images/time-success.png' alt='time' />
+        <span>
+          Сарфланадиган вақт – <span style='color:#11A832' class='font-semibold'>12</span> соат
+        </span>
+      </div>
+      <div class='text-2xl font-medium flex align-items-center gap-2'>
+        <img src='/images/statistic-success.png' alt='statistic' />
+        <span>
+          Йилига <span style='color:#11A832' class='font-semibold'>13 млрд. сўм </span> иқтисод
+        </span>
       </div>
     </div>
   </div>
