@@ -53,7 +53,7 @@ onMounted(() => {
             <div v-if='item.rate' class='progress-rate progress-rate-right'>
               <span class='symbol'>&#x2191</span>
               <AutoCounter :start-amout='animated ? 0 : item.rate' :end-amount='animated ? item.rate : 0'
-                           duration='1' />
+                           :duration='1' />
               <span>%</span>
             </div>
             <progress-bar
@@ -78,11 +78,11 @@ onMounted(() => {
           </div>
           <circle-progress
             v-if='el'
-            border-width='28'
-            border-bg-width='28'
+            :border-width='28'
+            :border-bg-width='28'
             :size='el.offsetWidth'
             :percent="animated ? totalP : 0"
-            transition='1000'
+            :transition='1000'
             empty-color='#e2e8f0'
             fill-color='#234699'
           />
