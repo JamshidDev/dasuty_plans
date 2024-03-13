@@ -2,17 +2,18 @@
 
 import PulseAnimation from "../../components/PulseAnimation/PulseAnimation.vue";
 import PulseCenter from "../../components/PulseAnimation/PulseCenter.vue";
-import { onMounted, ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import TitleText from "../../components/TitleText/TitleText.vue";
 
 const animated = ref(false)
+let timeout = null
 const totalP = ref(45)
-const op1 = ref()
-const op2 = ref()
-const op3 = ref()
-const op4 = ref()
-const op5 = ref()
-const op6 = ref()
+const op1 = ref(null)
+const op2 = ref(null)
+const op3 = ref(null)
+const op4 = ref(null)
+const op5 = ref(null)
+const op6 = ref(null)
 
 function toggle(event, idx) {
   switch (idx) {
@@ -48,51 +49,55 @@ const arr = [
 ]
 
 onMounted(() => {
-  setTimeout(() => {
+  timeout = setTimeout(() => {
     animated.value = !animated.value
   }, 500)
+})
+
+onUnmounted(() => {
+  clearTimeout(timeout)
 })
 
 </script>
 
 <template>
-  <OverlayPanel ref='op1'>
-    <div class='max-w-20rem'>
-      <div class='text-lg font-medium'>Давлат Cолиқ қўмитаси</div>
-      <p class='mb-0'>Мижозлар рўйхатдан ўтиш жараёнида ишончли маълумотлар олиш.</p>
-    </div>
-  </OverlayPanel>
-  <OverlayPanel ref='op2'>
-    <div class='max-w-20rem'>
-      <div class='text-lg font-medium'>Марказий Банк</div>
-      <p class='mb-0'>Мижозлар томондан тўловлар ҳақида маълумот олиш.</p>
-    </div>
-  </OverlayPanel>
-  <OverlayPanel ref='op3'>
-    <div class='max-w-20rem'>
-      <div class='text-lg font-medium'>“Rail-Tarif” тизими</div>
-      <p class='mb-0'>Тарифларни «Rail-Tarif» сервер иловаси ёрдамида ҳисоблаш.</p>
-    </div>
-  </OverlayPanel>
-  <OverlayPanel ref='op4'>
-    <div class='max-w-20rem'>
-      <div class='text-lg font-medium'>“E-IMZO” тизими</div>
-      <p class='mb-0'>“E-IMZO” ёрдамида электрон ҳужжатларни имзолаш.</p>
-    </div>
-  </OverlayPanel>
-  <OverlayPanel ref='op5'>
-    <div class='max-w-20rem'>
-      <div class='text-lg font-medium'>“One-ID” тизими</div>
-      <p class='mb-0'>“One-ID” Веб - сайтларга фойдаланувчиларни аниқлаш имконини беради.</p>
-    </div>
-  </OverlayPanel>
-  <OverlayPanel ref='op6'>
-    <div class='max-w-20rem'>
-      <div class='text-lg font-medium'>Божхона қўмитаси</div>
-      <p class='mb-0'>Божхона қўмитаси ахборот тизими орқали интеграция ишлари олиб борилмоқда</p>
-    </div>
-  </OverlayPanel>
   <div class="w-full wrapper min-h-full flex flex-column justify-content-center align-items-center">
+      <OverlayPanel ref='op1'>
+        <div class='max-w-20rem'>
+          <div class='text-lg font-medium'>Давлат Cолиқ қўмитаси</div>
+          <p class='mb-0'>Мижозлар рўйхатдан ўтиш жараёнида ишончли маълумотлар олиш.</p>
+        </div>
+      </OverlayPanel>
+      <OverlayPanel ref='op2'>
+        <div class='max-w-20rem'>
+          <div class='text-lg font-medium'>Марказий Банк</div>
+          <p class='mb-0'>Мижозлар томондан тўловлар ҳақида маълумот олиш.</p>
+        </div>
+      </OverlayPanel>
+      <OverlayPanel ref='op3'>
+        <div class='max-w-20rem'>
+          <div class='text-lg font-medium'>“Rail-Tarif” тизими</div>
+          <p class='mb-0'>Тарифларни «Rail-Tarif» сервер иловаси ёрдамида ҳисоблаш.</p>
+        </div>
+      </OverlayPanel>
+      <OverlayPanel ref='op4'>
+        <div class='max-w-20rem'>
+          <div class='text-lg font-medium'>“E-IMZO” тизими</div>
+          <p class='mb-0'>“E-IMZO” ёрдамида электрон ҳужжатларни имзолаш.</p>
+        </div>
+      </OverlayPanel>
+      <OverlayPanel ref='op5'>
+        <div class='max-w-20rem'>
+          <div class='text-lg font-medium'>“One-ID” тизими</div>
+          <p class='mb-0'>“One-ID” Веб - сайтларга фойдаланувчиларни аниқлаш имконини беради.</p>
+        </div>
+      </OverlayPanel>
+      <OverlayPanel ref='op6'>
+        <div class='max-w-20rem'>
+          <div class='text-lg font-medium'>Божхона қўмитаси</div>
+          <p class='mb-0'>Божхона қўмитаси ахборот тизими орқали интеграция ишлари олиб борилмоқда</p>
+        </div>
+      </OverlayPanel>
     <TitleText class='heading' title='Рақамлаштиришдан кейинги ҳолат'></TitleText>
     <PulseAnimation class='custom-pulse-animation overflow-visible' />
     <PulseCenter class='pulse'>
@@ -128,12 +133,11 @@ onMounted(() => {
         </div>
         <div style='transform: rotate(100deg)'>
           <circle-progress
-            angle='30'
-            border-width='10'
-            border-bg-width='10'
+            :border-width='10'
+            :border-bg-width='10'
             :size='600'
             :percent="animated ? totalP : 0"
-            transition='5000'
+            :transition='5000'
             empty-color='#e2e8f0'
             fill-color='#11A832'
           />
@@ -204,8 +208,8 @@ onMounted(() => {
 <style scoped lang="scss">
 
 .total-info-right {
-  right: 40px;
-  bottom: 40px;
+  right: 50px;
+  bottom: 50px;
   animation: 1.5s fadeIn forwards;
   opacity: 0;
   animation-delay: 5s;
@@ -229,7 +233,6 @@ onMounted(() => {
   white-space: nowrap;
   overflow: hidden;
   letter-spacing: 2px;
-
 }
 
 @keyframes zoom-in-zoom-out {
@@ -314,8 +317,8 @@ onMounted(() => {
 }
 
 .total-info {
-  bottom: 40px;
-  left: 40px;
+  bottom: 50px;
+  left: 50px;
   animation: 1.5s fadeIn forwards;
   opacity: 0;
   animation-delay: 5s;
