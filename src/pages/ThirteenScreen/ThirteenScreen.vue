@@ -169,7 +169,7 @@ onMounted(() => {
       <div class='text-xl font-medium flex align-items-center gap-2'>
         <img width='34' height='34' src='/images/time-success.png' alt='time' />
         <span>
-          Темир йўл хизматларидан фойдаланишда мижознинг сарфланадиган вақти
+          Темир йўл хизматларидан фойдаланишда мижознинг сарфлайдиган вақти
           <span style='color:#11A832' class='font-semibold'>60</span> соатга камайди
         </span>
       </div>
