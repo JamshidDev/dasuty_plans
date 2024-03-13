@@ -67,30 +67,30 @@ onMounted(() => {
     <div class='p-3 flex flex-column font-medium border-round-2xl border-3 gap-2 bg-white absolute total-info'
          style='border-color: #A8111B;'>
       <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
-        <img width='40' height='40' src='/images/tarif-calc-danger.png' alt='users' />
+        <img width='40' height='40' src='/images/time-spent-danger.png' alt='users' />
         <span>
-          Юк ташиш тарифларини ҳисоблаш имконияти мавжуд эмаслиги
+          Темир йўл хизматларидан фойдаланишда мижознинг сарфлаган вақти  <span style='color: #A8111B'>72 соатни</span>  ташкил қилиши
         </span>
       </div>
       <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
-        <img height='40' width='40' src='/images/delivery-slow-danger.png' alt='users' />
+        <img width='40' height='40' src='/images/tarif-calc-danger.png' alt='users' />
         <span>
-          Юкларни манзилга етказиб бериш тезлигининг пастлиги
+          Юк ташиш тарифларини ҳисоблаш имконияти мавжуд эмаслиги
         </span>
       </div>
     </div>
     <div class='p-3 flex flex-column font-medium border-round-2xl border-3 gap-2 bg-white absolute total-info-right'
          style='border-color: #A8111B;'>
       <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
-        <img width='40' height='40' src='/images/more-doc.png' alt='users' />
+        <img height='40' width='40' src='/images/delivery-slow-danger.png' alt='users' />
         <span>
-          Ҳужжатларни расмийлаштиришда ортиқча бюрократик жараёнларнинг мавжудлиги
+          Юкларни манзилга етказиб бериш тезлигининг пастлиги
         </span>
       </div>
       <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
-        <img width='40' height='40' src='/images/more-time-danger.png' alt='users' />
+        <img width='40' height='40' src='/images/more-doc.png' alt='users' />
         <span>
-          Хизматлардан фойдаланишда мижозларнинг кўп вақт сарфлаши
+          Ҳужжатларни расмийлаштиришда ортиқча бюрократик жараёнларнинг мавжудлиги
         </span>
       </div>
     </div>
@@ -165,8 +165,8 @@ $blue: #234699;
   }
 
   &.box-5 {
-    left: calc(100% - 50px);
-    top: calc(100% + 150px);
+    left: calc(100% - 64px);
+    top: calc(100% + 170px);
     animation-delay: 4s;
     transform: rotate(-135deg);
   }
