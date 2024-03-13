@@ -53,22 +53,46 @@ onMounted(() => {
         </div>
         <div style='transform: rotate(55deg)'>
           <circle-progress
-            angle='30'
-            border-width='10'
-            border-bg-width='10'
+            :border-width='10'
+            :border-bg-width='10'
             :size='600'
             :percent="animated ? totalP : 0"
-            transition='9000'
+            :transition='9000'
             empty-color='#e2e8f0'
             fill-color='#A8111B'
           />
         </div>
       </div>
     </div>
-    <div class='p-3 text-2xl font-medium border-round-2xl border-3 bg-white absolute total-info'
+    <div class='p-3 flex flex-column font-medium border-round-2xl border-3 gap-2 bg-white absolute total-info'
          style='border-color: #A8111B;'>
-      Темир йўл хизматларидан фойдаланишда мижознинг сарфлаган вақти
-      <br /> <span style='color:#A8111B' class='text-4xl font-semibold'>72</span> соатни ташкил қилган
+      <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
+        <img width='40' height='40' src='/images/time-spent-danger.png' alt='users' />
+        <span>
+          Темир йўл хизматларидан фойдаланишда мижознинг сарфлаган вақти  <span style='color: #A8111B'>72 соатни</span>  ташкил қилиши
+        </span>
+      </div>
+      <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
+        <img width='40' height='40' src='/images/tarif-calc-danger.png' alt='users' />
+        <span>
+          Юк ташиш тарифларини ҳисоблаш имконияти мавжуд эмаслиги
+        </span>
+      </div>
+    </div>
+    <div class='p-3 flex flex-column font-medium border-round-2xl border-3 gap-2 bg-white absolute total-info-right'
+         style='border-color: #A8111B;'>
+      <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
+        <img height='40' width='40' src='/images/delivery-slow-danger.png' alt='users' />
+        <span>
+          Юкларни манзилга етказиб бериш тезлигининг пастлиги
+        </span>
+      </div>
+      <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
+        <img width='40' height='40' src='/images/more-doc.png' alt='users' />
+        <span>
+          Ҳужжатларни расмийлаштиришда ортиқча бюрократик жараёнларнинг мавжудлиги
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -76,12 +100,22 @@ onMounted(() => {
 <style scoped lang="scss">
 $blue: #234699;
 
+.total-info-right {
+  bottom: 50px;
+  right: 50px;
+  animation: 1.5s fadeIn forwards;
+  opacity: 0;
+  animation-delay: 8.5s;
+  max-width: 500px;
+}
+
 .total-info {
   bottom: 50px;
   left: 50px;
   animation: 1.5s fadeIn forwards;
   opacity: 0;
   animation-delay: 8.5s;
+  max-width: 500px;
 }
 
 .box {
@@ -117,8 +151,8 @@ $blue: #234699;
   }
 
   &.box-3 {
-    left: 92%;
-    bottom: calc(100% + 115px);
+    left: 85%;
+    bottom: calc(100% + 150px);
     animation-delay: 2.5s;
     transform: rotate(-45deg);
   }
@@ -131,8 +165,8 @@ $blue: #234699;
   }
 
   &.box-5 {
-    left: calc(100% - 50px);
-    top: calc(100% + 150px);
+    left: calc(100% - 64px);
+    top: calc(100% + 170px);
     animation-delay: 4s;
     transform: rotate(-135deg);
   }
