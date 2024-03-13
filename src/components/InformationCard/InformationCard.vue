@@ -328,7 +328,7 @@ export default {
           id: 2,
           label: "Қўқон",
           value: ``,
-          path: './schema/stations/Учкудук-1.svg',
+          path: './schema/stations/Қўқон.svg',
         },
         {
           id: 3,
@@ -353,7 +353,7 @@ export default {
           id: 6,
           label: "Охангарон",
           value: ``,
-          path: './schema/stations/Ховос.svg'
+          path: './schema/stations/Охангарон.svg'
         },
         {
           id: 7,
@@ -389,7 +389,7 @@ export default {
           id: 12,
           label: "Бинокор",
           value: ``,
-          path: './schema/stations/Ховос.svg'
+          path: './schema/stations/Бинокор.svg'
         },
         {
           id: 13,
