@@ -19,7 +19,7 @@
             <div class="grid">
               <div v-for="item in general_data" :key="item.id" class="col-4 cursor-pointer">
                 <div @click="control_overall($event ,item.id)"
-                     :class="[2,6,8,5,7].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
+                     :class="[2,6,8,5,7,3].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
                      class="card_box p-2 border-round shadow-1 min-h-full "
                 >
                   <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
@@ -195,6 +195,60 @@
               <td colspan="3">
                  <div :class="selected_stik.is_increment? 'bg-green-100' : 'bg-red-100'" class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
                     <div :class="selected_stik.is_increment? 'text-green-600' : 'text-red-600'"  class="font-bold mb-2  text-center text-xl">{{selected_stik.percent}} <i :class="selected_stik.is_increment? 'bxs-arrow-from-bottom' : 'bxs-arrow-from-top'" class='bx  text-xl'></i></div>
+
+              </div>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </span>
+
+  <span v-if="general_stik_dialog" >
+    <div :class="general_stik_dialog && 'active_dialog'" class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden " >
+      <h2 class="w-full text-center my-0 text-500 font-bold  pt-1 pb-1 relative">{{general_stik_list?.name}}
+        <i  class='bx bx-x absolute top-0 right-0 mt-1 mr-2 text-3xl cursor-pointer' @click="general_stik_dialog=false"></i>
+      </h2>
+      <table class="w-full">
+        <thead>
+          <tr style="border-bottom:10px solid transparent">
+            <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Экспорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >тонна</span>
+              </div>
+            </th>
+
+             <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Импорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
+              </div>
+            </th>
+             <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Транзит <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
+              </div>
+            </th>
+              <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Махалий <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr v-for="item in general_stik_list.data" :id="item.id">
+              <td v-for="sub_item in item.data" :key="sub_item.name">
+                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
+                    <div class="font-bold mb-2 text-blue-600">{{ sub_item.count}}<span
+                        class="text-sm font-medium"></span></div>
+                    <div class="text-sm font-bold w-full text-right text-500 font-italic">{{item.year}}</div>
+              </div>
+              </td>
+            </tr>
+        <tr>
+              <td colspan="4">
+                 <div :class="general_stik_list.is_increment? 'bg-green-100' : 'bg-red-100'" class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
+                    <div :class="general_stik_list.is_increment? 'text-green-600' : 'text-red-600'"  class="font-bold mb-2  text-center text-xl">{{general_stik_list.percent}} <i :class="general_stik_list.is_increment? 'bxs-arrow-from-bottom' : 'bxs-arrow-from-top'" class='bx  text-xl'></i></div>
 
               </div>
               </td>
@@ -541,6 +595,8 @@ export default {
       active_card: true,
       sorted_station: false,
       stik_dialog:false,
+      general_stik_dialog:false,
+
       active_stik_dialog:false,
 
 
@@ -1362,6 +1418,57 @@ export default {
           ]
         },
       ],
+
+      general_stik_list:{
+        id:'0',
+        name:'Умумий кўрсатгичлар',
+        percent:'+7%',
+        is_increment:true,
+        data:[
+          {
+            year:'2022 й.',
+            data:[
+              {
+                name:'Экспорт',
+                count:'10 900',
+              },
+              {
+                name:'Импорт',
+                count:'19 500',
+              },
+              {
+                name:'Транзит',
+                count:'10 200',
+              },
+              {
+                name:'Махалий',
+                count:'61 700',
+              },
+            ]
+          },
+          {
+            year:'2023 й.',
+            data:[
+              {
+                name:'Экспорт',
+                count:'12 400',
+              },
+              {
+                name:'Импорт',
+                count:'24 600',
+              },
+              {
+                name:'Транзит',
+                count:'11 600',
+              },
+              {
+                name:'Махалий',
+                count:'60 800',
+              },
+            ]
+          },
+        ]
+      },
       selected_stik:null,
     }
   },
@@ -1382,6 +1489,8 @@ export default {
         this.$refs.overall3_ref.toggle(event);
       }else if (id === 5) {
         this.$refs.overall8_ref.toggle(event);
+      }else if (id === 3) {
+        this.general_stik_dialog = true;
       }
 
       if (id === 4) {
@@ -1431,6 +1540,7 @@ export default {
     },
 
     change_map(event, id) {
+      this.general_stik_dialog = false;
       if (id === 4) {
         this.$emit("changeMap", 'tchs');
       } else if (id === 5) {
@@ -1456,6 +1566,10 @@ export default {
       setTimeout(()=>{
         this.stik_dialog = false;
       },300)
+    },
+
+    show_general_dialog(){
+      this.general_stik_dialog = true;
     },
 
 

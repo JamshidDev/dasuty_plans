@@ -67,13 +67,13 @@
         </div>
     </template>
           </Timeline>
-            <Timeline v-else class="w-full" :value="timeline_two">
+            <Timeline v-else class="w-full" :value="timeline_two_text">
               <template #opposite="slotProps">
-        <small class="text-blue-600 font-bold">{{ slotProps.item.date }}</small>
+        <small class="text-blue-600 font-bold" :class="slotProps.item.stroke && 'line-through'">{{ slotProps.item.date }}</small>
     </template>
     <template #content="slotProps" class="h-3rem">
-        <div class="flex justify-content-between w-full px-2 align-items-center border-round"  :class="slotProps.item.show? 'bg-blue-100' : 'bg-transparent'">
-          <span>{{ slotProps.item.status }}</span> <i class='bx bxs-left-arrow-circle text-lg' :class="slotProps.item.show? 'text-primary' : 'text-white'"></i>
+        <div  class="flex justify-content-between w-full px-2 align-items-center border-round"  :class="slotProps.item.show? 'bg-blue-100' : 'bg-transparent'">
+          <span :class="slotProps.item.stroke && 'line-through'">{{ slotProps.item.status }}</span> <i class='bx bxs-left-arrow-circle text-lg' :class="[slotProps.item.show? 'text-primary' : 'text-white' ]"></i>
         </div>
     </template>
           </Timeline>
@@ -140,6 +140,20 @@ export default {
         {status: 'Мароканд', date: '22 соат', icon: 'pi pi-shopping-cart',show: false},
         {status: 'Бухоро', date: '44 соат', icon: 'pi pi-shopping-cart',show: false},
         {status: 'Мискин', date: '18 соат', icon: 'pi pi-cog',show: false},
+        // {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
+      ],
+      timeline_two_text: [
+        {status: 'Ахтачи', date: '25 соат', icon: 'pi pi-shopping-cart', show: false, stroke:false,},
+        {status: 'Охунбобоев', date: '39 соат', icon: 'pi pi-cog', show: false, stroke:false,},
+        {status: 'Қўқон', date: '26 соат', icon: 'pi pi-shopping-cart',show: false, stroke:true,},
+        {status: 'Поп', date: '9  соат', icon: 'pi pi-shopping-cart', show: false, stroke:false,},
+        {status: 'Ангрен', date: '5 соат', icon: 'pi pi-cog',show: false,stroke:false,},
+        {status: 'Оҳангарон', date: '3.5 соат', icon: 'pi pi-shopping-cart',show: false,stroke:true,},
+        {status: 'Ўзбекистон', date: '7 соат', icon: 'pi pi-shopping-cart',show: false, stroke:true,},
+        {status: 'Хаваст', date: '45 соат', icon: 'pi pi-cog',show: false,stroke:true,},
+        {status: 'Мароканд', date: '22 соат', icon: 'pi pi-shopping-cart',show: false, stroke:false,},
+        {status: 'Бухоро', date: '44 соат', icon: 'pi pi-shopping-cart',show: false,stroke:false,},
+        {status: 'Мискин', date: '18 соат', icon: 'pi pi-cog',show: false,stroke:false,},
         // {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
       ],
       timeline_two: [
@@ -1239,8 +1253,8 @@ export default {
     async new_timeline_start() {
       this.time_line_dialog = true;
       this.is_show_one = false;
-      for(let i=0; i<this.timeline_two.length; i++){
-        this.timeline_two[i].show=false;
+      for(let i=0; i<this.timeline_two_text.length; i++){
+        this.timeline_two_text[i].show=false;
       }
       clearTimeout(this.timeline_timeout);
       this.show_animation = true;
@@ -1253,9 +1267,9 @@ export default {
       for(let i=0; i<this.timeline_two.length; i++){
 
         if(i>0){
-          this.timeline_two[i-1].show=false;
+          this.timeline_two_text[i-1].show=false;
         }
-        this.timeline_two[i].show=true;
+        this.timeline_two_text[i].show=true;
         await new Promise(resolve => {
           this.timeline_timeout = setTimeout(resolve, 600);
           return this.timeline_timeout;
