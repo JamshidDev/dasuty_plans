@@ -67,8 +67,8 @@ onMounted(() => {
     </div>
     <div class='p-3 text-2xl font-medium border-round-2xl border-3 bg-white absolute total-info'
          style='border-color: #A8111B;'>
-      Умумий сарфланган вақт <br /> <span style='color:#A8111B' class='text-4xl font-semibold'>72</span> соатни ташкил
-      қилади
+      Темир йўл хизматларидан фойдаланишда мижознинг сарфлаган вақти
+      <br /> <span style='color:#A8111B' class='text-4xl font-semibold'>72</span> соатни ташкил қилган
     </div>
   </div>
 </template>
