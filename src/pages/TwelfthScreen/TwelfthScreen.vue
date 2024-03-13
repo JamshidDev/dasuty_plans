@@ -96,7 +96,7 @@ $blue: #234699;
   h6 {
     margin: 0 0 8px 0;
     font-size: 20px;
-    color: #A8111B;
+    color: #fff;
   }
 
   p {
