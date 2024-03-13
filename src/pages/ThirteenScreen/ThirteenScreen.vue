@@ -167,7 +167,7 @@ onUnmounted(() => {
     </div>
     <div class='p-3 border-round-2xl border-3 bg-white flex flex-column gap-2 absolute total-info-right'
          style='border-color: #11A832;'>
-      <div class='text-2xl font-medium flex align-items-center gap-2 mb-2'>
+      <div class='text-2xl font-medium  gap-2 mb-2 text-center w-full'>
         ЭРИШИЛГАН НАТИЖАЛАР
       </div>
       <div class='text-xl font-medium flex align-items-center gap-2'>
