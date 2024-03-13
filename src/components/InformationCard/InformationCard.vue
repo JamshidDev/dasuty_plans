@@ -19,7 +19,7 @@
             <div class="grid">
               <div v-for="item in general_data" :key="item.id" class="col-4 cursor-pointer">
                 <div @click="control_overall($event ,item.id)"
-                     :class="[2,6,8, 7].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
+                     :class="[2,6,8,5,7].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
                      class="card_box p-2 border-round shadow-1 min-h-full "
                 >
                   <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
@@ -133,6 +133,18 @@
   <OverlayPanel ref="overall4_ref" style="width:400px">
     <div class="grid">
       <div v-for="item in other_wagon_list" :key="item.id" class="col-12 py-1 ">
+        <div class="flex flex-column">
+          <div class="flex justify-content-between border-round min-h-full no-underline">
+            <span><i class='bx bxs-circle text-sm mr-2'></i> {{ item.label }}</span>
+            <span class="font-bold">{{ item.value }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </OverlayPanel>
+  <OverlayPanel ref="overall8_ref" style="width:400px">
+    <div class="grid">
+      <div v-for="item in mtu_wagon_list" :key="item.id" class="col-12 py-1 ">
         <div class="flex flex-column">
           <div class="flex justify-content-between border-round min-h-full no-underline">
             <span><i class='bx bxs-circle text-sm mr-2'></i> {{ item.label }}</span>
@@ -418,31 +430,31 @@ export default {
         {
           id: 0,
           label: "Ёпиқ вагон",
-          value: `4921 та`,
+          value: `4753 та`,
         },
         {
           id: 1,
           label: "Платформа",
-          value: `818 та`,
+          value: `804 та`,
         },
         {
           id: 2,
           label: "Полувагон",
-          value: `6260 та`,
+          value: `6330 та`,
         }, {
           id: 4,
           label: "Цистерна",
-          value: `3511 та`,
+          value: `3426 та`,
         },
         {
           id: 6,
           label: "Рефрижератор вагонлар",
-          value: `1145 та`,
+          value: `1111 та`,
         },
         {
           id: 15,
           label: "Бошқа турдаги вагонлар",
-          value: `5601 та`,
+          value: `5541 та`,
         },
 
 
@@ -451,48 +463,76 @@ export default {
         {
           id:0,
           label:"Зерновоз",
-          value:1355,
+          value:1353,
         },
         {
           id:1,
           label:"Цементовоз",
-          value:1922,
+          value:1905,
         },
         {
           id:2,
           label:"Менераловоз",
-          value:385,
+          value:360,
         },
         {
           id:3,
           label:"Фитингли платформа",
-          value:1081,
+          value:1079,
         },
         {
           id:4,
           label:"Хоппер-дозатор",
-          value:219,
+          value:205,
         },
+
+
+
         {
           id:5,
           label:"Думпкар",
-          value:172,
+          value:170,
         },
+
         {
           id:6,
           label:"Автомобиловоз",
-          value:228,
+          value:232,
         },
         {
           id:7,
           label:"Транспортер",
           value:57,
         },
+
         {
           id:8,
           label:"Қолган бошқа турдаги вагонлар",
-          value:182,
+          value:180,
         },
+      ],
+      mtu_wagon_list:[
+        {
+          id:0,
+          label:"Вчд - Тошкент",
+          value:2980,
+        },
+        {
+          id:1,
+          label:"Вчд - Қўқон",
+          value:4331,
+        },
+        {
+          id:2,
+          label:"Вчд - Бухоро",
+          value:6430,
+        },
+        {
+          id:3,
+          label:"Вчд - Қарши",
+          value:5295,
+        }
+
       ],
       overall_list: [],
       selected_id: null,
@@ -1340,6 +1380,8 @@ export default {
         this.$refs.overal_ref.toggle(event);
       } else if (id === 7) {
         this.$refs.overall3_ref.toggle(event);
+      }else if (id === 5) {
+        this.$refs.overall8_ref.toggle(event);
       }
 
       if (id === 4) {

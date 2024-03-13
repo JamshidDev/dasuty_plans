@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <div @click="open_overal_worker($event,item.id, selected_mtu_list.index)"  v-else class="card_box p-3 border-round shadow-1 min-h-full"
+        <div @click="open_overal_worker($event,item.id, selected_mtu_listnpm .index)"  v-else class="card_box p-3 border-round shadow-1 min-h-full"
              :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
           <div class="title font-bold">
             {{ item.value }}
@@ -81,8 +81,8 @@
          </div>
         <div class="flex justify-content-evenly text-sm mt-3 font-bold">
           <span class="pl-4">Умумий вақт</span>
-          <span v-if="is_show_one" class=" pl-4">73 соат 10 дақиқа</span>
-          <span v-else class=" pl-4">31 соат 50 дақиқа</span>
+          <span v-if="is_show_one" class=" pl-4">11 - 12 кун</span>
+          <span v-else class=" pl-4">5 - 6 кун</span>
         </div>
       </div>
     </span>
@@ -129,27 +129,27 @@ export default {
       active_dialog: false,
       show_animation: false,
       timeline_one: [
-        // {status: 'Ахтачи', date: '0 дақиқа', icon: 'pi pi-shopping-cart', show: false},
-        {status: 'Охунбобоев', date: '25 соат', icon: 'pi pi-cog', show: false},
-        {status: 'Қўқон', date: '13 соат', icon: 'pi pi-shopping-cart',show: false},
-        {status: 'Поп', date: '50 дақиқа', icon: 'pi pi-shopping-cart', show: false},
-        {status: 'Ангрен', date: '1 соат', icon: 'pi pi-cog',show: false},
-        {status: 'Оҳангарон', date: '1 соат', icon: 'pi pi-shopping-cart',show: false},
-        {status: 'Ўзбекистон', date: '1 соат', icon: 'pi pi-shopping-cart',show: false},
-        {status: 'Хаваст', date: '22 соат', icon: 'pi pi-cog',show: false},
-        {status: 'Мароканд', date: '8 соат', icon: 'pi pi-shopping-cart',show: false},
-        {status: 'Бухоро', date: '20 соат', icon: 'pi pi-shopping-cart',show: false},
-        {status: 'Мискин', date: '1 соат 20 дақиқа', icon: 'pi pi-cog',show: false},
+        {status: 'Ахтачи', date: '25 соат', icon: 'pi pi-shopping-cart', show: false},
+        {status: 'Охунбобоев', date: '39 соат', icon: 'pi pi-cog', show: false},
+        {status: 'Қўқон', date: '26 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Поп', date: '9  соат', icon: 'pi pi-shopping-cart', show: false},
+        {status: 'Ангрен', date: '5 соат', icon: 'pi pi-cog',show: false},
+        {status: 'Оҳангарон', date: '3.5 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Ўзбекистон', date: '7 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Хаваст', date: '45 соат', icon: 'pi pi-cog',show: false},
+        {status: 'Мароканд', date: '22 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Бухоро', date: '44 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Мискин', date: '18 соат', icon: 'pi pi-cog',show: false},
         // {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
       ],
       timeline_two: [
-        // {status: 'Ахтачи', date: '0 дақиқа', icon: 'pi pi-shopping-cart', show: false},
-        {status: 'Охунбобоев', date: '40 дақиқа', icon: 'pi pi-cog', show: false},
-        {status: 'Поп', date: '50 дақиқа', icon: 'pi pi-shopping-cart', show: false},
-        {status: 'Ангрен', date: '1 соат', icon: 'pi pi-cog',show: false},
-        {status: 'Мароканд', date: '8 соат', icon: 'pi pi-shopping-cart',show: false},
-        {status: 'Бухоро', date: '20 соат', icon: 'pi pi-shopping-cart',show: false},
-        {status: 'Мискин', date: '1 соат 20 дақиқа', icon: 'pi pi-cog',show: false},
+        {status: 'Ахтачи', date: '18 соат', icon: 'pi pi-shopping-cart', show: false},
+        {status: 'Охунбобоев', date: '9 соат', icon: 'pi pi-cog', show: false},
+        {status: 'Поп', date: '8.5 соат', icon: 'pi pi-shopping-cart', show: false},
+        {status: 'Ангрен', date: '4 соат', icon: 'pi pi-cog',show: false},
+        {status: 'Мароканд', date: '36 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Бухоро', date: '44 соат', icon: 'pi pi-shopping-cart',show: false},
+        {status: 'Мискин', date: '18 соат', icon: 'pi pi-cog',show: false},
         // {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
       ],
       mtu_data: [
