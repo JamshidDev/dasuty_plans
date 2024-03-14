@@ -4,6 +4,8 @@ import PulseAnimation from "../../components/PulseAnimation/PulseAnimation.vue";
 import PulseCenter from "../../components/PulseAnimation/PulseCenter.vue";
 import { onMounted, onUnmounted, ref } from "vue";
 import TitleText from "../../components/TitleText/TitleText.vue";
+import { topCompany } from "./top-company.js";
+import { userType } from "./user-type.js";
 
 const animated = ref(false)
 let timeout = null
@@ -14,6 +16,7 @@ const op3 = ref(null)
 const op4 = ref(null)
 const op5 = ref(null)
 const op6 = ref(null)
+const op7 = ref(null)
 
 function toggle(event, idx) {
   switch (idx) {
@@ -34,6 +37,9 @@ function toggle(event, idx) {
       break
     case 6:
       op6.value.toggle(event)
+      break
+    case 7:
+      op7.value.toggle(event)
       break
   }
 }
@@ -62,42 +68,47 @@ onUnmounted(() => {
 
 <template>
   <div class="w-full wrapper min-h-full flex flex-column justify-content-center align-items-center">
-      <OverlayPanel ref='op1'>
-        <div class='max-w-20rem'>
-          <div class='text-lg font-medium'>Давлат Cолиқ қўмитаси</div>
-          <p class='mb-0'>Мижозлар рўйхатдан ўтиш жараёнида ишончли маълумотлар олиш.</p>
-        </div>
-      </OverlayPanel>
-      <OverlayPanel ref='op2'>
-        <div class='max-w-20rem'>
-          <div class='text-lg font-medium'>Марказий Банк</div>
-          <p class='mb-0'>Мижозлар томондан тўловлар ҳақида маълумот олиш.</p>
-        </div>
-      </OverlayPanel>
-      <OverlayPanel ref='op3'>
-        <div class='max-w-20rem'>
-          <div class='text-lg font-medium'>“Rail-Tarif” тизими</div>
-          <p class='mb-0'>Тарифларни «Rail-Tarif» сервер иловаси ёрдамида ҳисоблаш.</p>
-        </div>
-      </OverlayPanel>
-      <OverlayPanel ref='op4'>
-        <div class='max-w-20rem'>
-          <div class='text-lg font-medium'>“E-IMZO” тизими</div>
-          <p class='mb-0'>“E-IMZO” ёрдамида электрон ҳужжатларни имзолаш.</p>
-        </div>
-      </OverlayPanel>
-      <OverlayPanel ref='op5'>
-        <div class='max-w-20rem'>
-          <div class='text-lg font-medium'>“One-ID” тизими</div>
-          <p class='mb-0'>“One-ID” Веб - сайтларга фойдаланувчиларни аниқлаш имконини беради.</p>
-        </div>
-      </OverlayPanel>
-      <OverlayPanel ref='op6'>
-        <div class='max-w-20rem'>
-          <div class='text-lg font-medium'>Божхона қўмитаси</div>
-          <p class='mb-0'>Божхона қўмитаси ахборот тизими орқали интеграция ишлари олиб борилмоқда</p>
-        </div>
-      </OverlayPanel>
+    <OverlayPanel ref='op1'>
+      <div class='max-w-20rem'>
+        <div class='text-lg font-medium'>Давлат Cолиқ қўмитаси</div>
+        <p class='mb-0'>Мижозлар рўйхатдан ўтиш жараёнида ишончли маълумотлар олиш.</p>
+      </div>
+    </OverlayPanel>
+    <OverlayPanel ref='op2'>
+      <div class='max-w-20rem'>
+        <div class='text-lg font-medium'>Марказий Банк</div>
+        <p class='mb-0'>Мижозлар томондан тўловлар ҳақида маълумот олиш.</p>
+      </div>
+    </OverlayPanel>
+    <OverlayPanel ref='op3'>
+      <div class='max-w-20rem'>
+        <div class='text-lg font-medium'>“Rail-Tarif” тизими</div>
+        <p class='mb-0'>Тарифларни «Rail-Tarif» сервер иловаси ёрдамида ҳисоблаш.</p>
+      </div>
+    </OverlayPanel>
+    <OverlayPanel ref='op4'>
+      <div class='max-w-20rem'>
+        <div class='text-lg font-medium'>“E-IMZO” тизими</div>
+        <p class='mb-0'>“E-IMZO” ёрдамида электрон ҳужжатларни имзолаш.</p>
+      </div>
+    </OverlayPanel>
+    <OverlayPanel ref='op5'>
+      <div class='max-w-20rem'>
+        <div class='text-lg font-medium'>“One-ID” тизими</div>
+        <p class='mb-0'>“One-ID” Веб - сайтларга фойдаланувчиларни аниқлаш имконини беради.</p>
+      </div>
+    </OverlayPanel>
+    <OverlayPanel ref='op6'>
+      <div class='max-w-20rem'>
+        <div class='text-lg font-medium'>Божхона қўмитаси</div>
+        <p class='mb-0'>Божхона қўмитаси ахборот тизими орқали интеграция ишлари олиб борилмоқда</p>
+      </div>
+    </OverlayPanel>
+    <OverlayPanel ref='op7'>
+      <div class='max-w-20rem overflow-y-auto flex flex-column gap-1 max-h-20rem'>
+        <div v-for='item in userType' :key='item.id'>{{item.nameUz || item.userType}}</div>
+      </div>
+    </OverlayPanel>
     <TitleText class='heading' title='Рақамлаштиришдан кейинги ҳолат'></TitleText>
     <PulseAnimation class='custom-pulse-animation overflow-visible' />
     <PulseCenter class='pulse'>
@@ -155,7 +166,7 @@ onUnmounted(() => {
       <div class='text-2xl font-medium flex align-items-center gap-2'>
         <img src='/images/user-type-success.png' alt='user-type' />
         <span>
-          Фойдаланувчилар тури – <span style='color:#11A832' class='font-semibold'>97</span>
+          Фойдаланувчилар тури – <span style='color:#11A832' class='font-semibold cursor-pointer' @click='toggle($event, 7)'>97</span>
         </span>
       </div>
       <div class='text-2xl font-medium flex align-items-center gap-2'>
@@ -202,10 +213,26 @@ onUnmounted(() => {
         </span>
       </div>
     </div>
+    <div class='total-info-top p-3 border-round-2xl border-3 bg-white flex flex-column gap-2 absolute'>
+      <div v-for='item in topCompany' :key='item.id' class='flex justify-content-between text-lg gap-2 font-medium'>
+        <span>{{ item.name }}</span>
+        <span style='color: #11A832'>{{ Number(item.value).toLocaleString('ru-ru', { currency: 'uzs' }) }}</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+
+.total-info-top {
+  top: 80px;
+  left: 50px;
+  border-color: #11A832;
+  animation: 1.5s fadeIn forwards;
+  opacity: 0;
+  animation-delay: 5s;
+  max-width: 550px;
+}
 
 .total-info-right {
   right: 50px;
@@ -357,7 +384,7 @@ onUnmounted(() => {
 
   &.box-3 {
     left: calc(100% + 40px);
-    bottom: -60px;
+    bottom: 0;
     animation-delay: 4.6s;
     transform: rotate(-180deg);
   }
