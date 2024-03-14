@@ -29,7 +29,7 @@ const arr1 = [
 
 const arr2 = [
     {offset: -12, name: 'E-NAKL', deadline: '31.05.2024', url: 'https://e-nakl.railway.uz', value: 92, rate: 17},
-    {offset: 0, name: 'TRAIN LOCATION', deadline: '15.06.2024', url: 'hhttps://tracking.railway.uz', value: 91, rate: 32},
+    {offset: 0, name: 'TRAIN LOCATION', deadline: '15.06.2024', url: 'https://tracking.railway.uz', value: 91, rate: 32},
     {offset: 6, name: 'E-TICKET', deadline: '10.08.2024', url: 'https://eticket.railway.uz', value: 88, rate: 25},
     {offset: 7.5, name: 'SMART DEPO', deadline: '10.07.2024', url: 'https://depouzbekistan.uz', value: 82, rate: 50},
     {offset: 5, name: 'UZ GPS', deadline: '21.08.2024', url: 'https://utysmpo.uzgps.uz', value: 78, rate: 70},
