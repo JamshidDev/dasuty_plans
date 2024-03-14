@@ -2,10 +2,13 @@
 import TitleText from "@/components/TitleText/TitleText.vue";
 import { onMounted, ref } from "vue";
 import CountTime from "../../components/CountTime/CountTime.vue";
+import lottie from 'lottie-web';
+import animationData from "../../components/LottieJSON/animate-comp.json";
 
 const animated = ref(false)
-const el = ref(false)
+const el = ref(null)
 const totalP = ref(65)
+const animEl = ref(null)
 
 const arr1 = [
   { offset: -12, name: 'KPI Тизими', value: 40, rate: 40 },
@@ -28,6 +31,16 @@ const arr2 = [
 ]
 
 onMounted(() => {
+  const container = animEl.value;
+
+  lottie.loadAnimation({
+    container: container,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: animationData // Your animation JSON data
+  });
+
   setTimeout(() => {
     animated.value = !animated.value
   }, 500)
@@ -46,7 +59,7 @@ onMounted(() => {
     <TitleText :title='`"ЎЗБЕКИСТОН ТЕМИР ЙЎЛЛАРИ" АЖДА`' :subtitle="`РАҚАМЛАШТИРИШНИНГ ЖОРИЙ ҲОЛАТИ`" />
     <div class='wrapper'>
       <div class='left-side flex align-items-end flex-column gap-6 mb-8'>
-        <div v-for='item in arr1' class='project-item' :style='{right: `${item.offset}%`}'>
+        <a href='/' target='_blank' v-for='item in arr1' class='project-item' :style='{right: `${item.offset}%`}'>
           <h4 class='text-right'>{{ item.name }}</h4>
           <div class='relative'>
 <!--            <div class='progress-icon progress-icon-left'></div>-->
@@ -62,10 +75,12 @@ onMounted(() => {
               :value='animated ? item.value : 0'
             />
           </div>
-        </div>
+        </a>
       </div>
       <div class='center-side flex justify-content-center align-items-center mb-8' ref='el'>
         <div class='relative'>
+          <div ref='animEl' class='anim-el' />
+
           <div class='fake-thumb flex justify-content-center align-items-center' />
           <div v-if='el' class='thumb-container' :style='{zIndex: totalP > 90 ? 15 : 1}'>
             <div class='seconds'
@@ -89,7 +104,7 @@ onMounted(() => {
         </div>
       </div>
       <div class='right-side flex align-items-start flex-column gap-6 mb-8'>
-        <div v-for='item in arr2' class='project-item' :style='{left: `${item.offset}%`}'>
+        <a href='/' target='_blank' v-for='item in arr2' class='project-item' :style='{left: `${item.offset}%`}'>
           <h4 class='text-left'>{{ item.name }}</h4>
           <div class='relative'>
 <!--            <div class='progress-icon progress-icon-right'></div>-->
@@ -104,7 +119,7 @@ onMounted(() => {
               :class='{primary: item.value > 72, warning: item.value > 56 && item.value < 72, danger: item.value < 56}'
             />
           </div>
-        </div>
+        </a>
       </div>
     </div>
     <CountTime class='special-countTime'></CountTime>
@@ -113,6 +128,14 @@ onMounted(() => {
 </template>
 <style lang="scss" scoped>
 $blue: #234699;
+
+.anim-el {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px
+}
 
 .progress-rate {
   position: absolute;
@@ -249,12 +272,15 @@ $blue: #234699;
 }
 
 .project-item {
+  display: block;
   max-width: 70%;
   width: 100%;
   position: relative;
+  text-decoration: unset;
 
   h4 {
-    margin: 0 0 4px
+    margin: 0 0 4px;
+    color: #1A1A1A;
   }
 }
 
