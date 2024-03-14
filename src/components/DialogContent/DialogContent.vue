@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <div @click="open_overal_worker($event,item.id, selected_mtu_listnpm .index)"  v-else class="card_box p-3 border-round shadow-1 min-h-full"
+        <div @click="open_overal_worker($event,item.id, selected_mtu_list.index)"  v-else class="card_box p-3 border-round shadow-1 min-h-full"
              :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
           <div class="title font-bold">
             {{ item.value }}
