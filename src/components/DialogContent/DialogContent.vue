@@ -11,7 +11,7 @@
           <div v-if="item?.multiple_label" class="card_box p-3 border-round shadow-1 min-h-full"
                :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
           <div class="title font-bold">
-            {{ item.labels.value1 }}
+            {{ item.labels.value1 ?? '' }}
           </div>
           <div class="text-sm">
             {{ item.labels.label1 }}
