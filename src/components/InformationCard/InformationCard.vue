@@ -214,25 +214,32 @@
           <tr style="border-bottom:10px solid transparent">
             <th style="width:150px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
-                Экспорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >тонна</span>
+                Экспорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
               </div>
             </th>
 
              <th style="width:150px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
-                Импорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
+                Импорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
               </div>
             </th>
              <th style="width:150px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
-                Транзит <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
+                Транзит <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
               </div>
             </th>
+
               <th style="width:150px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
-                Махалий <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
+                Махалий <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
               </div>
             </th>
+             <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Юк ташиш <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
+              </div>
+            </th>
+
           </tr>
         </thead>
         <tbody>
@@ -246,7 +253,7 @@
               </td>
             </tr>
         <tr>
-              <td colspan="4">
+              <td colspan="5">
                  <div :class="general_stik_list.is_increment? 'bg-green-100' : 'bg-red-100'" class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
                     <div :class="general_stik_list.is_increment? 'text-green-600' : 'text-red-600'"  class="font-bold mb-2  text-center text-xl">{{general_stik_list.percent}} <i :class="general_stik_list.is_increment? 'bxs-arrow-from-bottom' : 'bxs-arrow-from-top'" class='bx  text-xl'></i></div>
 
@@ -1430,19 +1437,23 @@ export default {
             data:[
               {
                 name:'Экспорт',
-                count:'10 900',
+                count:'10.9',
               },
               {
                 name:'Импорт',
-                count:'19 500',
+                count:'19.5',
               },
               {
                 name:'Транзит',
-                count:'10 200',
+                count:'10.2',
               },
               {
                 name:'Махалий',
-                count:'61 700',
+                count:'61.7',
+              },
+              {
+                name:'Юк ташиш',
+                count:'102,3',
               },
             ]
           },
@@ -1451,19 +1462,23 @@ export default {
             data:[
               {
                 name:'Экспорт',
-                count:'12 400',
+                count:'12.4',
               },
               {
                 name:'Импорт',
-                count:'24 600',
+                count:'24.6',
               },
               {
                 name:'Транзит',
-                count:'11 600',
+                count:'11.6',
               },
               {
                 name:'Махалий',
-                count:'60 800',
+                count:'60.8',
+              },
+              {
+                name:'Юк ташиш',
+                count:'109,4',
               },
             ]
           },

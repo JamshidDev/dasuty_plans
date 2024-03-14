@@ -81,8 +81,8 @@
          </div>
         <div class="flex justify-content-evenly text-sm mt-3 font-bold">
           <span class="pl-4">Умумий вақт</span>
-          <span v-if="is_show_one" class=" pl-4">11 - 12 кун</span>
-          <span v-else class=" pl-4">5 - 6 кун</span>
+          <span v-if="is_show_one" class=" pl-4">12 кун</span>
+          <span v-else class=" pl-4">6 кун</span>
         </div>
       </div>
     </span>
@@ -166,6 +166,7 @@ export default {
         {status: 'Мискин', date: '18 соат', icon: 'pi pi-cog',show: false},
         // {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
       ],
+      timeline_two_index :[0,1,3,4,8,9,10,],
       mtu_data: [
         {
           name: 'Тошкент МТУ',
@@ -1267,9 +1268,9 @@ export default {
       for(let i=0; i<this.timeline_two.length; i++){
 
         if(i>0){
-          this.timeline_two_text[i-1].show=false;
+          this.timeline_two_text[this.timeline_two_index[i-1]].show=false;
         }
-        this.timeline_two_text[i].show=true;
+        this.timeline_two_text[this.timeline_two_index[i]].show=true;
         await new Promise(resolve => {
           this.timeline_timeout = setTimeout(resolve, 600);
           return this.timeline_timeout;
