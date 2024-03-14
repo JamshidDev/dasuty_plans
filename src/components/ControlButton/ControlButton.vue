@@ -99,24 +99,24 @@ export default {
           index: 5,
           name: "thirteen-screen"
         },
+        // {
+        //   index: 6,
+        //   name: "first-screen"
+        // },
         {
           index: 6,
-          name: "first-screen"
-        },
-        {
-          index: 7,
           name: "second-screen"
         },
         {
-          index: 8,
+          index: 7,
           name: "nst-infra"
         },
+        // {
+        //   index: 9,
+        //   name: "vols"
+        // },
         {
-          index: 9,
-          name: "vols"
-        },
-        {
-          index: 10,
+          index: 8,
           name: "third-screen"
         },
       ],
