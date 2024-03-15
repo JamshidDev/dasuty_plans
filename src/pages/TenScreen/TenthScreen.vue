@@ -56,7 +56,7 @@ onMounted(() => {
         setTimeout(() => {
             animated.value = true
         }, 1000)
-    }, 8000)
+    }, 10000)
 })
 
 </script>
@@ -69,7 +69,7 @@ onMounted(() => {
                 <div v-for='item in arr1' class='project-item'
                    :style='{right: `${item.offset}%`}'>
                     <div class="flex gap-2 justify-content-between">
-                        <h4 class='text-left'>{{ item.name }}</h4>
+                        <h4 class='text-left text-xl'>{{ item.name }}</h4>
                         <span class="font-bold" style="color:#1A1A1A">{{ item.deadline ?? '' }}</span>
                     </div>
                     <div class='relative'>
@@ -120,7 +120,7 @@ onMounted(() => {
                 <div v-for='item in arr2' class='project-item'
                    :style='{left: `${item.offset}%`}'>
                     <div class="flex gap-2 justify-content-between">
-                        <h4 class='text-left'>{{ item.name }}</h4>
+                        <h4 class='text-left text-xl'>{{ item.name }}</h4>
                         <span class="font-bold" style="color:#1A1A1A">{{ item.deadline ?? '' }}</span>
                     </div>
                     <div class='relative'>
