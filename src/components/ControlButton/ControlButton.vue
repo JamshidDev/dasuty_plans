@@ -103,12 +103,12 @@ export default {
         //   index: 6,
         //   name: "first-screen"
         // },
+        // {
+        //   index: 6,
+        //   name: "second-screen"
+        // },
         {
           index: 6,
-          name: "second-screen"
-        },
-        {
-          index: 7,
           name: "nst-infra"
         },
         // {
@@ -116,7 +116,7 @@ export default {
         //   name: "vols"
         // },
         {
-          index: 8,
+          index: 7,
           name: "third-screen"
         },
       ],
