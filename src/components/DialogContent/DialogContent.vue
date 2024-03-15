@@ -10,18 +10,19 @@
         <div class="col-6" @click="control_overall2($event,item.iscollapse, item?.nodes_list, item.id)">
           <div v-if="item?.multiple_label" class="card_box p-3 border-round shadow-1 min-h-full"
                :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
+              <div class="title font-bold mt-2">
+            {{ item.labels.value2 }}
+          </div>
+          <div class="text-sm">
+            {{ item.labels.label2 }}
+          </div>
           <div class="title font-bold">
             {{ item.labels.value1 ?? '' }}
           </div>
           <div class="text-sm">
             {{ item.labels.label1 }}
           </div>
-             <div class="title font-bold mt-2">
-            {{ item.labels.value2 }}
-          </div>
-          <div class="text-sm">
-            {{ item.labels.label2 }}
-          </div>
+
         </div>
 
         <div @click="open_overal_worker($event,item.id, selected_mtu_list.index)" v-else
@@ -71,14 +72,14 @@
           </Timeline>
             <Timeline v-else class="w-full" :value="timeline_two_text">
               <template #opposite="slotProps">
-        <small class="text-blue-600 font-bold" :class="slotProps.item.stroke && 'line-through'">{{
+        <small  class="text-blue-600 font-bold" :class="slotProps.item.stroke && 'line-through text-red-600'">{{
                 slotProps.item.date
             }}</small>
     </template>
     <template #content="slotProps" class="h-3rem">
         <div class="flex justify-content-between w-full px-2 align-items-center border-round"
              :class="slotProps.item.show? 'bg-blue-100' : 'bg-transparent'">
-          <span :class="slotProps.item.stroke && 'line-through'">{{ slotProps.item.status }}</span> <i
+          <span :class="slotProps.item.stroke && 'line-through text-red-600'">{{ slotProps.item.status }}</span> <i
             class='bx bxs-left-arrow-circle text-lg' :class="[slotProps.item.show? 'text-primary' : 'text-white' ]"></i>
         </div>
     </template>
@@ -88,7 +89,7 @@
         <div class="flex justify-content-evenly text-sm mt-3 font-bold">
           <span class="pl-4">Умумий вақт</span>
           <span v-if="is_show_one" class=" pl-4">12 кун</span>
-          <span v-else class=" pl-4">6 кун</span>
+          <span v-else class=" pl-4">5 кун</span>
         </div>
       </div>
     </span>
@@ -152,15 +153,15 @@ export default {
             ],
             timeline_two_text: [
                 {status: 'Ахтачи', date: '25 соат', icon: 'pi pi-shopping-cart', show: false, stroke: false,},
-                {status: 'Охунбобоев', date: '39 соат', icon: 'pi pi-cog', show: false, stroke: false,},
-                {status: 'Қўқон', date: '26 соат', icon: 'pi pi-shopping-cart', show: false, stroke: true,},
+                {status: 'Охунбобоев', date: '30 соат', icon: 'pi pi-cog', show: false, stroke: false,},
+                {status: 'Қўқон', date: '20 соат', icon: 'pi pi-shopping-cart', show: false, stroke: true,},
                 {status: 'Поп', date: '9  соат', icon: 'pi pi-shopping-cart', show: false, stroke: false,},
                 {status: 'Ангрен', date: '5 соат', icon: 'pi pi-cog', show: false, stroke: false,},
                 {status: 'Оҳангарон', date: '3.5 соат', icon: 'pi pi-shopping-cart', show: false, stroke: true,},
                 {status: 'Ўзбекистон', date: '7 соат', icon: 'pi pi-shopping-cart', show: false, stroke: true,},
-                {status: 'Хаваст', date: '45 соат', icon: 'pi pi-cog', show: false, stroke: true,},
+                {status: 'Хаваст', date: '35 соат', icon: 'pi pi-cog', show: false, stroke: true,},
                 {status: 'Мароканд', date: '22 соат', icon: 'pi pi-shopping-cart', show: false, stroke: false,},
-                {status: 'Бухоро', date: '44 соат', icon: 'pi pi-shopping-cart', show: false, stroke: false,},
+                {status: 'Бухоро', date: '34 соат', icon: 'pi pi-shopping-cart', show: false, stroke: false,},
                 {status: 'Мискин', date: '18 соат', icon: 'pi pi-cog', show: false, stroke: false,},
                 // {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
             ],

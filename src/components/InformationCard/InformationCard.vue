@@ -12,28 +12,32 @@
       </div>
       <div class="col-12">
         <div class="grid overflow-y-auto overflow-x-hidden px-1" style="height:360px">
-          <div class="col-12 px-0 pb-2" v-if="active_card">
+          <div class="col-12 px-0 pb-2" v-show="active_card">
             <div class="grid">
               <div v-for="item in general_data" :key="item.id" class="col-4 cursor-pointer">
                 <div @click="control_overall($event ,item.id)"
                      :class="[2,6,8,5,7,3].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
                      class="card_box p-2 border-round shadow-1 min-h-full "
                 >
-                  <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
+                  <span v-show="[5,4, 3].includes(item.id)">
+                    <div  class="flex justify-content-between">
                     <div class="title font-bold">
                       <NumberAnimation :amount="item.value"></NumberAnimation>
-                      <span>{{ item.extension_value }}</span>
+                      <span> {{ item.extension_value }}</span>
                     </div>
                     <span>
-            <InputSwitch @click.stop @change="change_map(item.show_map, item.id)" v-model="item.show_map"/>
-          </span>
+                      <InputSwitch @click.stop @change="change_map(item.show_map, item.id)" v-model="item.show_map"/>
+                     </span>
                   </div>
-                  <div v-else>
+                  </span>
+                  <span v-show="![5,4, 3].includes(item.id)">
+                    <div>
                     <div class="title text-sm font-bold">
                       <NumberAnimation :amount="item.value"></NumberAnimation>
                       <span>{{ item.extension_value }}</span>
                     </div>
                   </div>
+                  </span>
                   <!--                  <div class="my-1">-->
 
                   <!--                  </div>-->
@@ -44,7 +48,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12" v-else>
+          <div class="col-12" v-show="!active_card">
             <div class="grid pt-2 pb-6">
               <div v-for="item in station_line_list" :key="item" class="col-12">
                 <div class="flex w-full gap-2 align-items-center justify-content-between">
@@ -59,13 +63,6 @@
             </div>
 
 
-          </div>
-          <div class="col-12">
-            <div    class="surface-card border-1 text-500 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
-  height: 40px;">
-              Олдинги ҳолат
-              <i class='bx bx-show text-500 text-4xl'></i>
-            </div>
           </div>
         </div>
       </div>
@@ -105,7 +102,7 @@
     <div class="grid w-full">
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="13171" :title="`Олий малумотли`" :percent="19"></EducationChart>
+          <EducationChart :color="`green`" :amount="13171" :title="`Олий малумотли`" :percent="20"></EducationChart>
           <EducationChart :color="`yellow`" :amount="35763" :title="`ўрта малумотли`" :percent="50"></EducationChart>
           <EducationChart :color="`blue`" :amount="21615" :title="`ўрта махсус малумотли`" :percent="30"></EducationChart>
         </div>
@@ -203,7 +200,7 @@
     </div>
   </span>
 
-  <span v-if="general_stik_dialog" >
+  <span v-show="general_stik_dialog" >
     <div :class="general_stik_dialog && 'active_dialog'" class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden " >
       <h2 class="w-full text-center my-0 text-500 font-bold  pt-1 pb-1 relative">{{general_stik_list?.name}}
         <i  class='bx bx-x absolute top-0 right-0 mt-1 mr-2 text-3xl cursor-pointer' @click="general_stik_dialog=false"></i>
@@ -271,6 +268,12 @@ import EducationChart from "@/components/InformationCard/EducationChart.vue";
 
 export default {
   name: "InformationCard",
+  props:{
+    switch_data:{
+      type:Object,
+      default:null,
+    }
+  },
   components: {
     NumberAnimation,
     EducationChart,
@@ -612,8 +615,8 @@ export default {
           name: 'Сарыагаш-Узбекистон-Тукимачи-Келес',
           color: '#996633',
           map: {
-            x: -3665,
-            y: -987,
+            x: -3034,
+            y: -889,
             zoom: 4,
           }
         },
@@ -622,8 +625,8 @@ export default {
           name: 'Узбекистон-Хаваст-Жиззах',
           color: '#cccccc',
           map: {
-            x: -2818,
-            y: -1088,
+            x: -2256,
+            y: -1008,
             zoom: 3.6,
           }
         },
@@ -632,8 +635,8 @@ export default {
           name: 'Ходжикент-Тошкент-Ангрен',
           color: '#faff81',
           map: {
-            x: -4155,
-            y: -997,
+            x: -3518,
+            y: -897,
             zoom: 4.3,
           }
         },
@@ -642,8 +645,8 @@ export default {
           name: 'Хаваст-Жиззах-Мараканд',
           color: '#ff99cc',
           map: {
-            x: -4273,
-            y: -2183,
+            x: -3233,
+            y: -1957,
             zoom: 5,
           }
         },
@@ -652,8 +655,8 @@ export default {
           name: '- Ангрен-Пап Коканд-Хаваст',
           color: '#000000',
           map: {
-            x: -2627,
-            y: -791,
+            x: -2252,
+            y: -727,
             zoom: 3,
           }
         },
@@ -662,8 +665,8 @@ export default {
           name: 'Коканд-Маргилон-Андижон',
           color: '#9933cc',
           map: {
-            x: -5030,
-            y: -1329,
+            x: -4299,
+            y: -1154,
             zoom: 4.3,
           }
         },
@@ -672,8 +675,8 @@ export default {
           name: 'Фарап-Мараканд',
           color: '#ffcc00',
           map: {
-            x: -1430,
-            y: -1170,
+            x: -1016,
+            y: -1061,
             zoom: 3,
           }
         },
@@ -682,8 +685,8 @@ export default {
           name: 'Тинчлик-Учкудук-Мискен',
           color: '#cc3399',
           map: {
-            x: -1175,
-            y: -825,
+            x: -741,
+            y: -769,
             zoom: 3,
           }
         },
@@ -692,8 +695,8 @@ export default {
           name: 'Кунград-Тахиаташ-Нукус-Мискен-Обод-Газоджак',
           color: '#00ccff',
           map: {
-            x: -554,
-            y: -551,
+            x: -82,
+            y: -515,
             zoom: 3,
           }
         },
@@ -702,8 +705,8 @@ export default {
           name: 'Кунград - Каракалпакстан',
           color: '#6600cc',
           map: {
-            x: -183,
-            y: -272,
+            x: 131,
+            y: -250,
             zoom: 3,
           }
         },
@@ -712,8 +715,8 @@ export default {
           name: 'Бухоро-Карши-Мараканд-Китоб',
           color: '#33cc66',
           map: {
-            x: -2140,
-            y: -1592,
+            x: -1666,
+            y: -1580,
             zoom: 3.6,
           }
         },
@@ -723,17 +726,18 @@ export default {
           name: 'Тошгузор-Бойсун-Кумкурган',
           color: '#6699ff',
           map: {
-            x: -2444,
-            y: -1891,
+            x: -1926,
+            y: -1828,
             zoom: 3.6,
           }
-        }, {
+        },
+        {
           id: 'uchas8',
           name: 'Карши-Талимарджан-Рзд.161-Термез-Кудукли-Галаба',
           color: '#ff0000',
           map: {
-            x: -2459,
-            y: -1991,
+            x: -1868,
+            y: -1908,
             zoom: 3.6,
           }
         },
@@ -1529,7 +1533,6 @@ export default {
     },
 
     change_card() {
-      console.log("pl")
       this.active_card = !this.active_card;
       this.$emit("changeCard", this.active_card);
 
@@ -1538,6 +1541,7 @@ export default {
       } else {
         this.general_data[4].show_map = false;
         this.general_data[5].show_map = false;
+        this.general_data[6].show_map = false;
       }
 
 
@@ -1591,6 +1595,8 @@ export default {
   },
   mounted() {
     // this.show_dialog('stik1')
+
+    this.general_data[6].show_map = this.switch_data.wagon;
   }
 }
 </script>

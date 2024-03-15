@@ -4,8 +4,8 @@
 <!--      -->
 <!--    </div>-->
     <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">
-      Ўзбекистон темир йўллари харитаси
-<!--    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}-->
+<!--      Ўзбекистон темир йўллари харитаси-->
+    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}
     </div>
     <div id="zoom-container" ref="zoom_container" class="w-full border-round relative"
          style="height:88vh; overflow: hidden;">
@@ -30,35 +30,19 @@
         <LottieIcon class="potok14_icon icon_position" :style="{visibility:show_patok_icon? 'visible':'hidden'}"></LottieIcon>
         <LottieIcon class="potok15_icon icon_position" :style="{visibility:show_patok_icon? 'visible':'hidden'}"></LottieIcon>
 <!--        <RiplleIcon class="ripple1_icon"></RiplleIcon>-->
-
-
       </div>
 
     </div>
 
     <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
-    <InformationCard ref="information_modal_ref" @closeInfoMap="close_info_map()"  @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" v-if="general_info_show"></InformationCard>
+    <SchemaButton v-show="show_button_schema && general_info_show" @action_draw="draw_schema($event)"></SchemaButton>
+    <span v-show="general_info_show">
+      <InformationCard  :switch_data="switch_details"  ref="information_modal_ref" @closeInfoMap="close_info_map()"  @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" ></InformationCard>
+    </span>
     <div v-if="$route.name ==='zero-screen'" class="fixed flex gap-2 absolute" style="bottom:10px; left:620px; z-index:10">
-      <div @click="clear_all_train()"  class="surface-card border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 60px;
-  height: 40px;">
-        <!--      Олдинги ҳолат-->
-        <i class='bx bx-hide text-500 text-4xl'></i>
-
-      </div>
-      <div @click="draw_old_train()"    class="surface-card border-1 text-500 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
-  height: 40px;">
-        Олдинги ҳолат
-        <i class='bx bx-show text-500 text-4xl'></i>
-      </div>
-      <div @click="draw_new_train()"   class="surface-card text-500 border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
-  height: 40px;">
-        Ҳозирги ҳолат
-        <i class='bx bx-show text-500 text-4xl'></i>
-      </div>
-      <div @click="draw_test_train()"   class="surface-card text-500 border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
-  height: 40px;">
-        тест ҳолат
-        <i class='bx bx-show text-500 text-4xl'></i>
+      <div v-if="general_info_show" @click="show_button_schema=!show_button_schema"  class="active:bg-blue-100 surface-card border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 60px;
+  height: 36px;">
+        <i class='bx bx-collapse-alt text-500 text-2xl font-bold'></i>
       </div>
     </div>
   </div>
@@ -72,10 +56,12 @@ import InformationCard from "@/components/InformationCard/InformationCard.vue";
 import Schema_One from "@/components/StationSchema/Schema_One.vue";
 import LottieIcon from "@/components/LottieIcon/LottieIcon.vue";
 import RiplleIcon from "@/components/LottieIcon/RiplleIcon.vue";
+import SchemaButton from "@/components/TrainSchemaButton/SchemaButton.vue";
 
 
 export default {
   components: {
+    SchemaButton,
     Schema_One,
     InformationCard,
     RailwayMap,
@@ -101,6 +87,13 @@ export default {
       active_map:true,
 
       show_patok_icon:false,
+      show_button_schema:false,
+
+      switch_details:{
+        wagon:false,
+        depo:false,
+        stik:false,
+      },
 
     }
   },
@@ -119,6 +112,7 @@ export default {
     },
     change_card(map){
       this.active_map = map;
+      this.show_patok_icon = false;
       if(map){
         this.go_push_element(38.6, -103, 1.2);
         this.$refs.railway_map_ref.clear_marked();
@@ -141,23 +135,37 @@ export default {
       this.go_push_element(38.6, -103, 1.2);
     },
 
-    draw_old_train(){
-      this.$refs.railway_map_ref.old_draw_train();
-      this.$refs.dialog_ref.old_timeline_start();
-    },
-    draw_new_train(){
-      this.$refs.railway_map_ref.new_draw_train();
-      this.$refs.dialog_ref.new_timeline_start();
+
+
+    draw_schema(action){
+      if(action === 'old-train'){
+        this.$refs.railway_map_ref.old_draw_train();
+        this.$refs.dialog_ref.old_timeline_start();
+      }else if(action === 'new-train'){
+        this.$refs.railway_map_ref.new_draw_train();
+        this.$refs.dialog_ref.new_timeline_start();
+      }else if(action === 'close'){
+        this.$refs.dialog_ref.close_timeline();
+        this.$refs.railway_map_ref.clear_all();
+        this.$refs.railway_map_ref.all_hidden_train_station();
+      }else if(action === 'route1'){
+        this.$refs.railway_map_ref.test_draw_train();
+        this.$refs.dialog_ref.close_timeline();
+      }else if(action === 'route2'){
+        this.$refs.railway_map_ref.route2_draw_train();
+        this.$refs.dialog_ref.close_timeline();
+      }else if(action === 'route3'){
+        this.$refs.railway_map_ref.route3_draw_train();
+        this.$refs.dialog_ref.close_timeline();
+      }else if(action === 'route4'){
+        this.$refs.railway_map_ref.route4_draw_train();
+        this.$refs.dialog_ref.close_timeline();
+      }else if(action === 'vokzals'){
+        this.$refs.railway_map_ref.show_train_station();
+        this.$refs.dialog_ref.close_timeline();
+      }
 
     },
-    draw_test_train(){
-      this.$refs.railway_map_ref.test_draw_train();
-      this.$refs.dialog_ref.close_timeline();
-    },
-    clear_all_train(){
-      this.$refs.dialog_ref.close_timeline();
-      this.$refs.railway_map_ref.clear_all();
-    }
   },
 
   mounted() {
