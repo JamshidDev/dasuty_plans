@@ -19,7 +19,7 @@
             <div class="grid">
               <div v-for="item in general_data" :key="item.id" class="col-4 cursor-pointer">
                 <div @click="control_overall($event ,item.id)"
-                     :class="[2,6,8, 7].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
+                     :class="[2,6,8,5,7,3].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
                      class="card_box p-2 border-round shadow-1 min-h-full "
                 >
                   <div v-if="[5,4, 3].includes(item.id)" class="flex justify-content-between">
@@ -75,12 +75,12 @@
       <div v-for="item in overall_list" :key="item.id" class="col-12 py-1">
         <div class="flex flex-column">
           <div class="flex justify-content-between border-round min-h-full">
-            <span><i class='bx bxs-circle text-sm mr-2'></i>
+            <span :class="item.id ===15 && 'text-blue-500'" @click="open_modal($event, item.id)" ><i class='bx bxs-circle text-sm mr-2'></i>
               <Checkbox @change="control_overall2"
                         class="mr-2 p-inputtext-sm"
                         v-if="item.id ===1 && selected_data_id ===6"
                         v-model="sorted_station"
-                        :binary="true"/> {{ item.label }}</span>
+                        :binary="true"/> <span class="cursor-pointer">{{ item.label }}</span></span>
             <span class="font-bold">{{ item.value }}</span>
           </div>
         </div>
@@ -105,27 +105,52 @@
     <div class="grid w-full">
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="9288" :title="`Олий малумотли`" :percent="18"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="26329" :title="`ўрта малумотли`" :percent="50"></EducationChart>
-          <EducationChart :color="`blue`" :amount="16713" :title="`ўрта махсус малумотли`" :percent="32"></EducationChart>
+          <EducationChart :color="`green`" :amount="13171" :title="`Олий малумотли`" :percent="19"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="35763" :title="`ўрта малумотли`" :percent="50"></EducationChart>
+          <EducationChart :color="`blue`" :amount="21615" :title="`ўрта махсус малумотли`" :percent="30"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="13598" :title="`31 ёшгача`" :percent="26"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="24797" :title="`32 ёшдан 45 ёшгача`" :percent="47"></EducationChart>
-          <EducationChart :color="`blue`" :amount="14174" :title="`46 ёшдан катталар`" :percent="27"></EducationChart>
+          <EducationChart :color="`green`" :amount="15086" :title="`31 ёшгача`" :percent="21"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="36169" :title="`32 ёшдан 45 ёшгача`" :percent="51"></EducationChart>
+          <EducationChart :color="`blue`" :amount="19678" :title="`46 ёшдан катталар`" :percent="28"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="43549" :title="`Эркаклар`" :percent="82"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="9020" :title="`Аёллар`" :percent="18"></EducationChart>
+          <EducationChart :color="`green`" :amount="57855" :title="`Эркаклар`" :percent="82"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="13078" :title="`Аёллар`" :percent="18"></EducationChart>
         </div>
       </div>
       <div class="col-6 flex justify-content-end align-items-end pb-3">
         <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i
             class='bx bx-right-top-arrow-circle ml-2'></i></a>
+      </div>
+    </div>
+  </OverlayPanel>
+
+  <OverlayPanel ref="overall4_ref" style="width:400px">
+    <div class="grid">
+      <div v-for="item in other_wagon_list" :key="item.id" class="col-12 py-1 ">
+        <div class="flex flex-column">
+          <div class="flex justify-content-between border-round min-h-full no-underline">
+            <span><i class='bx bxs-circle text-sm mr-2'></i> {{ item.label }}</span>
+            <span class="font-bold">{{ item.value }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </OverlayPanel>
+  <OverlayPanel ref="overall8_ref" style="width:400px">
+    <div class="grid">
+      <div v-for="item in mtu_wagon_list" :key="item.id" class="col-12 py-1 ">
+        <div class="flex flex-column">
+          <div class="flex justify-content-between border-round min-h-full no-underline">
+            <span><i class='bx bxs-circle text-sm mr-2'></i> {{ item.label }}</span>
+            <span class="font-bold">{{ item.value }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </OverlayPanel>
@@ -170,6 +195,67 @@
               <td colspan="3">
                  <div :class="selected_stik.is_increment? 'bg-green-100' : 'bg-red-100'" class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
                     <div :class="selected_stik.is_increment? 'text-green-600' : 'text-red-600'"  class="font-bold mb-2  text-center text-xl">{{selected_stik.percent}} <i :class="selected_stik.is_increment? 'bxs-arrow-from-bottom' : 'bxs-arrow-from-top'" class='bx  text-xl'></i></div>
+
+              </div>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </span>
+
+  <span v-if="general_stik_dialog" >
+    <div :class="general_stik_dialog && 'active_dialog'" class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden " >
+      <h2 class="w-full text-center my-0 text-500 font-bold  pt-1 pb-1 relative">{{general_stik_list?.name}}
+        <i  class='bx bx-x absolute top-0 right-0 mt-1 mr-2 text-3xl cursor-pointer' @click="general_stik_dialog=false"></i>
+      </h2>
+      <table class="w-full">
+        <thead>
+          <tr style="border-bottom:10px solid transparent">
+            <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Экспорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
+              </div>
+            </th>
+
+             <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Импорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
+              </div>
+            </th>
+             <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Транзит <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
+              </div>
+            </th>
+
+              <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Махалий <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
+              </div>
+            </th>
+             <th style="width:150px">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+                Юк ташиш <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
+              </div>
+            </th>
+
+          </tr>
+        </thead>
+        <tbody>
+            <tr v-for="item in general_stik_list.data" :id="item.id">
+              <td v-for="sub_item in item.data" :key="sub_item.name">
+                 <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
+                    <div class="font-bold mb-2 text-blue-600">{{ sub_item.count}}<span
+                        class="text-sm font-medium"></span></div>
+                    <div class="text-sm font-bold w-full text-right text-500 font-italic">{{item.year}}</div>
+              </div>
+              </td>
+            </tr>
+        <tr>
+              <td colspan="5">
+                 <div :class="general_stik_list.is_increment? 'bg-green-100' : 'bg-red-100'" class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
+                    <div :class="general_stik_list.is_increment? 'text-green-600' : 'text-red-600'"  class="font-bold mb-2  text-center text-xl">{{general_stik_list.percent}} <i :class="general_stik_list.is_increment? 'bxs-arrow-from-bottom' : 'bxs-arrow-from-top'" class='bx  text-xl'></i></div>
 
               </div>
               </td>
@@ -240,13 +326,13 @@ export default {
         {
           id: 8,
           label: `Мавжуд вагонлар сони `,
-          value: 19036,
+          value: 22256,
           extension_value: 'та',
         },
         {
           id: 7,
           label: `Ходимлар сони `,
-          value: 70979,
+          value: 70933,
           extension_value: 'нафар',
 
         },
@@ -303,7 +389,7 @@ export default {
           id: 2,
           label: "Қўқон",
           value: ``,
-          path: './schema/stations/Учкудук-1.svg',
+          path: './schema/stations/Қўқон.svg',
         },
         {
           id: 3,
@@ -328,7 +414,7 @@ export default {
           id: 6,
           label: "Охангарон",
           value: ``,
-          path: './schema/stations/Ховос.svg'
+          path: './schema/stations/Охангарон.svg'
         },
         {
           id: 7,
@@ -364,7 +450,7 @@ export default {
           id: 12,
           label: "Бинокор",
           value: ``,
-          path: './schema/stations/Ховос.svg'
+          path: './schema/stations/Бинокор.svg'
         },
         {
           id: 13,
@@ -404,23 +490,109 @@ export default {
       wagon_list: [
         {
           id: 0,
-          label: "ВЧД Бухоро ",
-          value: `6430 та`,
+          label: "Ёпиқ вагон",
+          value: `4753 та`,
         },
         {
           id: 1,
-          label: "ВЧД Карши",
-          value: `5295 та`,
+          label: "Платформа",
+          value: `804 та`,
         },
         {
           id: 2,
-          label: "ВЧД Коканд",
-          value: `4331 та`,
+          label: "Полувагон",
+          value: `6330 та`,
         }, {
           id: 4,
-          label: "ВЧД Тошкент ",
-          value: `2980 та`,
+          label: "Цистерна",
+          value: `3426 та`,
         },
+        {
+          id: 6,
+          label: "Рефрижератор вагонлар",
+          value: `1111 та`,
+        },
+        {
+          id: 15,
+          label: "Бошқа турдаги вагонлар",
+          value: `5541 та`,
+        },
+
+
+      ],
+      other_wagon_list:[
+        {
+          id:0,
+          label:"Зерновоз",
+          value:1353,
+        },
+        {
+          id:1,
+          label:"Цементовоз",
+          value:1905,
+        },
+        {
+          id:2,
+          label:"Менераловоз",
+          value:360,
+        },
+        {
+          id:3,
+          label:"Фитингли платформа",
+          value:1079,
+        },
+        {
+          id:4,
+          label:"Хоппер-дозатор",
+          value:205,
+        },
+
+
+
+        {
+          id:5,
+          label:"Думпкар",
+          value:170,
+        },
+
+        {
+          id:6,
+          label:"Автомобиловоз",
+          value:232,
+        },
+        {
+          id:7,
+          label:"Транспортер",
+          value:57,
+        },
+
+        {
+          id:8,
+          label:"Қолган бошқа турдаги вагонлар",
+          value:180,
+        },
+      ],
+      mtu_wagon_list:[
+        {
+          id:0,
+          label:"Вчд - Тошкент",
+          value:2980,
+        },
+        {
+          id:1,
+          label:"Вчд - Қўқон",
+          value:4331,
+        },
+        {
+          id:2,
+          label:"Вчд - Бухоро",
+          value:6430,
+        },
+        {
+          id:3,
+          label:"Вчд - Қарши",
+          value:5295,
+        }
 
       ],
       overall_list: [],
@@ -430,13 +602,15 @@ export default {
       active_card: true,
       sorted_station: false,
       stik_dialog:false,
+      general_stik_dialog:false,
+
       active_stik_dialog:false,
 
 
       station_line_list: [
         {
           id: 'uchas11',
-          name: '- узел Узбекистан - Сарыагач',
+          name: 'Сарыагаш-Узбекистон-Тукимачи-Келес',
           color: '#996633',
           map: {
             x: -3665,
@@ -446,7 +620,7 @@ export default {
         },
         {
           id: 'uchas10',
-          name: '- Даштабад - Узбекистан - Далагузар и Дустлик',
+          name: 'Узбекистон-Хаваст-Жиззах',
           color: '#cccccc',
           map: {
             x: -2818,
@@ -456,7 +630,7 @@ export default {
         },
         {
           id: 'uchas12',
-          name: '- центр Салар - Ходжикент, Тукимачи - Ангрен',
+          name: 'Ходжикент-Тошкент-Ангрен',
           color: '#faff81',
           map: {
             x: -4155,
@@ -466,7 +640,7 @@ export default {
         },
         {
           id: 'uchas9',
-          name: '- Мароканд - Даштабад',
+          name: 'Хаваст-Жиззах-Мараканд',
           color: '#ff99cc',
           map: {
             x: -4273,
@@ -486,7 +660,7 @@ export default {
         },
         {
           id: 'uchas14',
-          name: '- узел Коканд (Коканд - Андижан - Карасу)',
+          name: 'Коканд-Маргилон-Андижон',
           color: '#9933cc',
           map: {
             x: -5030,
@@ -496,7 +670,7 @@ export default {
         },
         {
           id: 'uchas5',
-          name: '- Фарап - Навои - Мароканд',
+          name: 'Фарап-Мараканд',
           color: '#ffcc00',
           map: {
             x: -1430,
@@ -506,7 +680,7 @@ export default {
         },
         {
           id: 'uchas3',
-          name: '- Мискен - Учкудук - Тинчлик',
+          name: 'Тинчлик-Учкудук-Мискен',
           color: '#cc3399',
           map: {
             x: -1175,
@@ -516,7 +690,7 @@ export default {
         },
         {
           id: 'uchas2',
-          name: '- Кунград - Мискен - Ургенч',
+          name: 'Кунград-Тахиаташ-Нукус-Мискен-Обод-Газоджак',
           color: '#00ccff',
           map: {
             x: -554,
@@ -526,7 +700,7 @@ export default {
         },
         {
           id: 'uchas1',
-          name: '- Кунград - Каракалпакстан',
+          name: 'Кунград - Каракалпакстан',
           color: '#6600cc',
           map: {
             x: -183,
@@ -536,7 +710,7 @@ export default {
         },
         {
           id: 'uchas6',
-          name: '- Бухара - Карши - Мароканд - Ташгузар',
+          name: 'Бухоро-Карши-Мараканд-Китоб',
           color: '#33cc66',
           map: {
             x: -2140,
@@ -547,7 +721,7 @@ export default {
 
         {
           id: 'uchas7',
-          name: '- Ташгузар-Кумгурган',
+          name: 'Тошгузор-Бойсун-Кумкурган',
           color: '#6699ff',
           map: {
             x: -2444,
@@ -556,7 +730,7 @@ export default {
           }
         }, {
           id: 'uchas8',
-          name: '- Болдырь -Термез Кудукли и Талимарждан - Карши',
+          name: 'Карши-Талимарджан-Рзд.161-Термез-Кудукли-Галаба',
           color: '#ff0000',
           map: {
             x: -2459,
@@ -566,7 +740,7 @@ export default {
         },
         {
           id: 'uchas4',
-          name: '- Бухара - Мискин',
+          name: 'Бухара - Мискин',
           color: '#000066',
           map: {
             x: -1539,
@@ -588,15 +762,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:32232341,
+                  count:'32 232 341',
                 },
                 {
                   name:'Вагон',
-                  count:546311,
+                  count:'546 311',
                 },
                 {
                   name:'Поезд',
-                  count:9584,
+                  count:'9 584',
                 },
               ]
             },
@@ -605,15 +779,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:39598991,
+                  count:'39 598 991',
                 },
                 {
                   name:'Вагон',
-                  count:671169,
+                  count:'671 169',
                 },
                 {
                   name:'Поезд',
-                  count:11775,
+                  count:'11 775',
                 },
               ]
             },
@@ -672,15 +846,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:2274864,
+                  count:'2 274 864',
                 },
                 {
                   name:'Вагон',
-                  count:38557,
+                  count:'38 557',
                 },
                 {
                   name:'Поезд',
-                  count:676,
+                  count:'676',
                 },
               ]
             },
@@ -689,15 +863,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:1940506,
+                  count:'1 940 506',
                 },
                 {
                   name:'Вагон',
-                  count:32889,
+                  count:'32 889',
                 },
                 {
                   name:'Поезд',
-                  count:577,
+                  count:'577',
                 },
               ]
             },
@@ -714,15 +888,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:151838,
+                  count:'151 838',
                 },
                 {
                   name:'Вагон',
-                  count:2573,
+                  count:'2 573',
                 },
                 {
                   name:'Поезд',
-                  count:45,
+                  count:'45',
                 },
               ]
             },
@@ -731,15 +905,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:66682,
+                  count:'66 682',
                 },
                 {
                   name:'Вагон',
-                  count:1130,
+                  count:'1 130',
                 },
                 {
                   name:'Поезд',
-                  count:20,
+                  count:'20',
                 },
               ]
             },
@@ -756,15 +930,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:79880,
+                  count:'79 880',
                 },
                 {
                   name:'Вагон',
-                  count:1353,
+                  count:'1 353',
                 },
                 {
                   name:'Поезд',
-                  count:24,
+                  count:'24',
                 },
               ]
             },
@@ -773,15 +947,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:154101,
+                  count:'154 101',
                 },
                 {
                   name:'Вагон',
-                  count:2611,
+                  count:'2 611',
                 },
                 {
                   name:'Поезд',
-                  count:46,
+                  count:'46',
                 },
               ]
             },
@@ -798,15 +972,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:2633839,
+                  count:'2 633 839',
                 },
                 {
                   name:'Вагон',
-                  count:44641,
+                  count:'44 641',
                 },
                 {
                   name:'Поезд',
-                  count:783,
+                  count:'783',
                 },
               ]
             },
@@ -815,15 +989,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:3464705,
+                  count:'3 464 705',
                 },
                 {
                   name:'Вагон',
-                  count:58723,
+                  count:'58 723',
                 },
                 {
                   name:'Поезд',
-                  count:1030,
+                  count:'1 030',
                 },
               ]
             },
@@ -841,15 +1015,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:439117,
+                  count:'439 117',
                 },
                 {
                   name:'Вагон',
-                  count:7443,
+                  count:'7 443',
                 },
                 {
                   name:'Поезд',
-                  count:131,
+                  count:'131',
                 },
               ]
             },
@@ -858,15 +1032,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:522676,
+                  count:'522 676',
                 },
                 {
                   name:'Вагон',
-                  count:8858,
+                  count:'8 858',
                 },
                 {
                   name:'Поезд',
-                  count:155,
+                  count:'155',
                 },
               ]
             },
@@ -883,15 +1057,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:2447322,
+                  count:'2 447 322',
                 },
                 {
                   name:'Вагон',
-                  count:41480,
+                  count:'41 480',
                 },
                 {
                   name:'Поезд',
-                  count:728,
+                  count:'728',
                 },
               ]
             },
@@ -900,15 +1074,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:2694630,
+                  count:'2 694 630',
                 },
                 {
                   name:'Вагон',
-                  count:45671,
+                  count:'45 671',
                 },
                 {
                   name:'Поезд',
-                  count:801,
+                  count:'801',
                 },
               ]
             },
@@ -925,15 +1099,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:4058174,
+                  count:'4 058 174',
                 },
                 {
                   name:'Вагон',
-                  count:68782,
+                  count:'68 782',
                 },
                 {
                   name:'Поезд',
-                  count:1207,
+                  count:'1 207',
                 },
               ]
             },
@@ -942,15 +1116,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:4154021,
+                  count:'4 154 021',
                 },
                 {
                   name:'Вагон',
-                  count:70407,
+                  count:'70 407',
                 },
                 {
                   name:'Поезд',
-                  count:1235,
+                  count:'1 235',
                 },
               ]
             },
@@ -967,15 +1141,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:16836,
+                  count:'16 836',
                 },
                 {
                   name:'Вагон',
-                  count:285,
+                  count:'285',
                 },
                 {
                   name:'Поезд',
-                  count:5,
+                  count:'5',
                 },
               ]
             },
@@ -984,15 +1158,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:15680,
+                  count:'15 680',
                 },
                 {
                   name:'Вагон',
-                  count:266,
+                  count:'266',
                 },
                 {
                   name:'Поезд',
-                  count:5,
+                  count:'5',
                 },
               ]
             },
@@ -1009,15 +1183,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:142518,
+                  count:'142 518',
                 },
                 {
                   name:'Вагон',
-                  count:2415,
+                  count:'2 415',
                 },
                 {
                   name:'Поезд',
-                  count:42,
+                  count:'42',
                 },
               ]
             },
@@ -1026,15 +1200,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:152939,
+                  count:'152 939',
                 },
                 {
                   name:'Вагон',
-                  count:2592,
+                  count:'2 592',
                 },
                 {
                   name:'Поезд',
-                  count:45,
+                  count:'45',
                 },
               ]
             },
@@ -1051,15 +1225,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:151838,
+                  count:'151 838',
                 },
                 {
                   name:'Вагон',
-                  count:2573,
+                  count:'2 573',
                 },
                 {
                   name:'Поезд',
-                  count:45,
+                  count:'45',
                 },
               ]
             },
@@ -1068,15 +1242,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:66682,
+                  count:'66 682',
                 },
                 {
                   name:'Вагон',
-                  count:1130,
+                  count:'1 130',
                 },
                 {
                   name:'Поезд',
-                  count:20,
+                  count:'20',
                 },
               ]
             },
@@ -1093,15 +1267,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:284507,
+                  count:'284 507',
                 },
                 {
                   name:'Вагон',
-                  count:4822,
+                  count:'4 822',
                 },
                 {
                   name:'Поезд',
-                  count:85,
+                  count:'85',
                 },
               ]
             },
@@ -1110,15 +1284,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:489416,
+                  count:'489 416',
                 },
                 {
                   name:'Вагон',
-                  count:8295,
+                  count:'8 295',
                 },
                 {
                   name:'Поезд',
-                  count:146,
+                  count:'146',
                 },
               ]
             },
@@ -1177,15 +1351,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:4204113,
+                  count:'4 204 113',
                 },
                 {
                   name:'Вагон',
-                  count:71256,
+                  count:'71 256',
                 },
                 {
                   name:'Поезд',
-                  count:1250,
+                  count:'1 250',
                 },
               ]
             },
@@ -1194,15 +1368,15 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:4263648,
+                  count:'4 263 648',
                 },
                 {
                   name:'Вагон',
-                  count:72265,
+                  count:'72 265',
                 },
                 {
                   name:'Поезд',
-                  count:1267,
+                  count:'1 267',
                 },
               ]
             },
@@ -1219,11 +1393,11 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:1238571,
+                  count:'1 238 571',
                 },
                 {
                   name:'Вагон',
-                  count:20992,
+                  count:'20 992',
                 },
                 {
                   name:'Поезд',
@@ -1236,11 +1410,11 @@ export default {
               data:[
                 {
                   name:'Юк',
-                  count:1847310,
+                  count:'1 847 310',
                 },
                 {
                   name:'Вагон',
-                  count:31310,
+                  count:'31 310',
                 },
                 {
                   name:'Поезд',
@@ -1251,6 +1425,65 @@ export default {
           ]
         },
       ],
+
+      general_stik_list:{
+        id:'0',
+        name:'Умумий кўрсатгичлар',
+        percent:'+7%',
+        is_increment:true,
+        data:[
+          {
+            year:'2022 й.',
+            data:[
+              {
+                name:'Экспорт',
+                count:'10.9',
+              },
+              {
+                name:'Импорт',
+                count:'19.5',
+              },
+              {
+                name:'Транзит',
+                count:'10.2',
+              },
+              {
+                name:'Махалий',
+                count:'61.7',
+              },
+              {
+                name:'Юк ташиш',
+                count:'102,3',
+              },
+            ]
+          },
+          {
+            year:'2023 й.',
+            data:[
+              {
+                name:'Экспорт',
+                count:'12.4',
+              },
+              {
+                name:'Импорт',
+                count:'24.6',
+              },
+              {
+                name:'Транзит',
+                count:'11.6',
+              },
+              {
+                name:'Махалий',
+                count:'60.8',
+              },
+              {
+                name:'Юк ташиш',
+                count:'109,4',
+              },
+            ]
+          },
+        ]
+      },
       selected_stik:null,
     }
   },
@@ -1269,6 +1502,10 @@ export default {
         this.$refs.overal_ref.toggle(event);
       } else if (id === 7) {
         this.$refs.overall3_ref.toggle(event);
+      }else if (id === 5) {
+        this.$refs.overall8_ref.toggle(event);
+      }else if (id === 3) {
+        this.general_stik_dialog = true;
       }
 
       if (id === 4) {
@@ -1281,6 +1518,11 @@ export default {
       }
     },
 
+    open_modal( event ,id){
+      if(id===15){
+        this.$refs.overall4_ref.toggle(event);
+      }
+    },
     control_overall2(event) {
       this.$refs.overall2_ref.toggle(event);
 
@@ -1313,6 +1555,7 @@ export default {
     },
 
     change_map(event, id) {
+      this.general_stik_dialog = false;
       if (id === 4) {
         this.$emit("changeMap", 'tchs');
       } else if (id === 5) {
@@ -1338,6 +1581,10 @@ export default {
       setTimeout(()=>{
         this.stik_dialog = false;
       },300)
+    },
+
+    show_general_dialog(){
+      this.general_stik_dialog = true;
     },
 
 
