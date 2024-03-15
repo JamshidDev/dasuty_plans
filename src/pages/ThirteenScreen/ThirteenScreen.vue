@@ -213,7 +213,10 @@ onUnmounted(() => {
         </span>
       </div>
     </div>
-    <div class='total-info-top p-3 border-round-2xl border-3 bg-white flex flex-column gap-2 absolute'>
+    <div class='total-info-top p-3 border-round-2xl border-3 bg-white flex flex-column gap-1 absolute'>
+      <div class='text-2xl font-medium  gap-2 mb-2 text-center w-full uppercase'>
+        Топ 10 мижозлар
+      </div>
       <div v-for='item in topCompany' :key='item.id' class='flex justify-content-between text-lg gap-2 font-medium'>
         <span>{{ item.name }}</span>
         <span style='color: #11A832'>{{ Number(item.value).toLocaleString('ru-ru', { currency: 'uzs' }) }}</span>
