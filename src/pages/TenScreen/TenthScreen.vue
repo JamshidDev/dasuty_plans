@@ -143,7 +143,6 @@ onMounted(() => {
         </div>
         <CountTime class='special-countTime'></CountTime>
     </div>
-
 </template>
 <style lang="scss" scoped>
 $blue: #234699;

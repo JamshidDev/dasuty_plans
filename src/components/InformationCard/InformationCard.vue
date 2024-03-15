@@ -3,7 +3,6 @@
 
   <div class="information-card shadow-2 px-4 py-2  overflow-hidden">
     <div class="grid">
-
       <div class="col-12 flex justify-content-between align-items-center border-bottom-1 border-200">
         <div class="m-0 font-bold text-sm">{{ active_card ? 'Умумий маълумот' : '14 та диспетчерлик участкалари' }}
         </div>
@@ -11,10 +10,8 @@
           <i @click="change_card()" class='bx bx-refresh text-2xl cursor-pointer font-bold'></i>
         </div>
       </div>
-
-
       <div class="col-12">
-        <div class="grid overflow-y-auto overflow-x-hidden px-1" style="height:330px">
+        <div class="grid overflow-y-auto overflow-x-hidden px-1" style="height:360px">
           <div class="col-12 px-0 pb-2" v-if="active_card">
             <div class="grid">
               <div v-for="item in general_data" :key="item.id" class="col-4 cursor-pointer">
@@ -63,10 +60,15 @@
 
 
           </div>
+          <div class="col-12">
+            <div    class="surface-card border-1 text-500 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 180px;
+  height: 40px;">
+              Олдинги ҳолат
+              <i class='bx bx-show text-500 text-4xl'></i>
+            </div>
+          </div>
         </div>
       </div>
-
-
     </div>
   </div>
 
@@ -87,7 +89,6 @@
       </div>
     </div>
   </OverlayPanel>
-
   <OverlayPanel ref="overall2_ref" style="width:400px">
     <div class="grid">
       <div v-for="item in sorted_station_list" :key="item.id" class="col-6 py-1 ">
@@ -100,7 +101,6 @@
       </div>
     </div>
   </OverlayPanel>
-
   <OverlayPanel ref="overall3_ref" style="width:600px">
     <div class="grid w-full">
       <div class="col-6">
@@ -129,7 +129,6 @@
       </div>
     </div>
   </OverlayPanel>
-
   <OverlayPanel ref="overall4_ref" style="width:400px">
     <div class="grid">
       <div v-for="item in other_wagon_list" :key="item.id" class="col-12 py-1 ">
