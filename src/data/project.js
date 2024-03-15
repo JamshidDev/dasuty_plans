@@ -53,20 +53,20 @@ export const projectList = {
         title: 'Smart Depo',
         imgUrl: 'enakl.png',
         deadline: '2024-09-15',
-        desc: 'Tashish jarayoni'
+        desc: "Lokomotiv depolari tizimi"
     },
     onk: {
         id: 'onk',
         title: 'ONK',
         imgUrl: 'enakl.png',
         deadline: '2024-08-15',
-        desc: 'Tashish jarayoni'
+        desc: "Onlayn nazorat ko'rigi"
     },
     gps: {
         id: 'gps',
         title: 'UzGPS',
         imgUrl: 'enakl.png',
         deadline: '2024-10-15',
-        desc: 'Tashish jarayoni'
+        desc: "Lokomotivlarni onlayn nazorati"
     },
 }

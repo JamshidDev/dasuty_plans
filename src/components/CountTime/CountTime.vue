@@ -58,7 +58,7 @@ export default {
   },
   mounted() {
     let current_date = new Date().getTime();
-    let finish_date =new Date("2025-12-31").getTime();
+    let finish_date =new Date("2025-03-31").getTime();
     this.count_time = finish_date -current_date;
   }
 }

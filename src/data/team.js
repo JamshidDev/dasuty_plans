@@ -10,7 +10,7 @@ export const teamList = [
     {
         name: 'Aytmuratov Artur',
         position: 'Backend Developer',
-        projects: [projectList.enakl.id, projectList.erp.id],
+        projects: [projectList.enakl.id, projectList.erp.id, projectList.trainLocation.id],
         tasks: [
             {title: 'SMGS ga ustunlarni qo’shish', deadline: '2024-03-04'}
         ]
@@ -18,20 +18,20 @@ export const teamList = [
     {
         name: 'Bekmirzayev Ilxomjon',
         position: 'System Admin',
-        projects: [projectList.enakl.id, projectList.erp.id],
+        projects: [projectList.enakl.id, projectList.erp.id, projectList.trainLocation.id],
         tasks: [
             {title: 'Temir yo’l kartasini optimizatsiya qilish', deadline: '2024-03-11'}
         ]
     },
     {
-        name: 'Boboqulov Jobir', position: 'Backend Developer (Team Lead)', projects: [projectList.erp.id], tasks: [
+        name: 'Boboqulov Jobir', position: 'Backend Developer (Team Lead)', projects: [projectList.erp.id, projectList.trainLocation.id], tasks: [
             {title: 'Buyruqlarni tizimdan tasdiqlash', deadline: '2024-03-05'}
         ]
     },
     {
         name: 'Gu’lumov Bekzod',
         position: 'Project Manager',
-        projects: [projectList.vOffice.id, projectList.utyFace.id, projectList.erp.id],
+        projects: [projectList.vOffice.id, projectList.utyFace.id, projectList.erp.id, projectList.trainLocation.id],
         tasks: [
             {title: 'Elektron bashmak qurilmasini yaratish', deadline: '2024-03-29'}
         ]
@@ -87,7 +87,7 @@ export const teamList = [
         ]
     },
     {
-        name: 'Raximov Jamshid', position: 'Frontend Developer', projects: [projectList.erp.id], tasks: [
+        name: 'Raximov Jamshid', position: 'Frontend Developer', projects: [projectList.erp.id, projectList.trainLocation.id], tasks: [
             {title: 'Buyruqlarni tizimdan tasdiqlash', deadline: '2024-03-05'}
         ]
     },
@@ -133,7 +133,7 @@ export const teamList = [
     {
         name: 'Xolmuradov Elbek',
         position: 'Backend Developer',
-        projects: [projectList.enakl.id, projectList.enaklM.id],
+        projects: [projectList.enakl.id, projectList.enaklM.id, projectList.trainLocation.id],
         tasks: [
             {title: 'Enakl mobileda Zayavka qismi uchun API larni chiqarish', deadline: '2024-03-04'}
         ]
