@@ -75,11 +75,11 @@
         <div class="flex flex-column">
           <div class="flex justify-content-between border-round min-h-full">
             <span :class="item.id ===15 && 'text-blue-500'" @click="open_modal($event, item.id)" ><i class='bx bxs-circle text-sm mr-2'></i>
-              <Checkbox @change="control_overall2"
+              <Checkbox @change="control_overall2($event, item.id)"
                         class="mr-2 p-inputtext-sm"
-                        v-if="item.id ===1 && selected_data_id ===6"
-                        v-model="sorted_station"
-                        :binary="true"/> <span class="cursor-pointer">{{ item.label }}</span></span>
+                        v-if="[1,6].includes(item.id) && selected_data_id ===6"
+                        v-model="item.active"
+                        :binary="true" /> <span class="cursor-pointer">{{ item.label }}</span></span>
             <span class="font-bold">{{ item.value }}</span>
           </div>
         </div>
@@ -344,6 +344,12 @@ export default {
       visible: true,
       station_list: [
         {
+          id: 6,
+          label: "Вокзаллар",
+          value: "38",
+          active:false,
+        },
+        {
           id: 0,
           label: "Йўловчи станциялар",
           value: "4",
@@ -352,6 +358,7 @@ export default {
           id: 1,
           label: "Саралаш станциялари",
           value: "15 ",
+          active:false,
         }, {
           id: 2,
           label: "Участка станцияси",
@@ -372,6 +379,7 @@ export default {
           label: "Разъездлар",
           value: "57",
         },
+
 
       ],
       sorted_station_list: [
@@ -1526,22 +1534,31 @@ export default {
         this.$refs.overall4_ref.toggle(event);
       }
     },
-    control_overall2(event) {
-      this.$refs.overall2_ref.toggle(event);
+    control_overall2(event, id) {
+        if(id === 1){
+          this.$refs.overall2_ref.toggle(event);
+          this.$emit("changeMap", 'sorts');
+        }else if(id === 6){
+          this.$emit("changeTrainStation", this.station_list[0].active? 'vokzals': 'of');
+        }
 
-      this.$emit("changeMap", 'sorts');
+
+
     },
 
     change_card() {
       this.active_card = !this.active_card;
       this.$emit("changeCard", this.active_card);
-
+      this.$emit("changeTrainStation", 'of');
       if (!this.active_card) {
         this.selected_id = null;
       } else {
         this.general_data[4].show_map = false;
         this.general_data[5].show_map = false;
         this.general_data[6].show_map = false;
+        this.station_list[0].active =false;
+        this.station_list[2].active =false;
+
       }
 
 
@@ -1594,9 +1611,7 @@ export default {
 
   },
   mounted() {
-    // this.show_dialog('stik1')
 
-    this.general_data[6].show_map = this.switch_data.wagon;
   }
 }
 </script>

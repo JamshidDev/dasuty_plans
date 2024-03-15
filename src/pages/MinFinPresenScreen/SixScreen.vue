@@ -1,18 +1,27 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
-    <img style="width:1500px;" src="@/assets/img/nst4.png" alt="">
+    <img style="width:1500px;" src="@/assets/img/fr1.png" alt="">
     
     <div class="visible-button" @click="$router.push({name:'vols'})"></div>
+    <div @click="control_gallery(0)" class="visible-button-content position-one"></div>
+    <div @click="control_gallery(1)" class="visible-button-content position-two"></div>
+    <div @click="control_gallery(2)" class="visible-button-content position-three"></div>
+    <div @click="control_gallery(3)" class="visible-button-content position-four"></div>
+    <div @click="control_gallery(4)" class="visible-button-content position-five"></div>
+    <PictureGallery ref="picture_gallery_ref"></PictureGallery>
   </div>
+
 
 </template>
 <script>
 import TitleText from "@/components/TitleText/TitleText.vue";
 import DeveloperCard from "@/components/DeveloperCard/DeveloperCard.vue";
+import PictureGallery from "@/pages/MinFinPresenScreen/PictureGallery.vue";
 
 
 export default {
   components: {
+    PictureGallery,
     DeveloperCard,
     TitleText,
 
@@ -20,10 +29,45 @@ export default {
 
   data() {
     return {}
+  },
+  methods:{
+    control_gallery(index){
+      this.$refs.picture_gallery_ref.open_gallery(index)
+    }
   }
 }
 </script>
 <style scoped lang="scss">
+
+.visible-button-content{
+  position: absolute;
+  width: 60px;
+  height: 44px;
+  background: transparent;
+  border-radius:12px;
+  cursor: pointer;
+}
+.position-one{
+  top:55px;
+  left: 210px;
+}
+.position-two{
+  top:55px;
+  left: 880px;
+}
+.position-three{
+  top:414px;
+  left: 220px;
+}
+.position-four{
+  top:414px;
+  right: 720px;
+}
+.position-five{
+  bottom:210px;
+  left: 210px;
+}
+
 
 .visible-button{
   position: absolute;

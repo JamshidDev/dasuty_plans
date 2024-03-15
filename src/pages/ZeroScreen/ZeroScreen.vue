@@ -37,7 +37,7 @@
     <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
     <SchemaButton v-show="show_button_schema && general_info_show" @action_draw="draw_schema($event)"></SchemaButton>
     <span v-show="general_info_show">
-      <InformationCard  :switch_data="switch_details"  ref="information_modal_ref" @closeInfoMap="close_info_map()"  @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" ></InformationCard>
+      <InformationCard   @changeTrainStation="draw_train_station($event)"  ref="information_modal_ref" @closeInfoMap="close_info_map()"  @listenMap="listen_map($event)"  @changeCard="change_card($event)" @changeMap="change_visible($event)" ></InformationCard>
     </span>
     <div v-if="$route.name ==='zero-screen'" class="fixed flex gap-2 absolute" style="bottom:10px; left:620px; z-index:10">
       <div v-if="general_info_show" @click="show_button_schema=!show_button_schema"  class="active:bg-blue-100 surface-card border-1 border-300 border-round cursor-pointer shadow-1 flex justify-content-center align-items-center" style="width: 60px;
@@ -164,8 +164,15 @@ export default {
         this.$refs.railway_map_ref.show_train_station();
         this.$refs.dialog_ref.close_timeline();
       }
-
     },
+
+    draw_train_station(action){
+     if(action === 'vokzals'){
+        this.$refs.railway_map_ref.show_train_station();
+      }else{
+       this.$refs.railway_map_ref.all_hidden_train_station();
+     }
+    }
   },
 
   mounted() {
