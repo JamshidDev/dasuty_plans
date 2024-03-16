@@ -138,6 +138,20 @@
       </div>
     </div>
   </OverlayPanel>
+
+  <OverlayPanel ref="overall21_ref" style="width:400px">
+    <div class="grid">
+      <div v-for="item in jdpas" :key="item.id" class="col-12 py-1 ">
+        <div class="flex flex-column">
+          <div class="flex justify-content-between border-round min-h-full no-underline">
+            <span><i class='bx bxs-circle text-sm mr-2'></i> {{ item.label }}</span>
+            <span class="font-bold">{{ item.value }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </OverlayPanel>
+
   <OverlayPanel ref="overall8_ref" style="width:400px">
     <div class="grid">
       <div v-for="item in mtu_wagon_list" :key="item.id" class="col-12 py-1 ">
@@ -528,8 +542,25 @@ export default {
           value: `5541 та`,
         },
 
+        {
+          id: 16,
+          label: "“Ўзтемирйўлйўловчи” АЖ",
+          value: `485 та`,
+        },
 
       ],
+      jdpas:[
+        {
+          id:0,
+          label:"Фойдалинилаётган вагонлар",
+          value: 322,
+        },
+        {
+          id:1,
+          label:"Таъмирлаш жараёнида турган вагонлар",
+          value:163,
+        },
+    ],
       other_wagon_list:[
         {
           id:0,
@@ -1532,6 +1563,10 @@ export default {
     open_modal( event ,id){
       if(id===15){
         this.$refs.overall4_ref.toggle(event);
+      }
+    else
+      if(id===16){
+        this.$refs.overall21_ref.toggle(event);
       }
     },
     control_overall2(event, id) {
