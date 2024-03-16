@@ -8,14 +8,14 @@
         <img :src="imgUrl" alt="">
       </div>
       <div class="content-box bg-dark shadow-5" :class="{active: active_card}">
-        <h3 class="text-center text-white m-0 text-sm py-1 font-bold bg-dark"
+        <h3 class="text-center m-0 text-sm py-1 font-bold bg-dark"
             style="border-bottom:1px solid #27272a;">{{ name }}</h3>
-        <h3 class="text-center text-gray-400 m-0 text-sm text-black pt-2 pb-2 font-medium">{{ desc }}</h3>
+        <h3 class="text-center  m-0 text-sm text-black pt-2 pb-2 font-medium">{{ desc }}</h3>
         <div class="flex bg-dark pt-2 pb-1 align-items-center w-full px-2 column-gap-4"
              style="border-top:1px solid #27272a;"
              :class="{'justify-content-between': list.length >0, 'justify-content-center': list.length === 0}"
         >
-          <div v-if="list.length > 0" class="tast-title text-white pl-2 hover:text-white text-sm cursor-pointer" @click="toggle">
+          <div v-if="list.length > 0" class="tast-title  pl-2 hover:text-white text-sm cursor-pointer" @click="toggle">
             Batafsil
           </div>
 
@@ -23,19 +23,19 @@
             <div class="time-contaner font-bold flex column-gap-2 text-sm">
               <div class="flex flex-column">
                 <div class="timer_value">{{ days }}</div>
-                <div class="text-gray-400" style="font-size:8px;">KUN</div>
+                <div class="" style="font-size:8px;">KUN</div>
               </div>
               <div class="flex flex-column timer-text">
                 <div class="timer_value">{{ hours }}</div>
-                <div class="text-gray-400" style="font-size:8px;">SOAT</div>
+                <div class="" style="font-size:8px;">SOAT</div>
               </div>
               <div class="flex flex-column timer-text">
                 <div class="timer_value">{{ minutes }}</div>
-                <div class="text-gray-400" style="font-size:8px;">MINUT</div>
+                <div class="" style="font-size:8px;">MINUT</div>
               </div>
               <div class="flex flex-column timer-text">
                 <div class="timer_value">{{ seconds }}</div>
-                <div class="text-gray-400" style="font-size:8px;">SEKUND</div>
+                <div class="" style="font-size:8px;">SEKUND</div>
               </div>
             </div>
           </vue-countdown>
@@ -150,7 +150,7 @@ onMounted(() => {
   }
 
   .bg-dark {
-    background: rgba(30, 29, 29, 0.9);
+    background: rgba(231, 231, 231, 0.9);
     backdrop-filter: blur(12px);
   }
 
@@ -159,7 +159,7 @@ onMounted(() => {
     height: 70px;
     overflow: hidden;
     border-radius: 50%;
-    border: 3px solid rgba(35, 34, 34, 0.9);
+    border: 3px solid rgba(231, 231, 231, 0.9);
     cursor: pointer;
     position: absolute;
     z-index: 2;
