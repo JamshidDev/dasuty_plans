@@ -214,7 +214,7 @@ onUnmounted(() => {
       </div>
     </div>
     <div class='total-info-top p-3 border-round-2xl border-3 bg-white flex flex-column gap-1 absolute'>
-      <div class='text-2xl font-medium  gap-2 mb-2 text-center w-full uppercase'>
+      <div class='text-2xl font-medium  gap-2 mb-1 text-center w-full uppercase'>
         Топ 10 мижозлар
       </div>
       <div v-for='item in topCompany' :key='item.id' class='flex justify-content-between text-lg gap-2 font-medium'>
@@ -228,7 +228,7 @@ onUnmounted(() => {
 <style scoped lang="scss">
 
 .total-info-top {
-  top: 80px;
+  top: 10px;
   left: 50px;
   border-color: #11A832;
   animation: 1.5s fadeIn forwards;
