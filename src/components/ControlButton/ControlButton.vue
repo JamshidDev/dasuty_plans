@@ -111,13 +111,13 @@ export default {
           index: 6,
           name: "nst-infra"
         },
-        // {
-        //   index: 9,
-        //   name: "vols"
-        // },
         {
           index: 7,
           name: "third-screen"
+        },
+        {
+          index: 8,
+          name: "vols"
         },
       ],
       page_index: 0,
