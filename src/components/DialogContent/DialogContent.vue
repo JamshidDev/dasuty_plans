@@ -86,10 +86,14 @@
           </Timeline>
 
          </div>
-        <div class="flex justify-content-evenly text-sm mt-3 font-bold">
-          <span class="pl-4">Умумий вақт</span>
-          <span v-if="is_show_one" class=" pl-4">12 кун</span>
-          <span v-else class=" pl-4">5 кун</span>
+         <div class="flex justify-content-between text-sm mt-3 font-bold">
+          <span>Масофа</span>
+          <span>1587 км</span>
+        </div>
+        <div class="flex justify-content-between text-sm1 font-bold">
+          <span>Умумий вақт</span>
+          <span v-if="is_show_one">12 кун</span>
+          <span v-else>5 кун</span>
         </div>
       </div>
     </span>

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import path1 from "@/assets/img/digit1.png"
+import path1 from "@/assets/img/digit5.png"
 import path2 from "@/assets/img/digit2.png"
 import path3 from "@/assets/img/digit3.png"
 import path4 from "@/assets/img/digit4.png"
