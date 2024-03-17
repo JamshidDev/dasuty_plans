@@ -31,7 +31,7 @@ const arr2 = [
     {offset: -12, name: 'E-NAKL', deadline: '31.05.2024', url: 'https://e-nakl.railway.uz', value: 72, rate: 17},
     {offset: 0, name: 'TRAIN LOCATION', deadline: '15.06.2024', url: 'https://tracking.railway.uz', value: 74, rate: 30},
     {offset: 6, name: 'E-TICKET', deadline: '10.08.2024', url: 'https://eticket.railway.uz', value: 82, rate: 25},
-    {offset: 7.5, name: 'SMART DEPO', deadline: '10.07.2024', url: 'https://depouzbekistan.uz', value: 61, rate: 25},
+    {offset: 7.5, name: 'SMART DEPO', deadline: '10.07.2024', url: 'https://uzdepo.uz/dashboard/', value: 61, rate: 25},
     {offset: 5, name: 'UZGPS', deadline: '21.08.2024', url: 'https://utysmpo.uzgps.uz', value: 60, rate: 25},
     {offset: -2, name: 'TUNNEL', deadline: '30.07.2024', url: 'https://tunnelmodpro.uz', value: 45, rate: 10},
     {offset: -16, name: 'E-NAKL MOBILE', deadline: '30.04.2024', url: '/', value: 35, rate: 2},

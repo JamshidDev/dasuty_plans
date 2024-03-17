@@ -327,7 +327,7 @@ export default {
         },
         {
           id: 4,
-          label: `Локомотив деполар сони `,
+          label: `Локомотив деполар сони`,
           value: 8,
           show_map: false,
           extension_value: 'та'
