@@ -171,7 +171,7 @@
               </div>
             </th>
              <th style="width:150px">
-              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
+              <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative font-bold">
                 Поезд <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
               </div>
             </th>
@@ -181,9 +181,9 @@
             <tr v-for="item in selected_stik.data" :id="item.id">
               <td v-for="sub_item in item.data" :key="sub_item.name">
                  <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
-                    <div class="font-bold mb-2 text-blue-600">{{ sub_item.count}}<span
+                    <div class="font-bold mb-2 text-red-600">{{ sub_item.count}}<span
                         class="text-sm font-medium"></span></div>
-                    <div class="text-sm font-bold w-full text-right text-500 font-italic">{{item.year}}</div>
+                    <div class="text-sm font-bold w-full text-right text-500">{{item.year}}</div>
               </div>
               </td>
             </tr>
@@ -201,36 +201,36 @@
   </span>
 
   <span v-show="general_stik_dialog" >
-    <div :class="general_stik_dialog && 'active_dialog'" class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden " >
+    <div :class="general_stik_dialog && 'active_dialog'" class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden" >
       <h2 class="w-full text-center my-0 text-500 font-bold  pt-1 pb-1 relative">{{general_stik_list?.name}}
         <i  class='bx bx-x absolute top-0 right-0 mt-1 mr-2 text-3xl cursor-pointer' @click="general_stik_dialog=false"></i>
       </h2>
       <table class="w-full">
         <thead>
           <tr style="border-bottom:10px solid transparent">
-            <th style="width:150px">
+            <th style="width:200px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
-                Экспорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
+                Экспорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
               </div>
             </th>
 
-             <th style="width:150px">
+             <th style="width:200px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
                 Импорт <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
               </div>
             </th>
-             <th style="width:150px">
+             <th style="width:200px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
                 Транзит <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
               </div>
             </th>
 
-              <th style="width:150px">
+              <th style="width:200px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
                 Махалий <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
               </div>
             </th>
-             <th style="width:150px">
+             <th style="width:200px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
                 Юк ташиш <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >млн.тн</span>
               </div>
@@ -242,7 +242,7 @@
             <tr v-for="item in general_stik_list.data" :id="item.id">
               <td v-for="sub_item in item.data" :key="sub_item.name">
                  <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
-                    <div class="font-bold mb-2 text-blue-600">{{ sub_item.count}}<span
+                    <div class="font-bold mb-2 text-red-600">{{ sub_item.count}}<span
                         class="text-sm font-medium"></span></div>
                     <div class="text-sm font-bold w-full text-right text-500 font-italic">{{item.year}}</div>
               </div>
