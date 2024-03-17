@@ -10,13 +10,13 @@
         <div class="col-6" @click="control_overall2($event,item.iscollapse, item?.nodes_list, item.id)">
           <div v-if="item?.multiple_label" class="card_box p-3 border-round shadow-1 min-h-full"
                :class="item.iscollapse? 'bg-blue-100 cursor-pointer' : 'gray-bg'">
-              <div class="title font-bold mt-2">
+              <div class="title font-bold ">
             {{ item.labels.value2 }}
           </div>
           <div class="text-sm">
             {{ item.labels.label2 }}
           </div>
-          <div class="title font-bold">
+          <div class="title font-bold mt-2">
             {{ item.labels.value1 ?? '' }}
           </div>
           <div class="text-sm">
@@ -274,8 +274,14 @@ export default {
                         },
                         {
                             id: 5,
-                            label: `Вагон деполари сони`,
-                            value: `1 та`,
+                          multiple_label: true,
+                          labels: {
+                            label1: `Вагонлар сони`,
+                            value1: `2980 та`,
+                            label2: 'Вагон деполари сони',
+                            value2: `1 та`,
+                          },
+
                             iscollapse: false,
                         },
                         {
@@ -368,8 +374,13 @@ export default {
                         },
                         {
                             id: 5,
-                            label: `Вагон деполари сони`,
-                            value: `1 та`,
+                          multiple_label: true,
+                          labels: {
+                            label1: `Вагонлар сони`,
+                            value1: `4331 та`,
+                            label2: 'Вагон деполари сони',
+                            value2: `1 та`,
+                          },
                             iscollapse: false,
                         },
                         {
@@ -474,8 +485,13 @@ export default {
                         },
                         {
                             id: 5,
-                            label: `Вагон деполари сони`,
-                            value: `1 та`,
+                          multiple_label: true,
+                          labels: {
+                            label1: `Вагонлар сони`,
+                            value1: `6430 та`,
+                            label2: 'Вагон деполари сони',
+                            value2: `1 та`,
+                          },
                             iscollapse: false,
                         },
                         {
@@ -641,8 +657,13 @@ export default {
                         },
                         {
                             id: 4,
-                            label: `Локомотив деполар сони`,
-                            value: `1 та`,
+                          multiple_label: true,
+                          labels: {
+                            label1: `Вагонлар сони`,
+                            value1: `5295 та`,
+                            label2: 'Вагон деполари сони',
+                            value2: `1 та`,
+                          },
                             iscollapse: true,
                             nodes_list: [
                                 {
