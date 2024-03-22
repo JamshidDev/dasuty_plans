@@ -1,6 +1,6 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
-    <img style="width:1500px;" src="@/assets/img/vols.jpg" alt="">
+    <img style="width:1350px;" src="@/assets/img/123.png" alt="">
   </div>
 
 </template>
