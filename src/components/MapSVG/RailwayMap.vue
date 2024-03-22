@@ -4093,7 +4093,7 @@ export default {
     },
     async test_draw_train() {
       this.clear_all();
-
+	  
       // load wait time
       await new Promise(resolve => {
         this.first_timeout = setTimeout(resolve, 400);

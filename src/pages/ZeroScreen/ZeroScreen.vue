@@ -4,10 +4,10 @@
         <!--      -->
         <!--    </div>-->
         <TitleText title="Ўзбекистон темир йўллари харитаси"></TitleText>
-        <!--    <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">-->
+<!--            <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">-->
 
-        <!--        &lt;!&ndash;&lt;!&ndash;    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}&ndash;&gt;&ndash;&gt;-->
-        <!--    </div>-->
+<!--                    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}-->
+<!--            </div>-->
         <div id="zoom-container" ref="zoom_container" class="w-full border-round relative"
              style="height:88vh; overflow: hidden;">
             <div id="trigger-zoom-element" ref="trigger_zoom_element"
@@ -155,36 +155,49 @@ export default {
             this.$refs.information_modal_ref.show_dialog(data.id);
         },
         close_info_map() {
-            this.go_push_element(38.6, -103, 1.2);
+            this.go_push_element(38.6, -60, 1.2);
         },
 
 
         draw_schema(action) {
             if (action === 'old-train') {
+	            this.go_push_element(-452, -343, 1.7);
+	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.old_draw_train();
                 this.$refs.dialog_ref.old_timeline_start();
             } else if (action === 'new-train') {
+	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.new_draw_train();
                 this.$refs.dialog_ref.new_timeline_start();
             } else if (action === 'close') {
+	            this.go_push_element(38.6, -60, 1.2);
                 this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.clear_all();
                 this.$refs.railway_map_ref.all_hidden_train_station();
             } else if (action === 'route1') {
+	            this.go_push_element(-791, -513, 2);
+	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.test_draw_train();
-                this.$refs.dialog_ref.close_timeline();
+	            this.$refs.dialog_ref.route1_timeline();
             } else if (action === 'route2') {
+	            this.go_push_element(-791, -513, 2);
+	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.route2_draw_train();
-                this.$refs.dialog_ref.close_timeline();
+	            this.$refs.dialog_ref.route2_timeline();
             } else if (action === 'route3') {
+	            this.go_push_element(-791, -513, 2);
+	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.route3_draw_train();
-                this.$refs.dialog_ref.close_timeline();
+	            this.$refs.dialog_ref.route3_timeline();
             } else if (action === 'route4') {
+	            this.go_push_element(-791, -513, 2);
+	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.route4_draw_train();
-                this.$refs.dialog_ref.close_timeline();
+	            this.$refs.dialog_ref.route4_timeline();
             } else if (action === 'vokzals') {
+	            this.go_push_element(38.6, -60, 1.2);
+	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.show_train_station();
-                this.$refs.dialog_ref.close_timeline();
             }
         },
 
@@ -322,7 +335,7 @@ export default {
         })
 
 
-        this.go_push_element(38.6, -103, 1.2);
+        this.go_push_element(38.6, -60, 1.2);
         // this.go_push_element(-1000, -1000, 1);
 
     }

@@ -32,25 +32,25 @@
               </div>
               <div class="col-12">
                 <div @click="action_emit('route1')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
-                  битта локомотив битта поезд - 1
+                  битта локомотив битта поезд - Қашқадарё - Охунбобоев
                   <i class='bx bx-show text-500 text-2xl'></i>
                 </div>
               </div>
               <div class="col-12">
                 <div @click="action_emit('route2')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
-                  битта локомотив битта поезд - 2
+                  битта локомотив битта поезд - Қарши - Ўзбекистон
                   <i class='bx bx-show text-500 text-2xl'></i>
                 </div>
               </div>
               <div class="col-12">
                 <div  @click="action_emit('route3')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
-                  битта локомотив битта поезд - 3
+                  битта локомотив битта поезд - Қумқўрғон - Ўзбекистон
                   <i class='bx bx-show text-500 text-2xl'></i>
                 </div>
               </div>
               <div class="col-8">
               <div @click="action_emit('route4')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
-                битта локомотив битта поезд - 4
+                Навоий - Озодлик
                 <i class='bx bx-show text-500 text-2xl'></i>
               </div>
             </div>
