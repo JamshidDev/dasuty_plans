@@ -65,6 +65,17 @@ onMounted(() => {
     <div class="w-full min-h-full relative flex flex-column justify-content-center align-items-center mt-0">
         <TitleText :title='`"ЎЗБЕКИСТОН ТЕМИР ЙЎЛЛАРИ" АЖДА`' :subtitle="`РАҚАМЛАШТИРИШНИНГ ЖОРИЙ ҲОЛАТИ`"/>
         <div class='wrapper'>
+          <div class="absolute" style="bottom:60px; left:20px">
+            <div class="flex align-items-center">
+              <span class="font-bold text-base text-red-500 mr-2"> 0 - 56% </span> <i class='bx bxs-square text-red-500 shadow-1 text-xl'></i>
+            </div>
+            <div class="flex align-items-center mt-2">
+              <span class="font-bold text-base text-yellow-500 mr-2"> 56% - 72% </span> <i class='bx bxs-square text-yellow-500 shadow-1 text-xl'></i>
+            </div><div class="flex align-items-center mt-2">
+            <span class="font-bold text-base text-green-500 mr-2"> 72% - 100% </span> <i class='bx bxs-square text-green-500 shadow-1 text-xl'></i>
+          </div>
+
+          </div>
             <div class='left-side flex align-items-end flex-column gap-6 mb-8'>
                 <div v-for='item in arr1' class='project-item'
                    :style='{right: `${item.offset}%`}'>
