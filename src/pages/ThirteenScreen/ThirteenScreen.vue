@@ -172,7 +172,7 @@ onUnmounted(() => {
       <div class='text-2xl font-medium flex align-items-center gap-2'>
         <img src='/images/client-success.png' alt='client' />
         <span>
-          Мижозлар сони – <span style='color:#11A832' class='font-semibold'>8 836</span> нафар
+          Мижозлар сони – <span style='color:#11A832' class='font-semibold'>8 977</span> нафар
         </span>
       </div>
     </div>

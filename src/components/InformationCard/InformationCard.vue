@@ -16,7 +16,7 @@
             <div class="grid">
               <div v-for="item in general_data" :key="item.id" class="col-4 cursor-pointer">
                 <div @click="control_overall($event ,item.id)"
-                     :class="[2,6,8,5,7,3].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
+                     :class="[2,6,8,5,7,3,0].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
                      class="card_box p-2 border-round shadow-1 min-h-full "
                 >
                   <span v-show="[5,4, 3].includes(item.id)">
@@ -165,6 +165,33 @@
     </div>
   </OverlayPanel>
 
+  <OverlayPanel ref="overall90_ref" style="width:400px">
+    <div class="grid">
+      <div  class="col-12 py-1 ">
+        <div class="flex flex-column">
+          <div class="flex justify-content-between border-round min-h-full no-underline">
+            <span><i class='bx bxs-circle text-sm mr-2'></i>1. Асосий йўл</span>
+            <span class="font-bold">5 314 км</span>
+          </div>
+          <div class="pl-4 flex justify-content-between border-round min-h-full no-underline">
+            <span>1.1 Бир йўллик</span>
+            <span class="font-bold">4 839 км</span>
+          </div>
+          <div class="pl-4 flex justify-content-between border-round min-h-full no-underline">
+            <span>1.2 Икки йўллик</span>
+            <span class="font-bold">475 км</span>
+          </div>
+          <div class="mt-4 flex justify-content-between border-round min-h-full no-underline">
+          <span><i class='bx bxs-circle text-sm mr-2'></i>2. Қабул қилувчи-жўнатувчи йўл</span>
+          <span class="font-bold">2 172 км</span>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+  </OverlayPanel>
+
   <span v-if="stik_dialog" >
     <div :class="active_stik_dialog && 'active_dialog'" class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden " >
       <h2 class="w-full text-center my-0 text-500 font-bold  pt-1 pb-1 relative">{{selected_stik.name}}
@@ -298,58 +325,58 @@ export default {
         {
           id: 0,
           label: `Мавжуд темир йўл узунлиги`,
-          value: 7488.9,
-          extension_value: 'км'
+          value: 7486,
+          extension_value: ' км',
         },
         {
           id: 1,
           label: `Электрлаштирилган йўл `,
           value: 3328.73,
-          extension_value: 'км (45%)'
+          extension_value: ' км (45%)'
         },
         {
           id: 2,
           label: `Мавжуд локомотивлар сони `,
           value: 471,
-          extension_value: 'та'
+          extension_value: ' та'
         },
         {
           id: 6,
           label: `Станциялар сони `,
           value: 270,
-          extension_value: 'та'
+          extension_value: ' та'
         },
         {
           id: 3,
           label: `Давлатлараро чегара пункти `,
           value: 18,
-          extension_value: 'та'
+          extension_value: ' та'
         },
         {
           id: 4,
           label: `Локомотив деполар сони`,
           value: 8,
           show_map: false,
-          extension_value: 'та'
+          extension_value: ' та'
         }, {
           id: 5,
           label: `Вагон деполари сони `,
           value: 6,
           show_map: false,
-          extension_value: 'та'
+          extension_value: ' та'
 
         },
         {
           id: 8,
           label: `Мавжуд вагонлар сони `,
           value: 22256,
-          extension_value: 'та',
+          extension_value: ' та',
         },
         {
           id: 7,
           label: `Ходимлар сони `,
           value: 70933,
-          extension_value: 'нафар',
+          extension_value: ' нафар',
 
         },
 
@@ -1548,6 +1575,8 @@ export default {
         this.$refs.overall8_ref.toggle(event);
       }else if (id === 3) {
         this.general_stik_dialog = true;
+      }else if(id === 0){
+        this.$refs.overall90_ref.toggle(event);
       }
 
       if (id === 4) {
