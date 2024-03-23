@@ -1,6 +1,6 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
-    <img style="width:1500px;" src="@/assets/img/fr1.png" alt="">
+    <img style="width:1500px;" src="@/assets/img/new_fr.png" alt="">
     
     <div class="visible-button" @click="$router.push({name:'vols'})"></div>
     <div @click="control_gallery(0)" class="visible-button-content position-one"></div>
