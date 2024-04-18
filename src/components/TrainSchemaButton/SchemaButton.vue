@@ -25,7 +25,7 @@
                 </div>
               </div>
               <div class="col-4">
-                <div @click="action_emit('close')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
+                <div @click="action_emit('close')" class="w-full flex bg-red-100 gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
                   Ёпиш
                   <i class='bx bx-x text-500 text-2xl'></i>
                 </div>
@@ -48,15 +48,21 @@
                   <i class='bx bx-show text-500 text-2xl'></i>
                 </div>
               </div>
-              <div class="col-8">
+              <div class="col-5">
               <div @click="action_emit('route4')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
                 Навоий - Озодлик
                 <i class='bx bx-show text-500 text-2xl'></i>
               </div>
             </div>
-              <div class="col-4">
+              <div class="col-3">
                 <div @click="action_emit('vokzals')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
                   Вокзаллар
+                  <i class='bx bx-show text-500 text-2xl'></i>
+                </div>
+              </div>
+              <div class="col-4">
+                <div @click="action_emit('optik')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
+                  Ўптик тола
                   <i class='bx bx-show text-500 text-2xl'></i>
                 </div>
               </div>

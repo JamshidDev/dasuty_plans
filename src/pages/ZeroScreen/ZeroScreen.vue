@@ -173,7 +173,7 @@ export default {
 	            this.go_push_element(38.6, -60, 1.2);
                 this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.clear_all();
-                this.$refs.railway_map_ref.all_hidden_train_station();
+              this.$refs.railway_map_ref.all_hidden_train_station();
             } else if (action === 'route1') {
 	            this.go_push_element(-791, -513, 2);
 	            this.$refs.dialog_ref.close_timeline();
@@ -184,6 +184,7 @@ export default {
 	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.route2_draw_train();
 	            this.$refs.dialog_ref.route2_timeline();
+
             } else if (action === 'route3') {
 	            this.go_push_element(-791, -513, 2);
 	            this.$refs.dialog_ref.close_timeline();
@@ -198,6 +199,11 @@ export default {
 	            this.go_push_element(38.6, -60, 1.2);
 	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.show_train_station();
+            }
+            else if (action === 'optik') {
+              this.go_push_element(38.6, -60, 1.2);
+              this.$refs.dialog_ref.close_timeline();
+              this.$refs.railway_map_ref.showAllPoints();
             }
         },
 
