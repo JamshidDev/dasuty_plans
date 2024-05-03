@@ -38,9 +38,6 @@
                     </div>
                   </div>
                   </span>
-                  <!--                  <div class="my-1">-->
-
-                  <!--                  </div>-->
                   <div class="text-sm">
                     {{ item.label }}
                   </div>
@@ -102,22 +99,22 @@
     <div class="grid w-full">
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="13171" :title="`Олий малумотли`" :percent="20"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="35763" :title="`ўрта малумотли`" :percent="50"></EducationChart>
-          <EducationChart :color="`blue`" :amount="21615" :title="`ўрта махсус малумотли`" :percent="30"></EducationChart>
+          <EducationChart :color="`green`" :amount="11855" :title="`Олий малумотли`" :percent="18"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="33583" :title="`ўрта малумотли`" :percent="51"></EducationChart>
+          <EducationChart :color="`blue`" :amount="20105" :title="`ўрта махсус малумотли`" :percent="31"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="15086" :title="`31 ёшгача`" :percent="21"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="36169" :title="`32 ёшдан 45 ёшгача`" :percent="51"></EducationChart>
-          <EducationChart :color="`blue`" :amount="19678" :title="`46 ёшдан катталар`" :percent="28"></EducationChart>
+          <EducationChart :color="`green`" :amount="16476" :title="`31 ёшгача`" :percent="25"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="31205" :title="`32 ёшдан 45 ёшгача`" :percent="47"></EducationChart>
+          <EducationChart :color="`blue`" :amount="18201" :title="`46 ёшдан катталар`" :percent="28"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="57855" :title="`Эркаклар`" :percent="82"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="13078" :title="`Аёллар`" :percent="18"></EducationChart>
+          <EducationChart :color="`green`" :amount="54252" :title="`Эркаклар`" :percent="82"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="11630" :title="`Аёллар`" :percent="18"></EducationChart>
         </div>
       </div>
       <div class="col-6 flex justify-content-end align-items-end pb-3">
