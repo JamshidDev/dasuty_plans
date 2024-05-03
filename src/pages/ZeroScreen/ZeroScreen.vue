@@ -51,9 +51,11 @@
         </div>
 
         <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
+        <OptikInfoModal v-if="optik_modal_visble"></OptikInfoModal>
         <SchemaButton v-show="show_button_schema && general_info_show"
                       @action_draw="draw_schema($event)"></SchemaButton>
         <span v-show="general_info_show">
+        
       <InformationCard @changeTrainStation="draw_train_station($event)" ref="information_modal_ref"
                        @closeInfoMap="close_info_map()" @listenMap="listen_map($event)"
                        @changeCard="change_card($event)" @changeMap="change_visible($event)"></InformationCard>
@@ -80,6 +82,7 @@ import LottieIcon from "@/components/LottieIcon/LottieIcon.vue";
 import RiplleIcon from "@/components/LottieIcon/RiplleIcon.vue";
 import SchemaButton from "@/components/TrainSchemaButton/SchemaButton.vue";
 import TitleText from "@/components/TitleText/TitleText.vue";
+import OptikInfoModal from "../../components/OptikInfoModal/OptikInfoModal.vue";
 
 export default {
     components: {
@@ -91,6 +94,7 @@ export default {
         DialogContent,
         LottieIcon,
         RiplleIcon,
+        OptikInfoModal,
 
     },
 
@@ -108,6 +112,7 @@ export default {
             zoo_element_container: null,
             general_info_show: true,
             active_map: true,
+            optik_modal_visble:false,
 
             show_patok_icon: false,
             show_button_schema: false,
@@ -160,6 +165,8 @@ export default {
 
 
         draw_schema(action) {
+            this.optik_modal_visble = action==='optik'
+
             if (action === 'old-train') {
 	            this.go_push_element(-452, -343, 1.7);
 	            this.$refs.dialog_ref.close_timeline();
@@ -205,6 +212,8 @@ export default {
               this.$refs.dialog_ref.close_timeline();
               this.$refs.railway_map_ref.showAllPoints();
             }
+
+
         },
 
         draw_train_station(action) {
