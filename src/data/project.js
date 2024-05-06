@@ -3,14 +3,14 @@ export const projectList = {
         id: 'enakl',
         title: 'E-nakl',
         imgUrl: 'enakl.png',
-        deadline: '2024-05-31',
+        deadline: '2024-10-31',
         desc: 'Yuk ortish tizimini raqamlashtirish'
     },
     vOffice: {
         id: 'vOffice',
         title: 'Virtual Ofis',
         imgUrl: 'enakl.png',
-        deadline: '2024-05-31',
+        deadline: '2024-7-31',
         desc: 'Xodimlar ish faoliyatini raqamlashtirish.'
     },
     erp: {
@@ -24,14 +24,14 @@ export const projectList = {
         id: 'enaklM',
         title: 'E-nakl mobile',
         imgUrl: 'enakl.png',
-        deadline: '2024-04-30',
+        deadline: '2024-08-30',
         desc: 'Yuk ortish tizimini raqamlashtirish'
     },
     utyFace: {
         id: 'utyFace',
         title: 'UTY Face ID',
         imgUrl: 'enakl.png',
-        deadline: '2024-04-15',
+        deadline: '2024-9-15',
         desc: 'Yagona Face control tizimi'
     },
     trainLocation: {
@@ -45,7 +45,7 @@ export const projectList = {
         id: 'railObserver',
         title: 'Rail Observer',
         imgUrl: 'enakl.png',
-        deadline: '2024-07-15',
+        deadline: '2024-08-15',
         desc: "Yo'l sozlovchilar nazorati"
     },
     smartDep: {
@@ -59,7 +59,7 @@ export const projectList = {
         id: 'onk',
         title: 'ONK',
         imgUrl: 'enakl.png',
-        deadline: '2024-08-15',
+        deadline: '2024-09-15',
         desc: "Onlayn nazorat ko'rigi"
     },
     gps: {
