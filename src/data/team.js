@@ -65,14 +65,6 @@ export const teamList = [
         ]
     },
     {
-        name: 'Pak Valeriya',
-        position: 'Backend Developer',
-        projects: [projectList.utyFace.id, projectList.erp.id],
-        tasks: [
-            {title: 'Stream orqali xodimni aniqlash ', deadline: '2024-8-07'}
-        ]
-    },
-    {
         name: 'Qorayev Farrux',
         position: 'Backend Developer',
         projects: [projectList.vOffice.id, projectList.erp.id],
