@@ -4,7 +4,7 @@ export const teamList = [
     {
         name: 'Aliqulov Barxayotjon', position: 'Database Developer', projects: [projectList.enakl.id],
         tasks: [
-            {title: 'Yo’l xo’jaligi korxonalari profillarini o’zgartirish', deadline: '2024-04-04'}
+            {title: 'Yo’l xo’jaligi korxonalari profillarini o’zgartirish', deadline: '2024-08-04'}
         ]
     },
     {
