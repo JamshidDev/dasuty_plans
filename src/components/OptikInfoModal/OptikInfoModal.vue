@@ -1,6 +1,6 @@
 <template>
 <div class="optik-modal  px-4 py-3 border-1 border-300 shadow-2" style="border-radius:12px">
-    <h5 class="text-base my-0 text-blue-600">ОТК - оптик толали кабел - 2647 км</h5>
+    <h5 class="text-base my-0" style="color:#0126ff">ОТК - оптик толали кабел - 2647 км</h5>
     <h5 class="text-base my-0 text-red-600">Ҳаво ва кабел линияси - 2364 км</h5>
     <p class="text-sm mb-0 mt-2 font-normal font-italic">Ҳамкор телекомуникация компаниялари:</p>
     <div class="text-green-600">
