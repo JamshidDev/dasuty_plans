@@ -4,6 +4,10 @@
 
 
     <div class="w-full min-h-screen relative overflow-hidden">
+<<<<<<< HEAD
+=======
+      <LocaleSection></LocaleSection>
+>>>>>>> e41e9a9 (Completed localization part)
       <ControlButton></ControlButton>
 
 
@@ -215,9 +219,17 @@
 <script>
 import FirstPage from "../pages/FirstScreen/FirstPage.vue";
 import ControlButton from "@/components/ControlButton/ControlButton.vue";
+<<<<<<< HEAD
 export default {
   components:{
     ControlButton,
+=======
+import LocaleSection from "@/components/LocaleSection/LocaleSection.vue";
+export default {
+  components:{
+    ControlButton,
+    LocaleSection,
+>>>>>>> e41e9a9 (Completed localization part)
     FirstPage,
   },
   name: "Layout.vue"

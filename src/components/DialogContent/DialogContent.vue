@@ -49,12 +49,21 @@
 	<span v-if="time_line_dialog">
       <div class="map_info_card shadow-1 border-1 border-blue-200" @click="show_animation=!show_animation">
         <div class="mt-0 text-500 mb-2">
+<<<<<<< HEAD
           <div class="text-red-500 font-bold w-full text-center" v-if="is_show_one">Олдинги ҳолат</div>
           <div class="text-green-600 font-bold w-full text-center" v-else>Ҳозирги ҳолат</div>
           <div class="flex justify-content-evenly text-900 font-bold mt-1">
             <span>Ахтачи</span>
             <span><i class='bx bx-right-arrow-alt'></i></span>
             <span>Нукус</span>
+=======
+          <div class="text-red-500 font-bold w-full text-center" v-if="is_show_one">{{ $t('SecondPage.BefMoment') }}</div>
+          <div class="text-green-600 font-bold w-full text-center" v-else>{{$t('SecondPage.CurrMoment')}}</div>
+          <div class="flex justify-content-evenly text-900 font-bold mt-1">
+            <span>{{ $t('SecondPage.Axtachi') }}</span>
+            <span><i class='bx bx-right-arrow-alt'></i></span>
+            <span>{{ $t('SecondPage.Nukus') }}</span>
+>>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
@@ -88,6 +97,7 @@
 
          </div>
          <div class="flex justify-content-between text-sm mt-3 font-bold">
+<<<<<<< HEAD
           <span>Масофа</span>
           <span>1587 км</span>
         </div>
@@ -95,6 +105,15 @@
           <span>Умумий вақт</span>
           <span v-if="is_show_one">12 кун</span>
           <span v-else>5 кун</span>
+=======
+          <span>{{$t('SecondPage.distance')}}</span>
+          <span>1587 {{$t('SecondPage.km')}}</span>
+        </div>
+        <div class="flex justify-content-between text-sm1 font-bold">
+          <span>{{$t('SecondPage.OverallTime')}}</span>
+          <span v-if="is_show_one">12 {{$t('SecondPage.day')}}</span>
+          <span v-else>5 {{$t('SecondPage.day')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
         </div>
       </div>
     </span>
@@ -102,112 +121,196 @@
 	<span v-if="is_route1">
       <div class="map_info_card shadow-1 border-1 border-blue-200">
         <div class="mt-0 text-500 mb-2">
+<<<<<<< HEAD
           <div class="font-bold w-full text-center">Қашқадарё - Охунбобоев</div>
           <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
             <span>Аввалги</span>
             <span><i class='bx bx-right-arrow-alt'></i></span>
             <span>Хозирги</span>
+=======
+          <div class="font-bold w-full text-center">{{ $t('SecondPage.QashOxun') }}</div>
+          <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
+            <span>{{$t('SecondPage.Before')}}</span>
+            <span><i class='bx bx-right-arrow-alt'></i></span>
+            <span>{{$t('SecondPage.Current')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
             <Timeline class="w-full" :value="1">
                 <template #opposite="slotProps">
+<<<<<<< HEAD
                     <small class="text-red-600 font-bold">55 соат</small>
 	            </template>
 			    <template #content="slotProps" class="h-3rem">
 			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
 			          <span class="text-green-600 font-bold">36 соат</span>
+=======
+                    <small class="text-red-600 font-bold">55 {{$t('SecondPage.hour')}}</small>
+	            </template>
+			    <template #content="slotProps" class="h-3rem">
+			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
+			          <span class="text-green-600 font-bold">36 {{$t('SecondPage.hour')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
 			        </div>
 			    </template>
           </Timeline>
          </div>
          <div class="flex justify-content-between text-sm mt-3 font-bold">
+<<<<<<< HEAD
           <span>Масофа</span>
           <span>852 км</span>
+=======
+          <span>{{$t('SecondPage.distance')}}</span>
+          <span>852 {{$t('SecondPage.km')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
         </div>
       </div>
     </span>
 	<span v-if="is_route2">
       <div class="map_info_card shadow-1 border-1 border-blue-200">
         <div class="mt-0 text-500 mb-2">
+<<<<<<< HEAD
           <div class="font-bold w-full text-center">Қарши - Ўзбекистон</div>
           <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
             <span>Аввалги</span>
             <span><i class='bx bx-right-arrow-alt'></i></span>
             <span>Хозирги</span>
+=======
+          <div class="font-bold w-full text-center">{{ $t('SecondPage.QarShUz') }}</div>
+          <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
+            <span>{{$t('SecondPage.Before')}}</span>
+            <span><i class='bx bx-right-arrow-alt'></i></span>
+            <span>{{$t('SecondPage.Current')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
             <Timeline class="w-full" :value="1">
                 <template #opposite="slotProps">
+<<<<<<< HEAD
                     <small class="text-red-600 font-bold">42 соат</small>
 	            </template>
 			    <template #content="slotProps" class="h-3rem">
 			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
 			          <span class="text-green-600 font-bold">24 соат</span>
+=======
+                    <small class="text-red-600 font-bold">42 {{$t('SecondPage.hour')}}</small>
+	            </template>
+			    <template #content="slotProps" class="h-3rem">
+			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
+			          <span class="text-green-600 font-bold">24 {{$t('SecondPage.hour')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
 			        </div>
 			    </template>
           </Timeline>
          </div>
          <div class="flex justify-content-between text-sm mt-3 font-bold">
+<<<<<<< HEAD
           <span>Масофа</span>
           <span>490 км</span>
+=======
+          <span>{{$t('SecondPage.distance')}}</span>
+          <span>490 {{$t('SecondPage.km')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
         </div>
       </div>
     </span>
 	<span v-if="is_route3">
       <div class="map_info_card shadow-1 border-1 border-blue-200">
         <div class="mt-0 text-500 mb-2">
+<<<<<<< HEAD
           <div class="font-bold w-full text-center">Қумқўрғон - Ўзбекистон</div>
           <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
             <span>Аввалги</span>
             <span><i class='bx bx-right-arrow-alt'></i></span>
             <span>Хозирги</span>
+=======
+          <div class="font-bold w-full text-center">{{ $t('SecondPage.QumUz') }}</div>
+          <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
+            <span>{{$t('SecondPage.Before')}}</span>
+            <span><i class='bx bx-right-arrow-alt'></i></span>
+            <span>{{$t('SecondPage.Current')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
             <Timeline class="w-full" :value="1">
                 <template #opposite="slotProps">
+<<<<<<< HEAD
                     <small class="text-red-600 font-bold">45 соат</small>
 	            </template>
 			    <template #content="slotProps" class="h-3rem">
 			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
 			          <span class="text-green-600 font-bold">26 соат</span>
+=======
+                    <small class="text-red-600 font-bold">45 {{$t('SecondPage.hour')}}</small>
+	            </template>
+			    <template #content="slotProps" class="h-3rem">
+			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
+			          <span class="text-green-600 font-bold">26 {{$t('SecondPage.hour')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
 			        </div>
 			    </template>
           </Timeline>
          </div>
          <div class="flex justify-content-between text-sm mt-3 font-bold">
+<<<<<<< HEAD
           <span>Масофа</span>
           <span>742 км</span>
+=======
+          <span>{{$t('SecondPage.distance')}}</span>
+          <span>742 {{$t('SecondPage.km')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
         </div>
       </div>
     </span>
 	<span v-if="is_route4">
       <div class="map_info_card shadow-1 border-1 border-blue-200">
         <div class="mt-0 text-500 mb-2">
+<<<<<<< HEAD
           <div class="font-bold w-full text-center">Навоий - Озодлик</div>
           <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
             <span>Аввалги</span>
             <span><i class='bx bx-right-arrow-alt'></i></span>
             <span>Хозирги</span>
+=======
+          <div class="font-bold w-full text-center">{{ $t('SecondPage.NavOzo') }}</div>
+          <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
+            <span>{{$t('SecondPage.Before')}}</span>
+            <span><i class='bx bx-right-arrow-alt'></i></span>
+            <span>{{$t('SecondPage.Current')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
             <Timeline class="w-full" :value="1">
                 <template #opposite="slotProps">
+<<<<<<< HEAD
                     <small class="text-red-600 font-bold">45 соат</small>
 	            </template>
 			    <template #content="slotProps" class="h-3rem">
 			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
 			          <span class="text-green-600 font-bold">26 соат</span>
+=======
+                    <small class="text-red-600 font-bold">45 {{$t('SecondPage.hour')}}</small>
+	            </template>
+			    <template #content="slotProps" class="h-3rem">
+			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
+			          <span class="text-green-600 font-bold">26 {{$t('SecondPage.hour')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
 			        </div>
 			    </template>
           </Timeline>
          </div>
          <div class="flex justify-content-between text-sm mt-3 font-bold">
+<<<<<<< HEAD
           <span>Масофа</span>
           <span>562 км</span>
+=======
+          <span>{{$t('SecondPage.distance')}}</span>
+          <span>562 {{$t('SecondPage.km')}}</span>
+>>>>>>> e41e9a9 (Completed localization part)
         </div>
       </div>
     </span>
@@ -235,7 +338,11 @@
 				</div>
 			</div>
 			<div class="col-6 flex justify-content-end align-items-end pb-3">
+<<<<<<< HEAD
 				<a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i
+=======
+				<a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">{{$t('SecondPage.More')}} <i
+>>>>>>> e41e9a9 (Completed localization part)
 						class='bx bx-right-top-arrow-circle ml-2'></i></a>
 			</div>
 		</div>
@@ -294,6 +401,7 @@ export default {
 				// {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
 			],
 			timeline_two_index: [0, 1, 3, 4, 8, 9, 10,],
+<<<<<<< HEAD
 			mtu_data: [
 				{
 					name: 'Тошкент МТУ',
@@ -897,6 +1005,611 @@ export default {
 					]
 				},
 			],
+=======
+      mtu_data: [
+        {
+          name: this.$t('SecondPage.ToshkentMtu'),
+          index: 0,
+          data: [
+            {
+              id: 0,
+              label:  this.$t('SecondPage.DistanceOfRailways'),
+              value: `1654,6 ` +  this.$t('SecondPage.km'),
+              iscollapse: false,
+            },
+            {
+              id: 1,
+              label:  this.$t('SecondPage.EngRoad'),
+              value: `1327,8 км  (80%)`,
+              iscollapse: false,
+            },
+            {
+              id: 2,
+              label:  this.$t('SecondPage.AssignedLoc'),
+              value: `174 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label:  this.$t('SecondPage.ElecLoc'),
+                  value: "93 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 1,
+                  label:  this.$t('SecondPage.MainlineLoc'),
+                  value: "3 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 2,
+                  label:  this.$t('SecondPage.ShuntLoc'),
+                  value: "65 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 3,
+                  label:  this.$t('SecondPage.ElecTrains'),
+                  value: "13 " +  this.$t('SecondPage.CountWord')
+                },
+              ]
+            },
+            {
+              id: 3,
+              multiple_label: true,
+              labels: {
+                label1:  this.$t('SecondPage.CountOfSortingStat'),
+                value1: `3 ` +  this.$t('SecondPage.CountWord'),
+                label2:  this.$t('SecondPage.TotalStat'),
+                value2: `58 ` +  this.$t('SecondPage.CountWord'),
+              },
+
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label:  this.$t('SecondPage.Chukursay'),
+                  value: ""
+                },
+                {
+                  id: 1,
+                  label:  this.$t('SecondPage.Xavast'),
+                  value: ""
+                },
+                {
+                  id: 2,
+                  label:  this.$t('SecondPage.Okhangaron'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 4,
+              label:  this.$t('SecondPage.CountLocDepo'),
+              value: `2 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label: this.$t('SecondPage.Toshkent'),
+                  value: ""
+                },
+                {
+                  id: 1,
+                  label: this.$t('SecondPage.Tinchlik'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 5,
+              multiple_label: true,
+              labels: {
+                label1:  this.$t('SecondPage.NumberOfWagons'),
+                value1: `2980 ` +  this.$t('SecondPage.CountWord'),
+                label2:  this.$t('SecondPage.wagonsDepo'),
+                value2: `1 ` +  this.$t('SecondPage.CountWord'),
+              },
+
+              iscollapse: false,
+            },
+            {
+              id: 6,
+              label:  this.$t('SecondPage.CountEmpl'),
+              value: `8045 ` +  this.$t('SecondPage.countLive'),
+              iscollapse: true,
+            },
+          ]
+        },
+        {
+          name: this.$t('SecondPage.QoqonMtu'),
+          index: 1,
+          data: [
+            {
+              id: 0,
+              label:  this.$t('SecondPage.DistanceOfRailways'),
+              value: `981,7 ` +  this.$t('SecondPage.km'),
+              iscollapse: false,
+            },
+            {
+              id: 1,
+              label:  this.$t('SecondPage.EngRoad'),
+              value: `587,31 км (60%)`,
+              iscollapse: false,
+            },
+            {
+              id: 2,
+              label:  this.$t('SecondPage.AssignedLoc'),
+              value: `63 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label:  this.$t('SecondPage.ElecLoc'),
+                  value: "25 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 1,
+                  label:  this.$t('SecondPage.MainlineLoc'),
+                  value: "9 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 2,
+                  label:  this.$t('SecondPage.ShuntLoc'),
+                  value: "28 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 3,
+                  label:  this.$t('SecondPage.ElecTrains'),
+                  value: "1 " +  this.$t('SecondPage.CountWord')
+                },
+              ]
+            },
+            {
+              id: 3,
+              multiple_label: true,
+              labels: {
+                label1:  this.$t('SecondPage.CountOfSortingStat'),
+                value1: `2 ` +  this.$t('SecondPage.CountWord'),
+                label2:  this.$t('SecondPage.TotalStat'),
+                value2: `38 ` +  this.$t('SecondPage.CountWord'),
+              },
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label: this.$t('SecondPage.Kokand'),
+                  value: ""
+                },
+                {
+                  id: 1,
+                  label: this.$t('SecondPage.Okhunboboyev'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 4,
+              label:  this.$t('SecondPage.CountLocDepo'),
+              value: `1 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label: this.$t('SecondPage.Andijon'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 5,
+              multiple_label: true,
+              labels: {
+                label1:  this.$t('SecondPage.NumberOfWagons'),
+                value1: `4331 ` +  this.$t('SecondPage.CountWord'),
+                label2:  this.$t('SecondPage.wagonsDepo'),
+                value2: `1 ` +  this.$t('SecondPage.CountWord'),
+              },
+              iscollapse: false,
+            },
+            {
+              id: 6,
+              label:  this.$t('SecondPage.CountEmpl'),
+              value: `6076 ` +  this.$t('SecondPage.countLive'),
+              iscollapse: true,
+
+            },
+          ]
+        },
+        {
+          name: this.$t('SecondPage.BuxoroMtu'),
+          index: 2,
+          data: [
+            {
+              id: 0,
+              label:  this.$t('SecondPage.DistanceOfRailways'),
+              value: `2037,2 ` +  this.$t('SecondPage.km'),
+              iscollapse: false,
+            },
+            {
+              id: 1,
+              label:  this.$t('SecondPage.EngRoad'),
+              value: `728,92 км (35,7%)`,
+              iscollapse: false,
+            },
+            {
+              id: 2,
+              label:  this.$t('SecondPage.AssignedLoc'),
+              value: `90 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label:  this.$t('SecondPage.ElecLoc'),
+                  value: "7 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 1,
+                  label:  this.$t('SecondPage.MainlineLoc'),
+                  value: "37 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 2,
+                  label:  this.$t('SecondPage.ShuntLoc'),
+                  value: "46 " +  this.$t('SecondPage.CountWord')
+                },
+              ]
+            },
+            {
+              id: 3,
+              multiple_label: true,
+              labels: {
+                label1:  this.$t('SecondPage.CountOfSortingStat'),
+                value1: `4 ` +  this.$t('SecondPage.CountWord'),
+                label2:  this.$t('SecondPage.TotalStat'),
+                value2: `69 ` +  this.$t('SecondPage.CountWord'),
+              },
+
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label: this.$t('SecondPage.Bukhara'),
+                  value: ""
+                },
+                {
+                  id: 1,
+                  label: this.$t('SecondPage.Marokand'),
+                  value: ""
+                },
+                {
+                  id: 2,
+                  label: this.$t('SecondPage.Navoi'),
+                  value: ""
+                },
+                {
+                  id: 3,
+                  label: this.$t('SecondPage.Binokor'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 4,
+              label:  this.$t('SecondPage.CountLocDepo'),
+              value: `2 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label: this.$t('SecondPage.Bukhara'),
+                  value: ""
+                },
+                {
+                  id: 1,
+                  label: this.$t('SecondPage.Tinchlik'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 5,
+              multiple_label: true,
+              labels: {
+                label1:  this.$t('SecondPage.NumberOfWagons'),
+                value1: `6430 ` +  this.$t('SecondPage.CountWord'),
+                label2:  this.$t('SecondPage.wagonsDepo'),
+                value2: `1 ` +  this.$t('SecondPage.CountWord'),
+              },
+              iscollapse: false,
+            },
+            {
+              id: 6,
+              label:  this.$t('SecondPage.CountEmpl'),
+              value: `9812 ` +  this.$t('SecondPage.countLive'),
+              iscollapse: true,
+            },
+          ]
+        },
+        {
+          name: this.$t('SecondPage.KungirotMtu'),
+          index: 3,
+          data: [
+            {
+              id: 0,
+              label:  this.$t('SecondPage.DistanceOfRailways'),
+              value: `1491,7 ` +  this.$t('SecondPage.km'),
+              iscollapse: false,
+            },
+            // {
+            //   id: 1,
+            //   label:  this.$t('SecondPage.EngRoad'),
+            //   value: 'hidden',
+            //   iscollapse:false,
+            // },
+            {
+              id: 2,
+              label:  this.$t('SecondPage.AssignedLoc'),
+              value: `59 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 1,
+                  label:  this.$t('SecondPage.MainlineLoc'),
+                  value: "35 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 2,
+                  label:  this.$t('SecondPage.ShuntLoc'),
+                  value: "24 " +  this.$t('SecondPage.CountWord')
+                },
+              ]
+            },
+            {
+              id: 3,
+
+              multiple_label: true,
+              labels: {
+                label1:  this.$t('SecondPage.CountOfSortingStat'),
+                value1: `3 ` +  this.$t('SecondPage.CountWord'),
+                label2:  this.$t('SecondPage.TotalStat'),
+                value2: `49 ` +  this.$t('SecondPage.CountWord'),
+              },
+
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label: this.$t('SecondPage.Misken'),
+                  value: ""
+                },
+                {
+                  id: 1,
+                  label: this.$t('SecondPage.Kungirot'),
+                  value: ""
+                },
+                {
+                  id: 2,
+                  label: this.$t('SecondPage.Nukus'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 4,
+              label:  this.$t('SecondPage.CountLocDepo'),
+              value: `2 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label: this.$t('SecondPage.Urganch'),
+                  value: ""
+                },
+                {
+                  id: 1,
+                  label: this.$t('SecondPage.Kungirot'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 5,
+              label:  this.$t('SecondPage.wagonsDepo'),
+              value: `1 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: false,
+            },
+            {
+              id: 6,
+              label:  this.$t('SecondPage.CountEmpl'),
+              value: `5560 ` +  this.$t('SecondPage.countLive'),
+              iscollapse: true,
+            },
+          ]
+        },
+        {
+          name: this.$t('SecondPage.QarshiMtu'),
+          index: 4,
+          data: [
+            {
+              id: 0,
+              label:  this.$t('SecondPage.DistanceOfRailways'),
+              value: `722,8 ` +  this.$t('SecondPage.km'),
+              iscollapse: false,
+            },
+            {
+              id: 1,
+              label:  this.$t('SecondPage.EngRoad'),
+              value: `440,3 км (61%)`,
+              iscollapse: false,
+            },
+            {
+              id: 2,
+              label:  this.$t('SecondPage.AssignedLoc'),
+              value: `40 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label:  this.$t('SecondPage.ElecLoc'),
+                  value: "18 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 1,
+                  label:  this.$t('SecondPage.MainlineLoc'),
+                  value: "6 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 2,
+                  label:  this.$t('SecondPage.ShuntLoc'),
+                  value: "16 " +  this.$t('SecondPage.CountWord')
+                },
+              ]
+            },
+            {
+              id: 3,
+              multiple_label: true,
+              labels: {
+                label1:  this.$t('SecondPage.CountOfSortingStat'),
+                value1: `1 ` +  this.$t('SecondPage.CountWord'),
+                label2:  this.$t('SecondPage.TotalStat'),
+                value2: `30 ` +  this.$t('SecondPage.CountWord'),
+              },
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label:  this.$t('SecondPage.Karshi'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 4,
+              multiple_label: true,
+              labels: {
+                label1:  this.$t('SecondPage.NumberOfWagons'),
+                value1: `5295 ` +  this.$t('SecondPage.CountWord'),
+                label2:  this.$t('SecondPage.wagonsDepo'),
+                value2: `1 ` +  this.$t('SecondPage.CountWord'),
+              },
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label:  this.$t('SecondPage.Karshi'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 5,
+              label:  this.$t('SecondPage.wagonsDepo'),
+              value: `1 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: false,
+            },
+            {
+              id: 6,
+              label:  this.$t('SecondPage.CountEmpl'),
+              value: `4469  ` +  this.$t('SecondPage.countLive'),
+              iscollapse: false,
+            },
+            {
+              id: 7,
+              label:  this.$t('SecondPage.AvailableWagons'),
+              value: `8045 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+            },
+          ]
+        },
+        {
+          name: this.$t('SecondPage.TermizMtu'),
+          index: 5,
+          data: [
+            {
+              id: 0,
+              label:  this.$t('SecondPage.DistanceOfRailways'),
+              value: `600,9 ` +  this.$t('SecondPage.km'),
+              iscollapse: false,
+            },
+            {
+              id: 1,
+              label:  this.$t('SecondPage.EngRoad'),
+              value: `244,4 ` +  this.$t('SecondPage.km'),
+              iscollapse: false,
+            },
+            {
+              id: 2,
+              label:  this.$t('SecondPage.AssignedLoc'),
+              value: `45 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label:  this.$t('SecondPage.ElecLoc'),
+                  value: "11 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 1,
+                  label:  this.$t('SecondPage.MainlineLoc'),
+                  value: "14 " +  this.$t('SecondPage.CountWord')
+                },
+                {
+                  id: 2,
+                  label:  this.$t('SecondPage.ShuntLoc'),
+                  value: "20 " +  this.$t('SecondPage.CountWord')
+                },
+              ]
+            },
+            {
+              id: 3,
+              multiple_label: true,
+              labels: {
+                label1:  this.$t('SecondPage.CountOfSortingStat'),
+                value1: `2 ` +  this.$t('SecondPage.CountWord'),
+                label2:  this.$t('SecondPage.TotalStat'),
+                value2: `26 ` +  this.$t('SecondPage.CountWord'),
+              },
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label:  this.$t('SecondPage.Termez'),
+                  value: ""
+                },
+                {
+                  id: 1,
+                  label:  this.$t('SecondPage.Kumkurgan'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 4,
+              label:  this.$t('SecondPage.CountLocDepo'),
+              value: `1 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: true,
+              nodes_list: [
+                {
+                  id: 0,
+                  label:  this.$t('SecondPage.Termez'),
+                  value: ""
+                },
+              ]
+            },
+            {
+              id: 5,
+              label:  this.$t('SecondPage.wagonsDepo'),
+              value: `1 ` +  this.$t('SecondPage.CountWord'),
+              iscollapse: false,
+            },
+            {
+              id: 6,
+              label:  this.$t('SecondPage.CountEmpl'),
+              value: `3591  ` +  this.$t('SecondPage.countLive'),
+              iscollapse: true,
+            },
+          ]
+        },
+      ],
+>>>>>>> e41e9a9 (Completed localization part)
 			selected_mtu_list: [],
 			selected_overall_list: [],
 			timeline_timeout: null,
@@ -906,6 +1619,7 @@ export default {
 			is_route2: false,
 			is_route3: false,
 			is_route4: false,
+<<<<<<< HEAD
 			mtu_worker_list: [
 				{
 					id: 1,
@@ -1328,6 +2042,430 @@ export default {
 					]
 				},
 			],
+=======
+      mtu_worker_list: [
+        {
+          id: 1,
+          name:  this.$t('SecondPage.ToshkentMtu'),
+          data: [
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.HigherEdu'),
+                  value: 1562,
+                  percent: 20,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.SecEdu'),
+                  value: 3981,
+                  percent: 50,
+                  color: 'yellow',
+                },
+                {
+                  label:  this.$t('SecondPage.VocEdu'),
+                  value: 2404,
+                  percent: 30,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.till31'),
+                  value: 1790,
+                  percent: 22,
+                  color: 'green',
+
+                },
+                {
+                  label:  this.$t('SecondPage.till45'),
+                  value: 4162,
+                  percent: 52,
+                  color: 'yellow',
+
+                },
+                {
+                  label:  this.$t('SecondPage.upTo46'),
+                  value: 2049,
+                  percent: 26,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.men'),
+                  value: 6748,
+                  percent: 84,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.women'),
+                  value: 1253,
+                  percent: 16,
+                  color: 'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
+        {
+          id: 2,
+          name: this.$t('SecondPage.QoqonMtu'),
+          data: [
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.HigherEdu'),
+                  value: 986,
+                  percent: 16,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.SecEdu'),
+                  value: 3394,
+                  percent: 56,
+                  color: 'yellow',
+                },
+                {
+                  label:  this.$t('SecondPage.VocEdu'),
+                  value: 1669,
+                  percent: 28,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.till31'),
+                  value: 2016,
+                  percent: 33,
+                  color: 'green',
+
+                },
+                {
+                  label:  this.$t('SecondPage.till45'),
+                  value: 2576,
+                  percent: 43,
+                  color: 'yellow',
+
+                },
+                {
+                  label:  this.$t('SecondPage.upTo46'),
+                  value: 1466,
+                  percent: 24,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.men'),
+                  value: 5352,
+                  percent: 88,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.women'),
+                  value: 709,
+                  percent: 12,
+                  color: 'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
+        {
+          id: 3,
+          name: this.$t('SecondPage.BuxoroMtu'),
+          data: [
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.HigherEdu'),
+                  value: 1424,
+                  percent: 15,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.SecEdu'),
+                  value: 6035,
+                  percent: 62,
+                  color: 'yellow',
+                },
+                {
+                  label:  this.$t('SecondPage.VocEdu'),
+                  value: 2322,
+                  percent: 24,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.till31'),
+                  value: 2597,
+                  percent: 26,
+                  color: 'green',
+
+                },
+                {
+                  label:  this.$t('SecondPage.till45'),
+                  value: 5215,
+                  percent: 53,
+                  color: 'yellow',
+
+                },
+                {
+                  label:  this.$t('SecondPage.upTo46'),
+                  value: 1990,
+                  percent: 20,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.men'),
+                  value: 8409,
+                  percent: 86,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.women'),
+                  value: 1393,
+                  percent: 14,
+                  color: 'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
+        {
+          id: 4,
+          name: this.$t('SecondPage.KungirotMtu'),
+          data: [
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.HigherEdu'),
+                  value: 847,
+                  percent: 15,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.SecEdu'),
+                  value: 2807,
+                  percent: 51,
+                  color: 'yellow',
+                },
+                {
+                  label:  this.$t('SecondPage.VocEdu'),
+                  value: 1889,
+                  percent: 34,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.till31'),
+                  value: 1223,
+                  percent: 22,
+                  color: 'green',
+
+                },
+                {
+                  label:  this.$t('SecondPage.till45'),
+                  value: 2958,
+                  percent: 53,
+                  color: 'yellow',
+
+                },
+                {
+                  label:  this.$t('SecondPage.upTo46'),
+                  value: 1376,
+                  percent: 25,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.men'),
+                  value: 4751,
+                  percent: 85,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.women'),
+                  value: 806,
+                  percent: 15,
+                  color: 'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
+        {
+          id: 5,
+          name: this.$t('SecondPage.QarshiMtu'),
+          data: [
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.HigherEdu'),
+                  value: 1002,
+                  percent: 22,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.SecEdu'),
+                  value: 1684,
+                  percent: 38,
+                  color: 'yellow',
+                },
+                {
+                  label:  this.$t('SecondPage.VocEdu'),
+                  value: 1753,
+                  percent: 39,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.till31'),
+                  value: 765,
+                  percent: 17,
+                  color: 'green',
+
+                },
+                {
+                  label:  this.$t('SecondPage.till45'),
+                  value: 2448,
+                  percent: 55,
+                  color: 'yellow',
+
+                },
+                {
+                  label:  this.$t('SecondPage.upTo46'),
+                  value: 1247,
+                  percent: 28,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.men'),
+                  value: 4029,
+                  percent: 90,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.women'),
+                  value: 431,
+                  percent: 10,
+                  color: 'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
+        {
+          id: 6,
+          name: this.$t('SecondPage.TermizMtu'),
+          data: [
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.HigherEdu'),
+                  value: 920,
+                  percent: 26,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.SecEdu'),
+                  value: 1642,
+                  percent: 46,
+                  color: 'yellow',
+                },
+                {
+                  label:  this.$t('SecondPage.VocEdu'),
+                  value: 1019,
+                  percent: 28,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.till31'),
+                  value: 654,
+                  percent: 18,
+                  color: 'green',
+
+                },
+                {
+                  label:  this.$t('SecondPage.till45'),
+                  value: 2125,
+                  percent: 59,
+                  color: 'yellow',
+
+                },
+                {
+                  label:  this.$t('SecondPage.upTo46'),
+                  value: 806,
+                  percent: 22,
+                  color: 'blue',
+                },
+              ]
+            },
+            {
+              chart_list: [
+                {
+                  label:  this.$t('SecondPage.men'),
+                  value: 3232,
+                  percent: 90,
+                  color: 'green',
+                },
+                {
+                  label:  this.$t('SecondPage.women'),
+                  value: 353,
+                  percent: 10,
+                  color: 'yellow',
+                },
+              ]
+            },
+
+
+          ]
+        },
+      ],
+>>>>>>> e41e9a9 (Completed localization part)
 			selected_mtu: null,
 		}
 	},

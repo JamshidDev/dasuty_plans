@@ -23,8 +23,33 @@ import AOS from 'aos'
 import Donut from 'vue-css-donut-chart';
 import 'vue-css-donut-chart/dist/vcdonut.css';
 import 'aos/dist/aos.css'
+<<<<<<< HEAD
 
 const app = createApp(App);
+=======
+import { createI18n } from 'vue-i18n'
+import en from './locale/en.json';
+import uz from './locale/uz.json';
+import ru from './locale/ru.json';
+
+const getCookie = (name) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return 'uz';
+};
+const app = createApp(App);
+const i18n = createI18n({
+    locale: getCookie('locale'),
+    messages:{
+        uz: uz,
+        en: en,
+        ru: ru,
+    }
+})
+
+app.use(i18n)
+>>>>>>> e41e9a9 (Completed localization part)
 app.use(PrimeVue);
 app.use(AOS)
 app.use(router);

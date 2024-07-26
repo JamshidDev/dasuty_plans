@@ -5,11 +5,15 @@ import PulseCenter from "../../components/PulseAnimation/PulseCenter.vue";
 import PersonSvg from "../../components/IconSvg/PersonSvg.vue";
 import {onMounted, ref} from "vue";
 import TitleText from "@/components/TitleText/TitleText.vue";
+<<<<<<< HEAD
 
+=======
+>>>>>>> e41e9a9 (Completed localization part)
 const animated = ref(false)
 const totalP = ref(70)
 
 const arr = [
+<<<<<<< HEAD
     {r: 45, desc: 'Мижоз авваламбор станцияга мурожаат қилади', icon: 'station.png'},
     {r: 90, desc: 'Минтақавий темир йўл узелига шартнома тузиш учун боради', icon: 'contract.png'},
     {r: 135, desc: 'Ўзаро келишув учун Мижозлар ҳудудий марказига боради', icon: 'deal.png'},
@@ -21,6 +25,19 @@ const arr = [
         icon: 'payment-success.png'
     },
     {r: 315, desc: 'Мижозлар ҳудудий марказидан маълумотни олиб станцияга боради', icon: 'station.png'},
+=======
+    {r: 45, desc: 'FifthPage.Option1', icon: 'station.png'},
+    {r: 90, desc: 'FifthPage.Option2', icon: 'contract.png'},
+    {r: 135, desc: 'FifthPage.Option3', icon: 'deal.png'},
+    {r: 180, desc: 'FifthPage.Option4', icon: 'station.png'},
+    {r: 225, desc: 'FifthPage.Option5', icon: 'bank.png'},
+    {
+        r: 270,
+        desc: 'FifthPage.Option6',
+        icon: 'payment-success.png'
+    },
+    {r: 315, desc: 'FifthPage.Option7', icon: 'station.png'},
+>>>>>>> e41e9a9 (Completed localization part)
 ]
 
 onMounted(() => {
@@ -33,7 +50,11 @@ onMounted(() => {
 
 <template>
     <div class="w-full min-h-full flex flex-column justify-content-center align-items-center">
+<<<<<<< HEAD
         <TitleText class='heading' title='Рақамлаштиришдан олдинги ҳолат'></TitleText>
+=======
+        <TitleText class='heading' :title="$t('FifthPage.ThemeTitle')"></TitleText>
+>>>>>>> e41e9a9 (Completed localization part)
         <PulseAnimation class='custom-pulse-animation overflow-visible'/>
         <PulseCenter class='pulse'>
             <PersonSvg/>
@@ -46,8 +67,13 @@ onMounted(() => {
                             <img :src='`/images/${item.icon}`'>
                         </div>
                         <div class='absolute box' :class='`box-${idx + 1}`'>
+<<<<<<< HEAD
                             <h6>{{ `${idx + 1}-Босқич` }}</h6>
                             <p>{{ item.desc }}</p>
+=======
+                            <h6>{{ `${idx + 1}-` + $t('FifthPage.stage') }}</h6>
+                            <p>{{$t(item.desc) }}</p>
+>>>>>>> e41e9a9 (Completed localization part)
                         </div>
                     </div>
                 </div>
@@ -70,19 +96,28 @@ onMounted(() => {
             <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
                 <img height='40' width='40' src='/images/delivery-slow-danger.png' alt='users'/>
                 <span>
+<<<<<<< HEAD
           Юкларни манзилга етказиб бериш тезлигининг пастлиги
+=======
+          {{$t('FifthPage.CardOption1')}}
+>>>>>>> e41e9a9 (Completed localization part)
         </span>
             </div>
             <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
                 <img width='40' height='40' src='/images/more-doc.png' alt='users'/>
                 <span>
+<<<<<<< HEAD
           Ҳужжатларни расмийлаштиришда ортиқча бюрократик жараёнларнинг мавжудлиги
+=======
+          {{$t('FifthPage.CardOption2')}}
+>>>>>>> e41e9a9 (Completed localization part)
         </span>
             </div>
         </div>
 
         <div class='p-3 flex flex-column font-medium border-round-2xl border-3 gap-2 bg-white absolute total-info'
              style='border-color: #A8111B;'>
+<<<<<<< HEAD
             <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
                 <img width='40' height='40' src='/images/time-spent-danger.png' alt='users'/>
                 <span>
@@ -93,6 +128,16 @@ onMounted(() => {
                 <img width='40' height='40' src='/images/tarif-calc-danger.png' alt='users'/>
                 <span>
           Юк ташиш тарифларини ҳисоблаш имконияти мавжуд эмаслиги
+=======
+              <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
+                <img width='40' height='40' src='/images/time-spent-danger.png' alt='users'/>
+                <span v-html="$t('FifthPage.CardOption3')"></span>
+              </div>
+            <div class='text-xl line-height-2 font-medium flex align-items-center gap-2'>
+                <img width='40' height='40' src='/images/tarif-calc-danger.png' alt='users'/>
+                <span>
+          {{$t('FifthPage.CardOption4')}}
+>>>>>>> e41e9a9 (Completed localization part)
         </span>
             </div>
         </div>
