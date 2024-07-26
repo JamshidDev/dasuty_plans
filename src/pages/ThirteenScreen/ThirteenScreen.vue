@@ -47,18 +47,11 @@ function toggle(event, idx) {
 
 const arr = [
   {
-<<<<<<< HEAD
-    r: 90, desc: 'Мижоз\n' +
-      '"https://enakl.railway.uz" сайтдан рўйхатдан ўтади', icon: 'desktop.png'
-  },
-  { r: 180, desc: 'Шартнома асосида онлайн тўлов амалга   оширилади', icon: 'credit-card.png' },
-  { r: 270, desc: 'Онлайн ариза топширади', icon: 'success.png' },
-=======
+
     r: 90, desc: 'SixthPage.stage_1', icon: 'desktop.png'
   },
   { r: 180, desc: 'SixthPage.stage_2', icon: 'credit-card.png' },
   { r: 270, desc: 'SixthPage.stage_3', icon: 'success.png' },
->>>>>>> e41e9a9 (Completed localization part)
 ]
 
 onMounted(() => {
@@ -77,68 +70,44 @@ onUnmounted(() => {
   <div class="w-full wrapper min-h-full flex flex-column justify-content-center align-items-center">
     <OverlayPanel ref='op1'>
       <div class='max-w-20rem'>
-<<<<<<< HEAD
-        <div class='text-lg font-medium'>Давлат Cолиқ қўмитаси</div>
-        <p class='mb-0'>Мижозлар рўйхатдан ўтиш жараёнида ишончли маълумотлар олиш.</p>
-=======
+
         <div class='text-lg font-medium'>{{$t('SixthPage.Option1')}}</div>
         <p class='mb-0'>{{$t('SixthPage.Option1_text')}}</p>
->>>>>>> e41e9a9 (Completed localization part)
       </div>
     </OverlayPanel>
     <OverlayPanel ref='op2'>
       <div class='max-w-20rem'>
-<<<<<<< HEAD
-        <div class='text-lg font-medium'>Марказий Банк</div>
-        <p class='mb-0'>Мижозлар томондан тўловлар ҳақида маълумот олиш.</p>
-=======
+
         <div class='text-lg font-medium'>{{$t('SixthPage.Option2')}}</div>
         <p class='mb-0'>{{$t('SixthPage.Option2_text')}}</p>
->>>>>>> e41e9a9 (Completed localization part)
       </div>
     </OverlayPanel>
     <OverlayPanel ref='op3'>
       <div class='max-w-20rem'>
-<<<<<<< HEAD
-        <div class='text-lg font-medium'>“Rail-Tarif” тизими</div>
-        <p class='mb-0'>Тарифларни «Rail-Tarif» сервер иловаси ёрдамида ҳисоблаш.</p>
-=======
+
         <div class='text-lg font-medium'>{{$t('SixthPage.Option6')}}</div>
         <p class='mb-0'>{{$t('SixthPage.Option6_text')}}</p>
->>>>>>> e41e9a9 (Completed localization part)
       </div>
     </OverlayPanel>
     <OverlayPanel ref='op4'>
       <div class='max-w-20rem'>
-<<<<<<< HEAD
-        <div class='text-lg font-medium'>“E-IMZO” тизими</div>
-        <p class='mb-0'>“E-IMZO” ёрдамида электрон ҳужжатларни имзолаш.</p>
-=======
+
         <div class='text-lg font-medium'>{{$t('SixthPage.Option3')}}</div>
         <p class='mb-0'>{{$t('SixthPage.Option3_text')}}</p>
->>>>>>> e41e9a9 (Completed localization part)
       </div>
     </OverlayPanel>
     <OverlayPanel ref='op5'>
       <div class='max-w-20rem'>
-<<<<<<< HEAD
-        <div class='text-lg font-medium'>“One-ID” тизими</div>
-        <p class='mb-0'>“One-ID” Веб - сайтларга фойдаланувчиларни аниқлаш имконини беради.</p>
-=======
+
         <div class='text-lg font-medium'>{{$t('SixthPage.Option4')}}</div>
         <p class='mb-0'>{{$t('SixthPage.Option4_text')}}</p>
->>>>>>> e41e9a9 (Completed localization part)
       </div>
     </OverlayPanel>
     <OverlayPanel ref='op6'>
       <div class='max-w-20rem'>
-<<<<<<< HEAD
-        <div class='text-lg font-medium'>Божхона қўмитаси</div>
-        <p class='mb-0'>Божхона қўмитаси ахборот тизими орқали интеграция ишлари олиб борилмоқда</p>
-=======
+
         <div class='text-lg font-medium'>{{$t('SixthPage.Option5')}}</div>
         <p class='mb-0'>{{$t('SixthPage.Option5_text')}}</p>
->>>>>>> e41e9a9 (Completed localization part)
       </div>
     </OverlayPanel>
     <OverlayPanel ref='op7'>
@@ -146,11 +115,8 @@ onUnmounted(() => {
         <div v-for='item in userType' :key='item.id'>{{item.nameUz || item.userType}}</div>
       </div>
     </OverlayPanel>
-<<<<<<< HEAD
-    <TitleText class='heading' title='Рақамлаштиришдан кейинги ҳолат'></TitleText>
-=======
+
     <TitleText class='heading' :title="$t('SixthPage.ThemeTitle')"></TitleText>
->>>>>>> e41e9a9 (Completed localization part)
     <PulseAnimation class='custom-pulse-animation overflow-visible' />
     <PulseCenter class='pulse'>
       <!--      <MobileDevice />-->
@@ -178,13 +144,8 @@ onUnmounted(() => {
               <img :src='`/images/${item.icon}`' :alt='`icon-${idx}`'>
             </div>
             <div class='absolute box' :class='`box-${idx + 1}`'>
-<<<<<<< HEAD
-              <h6>{{ `${idx + 1}-Босқич` }}</h6>
-              <p>{{ item.desc }}</p>
-=======
               <h6>{{ `${idx + 1}-` + $t('SixthPage.stage') }}</h6>
               <p>{{ $t(item.desc) }}</p>
->>>>>>> e41e9a9 (Completed localization part)
             </div>
           </div>
         </div>
@@ -206,110 +167,72 @@ onUnmounted(() => {
       <div class='text-2xl font-medium flex align-items-center gap-2'>
         <img src='/images/users-success.png' alt='users' />
         <span>
-<<<<<<< HEAD
-          Фойдаланувчилар сони – <span style='color:#11A832' class='font-semibold'>18 354</span> нафар
-=======
+
           {{$t('SixthPage.FirstCardOption_1')}} <span style='color:#11A832' class='font-semibold'>18 354</span> {{$t('SecondPage.countLive')}}
->>>>>>> e41e9a9 (Completed localization part)
         </span>
       </div>
       <div class='text-2xl font-medium flex align-items-center gap-2'>
         <img src='/images/user-type-success.png' alt='user-type' />
         <span>
-<<<<<<< HEAD
-          Фойдаланувчилар тури – <span style='color:#11A832' class='font-semibold cursor-pointer' @click='toggle($event, 7)'>97</span>
-=======
+
           {{$t('SixthPage.FirstCardOption_2')}} <span style='color:#11A832' class='font-semibold cursor-pointer' @click='toggle($event, 7)'>97</span>
->>>>>>> e41e9a9 (Completed localization part)
         </span>
       </div>
       <div class='text-2xl font-medium flex align-items-center gap-2'>
         <img src='/images/client-success.png' alt='client' />
         <span>
-<<<<<<< HEAD
-          Мижозлар сони – <span style='color:#11A832' class='font-semibold'>8 977</span> нафар
-=======
+
           {{$t('SixthPage.FirstCardOption_3')}} <span style='color:#11A832' class='font-semibold'>8 977</span> {{$t('SecondPage.countLive')}}
->>>>>>> e41e9a9 (Completed localization part)
         </span>
       </div>
     </div>
     <div class='p-3 border-round-2xl border-3 bg-white flex flex-column gap-2 absolute total-info-right'
          style='border-color: #11A832;'>
       <div class='text-2xl font-medium  gap-2 mb-2 text-center w-full'>
-<<<<<<< HEAD
-        ЭРИШИЛГАН НАТИЖАЛАР
-      </div>
-      <div class='text-xl font-medium flex align-items-center gap-2'>
-        <img width='34' height='34' src='/images/time-success.png' alt='time' />
-        <span>
-          Темир йўл хизматларидан фойдаланишда мижознинг сарфлайдиган вақти
-          <span style='color:#11A832' class='font-semibold'>60</span> соатга камайди
-=======
+
         {{$t('SixthPage.SecondCardOption_1')}}
       </div>
       <div class='text-xl font-medium flex align-items-center gap-2'>
         <img width='34' height='34' src='/images/time-success.png' alt='time' />
         <span v-html="$t('SixthPage.SecondCardOption_2')">
 
->>>>>>> e41e9a9 (Completed localization part)
         </span>
       </div>
       <div class='text-xl font-medium flex align-items-center gap-2'>
         <img width='34' height='34' src='/images/no-money-success.png' alt='time' />
         <span>
-<<<<<<< HEAD
-          Бюрократик тўсиқлар ҳамда коррупцияни келтириб чиқарувчи омиллар бартараф этилди
-=======
+
          {{$t('SixthPage.SecondCardOption_3')}}
->>>>>>> e41e9a9 (Completed localization part)
         </span>
       </div>
       <div class='text-xl font-medium flex align-items-center gap-2'>
         <img width='34' height='34' src='/images/no-document-success.png' alt='time' />
         <span>
-<<<<<<< HEAD
-          Турли  хил темир йўл идораларига мурожаат этиш бартараф этилди
-=======
+
           {{$t('SixthPage.SecondCardOption_4')}}
->>>>>>> e41e9a9 (Completed localization part)
         </span>
       </div>
       <div class='text-xl font-medium flex align-items-center gap-2'>
         <img width='34' height='34' src='/images/check-sucess.png' alt='time' />
         <span>
-<<<<<<< HEAD
-          Кўрсатилаётган темир йўл хизматлари сифати яхшиланди
-=======
           {{$t('SixthPage.SecondCardOption_5')}}
->>>>>>> e41e9a9 (Completed localization part)
         </span>
       </div>
       <div class='text-xl font-medium flex align-items-center gap-2'>
         <img width='34' height='34' src='/images/statistic-success.png' alt='statistic' />
-<<<<<<< HEAD
-        <span>
-          Йилига <span style='color:#11A832' class='font-semibold'>13 млрд. сўм </span> иқтисод қилинмоқда
-=======
+
         <span v-html="$t('SixthPage.SecondCardOption_6')">
 
->>>>>>> e41e9a9 (Completed localization part)
         </span>
       </div>
     </div>
     <div class='total-info-top p-3 border-round-2xl border-3 bg-white flex flex-column gap-1 absolute'>
       <div class='text-2xl font-medium  gap-2 mb-1 text-center w-full uppercase'>
-<<<<<<< HEAD
-        Топ 10 мижозлар
-      </div>
-      <div v-for='item in topCompany' :key='item.id' class='flex justify-content-between text-lg gap-2 font-medium'>
-        <span>{{ item.name }}</span>
-=======
+
         {{$t('SixthPage.ThirdCardOption')}}
       </div>
       <div v-for='item in topCompany' :key='item.id' class='flex justify-content-between text-lg gap-2 font-medium'>
         <span>{{ $t(item.name) }}</span>
->>>>>>> e41e9a9 (Completed localization part)
         <span style='color: #11A832'>{{ Number(item.value).toLocaleString('ru-ru', { currency: 'uzs' }) }}</span>
       </div>
     </div>

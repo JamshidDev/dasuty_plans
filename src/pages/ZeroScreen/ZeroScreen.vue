@@ -3,11 +3,8 @@
         <!--    <div class="flex w-full absolute top-0 left-0 justify-content-end">-->
         <!--      -->
         <!--    </div>-->
-<<<<<<< HEAD
-        <TitleText title="Ўзбекистон темир йўллари харитаси"></TitleText>
-=======
+
         <TitleText :title="$t('SecondPage.themeName')"></TitleText>
->>>>>>> e41e9a9 (Completed localization part)
 <!--            <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">-->
 
 <!--                    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}-->
@@ -59,11 +56,8 @@
         <SchemaButton v-show="show_button_schema && general_info_show"
                       @action_draw="draw_schema($event)"></SchemaButton>
         <span v-show="general_info_show">
-<<<<<<< HEAD
-        
-=======
+x
 
->>>>>>> e41e9a9 (Completed localization part)
       <InformationCard @changeTrainStation="draw_train_station($event)" ref="information_modal_ref"
                        @closeInfoMap="close_info_map()" @listenMap="listen_map($event)"
                        @changeCard="change_card($event)" @changeMap="change_visible($event)"></InformationCard>

@@ -1,13 +1,9 @@
 <script>
-<<<<<<< HEAD
-export default {
-  name: "MultitpleTitle",
-=======
+
 
 export default {
   name: "MultitpleTitle",
 
->>>>>>> e41e9a9 (Completed localization part)
   data() {
     return {
       text_list: [
@@ -54,11 +50,8 @@ export default {
         {
           id: "1",
           path: "zero-screen",
-<<<<<<< HEAD
-          text: "ЎЗБЕКИСТОН ТЕМИР ЙЎЛЛАРИ"
-=======
+
           text: this.$t('firstPage.FirstContent')
->>>>>>> e41e9a9 (Completed localization part)
         },
         // {
         //   id: "11-13",
@@ -78,11 +71,8 @@ export default {
         {
           id: "2-6",
           path: "tenth-screen",
-<<<<<<< HEAD
-          text: "РАҚАМЛАШТИРИШДА АМАЛГА ОШИРИЛАЁТГАН ИШЛАР"
-=======
+
           text: this.$t('firstPage.SecondContent')
->>>>>>> e41e9a9 (Completed localization part)
         },
         // {
         //   id: 7,

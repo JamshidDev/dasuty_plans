@@ -8,11 +8,8 @@
             {{ days }}
           </div>
           <div class="content-value text-center font-bold  mt-2 text-sm">
-<<<<<<< HEAD
-            КУН
-=======
+
             {{ $t('ThirdPage.day') }}
->>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
 
@@ -21,11 +18,8 @@
             {{ hours }}
           </div>
           <div class="content-value text-center font-bold  mt-2 text-sm">
-<<<<<<< HEAD
-            СОАТ
-=======
+
             {{ $t('ThirdPage.hour') }}
->>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
 
@@ -35,11 +29,7 @@
             {{ minutes }}
           </div>
           <div class="content-value text-center font-bold  mt-2 text-sm">
-<<<<<<< HEAD
-            МИНУТ
-=======
             {{ $t('ThirdPage.minute') }}
->>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
 
@@ -48,11 +38,7 @@
             {{ seconds }}
           </div>
           <div class="content-value text-center font-bold  mt-2 text-sm">
-<<<<<<< HEAD
-            СЕКУНД
-=======
             {{ $t('ThirdPage.seconds') }}
->>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
 

@@ -18,10 +18,8 @@
     "primevue": "^3.49.1",
     "vue": "^3.4.21",
     "vue-css-donut-chart": "^2.0.0",
-<<<<<<< HEAD
-=======
+
     "vue-i18n": "^9.13.1",
->>>>>>> e41e9a9 (Completed localization part)
     "vue-router": "^4.3.0",
     "vue3-autocounter": "^1.0.6",
     "vue3-circle-progress": "^1.0.7"

@@ -49,21 +49,13 @@
 	<span v-if="time_line_dialog">
       <div class="map_info_card shadow-1 border-1 border-blue-200" @click="show_animation=!show_animation">
         <div class="mt-0 text-500 mb-2">
-<<<<<<< HEAD
-          <div class="text-red-500 font-bold w-full text-center" v-if="is_show_one">Олдинги ҳолат</div>
-          <div class="text-green-600 font-bold w-full text-center" v-else>Ҳозирги ҳолат</div>
-          <div class="flex justify-content-evenly text-900 font-bold mt-1">
-            <span>Ахтачи</span>
-            <span><i class='bx bx-right-arrow-alt'></i></span>
-            <span>Нукус</span>
-=======
+
           <div class="text-red-500 font-bold w-full text-center" v-if="is_show_one">{{ $t('SecondPage.BefMoment') }}</div>
           <div class="text-green-600 font-bold w-full text-center" v-else>{{$t('SecondPage.CurrMoment')}}</div>
           <div class="flex justify-content-evenly text-900 font-bold mt-1">
             <span>{{ $t('SecondPage.Axtachi') }}</span>
             <span><i class='bx bx-right-arrow-alt'></i></span>
             <span>{{ $t('SecondPage.Nukus') }}</span>
->>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
@@ -97,15 +89,7 @@
 
          </div>
          <div class="flex justify-content-between text-sm mt-3 font-bold">
-<<<<<<< HEAD
-          <span>Масофа</span>
-          <span>1587 км</span>
-        </div>
-        <div class="flex justify-content-between text-sm1 font-bold">
-          <span>Умумий вақт</span>
-          <span v-if="is_show_one">12 кун</span>
-          <span v-else>5 кун</span>
-=======
+
           <span>{{$t('SecondPage.distance')}}</span>
           <span>1587 {{$t('SecondPage.km')}}</span>
         </div>
@@ -113,7 +97,6 @@
           <span>{{$t('SecondPage.OverallTime')}}</span>
           <span v-if="is_show_one">12 {{$t('SecondPage.day')}}</span>
           <span v-else>5 {{$t('SecondPage.day')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
         </div>
       </div>
     </span>
@@ -121,196 +104,116 @@
 	<span v-if="is_route1">
       <div class="map_info_card shadow-1 border-1 border-blue-200">
         <div class="mt-0 text-500 mb-2">
-<<<<<<< HEAD
-          <div class="font-bold w-full text-center">Қашқадарё - Охунбобоев</div>
-          <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
-            <span>Аввалги</span>
-            <span><i class='bx bx-right-arrow-alt'></i></span>
-            <span>Хозирги</span>
-=======
           <div class="font-bold w-full text-center">{{ $t('SecondPage.QashOxun') }}</div>
           <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
             <span>{{$t('SecondPage.Before')}}</span>
             <span><i class='bx bx-right-arrow-alt'></i></span>
             <span>{{$t('SecondPage.Current')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
             <Timeline class="w-full" :value="1">
                 <template #opposite="slotProps">
-<<<<<<< HEAD
-                    <small class="text-red-600 font-bold">55 соат</small>
-	            </template>
-			    <template #content="slotProps" class="h-3rem">
-			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
-			          <span class="text-green-600 font-bold">36 соат</span>
-=======
+
                     <small class="text-red-600 font-bold">55 {{$t('SecondPage.hour')}}</small>
 	            </template>
 			    <template #content="slotProps" class="h-3rem">
 			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
 			          <span class="text-green-600 font-bold">36 {{$t('SecondPage.hour')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
 			        </div>
 			    </template>
           </Timeline>
          </div>
          <div class="flex justify-content-between text-sm mt-3 font-bold">
-<<<<<<< HEAD
-          <span>Масофа</span>
-          <span>852 км</span>
-=======
+
           <span>{{$t('SecondPage.distance')}}</span>
           <span>852 {{$t('SecondPage.km')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
         </div>
       </div>
     </span>
 	<span v-if="is_route2">
       <div class="map_info_card shadow-1 border-1 border-blue-200">
         <div class="mt-0 text-500 mb-2">
-<<<<<<< HEAD
-          <div class="font-bold w-full text-center">Қарши - Ўзбекистон</div>
-          <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
-            <span>Аввалги</span>
-            <span><i class='bx bx-right-arrow-alt'></i></span>
-            <span>Хозирги</span>
-=======
+
           <div class="font-bold w-full text-center">{{ $t('SecondPage.QarShUz') }}</div>
           <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
             <span>{{$t('SecondPage.Before')}}</span>
             <span><i class='bx bx-right-arrow-alt'></i></span>
             <span>{{$t('SecondPage.Current')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
             <Timeline class="w-full" :value="1">
                 <template #opposite="slotProps">
-<<<<<<< HEAD
-                    <small class="text-red-600 font-bold">42 соат</small>
-	            </template>
-			    <template #content="slotProps" class="h-3rem">
-			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
-			          <span class="text-green-600 font-bold">24 соат</span>
-=======
                     <small class="text-red-600 font-bold">42 {{$t('SecondPage.hour')}}</small>
 	            </template>
 			    <template #content="slotProps" class="h-3rem">
 			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
 			          <span class="text-green-600 font-bold">24 {{$t('SecondPage.hour')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
 			        </div>
 			    </template>
           </Timeline>
          </div>
          <div class="flex justify-content-between text-sm mt-3 font-bold">
-<<<<<<< HEAD
-          <span>Масофа</span>
-          <span>490 км</span>
-=======
+
           <span>{{$t('SecondPage.distance')}}</span>
           <span>490 {{$t('SecondPage.km')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
         </div>
       </div>
     </span>
 	<span v-if="is_route3">
       <div class="map_info_card shadow-1 border-1 border-blue-200">
         <div class="mt-0 text-500 mb-2">
-<<<<<<< HEAD
-          <div class="font-bold w-full text-center">Қумқўрғон - Ўзбекистон</div>
-          <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
-            <span>Аввалги</span>
-            <span><i class='bx bx-right-arrow-alt'></i></span>
-            <span>Хозирги</span>
-=======
           <div class="font-bold w-full text-center">{{ $t('SecondPage.QumUz') }}</div>
           <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
             <span>{{$t('SecondPage.Before')}}</span>
             <span><i class='bx bx-right-arrow-alt'></i></span>
             <span>{{$t('SecondPage.Current')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
             <Timeline class="w-full" :value="1">
                 <template #opposite="slotProps">
-<<<<<<< HEAD
-                    <small class="text-red-600 font-bold">45 соат</small>
-	            </template>
-			    <template #content="slotProps" class="h-3rem">
-			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
-			          <span class="text-green-600 font-bold">26 соат</span>
-=======
                     <small class="text-red-600 font-bold">45 {{$t('SecondPage.hour')}}</small>
 	            </template>
 			    <template #content="slotProps" class="h-3rem">
 			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
 			          <span class="text-green-600 font-bold">26 {{$t('SecondPage.hour')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
 			        </div>
 			    </template>
           </Timeline>
          </div>
          <div class="flex justify-content-between text-sm mt-3 font-bold">
-<<<<<<< HEAD
-          <span>Масофа</span>
-          <span>742 км</span>
-=======
           <span>{{$t('SecondPage.distance')}}</span>
           <span>742 {{$t('SecondPage.km')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
         </div>
       </div>
     </span>
 	<span v-if="is_route4">
       <div class="map_info_card shadow-1 border-1 border-blue-200">
         <div class="mt-0 text-500 mb-2">
-<<<<<<< HEAD
-          <div class="font-bold w-full text-center">Навоий - Озодлик</div>
-          <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
-            <span>Аввалги</span>
-            <span><i class='bx bx-right-arrow-alt'></i></span>
-            <span>Хозирги</span>
-=======
           <div class="font-bold w-full text-center">{{ $t('SecondPage.NavOzo') }}</div>
           <div class="flex justify-content-evenly text-900 font-bold mt-3 mb-3">
             <span>{{$t('SecondPage.Before')}}</span>
             <span><i class='bx bx-right-arrow-alt'></i></span>
             <span>{{$t('SecondPage.Current')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
             <Timeline class="w-full" :value="1">
                 <template #opposite="slotProps">
-<<<<<<< HEAD
-                    <small class="text-red-600 font-bold">45 соат</small>
-	            </template>
-			    <template #content="slotProps" class="h-3rem">
-			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
-			          <span class="text-green-600 font-bold">26 соат</span>
-=======
                     <small class="text-red-600 font-bold">45 {{$t('SecondPage.hour')}}</small>
 	            </template>
 			    <template #content="slotProps" class="h-3rem">
 			        <div class="flex justify-content-between w-full px-2 align-items-center border-round">
 			          <span class="text-green-600 font-bold">26 {{$t('SecondPage.hour')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
 			        </div>
 			    </template>
           </Timeline>
          </div>
          <div class="flex justify-content-between text-sm mt-3 font-bold">
-<<<<<<< HEAD
-          <span>Масофа</span>
-          <span>562 км</span>
-=======
           <span>{{$t('SecondPage.distance')}}</span>
           <span>562 {{$t('SecondPage.km')}}</span>
->>>>>>> e41e9a9 (Completed localization part)
         </div>
       </div>
     </span>
@@ -338,11 +241,8 @@
 				</div>
 			</div>
 			<div class="col-6 flex justify-content-end align-items-end pb-3">
-<<<<<<< HEAD
-				<a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">Батафсил <i
-=======
+
 				<a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">{{$t('SecondPage.More')}} <i
->>>>>>> e41e9a9 (Completed localization part)
 						class='bx bx-right-top-arrow-circle ml-2'></i></a>
 			</div>
 		</div>
@@ -401,611 +301,7 @@ export default {
 				// {status: 'Нукус', date: '0 дақиқа', icon: 'pi pi-shopping-cart',show: false},
 			],
 			timeline_two_index: [0, 1, 3, 4, 8, 9, 10,],
-<<<<<<< HEAD
-			mtu_data: [
-				{
-					name: 'Тошкент МТУ',
-					index: 0,
-					data: [
-						{
-							id: 0,
-							label: `Мавжуд темир йўл узунлиги `,
-							value: `1654,6 км`,
-							iscollapse: false,
-						},
-						{
-							id: 1,
-							label: `Электрлаштирилган йўл `,
-							value: `1327,8 км  (80%)`,
-							iscollapse: false,
-						},
-						{
-							id: 2,
-							label: `Бириктирилган локомотивлар сони`,
-							value: `174 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Электровозлар ",
-									value: "93 та"
-								},
-								{
-									id: 1,
-									label: "Магистрал тепловоз  ",
-									value: "3 та"
-								},
-								{
-									id: 2,
-									label: "Манёвр тепловоз ",
-									value: "65 та"
-								},
-								{
-									id: 3,
-									label: "Электропоездлар ",
-									value: "13 та"
-								},
-							]
-						},
-						{
-							id: 3,
-							multiple_label: true,
-							labels: {
-								label1: `Саралаш станциялар сони`,
-								value1: `3 та`,
-								label2: 'Умумий стансиялар сони',
-								value2: `58 та`,
-							},
-							
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Чуқурсой ",
-									value: ""
-								},
-								{
-									id: 1,
-									label: "Хаваст",
-									value: ""
-								},
-								{
-									id: 2,
-									label: "Охангарон",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 4,
-							label: `Локомотив деполар сони`,
-							value: `2 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Тошкент ",
-									value: ""
-								},
-								{
-									id: 1,
-									label: "Тинчлик",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 5,
-							multiple_label: true,
-							labels: {
-								label1: `Вагонлар сони`,
-								value1: `2980 та`,
-								label2: 'Вагон деполари сони',
-								value2: `1 та`,
-							},
-							
-							iscollapse: false,
-						},
-						{
-							id: 6,
-							label: `Ходимлар сони`,
-							value: `8045 нафар`,
-							iscollapse: true,
-						},
-					]
-				},
-				{
-					name: 'Қўқон МТУ ',
-					index: 1,
-					data: [
-						{
-							id: 0,
-							label: `Мавжуд темир йўл узунлиги `,
-							value: `981,7 км`,
-							iscollapse: false,
-						},
-						{
-							id: 1,
-							label: `Электрлаштирилган йўл `,
-							value: `587,31 км (60%)`,
-							iscollapse: false,
-						},
-						{
-							id: 2,
-							label: `Бириктирилган локомотивлар сони`,
-							value: `63 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Электровозлар ",
-									value: "25 та"
-								},
-								{
-									id: 1,
-									label: "Магистрал тепловоз  ",
-									value: "9 та"
-								},
-								{
-									id: 2,
-									label: "Манёвр тепловоз ",
-									value: "28 та"
-								},
-								{
-									id: 3,
-									label: "Электропоездлар ",
-									value: "1 та"
-								},
-							]
-						},
-						{
-							id: 3,
-							multiple_label: true,
-							labels: {
-								label1: `Саралаш станциялар сони`,
-								value1: `2 та`,
-								label2: 'Умумий стансиялар сони',
-								value2: `38 та`,
-							},
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Қўқон  ",
-									value: ""
-								},
-								{
-									id: 1,
-									label: "Охунбобоев",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 4,
-							label: `Локомотив деполар сони`,
-							value: `1 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Андижон ",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 5,
-							multiple_label: true,
-							labels: {
-								label1: `Вагонлар сони`,
-								value1: `4331 та`,
-								label2: 'Вагон деполари сони',
-								value2: `1 та`,
-							},
-							iscollapse: false,
-						},
-						{
-							id: 6,
-							label: `Ходимлар сони`,
-							value: `6076 нафар`,
-							iscollapse: true,
-							
-						},
-					]
-				},
-				{
-					name: 'Бухоро МТУ ',
-					index: 2,
-					data: [
-						{
-							id: 0,
-							label: `Мавжуд темир йўл узунлиги `,
-							value: `2037,2 км`,
-							iscollapse: false,
-						},
-						{
-							id: 1,
-							label: `Электрлаштирилган йўл `,
-							value: `728,92 км (35,7%)`,
-							iscollapse: false,
-						},
-						{
-							id: 2,
-							label: `Бириктирилган локомотивлар сони`,
-							value: `90 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Электровозлар ",
-									value: "7 та"
-								},
-								{
-									id: 1,
-									label: "Магистрал тепловоз  ",
-									value: "37 та"
-								},
-								{
-									id: 2,
-									label: "Манёвр тепловоз ",
-									value: "46 та"
-								},
-							]
-						},
-						{
-							id: 3,
-							multiple_label: true,
-							labels: {
-								label1: `Саралаш станциялар сони`,
-								value1: `4 та`,
-								label2: 'Умумий стансиялар сони',
-								value2: `69 та`,
-							},
-							
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Бухоро  ",
-									value: ""
-								},
-								{
-									id: 1,
-									label: "Мароқанд",
-									value: ""
-								},
-								{
-									id: 2,
-									label: "Навоий",
-									value: ""
-								},
-								{
-									id: 3,
-									label: "Бинокор",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 4,
-							label: `Локомотив деполар сони`,
-							value: `2 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Бухоро ",
-									value: ""
-								},
-								{
-									id: 1,
-									label: "Тинчлик ",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 5,
-							multiple_label: true,
-							labels: {
-								label1: `Вагонлар сони`,
-								value1: `6430 та`,
-								label2: 'Вагон деполари сони',
-								value2: `1 та`,
-							},
-							iscollapse: false,
-						},
-						{
-							id: 6,
-							label: `Ходимлар сони`,
-							value: `9812 нафар`,
-							iscollapse: true,
-						},
-					]
-				},
-				{
-					name: 'Қўнғирод МТУ',
-					index: 3,
-					data: [
-						{
-							id: 0,
-							label: `Мавжуд темир йўл узунлиги `,
-							value: `1491,7 км`,
-							iscollapse: false,
-						},
-						// {
-						//   id: 1,
-						//   label: `Электрлаштирилган йўл `,
-						//   value: 'hidden',
-						//   iscollapse:false,
-						// },
-						{
-							id: 2,
-							label: `Бириктирилган локомотивлар сони`,
-							value: `59 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 1,
-									label: "Магистрал тепловоз  ",
-									value: "35 та"
-								},
-								{
-									id: 2,
-									label: "Манёвр тепловоз ",
-									value: "24 та"
-								},
-							]
-						},
-						{
-							id: 3,
-							
-							multiple_label: true,
-							labels: {
-								label1: `Саралаш станциялар сони`,
-								value1: `3 та`,
-								label2: 'Умумий стансиялар сони',
-								value2: `49 та`,
-							},
-							
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Мискен  ",
-									value: ""
-								},
-								{
-									id: 1,
-									label: "Қўнғирот",
-									value: ""
-								},
-								{
-									id: 2,
-									label: "Нукус",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 4,
-							label: `Локомотив деполар сони`,
-							value: `2 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Ургенч ",
-									value: ""
-								},
-								{
-									id: 1,
-									label: "Кунграт ",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 5,
-							label: `Вагон деполари сони`,
-							value: `1 та`,
-							iscollapse: false,
-						},
-						{
-							id: 6,
-							label: `Ходимлар сони`,
-							value: `5560 нафар`,
-							iscollapse: true,
-						},
-					]
-				},
-				{
-					name: 'Қарши МТУ ',
-					index: 4,
-					data: [
-						{
-							id: 0,
-							label: `Мавжуд темир йўл узунлиги `,
-							value: `722,8 км`,
-							iscollapse: false,
-						},
-						{
-							id: 1,
-							label: `Электрлаштирилган йўл `,
-							value: `440,3 км (61%)`,
-							iscollapse: false,
-						},
-						{
-							id: 2,
-							label: `Бириктирилган локомотивлар сони`,
-							value: `40 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Электровозлар   ",
-									value: "18 та"
-								},
-								{
-									id: 1,
-									label: "Магистрал тепловоз  ",
-									value: "6 та"
-								},
-								{
-									id: 2,
-									label: "Манёвр тепловоз ",
-									value: "16 та"
-								},
-							]
-						},
-						{
-							id: 3,
-							multiple_label: true,
-							labels: {
-								label1: `Саралаш станциялар сони`,
-								value1: `1 та`,
-								label2: 'Умумий стансиялар сони',
-								value2: `30 та`,
-							},
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Қарши  ",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 4,
-							multiple_label: true,
-							labels: {
-								label1: `Вагонлар сони`,
-								value1: `5295 та`,
-								label2: 'Вагон деполари сони',
-								value2: `1 та`,
-							},
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Қарши ",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 5,
-							label: `Вагон деполари сони`,
-							value: `1 та`,
-							iscollapse: false,
-						},
-						{
-							id: 6,
-							label: `Ходимлар сони`,
-							value: `4469  нафар`,
-							iscollapse: false,
-						},
-						{
-							id: 7,
-							label: `Мавжуд вагонлар сони`,
-							value: `8045 та`,
-							iscollapse: true,
-						},
-					]
-				},
-				{
-					name: 'Термез МТУ ',
-					index: 5,
-					data: [
-						{
-							id: 0,
-							label: `Мавжуд темир йўл узунлиги `,
-							value: `600,9 км`,
-							iscollapse: false,
-						},
-						{
-							id: 1,
-							label: `Электрлаштирилган йўл `,
-							value: `244,4 км`,
-							iscollapse: false,
-						},
-						{
-							id: 2,
-							label: `Бириктирилган локомотивлар сони`,
-							value: `45 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Электровозлар ",
-									value: "11 та"
-								},
-								{
-									id: 1,
-									label: "Магистрал тепловоз  ",
-									value: "14 та"
-								},
-								{
-									id: 2,
-									label: "Манёвр тепловоз ",
-									value: "20 та"
-								},
-							]
-						},
-						{
-							id: 3,
-							multiple_label: true,
-							labels: {
-								label1: `Саралаш станциялар сони`,
-								value1: `2 та`,
-								label2: 'Умумий стансиялар сони',
-								value2: `26 та`,
-							},
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Термез ",
-									value: ""
-								},
-								{
-									id: 1,
-									label: "Қумқўрғон",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 4,
-							label: `Локомотив деполар сони`,
-							value: `1 та`,
-							iscollapse: true,
-							nodes_list: [
-								{
-									id: 0,
-									label: "Термез ",
-									value: ""
-								},
-							]
-						},
-						{
-							id: 5,
-							label: `Вагон деполари сони`,
-							value: `1 та`,
-							iscollapse: false,
-						},
-						{
-							id: 6,
-							label: `Ходимлар сони`,
-							value: `3591  нафар`,
-							iscollapse: true,
-						},
-					]
-				},
-			],
-=======
+
       mtu_data: [
         {
           name: this.$t('SecondPage.ToshkentMtu'),
@@ -1609,7 +905,6 @@ export default {
           ]
         },
       ],
->>>>>>> e41e9a9 (Completed localization part)
 			selected_mtu_list: [],
 			selected_overall_list: [],
 			timeline_timeout: null,
@@ -1619,430 +914,7 @@ export default {
 			is_route2: false,
 			is_route3: false,
 			is_route4: false,
-<<<<<<< HEAD
-			mtu_worker_list: [
-				{
-					id: 1,
-					name: 'MTU 1',
-					data: [
-						{
-							chart_list: [
-								{
-									label: 'Олий малумотли',
-									value: 1562,
-									percent: 20,
-									color: 'green',
-								},
-								{
-									label: 'Ўрта малумотли',
-									value: 3981,
-									percent: 50,
-									color: 'yellow',
-								},
-								{
-									label: 'Ўрта махсус малумотли',
-									value: 2404,
-									percent: 30,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: '31 ёшгача',
-									value: 1790,
-									percent: 22,
-									color: 'green',
-									
-								},
-								{
-									label: '32 ёшдан 45 ёшгача',
-									value: 4162,
-									percent: 52,
-									color: 'yellow',
-									
-								},
-								{
-									label: '46 ёшдан катталар',
-									value: 2049,
-									percent: 26,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: 'Эркаклар',
-									value: 6748,
-									percent: 84,
-									color: 'green',
-								},
-								{
-									label: 'Аёллар',
-									value: 1253,
-									percent: 16,
-									color: 'yellow',
-								},
-							]
-						},
-					
-					
-					]
-				},
-				{
-					id: 2,
-					name: 'Қўқон МТУ ',
-					data: [
-						{
-							chart_list: [
-								{
-									label: 'Олий малумотли',
-									value: 986,
-									percent: 16,
-									color: 'green',
-								},
-								{
-									label: 'Ўрта малумотли',
-									value: 3394,
-									percent: 56,
-									color: 'yellow',
-								},
-								{
-									label: 'Ўрта махсус малумотли',
-									value: 1669,
-									percent: 28,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: '31 ёшгача',
-									value: 2016,
-									percent: 33,
-									color: 'green',
-									
-								},
-								{
-									label: '32 ёшдан 45 ёшгача',
-									value: 2576,
-									percent: 43,
-									color: 'yellow',
-									
-								},
-								{
-									label: '46 ёшдан катталар',
-									value: 1466,
-									percent: 24,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: 'Эркаклар',
-									value: 5352,
-									percent: 88,
-									color: 'green',
-								},
-								{
-									label: 'Аёллар',
-									value: 709,
-									percent: 12,
-									color: 'yellow',
-								},
-							]
-						},
-					
-					
-					]
-				},
-				{
-					id: 3,
-					name: 'Бухоро МТУ  ',
-					data: [
-						{
-							chart_list: [
-								{
-									label: 'Олий малумотли',
-									value: 1424,
-									percent: 15,
-									color: 'green',
-								},
-								{
-									label: 'Ўрта малумотли',
-									value: 6035,
-									percent: 62,
-									color: 'yellow',
-								},
-								{
-									label: 'Ўрта махсус малумотли',
-									value: 2322,
-									percent: 24,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: '31 ёшгача',
-									value: 2597,
-									percent: 26,
-									color: 'green',
-									
-								},
-								{
-									label: '32 ёшдан 45 ёшгача',
-									value: 5215,
-									percent: 53,
-									color: 'yellow',
-									
-								},
-								{
-									label: '46 ёшдан катталар',
-									value: 1990,
-									percent: 20,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: 'Эркаклар',
-									value: 8409,
-									percent: 86,
-									color: 'green',
-								},
-								{
-									label: 'Аёллар',
-									value: 1393,
-									percent: 14,
-									color: 'yellow',
-								},
-							]
-						},
-					
-					
-					]
-				},
-				{
-					id: 4,
-					name: 'Қўнғирод МТУ',
-					data: [
-						{
-							chart_list: [
-								{
-									label: 'Олий малумотли',
-									value: 847,
-									percent: 15,
-									color: 'green',
-								},
-								{
-									label: 'Ўрта малумотли',
-									value: 2807,
-									percent: 51,
-									color: 'yellow',
-								},
-								{
-									label: 'Ўрта махсус малумотли',
-									value: 1889,
-									percent: 34,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: '31 ёшгача',
-									value: 1223,
-									percent: 22,
-									color: 'green',
-									
-								},
-								{
-									label: '32 ёшдан 45 ёшгача',
-									value: 2958,
-									percent: 53,
-									color: 'yellow',
-									
-								},
-								{
-									label: '46 ёшдан катталар',
-									value: 1376,
-									percent: 25,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: 'Эркаклар',
-									value: 4751,
-									percent: 85,
-									color: 'green',
-								},
-								{
-									label: 'Аёллар',
-									value: 806,
-									percent: 15,
-									color: 'yellow',
-								},
-							]
-						},
-					
-					
-					]
-				},
-				{
-					id: 5,
-					name: 'Қарши МТУ',
-					data: [
-						{
-							chart_list: [
-								{
-									label: 'Олий малумотли',
-									value: 1002,
-									percent: 22,
-									color: 'green',
-								},
-								{
-									label: 'Ўрта малумотли',
-									value: 1684,
-									percent: 38,
-									color: 'yellow',
-								},
-								{
-									label: 'Ўрта махсус малумотли',
-									value: 1753,
-									percent: 39,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: '31 ёшгача',
-									value: 765,
-									percent: 17,
-									color: 'green',
-									
-								},
-								{
-									label: '32 ёшдан 45 ёшгача',
-									value: 2448,
-									percent: 55,
-									color: 'yellow',
-									
-								},
-								{
-									label: '46 ёшдан катталар',
-									value: 1247,
-									percent: 28,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: 'Эркаклар',
-									value: 4029,
-									percent: 90,
-									color: 'green',
-								},
-								{
-									label: 'Аёллар',
-									value: 431,
-									percent: 10,
-									color: 'yellow',
-								},
-							]
-						},
-					
-					
-					]
-				},
-				{
-					id: 6,
-					name: 'Термез МТУ',
-					data: [
-						{
-							chart_list: [
-								{
-									label: 'Олий малумотли',
-									value: 920,
-									percent: 26,
-									color: 'green',
-								},
-								{
-									label: 'Ўрта малумотли',
-									value: 1642,
-									percent: 46,
-									color: 'yellow',
-								},
-								{
-									label: 'Ўрта махсус малумотли',
-									value: 1019,
-									percent: 28,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: '31 ёшгача',
-									value: 654,
-									percent: 18,
-									color: 'green',
-									
-								},
-								{
-									label: '32 ёшдан 45 ёшгача',
-									value: 2125,
-									percent: 59,
-									color: 'yellow',
-									
-								},
-								{
-									label: '46 ёшдан катталар',
-									value: 806,
-									percent: 22,
-									color: 'blue',
-								},
-							]
-						},
-						{
-							chart_list: [
-								{
-									label: 'Эркаклар',
-									value: 3232,
-									percent: 90,
-									color: 'green',
-								},
-								{
-									label: 'Аёллар',
-									value: 353,
-									percent: 10,
-									color: 'yellow',
-								},
-							]
-						},
-					
-					
-					]
-				},
-			],
-=======
+
       mtu_worker_list: [
         {
           id: 1,
@@ -2465,7 +1337,6 @@ export default {
           ]
         },
       ],
->>>>>>> e41e9a9 (Completed localization part)
 			selected_mtu: null,
 		}
 	},

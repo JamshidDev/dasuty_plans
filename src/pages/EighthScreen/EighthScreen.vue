@@ -1,10 +1,7 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
-<<<<<<< HEAD
-    <TitleText :title="`ТАҚДИМОТ МУНДАРИЖАСИ`"></TitleText>
-=======
+
     <TitleText :title="$t('firstPage.MainContents')"></TitleText>
->>>>>>> e41e9a9 (Completed localization part)
     <PlanPresentation></PlanPresentation>
   </div>
 </template>

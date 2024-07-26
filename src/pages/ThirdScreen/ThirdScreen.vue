@@ -1,10 +1,7 @@
 <template>
   <div class="w-full min-h-full relative flex justify-content-center align-items-center">
-<<<<<<< HEAD
-    <TitleText :title="`Дастурчилар Жамоаси`"></TitleText>
-=======
+
     <TitleText :title=" $t('SeventhPage.ThemeTitle') "></TitleText>
->>>>>>> e41e9a9 (Completed localization part)
     <div class="scroll_container">
       <div class="custom px-2 mb-4 gap-2">
         <DeveloperCard

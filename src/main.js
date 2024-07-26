@@ -23,10 +23,10 @@ import AOS from 'aos'
 import Donut from 'vue-css-donut-chart';
 import 'vue-css-donut-chart/dist/vcdonut.css';
 import 'aos/dist/aos.css'
-<<<<<<< HEAD
 
-const app = createApp(App);
-=======
+
+
+
 import { createI18n } from 'vue-i18n'
 import en from './locale/en.json';
 import uz from './locale/uz.json';
@@ -49,7 +49,7 @@ const i18n = createI18n({
 })
 
 app.use(i18n)
->>>>>>> e41e9a9 (Completed localization part)
+
 app.use(PrimeVue);
 app.use(AOS)
 app.use(router);

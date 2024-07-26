@@ -16,32 +16,15 @@
              :class="{'justify-content-between': list.length >0, 'justify-content-center': list.length === 0}"
         >
           <div v-if="list.length > 0" class="tast-title  pl-2 hover:text-white text-sm cursor-pointer" @click="toggle">
-<<<<<<< HEAD
-            Batafsil
-=======
+
             {{$t('SecondPage.More')}}
->>>>>>> e41e9a9 (Completed localization part)
           </div>
 
           <vue-countdown :time="count_time" v-slot="{ days, hours, minutes, seconds }">
             <div class="time-contaner font-bold flex column-gap-2 text-sm">
               <div class="flex flex-column">
                 <div class="timer_value">{{ days }}</div>
-<<<<<<< HEAD
-                <div class="" style="font-size:8px;">KUN</div>
-              </div>
-              <div class="flex flex-column timer-text">
-                <div class="timer_value">{{ hours }}</div>
-                <div class="" style="font-size:8px;">SOAT</div>
-              </div>
-              <div class="flex flex-column timer-text">
-                <div class="timer_value">{{ minutes }}</div>
-                <div class="" style="font-size:8px;">MINUT</div>
-              </div>
-              <div class="flex flex-column timer-text">
-                <div class="timer_value">{{ seconds }}</div>
-                <div class="" style="font-size:8px;">SEKUND</div>
-=======
+
                 <div class="" style="font-size:8px;">{{$t('ThirdPage.day')}}</div>
               </div>
               <div class="flex flex-column timer-text">
@@ -55,7 +38,6 @@
               <div class="flex flex-column timer-text">
                 <div class="timer_value">{{ seconds }}</div>
                 <div class="" style="font-size:8px;">{{$t('ThirdPage.seconds')}}</div>
->>>>>>> e41e9a9 (Completed localization part)
               </div>
             </div>
           </vue-countdown>
@@ -67,15 +49,6 @@
           <div v-for="(item, idx) in list" :key="idx" class="flex flex-column gap-3">
             <div>
               <h6 class="text-sm text-gray-300 font-medium m-0 mb-1">
-<<<<<<< HEAD
-                Вазифа номи
-              </h6>
-              <p class="m-0 text-sm text-white">{{ item.title }}</p>
-            </div>
-            <div>
-              <h6 class="text-sm font-medium m-0 mb-1 text-gray-300">
-                Тугатиш санаси
-=======
                 {{ $t('SeventhPage.TaskName') }}
               </h6>
               <p class="m-0 text-sm text-white">{{ $t(item.title) }}</p>
@@ -83,7 +56,6 @@
             <div>
               <h6 class="text-sm font-medium m-0 mb-1 text-gray-300">
                 {{ $t('SeventhPage.Deadline') }}
->>>>>>> e41e9a9 (Completed localization part)
               </h6>
               <p class="m-0 text-sm text-white">{{ item.deadline }}</p>
             </div>
