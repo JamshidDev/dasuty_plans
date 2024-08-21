@@ -7,33 +7,33 @@ import animationData from "../../components/LottieJSON/animate-comp.json";
 
 const animated = ref(false)
 const el = ref(null)
-const totalP = ref(53)
+const totalP = ref(72)
 const animEl = ref(null)
 
 const arr1 = [
-    {offset: -12, name: 'HRM', deadline: '01.08.2024', url: 'https://exodim.railway.uz', value: 90, rate: 25},
-    {offset: 0, name: 'RAIL OBSERVER', deadline: '01.07.2024', url: 'https://railwayobserver.uz', value: 65, rate: 18},
-    {offset: 6, name: 'ONK', deadline: '10.08.2024', url: 'https://kmo.railwayinfra.uz/statistika', value: 60,  rate: 20},
+    {offset: -12, name: 'HRM', deadline: '01.08.2024', url: 'https://exodim.railway.uz', value: 100, rate: 25},
+    {offset: 0, name: 'RAIL OBSERVER', deadline: '01.07.2024', url: 'https://railwayobserver.uz', value: 100, rate: 18},
+    {offset: 6, name: 'ONK', deadline: '10.08.2024', url: 'https://kmo.railwayinfra.uz/statistika', value: 100,  rate: 20},
     {
         offset: 7.5,
         name: 'TEZKOR TELEGRAF',
         deadline: '25.09.2024',
         url: 'https://telegraf.railwayinfra.uz/',
-        value: 50,
+        value: 100,
         rate: 8
     },
-    {offset: 5, name: 'RELAY CONTROL', deadline: '31.07.2024', url: 'http://relay.itdevs.uz/', value: 50, rate: 12},
-    {offset: -2, name: 'VIRTUAL OFFICE', deadline: '01.01.2025', url: '/', value: 20, rate: 2},
-    {offset: -16, name: 'ERP', value: 15, deadline: '31.03.2025', url: '/', rate: 2},
+    {offset: 5, name: 'RELAY CONTROL', deadline: '31.07.2024', url: 'http://relay.itdevs.uz/', value: 100, rate: 12},
+    {offset: -2, name: 'VIRTUAL OFFICE', deadline: '01.01.2025', url: '/', value: 50, rate: 2},
+    {offset: -16, name: 'ERP', value: 30, deadline: '31.03.2025', url: '/', rate: 2},
 ]
 
 const arr2 = [
-    {offset: -12, name: 'E-NAKL', deadline: '10.08.2024', url: 'https://e-nakl.railway.uz', value: 72, rate: 17},
-    {offset: 0, name: 'TRAIN LOCATION', deadline: '15.08.2024', url: 'https://tracking.railway.uz', value: 74, rate: 30},
-    {offset: 6, name: 'E-TICKET', deadline: '10.10.2024', url: 'https://eticket.railway.uz', value: 82, rate: 25},
-    {offset: 7.5, name: 'SMART DEPO', deadline: '10.12.2024', url: 'https://uzdepo.uz/dashboard/', value: 61, rate: 25},
-    {offset: 5, name: 'UZGPS', deadline: '21.12.2024', url: 'https://utysmpo.uzgps.uz', value: 70, rate: 25},
-    {offset: -2, name: 'TUNNEL', deadline: '24.12.2024', url: 'https://tunnelmodpro.uz', value: 75, rate: 10},
+    {offset: -12, name: 'E-NAKL', deadline: '10.08.2024', url: 'https://e-nakl.railway.uz', value: 102, rate: 17},
+    {offset: 0, name: 'TRAIN LOCATION', deadline: '15.08.2024', url: 'https://tracking.railway.uz', value: 100, rate: 30},
+    {offset: 6, name: 'E-TICKET', deadline: '10.10.2024', url: 'https://eticket.railway.uz', value: 100, rate: 25},
+    {offset: 7.5, name: 'SMART DEPO', deadline: '10.12.2024', url: 'https://uzdepo.uz/dashboard/', value: 100, rate: 25},
+    {offset: 5, name: 'UZGPS', deadline: '21.12.2024', url: 'https://utysmpo.uzgps.uz', value: 100, rate: 25},
+    {offset: -2, name: 'TUNNEL', deadline: '24.12.2024', url: 'https://tunnelmodpro.uz', value: 100, rate: 10},
     {offset: -16, name: 'E-NAKL MOBILE', deadline: '30.08.2024', url: '/', value: 100, rate: 2},
 ]
 
