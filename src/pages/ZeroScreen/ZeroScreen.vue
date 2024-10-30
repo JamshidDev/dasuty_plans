@@ -5,10 +5,10 @@
         <!--    </div>-->
 
         <TitleText :title="$t('SecondPage.themeName')"></TitleText>
-<!--            <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">-->
+            <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">
 
-<!--                    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}-->
-<!--            </div>-->
+                    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}
+            </div>
         <div id="zoom-container" ref="zoom_container" class="w-full border-round relative"
              style="height:88vh; overflow: hidden;">
             <div id="trigger-zoom-element" ref="trigger_zoom_element"
@@ -52,11 +52,12 @@
         </div>
 
         <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
+      <StationReportModal  ref="stationReportRef"/>
         <OptikInfoModal v-if="optik_modal_visble"></OptikInfoModal>
         <SchemaButton v-show="show_button_schema && general_info_show"
                       @action_draw="draw_schema($event)"></SchemaButton>
         <span v-show="general_info_show">
-x
+
 
       <InformationCard @changeTrainStation="draw_train_station($event)" ref="information_modal_ref"
                        @closeInfoMap="close_info_map()" @listenMap="listen_map($event)"
@@ -85,6 +86,7 @@ import RiplleIcon from "@/components/LottieIcon/RiplleIcon.vue";
 import SchemaButton from "@/components/TrainSchemaButton/SchemaButton.vue";
 import TitleText from "@/components/TitleText/TitleText.vue";
 import OptikInfoModal from "../../components/OptikInfoModal/OptikInfoModal.vue";
+import StationReportModal from "@/components/StationDialog/StationReportModal.vue";
 
 export default {
     components: {
@@ -97,6 +99,7 @@ export default {
         LottieIcon,
         RiplleIcon,
         OptikInfoModal,
+      StationReportModal,
 
     },
 
@@ -336,11 +339,14 @@ export default {
             }
 
         })
+        // worker zone its
         toshkentRJU.addEventListener("click", () => {
             if (this.active_map) {
                 this.general_info_show = false;
-                this.go_push_element(-1580, -428, 2.5);
-                this.$refs.dialog_ref.open_dialog(0)
+              // this.go_push_element(-1580, -428, 2.5);
+              this.go_push_element(-5310, -1537, 6);
+                // this.$refs.dialog_ref.open_dialog(0)
+              this.$refs.stationReportRef.openReport()
             }
         })
         kokandRJU.addEventListener("click", () => {
