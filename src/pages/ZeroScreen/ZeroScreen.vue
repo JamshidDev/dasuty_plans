@@ -127,10 +127,87 @@ export default {
                 depo: false,
                 stik: false,
             },
+           stationId:[
+             {
+               id:'st_720000',
+               name:'chuqursoy',
+             },
+             {
+               id:'st_722400',
+               name:'tosh. Tovarniy',
+             },
+             {
+               id:'st_720903',
+               name:'salar',
+             },
+             {
+               id:'st_723600',
+               name:"to'qimachi",
+             },
+             {
+               id:'st_722504',
+               name:"xamza",
+             },
+             {
+               id:'st_723507',
+               name:"sergeli",
+             },
+             {
+               id:'st_723403',
+               name:"Jaloir",
+             },
+             {
+               id:'st_723307',
+               name:"kuchluk",
+             },
+             {
+               id:'st_722608',
+               name:"angren",
+             },
+             {
+               id:'st_723206',
+               name:"toytepa",
+             },
+             {
+               id:'st_723102',
+               name:"ozodlik",
+             },
+             {
+               id:'st_723009',
+               name:"oxongaron",
+             },
+             {
+               id:'st_722805',
+               name:"aqcha",
+             },
+             {
+               id:'st_722701',
+               name:"abliq",
+             },
+
+           ]
 
         }
     },
     methods: {
+        removeAllClass(){
+          this.stationId.forEach((v)=> {
+            const element = document.getElementById(v.id)
+            element.classList.remove('animated-svg-2')
+          })
+        },
+        initialStationEvent(){
+          this.stationId.forEach((v)=>{
+            const element = document.getElementById(v.id)
+            element.addEventListener('click', ()=>{
+              console.log(v.name)
+              this.removeAllClass()
+              element.classList.add('animated-svg-2')
+              this.$refs.stationReportRef.onClose()
+              this.$refs.stationReportRef.openReport(v.id)
+            })
+          })
+        },
         go_push_element(pointX, pointY, scale) {
             this.pointX = pointX;
             this.pointY = pointY;
@@ -346,7 +423,6 @@ export default {
               // this.go_push_element(-1580, -428, 2.5);
               this.go_push_element(-5310, -1537, 6);
                 // this.$refs.dialog_ref.open_dialog(0)
-              this.$refs.stationReportRef.openReport()
             }
         })
         kokandRJU.addEventListener("click", () => {
@@ -360,6 +436,8 @@ export default {
 
         this.go_push_element(38.6, -60, 1.2);
         // this.go_push_element(-1000, -1000, 1);
+
+      this.initialStationEvent()
 
     }
 }
