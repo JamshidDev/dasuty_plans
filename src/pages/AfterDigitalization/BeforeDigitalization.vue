@@ -160,7 +160,7 @@ $blue: #234699;
 .e-nakl {
   width: 70px;
   left: 23%;
-  top: 20%;
+  top: 25%;
   height: auto;
   z-index: 10;
   animation: zoom-in-zoom-out 2s ease-out infinite;
@@ -170,7 +170,7 @@ $blue: #234699;
 .vo-logo {
   width: 70px;
   left: 53%;
-  top: 20%;
+  top: 25%;
   height: auto;
   z-index: 10;
   animation: zoom-in-zoom-out 2s ease-out infinite;
@@ -180,7 +180,7 @@ $blue: #234699;
 .emm-logo {
   width: 70px;
   left: 37% ;
-  top: 50%;
+  top: 55%;
   height: auto;
   z-index: 10;
   animation: zoom-in-zoom-out 2s ease-out infinite;

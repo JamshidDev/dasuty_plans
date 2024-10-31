@@ -52,7 +52,7 @@
         </div>
 
         <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
-      <StationReportModal  ref="stationReportRef"/>
+      <StationReportModal @close="this.removeAllClass()" ref="stationReportRef"/>
         <OptikInfoModal v-if="optik_modal_visble"></OptikInfoModal>
         <SchemaButton v-show="show_button_schema && general_info_show"
                       @action_draw="draw_schema($event)"></SchemaButton>
@@ -87,7 +87,11 @@ import SchemaButton from "@/components/TrainSchemaButton/SchemaButton.vue";
 import TitleText from "@/components/TitleText/TitleText.vue";
 import OptikInfoModal from "../../components/OptikInfoModal/OptikInfoModal.vue";
 import StationReportModal from "@/components/StationDialog/StationReportModal.vue";
-
+import {stationReport} from "@/data/stationReport.js";
+import {onUnmounted, onBeforeUnmount} from "vue";
+onBeforeUnmount(()=>{
+  this.removeAllClass()
+})
 export default {
     components: {
         TitleText,
@@ -99,8 +103,7 @@ export default {
         LottieIcon,
         RiplleIcon,
         OptikInfoModal,
-      StationReportModal,
-
+        StationReportModal,
     },
 
     data() {
@@ -202,9 +205,12 @@ export default {
             element.addEventListener('click', ()=>{
               console.log(v.name)
               this.removeAllClass()
-              element.classList.add('animated-svg-2')
               this.$refs.stationReportRef.onClose()
-              this.$refs.stationReportRef.openReport(v.id)
+              let station = stationReport.find((val) => val.id === v.id)
+              if (station && station.data?.video !==undefined &&  station.data?.removedWagon !== undefined && station.data?.addingWagon !== undefined && station.data?.du1 !== undefined) {
+                element.classList.add('animated-svg-2')
+                this.$refs.stationReportRef.openReport(v.id)
+              }
             })
           })
         },
@@ -356,7 +362,6 @@ export default {
         });
 
         zoo_element.addEventListener("mouseout", (event) => {
-          console.log("Out")
             this.panning = false;
         });
         zoo_element_container.addEventListener("contextmenu", (event) => {
