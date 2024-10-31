@@ -207,7 +207,7 @@ export default {
               this.removeAllClass()
               this.$refs.stationReportRef.onClose()
               let station = stationReport.find((val) => val.id === v.id)
-              if (station && station.data?.video !==undefined &&  station.data?.removedWagon !== undefined && station.data?.addingWagon !== undefined && station.data?.du1 !== undefined) {
+              if (station && station.data) {
                 element.classList.add('animated-svg-2')
                 this.$refs.stationReportRef.openReport(v.id)
               }
