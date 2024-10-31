@@ -12,7 +12,7 @@ const routes = [
     {
         path: "/",
         name: "home",
-        redirect:'/eighth-screen',
+        redirect:'/zero-screen',
         component: function () {
             return import("../Layout/Layout.vue");
         },
@@ -242,6 +242,16 @@ const routes = [
                 name: "thirteen-screen",
                 component: function () {
                     return import("../pages/ThirteenScreen/ThirteenScreen.vue");
+                },
+                meta:{
+                    pageNUmber:24,
+                }
+            },
+            {
+                path: "/after-digitalization",
+                name: "after-digitalization",
+                component: function () {
+                    return import("../pages/AfterDigitalization/BeforeDigitalization.vue");
                 },
                 meta:{
                     pageNUmber:24,

@@ -356,6 +356,7 @@ export default {
         });
 
         zoo_element.addEventListener("mouseout", (event) => {
+          console.log("Out")
             this.panning = false;
         });
         zoo_element_container.addEventListener("contextmenu", (event) => {
@@ -384,54 +385,54 @@ export default {
         let termizRJU = document.getElementById("termizRJU");
         let toshkentRJU = document.getElementById("toshkentRJU");
         let kokandRJU = document.getElementById("kokandRJU");
-        qongirotRJU.addEventListener("click", () => {
-            if (this.active_map) {
-                this.general_info_show = false;
-                this.go_push_element(196, -60, 2);
-                this.$refs.dialog_ref.open_dialog(3);
-            }
-
-        })
-        buxoroRJU.addEventListener("click", () => {
-            if (this.active_map) {
-                this.general_info_show = false;
-                this.go_push_element(-468, -353, 2);
-                this.$refs.dialog_ref.open_dialog(2)
-            }
-
-        })
-        qarshiRJU.addEventListener("click", () => {
-            if (this.active_map) {
-                this.general_info_show = false;
-                this.go_push_element(-1848, -1574, 3.4);
-                this.$refs.dialog_ref.open_dialog(4)
-            }
-
-        })
-        termizRJU.addEventListener("click", () => {
-            if (this.active_map) {
-                this.general_info_show = false;
-                this.go_push_element(-2320, -1898, 3.5);
-                this.$refs.dialog_ref.open_dialog(5)
-            }
-
-        })
-        // worker zone its
-        toshkentRJU.addEventListener("click", () => {
-            if (this.active_map) {
-                this.general_info_show = false;
-              // this.go_push_element(-1580, -428, 2.5);
-              this.go_push_element(-5310, -1537, 6);
-                // this.$refs.dialog_ref.open_dialog(0)
-            }
-        })
-        kokandRJU.addEventListener("click", () => {
-            if (this.active_map) {
-                this.general_info_show = false;
-                this.go_push_element(-3706, -866, 3.5);
-                this.$refs.dialog_ref.open_dialog(1)
-            }
-        })
+        // qongirotRJU.addEventListener("click", () => {
+        //     if (this.active_map) {
+        //         this.general_info_show = false;
+        //         this.go_push_element(196, -60, 2);
+        //         this.$refs.dialog_ref.open_dialog(3);
+        //     }
+        //
+        // })
+        // buxoroRJU.addEventListener("click", () => {
+        //     if (this.active_map) {
+        //         this.general_info_show = false;
+        //         this.go_push_element(-468, -353, 2);
+        //         this.$refs.dialog_ref.open_dialog(2)
+        //     }
+        //
+        // })
+        // qarshiRJU.addEventListener("click", () => {
+        //     if (this.active_map) {
+        //         this.general_info_show = false;
+        //         this.go_push_element(-1848, -1574, 3.4);
+        //         this.$refs.dialog_ref.open_dialog(4)
+        //     }
+        //
+        // })
+        // termizRJU.addEventListener("click", () => {
+        //     if (this.active_map) {
+        //         this.general_info_show = false;
+        //         this.go_push_element(-2320, -1898, 3.5);
+        //         this.$refs.dialog_ref.open_dialog(5)
+        //     }
+        //
+        // })
+        // // worker zone its
+        // toshkentRJU.addEventListener("click", () => {
+        //     if (this.active_map) {
+        //         this.general_info_show = false;
+        //       // this.go_push_element(-1580, -428, 2.5);
+        //       this.go_push_element(-5310, -1537, 6);
+        //         // this.$refs.dialog_ref.open_dialog(0)
+        //     }
+        // })
+        // kokandRJU.addEventListener("click", () => {
+        //     if (this.active_map) {
+        //         this.general_info_show = false;
+        //         this.go_push_element(-3706, -866, 3.5);
+        //         this.$refs.dialog_ref.open_dialog(1)
+        //     }
+        // })
 
 
         // this.go_push_element(38.6, -60, 1.2);
