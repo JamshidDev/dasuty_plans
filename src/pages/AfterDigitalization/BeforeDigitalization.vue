@@ -226,21 +226,21 @@ $blue: #234699;
     }
 
     &.box-1 {
-        left: calc(100% + 15px);
-        top: 55px;
+        left: calc(100% - 20px);
+        top: 120px;
         transform: rotate(45deg);
         animation-delay: 0.5s;
     }
 
     &.box-2 {
         left: calc(100% + 20px);
-        bottom: calc(100% + 40px);
+        bottom: calc(100% - 40px);
         animation-delay: 1.5s;
     }
 
     &.box-3 {
         left: 85%;
-        bottom: calc(100% + 150px);
+        bottom: calc(100% + 120px);
         animation-delay: 2.5s;
         transform: rotate(-45deg);
     }
@@ -253,22 +253,22 @@ $blue: #234699;
     }
 
     &.box-5 {
-        left: calc(100% - 64px);
-        top: calc(100% + 170px);
+        left: calc(100% - 30px );
+        top: calc(100% + 90px);
         animation-delay: 4s;
         transform: rotate(-135deg);
     }
 
     &.box-6 {
         left: calc(100% + 35px);
-        bottom: -135px;
+        bottom: -50px;
         animation-delay: 5s;
         transform: rotate(-180deg);
     }
 
     &.box-7 {
-        left: calc(100% + 15px);
-        bottom: calc(100% + 60px);
+        left: calc(100% - 20px);
+        bottom: calc(100% + 120px);
         animation-delay: 8s;
         transform: rotate(-225deg);
     }
