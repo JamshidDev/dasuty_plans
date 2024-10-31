@@ -7,18 +7,15 @@ const stationName = ref(null)
 const stationData = ref(null)
 
 const openReport = (stationId) => {
-  console.log(stationId)
   visible.value = false
   let station = stationReport.find((v) => v.id === stationId)
   if (station) {
     stationName.value = station.name
     stationData.value = station
+    setTimeout(() => {
+      visible.value = true
+    }, 200)
 
-    if (station.data) {
-      setTimeout(() => {
-        visible.value = true
-      }, 200)
-    }
   }
 }
 
@@ -30,6 +27,8 @@ defineExpose({
   openReport,
   onClose
 })
+defineEmits(['close'])
+
 </script>
 
 <template>
@@ -39,6 +38,11 @@ defineExpose({
       :style="{ width:'600px' }"
       class="shadow-"
       position="topleft"
+      @update:visible="(v)=>{
+        if(!v){
+          $emit('close')
+        }
+      }"
   >
     <div class="grid bg-yellow-100 border-1 border-round border-yellow-300 p-4 mt-1">
       <div class="col-12 flex justify-content-between">
@@ -52,10 +56,6 @@ defineExpose({
       <div class="col-12 flex justify-content-between">
         <span class="text-lg text-600 ">Қўшилган вагонлар сони</span> <span
           class="font-bold text-xl">{{ stationData.data.addingWagon }}</span>
-      </div>
-      <div class="col-12 flex justify-content-between">
-        <span class="text-lg text-600 ">Қабул қилинган поездлар сони</span> <span
-          class="font-bold text-xl">{{ stationData.data.acceptedTrain }}</span>
       </div>
     </div>
 
