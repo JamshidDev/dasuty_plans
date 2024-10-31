@@ -18,28 +18,28 @@ export const stationReport = [
     },
     {
         id: 'st_722400',
-        name: 'tosh. Tovarniy',
+        name: 'Тошкент стансияси',
         data: {
             video: toshkentVideUrl
         }
     },
     {
         id: 'st_720903',
-        name: 'salar',
+        name: 'Салар стансияси',
         data: {
             video: salarVideUrl
         }
     },
     {
         id: 'st_723600',
-        name: "to'qimachi",
+        name: "Тўқимачи стансияси",
         data: {
             video: tuqimachiVideUrl
         }
     },
     {
         id: 'st_722504',
-        name: "xamza",
+        name: "Хамза стансияси",
         data: {
             video: xamzaVideUrl
         }

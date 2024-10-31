@@ -7,7 +7,7 @@
   height: 40px;">
       <i class='bx bx-chevron-left text-white text-4xl'></i>
     </div>
-    <div @click="$router.push({name : 'eighth-screen'})" class="premium_bg" style="width: 80px;
+    <div @click="$router.push({name : 'zero-screen'})" class="premium_bg" style="width: 80px;
   height: 40px;">
       <i class='bx bx-home text-white text-4xl'></i>
     </div>
@@ -27,9 +27,17 @@ export default {
   data() {
     return {
       page_list: [
+        // {
+        //   index: 0,
+        //   name: "eighth-screen"
+        // },
         {
-          index: 0,
-          name: "eighth-screen"
+          index: 1,
+          name: "zero-screen"
+        },
+        {
+          index: 2,
+          name: "after-digitalization"
         },
         // {
         //   index: 4,
@@ -63,10 +71,6 @@ export default {
         //   index: 2,
         //   name: "min-fin-seven"
         // },
-        {
-          index: 1,
-          name: "zero-screen"
-        },
         // {
         //   index: 9,
         //   name: "sixth-screen"
@@ -83,22 +87,22 @@ export default {
         //   index: 9,
         //   name: "eticket"
         // },
-        {
-          index: 2,
-          name: "tenth-screen"
-        },
-        {
-          index: 3,
-          name: "eleventh-screen"
-        },
-        {
-          index: 4,
-          name: "twelfth-screen"
-        },
-        {
-          index: 5,
-          name: "thirteen-screen"
-        },
+        // {
+        //   index: 2,
+        //   name: "tenth-screen"
+        // },
+        // {
+        //   index: 3,
+        //   name: "eleventh-screen"
+        // },
+        // {
+        //   index: 4,
+        //   name: "twelfth-screen"
+        // },
+        // {
+        //   index: 5,
+        //   name: "thirteen-screen"
+        // },
         // {
         //   index: 6,
         //   name: "first-screen"
@@ -107,18 +111,18 @@ export default {
         //   index: 6,
         //   name: "second-screen"
         // },
-        {
-          index: 6,
-          name: "nst-infra"
-        },
-        {
-          index: 7,
-          name: "third-screen"
-        },
-        {
-          index: 8,
-          name: "vols"
-        },
+        // {
+        //   index: 6,
+        //   name: "nst-infra"
+        // },
+        // {
+        //   index: 7,
+        //   name: "third-screen"
+        // },
+        // {
+        //   index: 8,
+        //   name: "vols"
+        // },
       ],
       page_index: 0,
       page_number: 1,

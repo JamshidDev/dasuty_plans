@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     redirect(name) {
-      this.$router.push({name,});
+      this.$router.push({name});
     }
   }
 }
