@@ -5,10 +5,10 @@
         <!--    </div>-->
 
         <TitleText :title="$t('SecondPage.themeName')"></TitleText>
-            <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">
+<!--            <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">-->
 
-                    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}
-            </div>
+<!--                    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}-->
+<!--            </div>-->
         <div id="zoom-container" ref="zoom_container" class="w-full border-round relative"
              style="height:88vh; overflow: hidden;">
             <div id="trigger-zoom-element" ref="trigger_zoom_element"
