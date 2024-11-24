@@ -86,12 +86,12 @@ onMounted(() => {
                     </div>
                     <div class='relative'>
                         <!--            <div class='progress-icon progress-icon-left'></div>-->
-                        <div v-if='item.rate' class='progress-rate progress-rate-right'>
-                            <span class='symbol'>&#x2191</span>
-                            <AutoCounter :start-amout='animated ? 0 : item.rate' :end-amount='animated ? item.rate : 0'
-                                         :duration='1'/>
-                            <span>%</span>
-                        </div>
+<!--                        <div v-if='item.rate' class='progress-rate progress-rate-right'>-->
+<!--                            <span class='symbol'>&#x2191</span>-->
+<!--                            <AutoCounter :start-amout='animated ? 0 : item.rate' :end-amount='animated ? item.rate : 0'-->
+<!--                                         :duration='1'/>-->
+<!--                            <span>%</span>-->
+<!--                        </div>-->
                        <a :href="item.url" target='_blank'>
                            <progress-bar
                                class='flex-grow-1 custom-progress-bar'
@@ -137,11 +137,11 @@ onMounted(() => {
                     </div>
                     <div class='relative'>
                         <!--            <div class='progress-icon progress-icon-right'></div>-->
-                        <div v-if='item.rate' class='progress-rate progress-rate-left'>
-                            <span class='symbol'>&#x2191</span>
-                            <span>{{ item.rate }}</span>
-                            <span>%</span>
-                        </div>
+<!--                        <div v-if='item.rate' class='progress-rate progress-rate-left'>-->
+<!--                            <span class='symbol'>&#x2191</span>-->
+<!--                            <span>{{ item.rate }}</span>-->
+<!--                            <span>%</span>-->
+<!--                        </div>-->
                        <a :href="item.url" target="_blank">
                            <progress-bar
                                class='flex-grow-1 custom-progress-bar'
