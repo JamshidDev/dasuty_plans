@@ -32,19 +32,19 @@
               </div>
               <div class="col-12">
                 <div @click="action_emit('route1')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
-                  битта локомотив битта поезд - Қашқадарё - Охунбобоев
+                  битта локомотив битта поезд - Қашқадарё - Охунбобоев (161та)
                   <i class='bx bx-show text-500 text-2xl'></i>
                 </div>
               </div>
               <div class="col-12">
                 <div @click="action_emit('route2')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
-                  битта локомотив битта поезд - Қарши - Ўзбекистон
+                  битта локомотив битта поезд - Қарши - Ўзбекистон (424та)
                   <i class='bx bx-show text-500 text-2xl'></i>
                 </div>
               </div>
               <div class="col-12">
                 <div  @click="action_emit('route3')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
-                  битта локомотив битта поезд - Қумқўрғон - Ўзбекистон
+                  битта локомотив битта поезд - Қумқўрғон - Ўзбекистон (347та)
                   <i class='bx bx-show text-500 text-2xl'></i>
                 </div>
               </div>
