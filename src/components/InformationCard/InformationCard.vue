@@ -17,7 +17,7 @@
             <div class="grid">
               <div v-for="item in general_data" :key="item.id" class="col-4 cursor-pointer">
                 <div @click="control_overall($event ,item.id)"
-                     :class="[2,6,8,5,7,3,0].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
+                     :class="[1,2,6,8,5,7,0].includes(item.id)? 'bg-blue-100 border-blue-200 border-1 ' : 'bg-gray'"
                      class="card_box p-2 border-round shadow-1 min-h-full "
                 >
                   <span v-show="[5,4, 3].includes(item.id)">
@@ -331,14 +331,20 @@ export default {
         {
           id: 0,
           label: this.$t('SecondPage.DistanceOfRailways'),
-          value: 7486,
+          value: 7489,
           extension_value: this.$t('SecondPage.km'),
         },
         {
           id: 1,
           label: this.$t('SecondPage.EngRoad'),
-          value: 3328.73,
-          extension_value: this.$t('SecondPage.km') + ' (45%)'
+          value: 3923,
+          extension_value: this.$t('SecondPage.km') + ' (53%)'
+        },
+        {
+          id: 6,
+          label: this.$t('SecondPage.CountStantions'),
+          value: 270,
+          extension_value: this.$t('SecondPage.CountWord')
         },
         {
           id: 2,
@@ -347,9 +353,10 @@ export default {
           extension_value: this.$t('SecondPage.CountWord')
         },
         {
-          id: 6,
-          label: this.$t('SecondPage.CountStantions'),
-          value: 270,
+          id: 4,
+          label: this.$t('SecondPage.CountLocDepo'),
+          value: 8,
+          show_map: false,
           extension_value: this.$t('SecondPage.CountWord')
         },
         {
@@ -359,25 +366,19 @@ export default {
           extension_value: this.$t('SecondPage.CountWord')
         },
         {
-          id: 4,
-          label: this.$t('SecondPage.CountLocDepo'),
-          value: 8,
-          show_map: false,
-          extension_value: this.$t('SecondPage.CountWord')
-        }, {
+          id: 8,
+
+          label: this.$t('SecondPage.AvailableWagons'),
+          value: 22256,
+          extension_value: this.$t('SecondPage.CountWord'),
+        },
+        {
           id: 5,
           label: this.$t('SecondPage.wagonsDepo'),
           value: 6,
           show_map: false,
           extension_value: this.$t('SecondPage.CountWord')
 
-        },
-        {
-          id: 8,
-
-          label: this.$t('SecondPage.AvailableWagons'),
-          value: 22256,
-          extension_value: this.$t('SecondPage.CountWord'),
         },
         {
           id: 7,
@@ -550,6 +551,23 @@ export default {
           value: `14 та`,
         },
 
+      ],
+      elector_road_list: [
+        {
+          id: 0,
+          label: "Мароқанд-Навоий",
+          value: `138`,
+        },
+        {
+          id: 1,
+          label: "Бухоро-Мискин",
+          value: `594`,
+        },
+        {
+          id: 2,
+          label: "Умумий",
+          value: `4061km (54%)`,
+        },
       ],
       wagon_list: [
         {
@@ -1604,12 +1622,17 @@ export default {
         this.$refs.overall3_ref.toggle(event);
       }else if (id === 5) {
         this.$refs.overall8_ref.toggle(event);
-      }else if (id === 3) {
-        this.general_stik_dialog = true;
-      }else if(id === 0){
-        this.$refs.overall90_ref.toggle(event);
       }
-
+      // else if (id === 3) {
+      //   this.general_stik_dialog = true;
+      // }
+      else if(id === 0){
+        this.$refs.overall90_ref.toggle(event);
+      }else if(id === 1){
+        this.overall_list = this.elector_road_list;
+        this.$refs.overal_ref.toggle(event);
+      }
+      console.log(id)
       if (id === 4) {
         let anchorTag = document.createElement('a');
         anchorTag.setAttribute('href', 'https://uzdepo.uz/uzel/lokomotiv.php?depo=%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD');
