@@ -168,7 +168,7 @@ onUnmounted(() => {
         <img src='/images/users-success.png' alt='users' />
         <span>
 
-          {{$t('SixthPage.FirstCardOption_1')}} <span style='color:#11A832' class='font-semibold'>18 354</span> {{$t('SecondPage.countLive')}}
+          {{$t('SixthPage.FirstCardOption_1')}} <span style='color:#11A832' class='font-semibold'>20 615</span> {{$t('SecondPage.countLive')}}
         </span>
       </div>
       <div class='text-2xl font-medium flex align-items-center gap-2'>
@@ -182,7 +182,7 @@ onUnmounted(() => {
         <img src='/images/client-success.png' alt='client' />
         <span>
 
-          {{$t('SixthPage.FirstCardOption_3')}} <span style='color:#11A832' class='font-semibold'>8 977</span> {{$t('SecondPage.countLive')}}
+          {{$t('SixthPage.FirstCardOption_3')}} <span style='color:#11A832' class='font-semibold'>11 858</span> {{$t('SecondPage.countLive')}}
         </span>
       </div>
     </div>

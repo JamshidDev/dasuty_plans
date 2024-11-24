@@ -30,9 +30,9 @@ const arr1 = [
 const arr2 = [
     {offset: -12, name: 'E-NAKL', deadline: '10.08.2024', url: 'https://e-nakl.railway.uz', value: 100, rate: 17},
     {offset: 0, name: 'TRAIN LOCATION', deadline: '15.08.2024', url: 'https://tracking.railway.uz', value: 100, rate: 30},
-    {offset: 6, name: 'E-TICKET', deadline: '10.10.2024', url: 'https://eticket.railway.uz', value: 95, rate: 25},
+    {offset: 6, name: 'UZGPS', deadline: '21.12.2024', url: 'https://utysmpo.uzgps.uz', value: 94, rate: 25},
     {offset: 7.5, name: 'SMART DEPO', deadline: '10.12.2024', url: 'https://uzdepo.uz/dashboard/', value: 92, rate: 25},
-    {offset: 5, name: 'UZGPS', deadline: '21.12.2024', url: 'https://utysmpo.uzgps.uz', value: 94, rate: 25},
+    {offset: 5, name: 'E-TICKET', deadline: '10.10.2024', url: 'https://eticket.railway.uz', value: 95, rate: 25},
     // {offset: -2, name: 'TUNNEL', deadline: '24.12.2024', url: 'https://tunnelmodpro.uz', value: 93, rate: 10},
     {offset: -16, name: 'E-NAKL MOBILE', deadline: '30.08.2024', url: '/', value: 100, rate: 2},
 ]
@@ -55,7 +55,7 @@ onMounted(() => {
         animated.value = false
         setTimeout(() => {
             animated.value = true
-        }, 1000)
+        }, 3000)
     }, 10000)
 })
 
@@ -97,6 +97,7 @@ onMounted(() => {
                                class='flex-grow-1 custom-progress-bar'
                                :class='{primary: item.value > 72, warning: item.value > 56 && item.value < 72, danger: item.value < 56}'
                                :value='animated ? item.value : 0'
+
                            />
                        </a>
                     </div>
@@ -122,7 +123,7 @@ onMounted(() => {
                         :border-bg-width='28'
                         :size='el.offsetWidth'
                         :percent="animated ? totalP : 0"
-                        :transition='1000'
+                        :transition='3000'
                         empty-color='#e2e8f0'
                         fill-color='#234699'
                     />
@@ -158,7 +159,9 @@ onMounted(() => {
 </template>
 <style lang="scss" scoped>
 $blue: #234699;
-
+:deep(.p-progressbar-value){
+  transition: all 3s ease;
+}
 .anim-el {
     position: absolute;
     left: 50%;
@@ -241,7 +244,7 @@ $blue: #234699;
     position: absolute;
     top: 50%;
     left: calc(50% - 30px);
-    transition: all 1s;
+    transition: all 3s;
     transform-origin: 30px center;
     z-index: 15;
     display: flex;

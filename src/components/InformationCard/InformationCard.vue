@@ -100,22 +100,22 @@
     <div class="grid w-full">
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="11855" :title="$t('SecondPage.HigherEdu')" :percent="18"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="33583" :title="$t('SecondPage.SecEdu')" :percent="51"></EducationChart>
-          <EducationChart :color="`blue`" :amount="20105" :title="$t('SecondPage.VocEdu')" :percent="31"></EducationChart>
+          <EducationChart :color="`green`" :amount="12183" :title="$t('SecondPage.HigherEdu')" :percent="19"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="33071" :title="$t('SecondPage.SecEdu')" :percent="51"></EducationChart>
+          <EducationChart :color="`blue`" :amount="19400" :title="$t('SecondPage.VocEdu')" :percent="30"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="16476" :title="$t('SecondPage.till31')" :percent="25"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="31205" :title="$t('SecondPage.till45')" :percent="47"></EducationChart>
-          <EducationChart :color="`blue`" :amount="18201" :title="$t('SecondPage.till46')" :percent="28"></EducationChart>
+          <EducationChart :color="`green`" :amount="14837" :title="$t('SecondPage.till31')" :percent="23"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="31876" :title="$t('SecondPage.till45')" :percent="49"></EducationChart>
+          <EducationChart :color="`blue`" :amount="18289" :title="$t('SecondPage.upTo46')" :percent="28"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="54252" :title="$t('SecondPage.men')" :percent="82"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="11630" :title="$t('SecondPage.women')" :percent="18"></EducationChart>
+          <EducationChart :color="`green`" :amount="53704" :title="$t('SecondPage.men')" :percent="83"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="11298" :title="$t('SecondPage.women')" :percent="17"></EducationChart>
         </div>
       </div>
       <div class="col-6 flex justify-content-end align-items-end pb-3">
@@ -382,7 +382,7 @@ export default {
         {
           id: 7,
           label: this.$t('SecondPage.CountEmpl'),
-          value: 70933,
+          value: 65002,
           extension_value: this.$t('SecondPage.countLive'),
 
         },

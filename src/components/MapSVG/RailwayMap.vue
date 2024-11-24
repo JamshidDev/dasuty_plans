@@ -3751,15 +3751,15 @@ export default {
 .fil11 {fill:#1A1A1A}
 .fil3 {fill:#707070}
 .fil28 {fill:#86F266}
-.fil4 {fill: #1aaddb}
+.fil4 {fill: #cdaaff}
 .fil10 {fill:#99FF00}
 .fil32 {fill:#99FF99}
 .fil8 {fill:#9CDCFF}
-.fil5 {fill: #8247d8}
+.fil5 {fill:#54cbf1}
 .fil2 {fill:#ADD6FF}
-.fil6 {fill: #7cc83f}
+.fil6 {fill: #d7fbba}
 .fil30 {fill:#B3B3B3}
-.fil7 {fill: #438ad1}
+.fil7 {fill: #5292d2}
 .fil36 {fill:red}
 .fil29 {fill:red}
 .fil34 {fill:yellow}
