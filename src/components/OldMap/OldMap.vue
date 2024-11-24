@@ -2024,7 +2024,7 @@
      </g>
             <rect class="fil25 str7" x="11601.52" y="8807.67" width="1747.15" height="388.47" rx="222.02"
                   ry="194.24"/>
-            <text x="12042.35" y="9088.71" class="fil20 fnt3">Мискен</text>
+            <text x="12042.35" y="9088.71" class="fil20 fnt3">Мискин</text>
     </g>
           <g id="loc5">
      <g>
