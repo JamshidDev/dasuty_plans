@@ -5,7 +5,6 @@
 
     <div class="w-full min-h-screen relative overflow-hidden">
 
-      <LocaleSection></LocaleSection>
       <ControlButton></ControlButton>
 
 
