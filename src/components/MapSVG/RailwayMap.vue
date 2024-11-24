@@ -157,7 +157,7 @@
         <polyline class="fil9 str1" points="23172.13,12702.63 23449.98,12728.57 23685.6,12826.75 23710.84,12912.3 23688.4,13063.77 23466.28,13237.01 23471.35,13248.26 "/>
   </g>
       <g id="potoks">
-   <circle id="potok1" class="fil10 str2" cx="25211.55" cy="9317.56" r="80.37"/>
+        <circle id="potok1" class="fil10 str2" cx="25211.55" cy="9317.56" r="80.37"/>
         <circle id="potok2" class="fil10 str2" cx="26471.45" cy="6670.98" r="80.37"/>
         <circle id="potok3" class="fil10 str2" cx="34956.89" cy="7668.81" r="80.37"/>
         <circle id="potok4" class="fil10 str2" cx="36849.28" cy="11176.48" r="80.37"/>
@@ -2808,6 +2808,39 @@
       </div>
     </div>
   </Dialog>
+  <Dialog v-model:visible="is_innovations_modal_visible" modal header="Соҳани ривожлантириш учун амалга оширилган ишлар" :style="{ width: '90%' }">
+    <div class="grid">
+      <div class="col-12">
+        <ul>
+          <li>
+            <p><strong>Электр хўжалиги бўйича</strong>:
+            Мароканд-Навоий электрлаштириш орқали 3 600 тоннадан 6000 тоннага юк поездларининг оғирлиги оширилди.</p>
+          </li>
+          <li>
+            <p><strong>Йўл хўжалиги бўйича:</strong>
+            Жайрон-Кенгсой станциялари оралиғидаги максимал нишаблик 20‰ дан 9‰ гача пасайтирилди ҳамда Нишон-Кенгсой айланиб ўтиш йўли (обводной) қурилиши орқали:</p>
+            <ul>
+              <li>
+                <p>юк поездларининг оғирлиги 1700 тоннадан 3500 тоннага оширилди;</p>
+              </li>
+              <li>
+                <p>Қарши-Кенгсой участкасида юк поездларининг ҳаракат тезлиги 36 км/соатдан 55 км/соатга оширилди;</p>
+              </li>
+              <li>
+                <p>Қарши-Кенгсой участкаси узунлиги 12 км га қисқариб, юк  поездларининг юриш вақти 1 соатга камайди.</p>
+              </li>
+            </ul>
+            <p><i>Рельс</i> Жами бўлиб 133 км харид қилинган. Ундан 34 км Хитой Халқ Республикасидан, 95 км Россия Федерациясидан. Йил якунига қадар 64 км Хитой Халқ Республикасидан олиб келиш режалаштирилган.</p>
+            <p><i>Стрелкали ўтказгич</i> Жами бўлиб 50 тўплам харид қилинган.</p>
+            <p><i>Креставина</i> Жами бўлиб 157 тўплам харид қилинган.</p>
+          </li>
+        </ul>
+        <p>
+
+        </p>
+      </div>
+    </div>
+  </Dialog>
 </template>
 
 
@@ -2817,6 +2850,7 @@ export default {
   data() {
     return {
       img_dialog: false,
+      is_innovations_modal_visible: false,
       elementIdList: ['mains', 'sorts', 'stiks', 'tchs', 'vchds'],
       text_element_list: [],
       line_element_list: [],
@@ -3621,6 +3655,9 @@ export default {
 
     document.getElementById('potok2').addEventListener("click", () => {
       this.img_dialog = true;
+    })
+    document.getElementById('potok1').addEventListener("click", () => {
+      this.is_innovations_modal_visible = true;
     })
     this.hideAllPoints();
 
