@@ -7,7 +7,7 @@
   height: 40px;">
       <i class='bx bx-chevron-left text-white text-4xl'></i>
     </div>
-    <div @click="$router.push({name : 'eighth-screen'})" class="premium_bg" style="width: 80px;
+    <div @click="$router.push({name : 'tenth-screen'})" class="premium_bg" style="width: 80px;
   height: 40px;">
       <i class='bx bx-home text-white text-4xl'></i>
     </div>

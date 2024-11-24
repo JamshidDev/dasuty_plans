@@ -7,7 +7,7 @@ import animationData from "../../components/LottieJSON/animate-comp.json";
 
 const animated = ref(false)
 const el = ref(null)
-const totalP = ref(72)
+const totalP = ref(93)
 const animEl = ref(null)
 
 const arr1 = [
@@ -23,8 +23,8 @@ const arr1 = [
         rate: 8
     },
     {offset: 5, name: 'RELAY CONTROL', deadline: '31.07.2024', url: 'http://relay.itdevs.uz/', value: 100, rate: 12},
-    {offset: -2, name: 'VIRTUAL OFFICE', deadline: '01.01.2025', url: '/', value: 50, rate: 2},
-    {offset: -16, name: 'ERP', value: 30, deadline: '31.03.2025', url: '/', rate: 2},
+    {offset: -2, name: 'VIRTUAL OFFICE', deadline: '31.03.2025', url: '/', value: 50, rate: 2},
+    // {offset: -16, name: 'ERP', value: 30, deadline: '31.03.2025', url: '/', rate: 2},
 ]
 
 const arr2 = [
@@ -33,7 +33,7 @@ const arr2 = [
     {offset: 6, name: 'E-TICKET', deadline: '10.10.2024', url: 'https://eticket.railway.uz', value: 95, rate: 25},
     {offset: 7.5, name: 'SMART DEPO', deadline: '10.12.2024', url: 'https://uzdepo.uz/dashboard/', value: 92, rate: 25},
     {offset: 5, name: 'UZGPS', deadline: '21.12.2024', url: 'https://utysmpo.uzgps.uz', value: 94, rate: 25},
-    {offset: -2, name: 'TUNNEL', deadline: '24.12.2024', url: 'https://tunnelmodpro.uz', value: 93, rate: 10},
+    // {offset: -2, name: 'TUNNEL', deadline: '24.12.2024', url: 'https://tunnelmodpro.uz', value: 93, rate: 10},
     {offset: -16, name: 'E-NAKL MOBILE', deadline: '30.08.2024', url: '/', value: 100, rate: 2},
 ]
 
