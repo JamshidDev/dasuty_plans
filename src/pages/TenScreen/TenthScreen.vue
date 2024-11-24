@@ -28,7 +28,7 @@ const arr1 = [
 ]
 
 const arr2 = [
-    {offset: -12, name: 'E-NAKL', deadline: '10.08.2024', url: 'https://e-nakl.railway.uz', value: 102, rate: 17},
+    {offset: -12, name: 'E-NAKL', deadline: '10.08.2024', url: 'https://e-nakl.railway.uz', value: 100, rate: 17},
     {offset: 0, name: 'TRAIN LOCATION', deadline: '15.08.2024', url: 'https://tracking.railway.uz', value: 100, rate: 30},
     {offset: 6, name: 'E-TICKET', deadline: '10.10.2024', url: 'https://eticket.railway.uz', value: 95, rate: 25},
     {offset: 7.5, name: 'SMART DEPO', deadline: '10.12.2024', url: 'https://uzdepo.uz/dashboard/', value: 92, rate: 25},
