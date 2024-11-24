@@ -51,12 +51,12 @@ onMounted(() => {
     setTimeout(() => {
         animated.value = !animated.value
     }, 500)
-    setInterval(() => {
-        animated.value = false
-        setTimeout(() => {
-            animated.value = true
-        }, 3000)
-    }, 10000)
+    // setInterval(() => {
+    //     animated.value = false
+    //     setTimeout(() => {
+    //         animated.value = true
+    //     }, 3000)
+    // }, 10000)
 })
 
 </script>

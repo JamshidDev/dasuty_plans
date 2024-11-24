@@ -434,8 +434,8 @@ export default {
         })
 
 
-        // this.go_push_element(38.6, -60, 1.2);
-      this.go_push_element(-5310, -1537, 6);
+        this.go_push_element(38.6, -60, 1.2);
+      // this.go_push_element(-5310, -1537, 6);
       this.general_info_show = false;
 
       this.initialStationEvent()
