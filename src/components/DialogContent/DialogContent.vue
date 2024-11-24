@@ -96,7 +96,7 @@
         <div class="flex justify-content-between text-sm1 font-bold">
           <span>{{$t('SecondPage.OverallTime')}}</span>
           <span v-if="is_show_one">12 {{$t('SecondPage.day')}}</span>
-          <span v-else>5 {{$t('SecondPage.day')}}</span>
+          <span v-else>5-6 {{$t('SecondPage.day')}}</span>
         </div>
       </div>
     </span>

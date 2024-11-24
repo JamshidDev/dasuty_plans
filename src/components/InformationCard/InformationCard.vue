@@ -96,26 +96,26 @@
       </div>
     </div>
   </OverlayPanel>
-  <OverlayPanel ref="overall3_ref" style="width:600px">
+  <OverlayPanel ref="overall7_ref" style="width:600px">
     <div class="grid w-full">
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
           <EducationChart :color="`green`" :amount="12183" :title="$t('SecondPage.HigherEdu')" :percent="19"></EducationChart>
           <EducationChart :color="`yellow`" :amount="33071" :title="$t('SecondPage.SecEdu')" :percent="51"></EducationChart>
-          <EducationChart :color="`blue`" :amount="19400" :title="$t('SecondPage.VocEdu')" :percent="30"></EducationChart>
+          <EducationChart :color="`blue`" :amount="21354" :title="$t('SecondPage.VocEdu')" :percent="33"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
           <EducationChart :color="`green`" :amount="14837" :title="$t('SecondPage.till31')" :percent="23"></EducationChart>
           <EducationChart :color="`yellow`" :amount="31876" :title="$t('SecondPage.till45')" :percent="49"></EducationChart>
-          <EducationChart :color="`blue`" :amount="18289" :title="$t('SecondPage.upTo46')" :percent="28"></EducationChart>
+          <EducationChart :color="`blue`" :amount="19895" :title="$t('SecondPage.upTo46')" :percent="31"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="53704" :title="$t('SecondPage.men')" :percent="83"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="11298" :title="$t('SecondPage.women')" :percent="17"></EducationChart>
+          <EducationChart :color="`green`" :amount="53156" :title="$t('SecondPage.men')" :percent="83"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="11280" :title="$t('SecondPage.women')" :percent="17"></EducationChart>
         </div>
       </div>
       <div class="col-6 flex justify-content-end align-items-end pb-3">
@@ -137,6 +137,19 @@
     </div>
   </OverlayPanel>
 
+  <OverlayPanel ref="overall3_ref" style="width:400px">
+    <p>Жорий йил якунига қадар:</p>
+    <div class="grid">
+      <div v-for="item in elector_road_list" :key="item.id" class="col-12 py-1 ">
+        <div class="flex flex-column">
+          <div class="flex justify-content-between border-round min-h-full no-underline">
+            <span><i class='bx bxs-circle text-sm mr-2'></i> {{ item.label }}</span>
+            <span class="font-bold">{{ item.value }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </OverlayPanel>
   <OverlayPanel ref="overall21_ref" style="width:400px">
     <div class="grid">
       <div v-for="item in jdpas" :key="item.id" class="col-12 py-1 ">
@@ -338,7 +351,7 @@ export default {
           id: 1,
           label: this.$t('SecondPage.EngRoad'),
           value: 3923,
-          extension_value: this.$t('SecondPage.km') + ' (53%)'
+          extension_value: this.$t('SecondPage.km') + ' (45%)'
         },
         {
           id: 6,
@@ -383,7 +396,7 @@ export default {
         {
           id: 7,
           label: this.$t('SecondPage.CountEmpl'),
-          value: 65002,
+          value: 66608,
           extension_value: this.$t('SecondPage.countLive'),
 
         },
@@ -566,7 +579,7 @@ export default {
         {
           id: 2,
           label: "Умумий",
-          value: `4061km (54%)`,
+          value: `4061 km (54%)`,
         },
       ],
       wagon_list: [
@@ -1619,7 +1632,7 @@ export default {
         this.overall_list = this.wagon_list;
         this.$refs.overal_ref.toggle(event);
       } else if (id === 7) {
-        this.$refs.overall3_ref.toggle(event);
+        this.$refs.overall7_ref.toggle(event);
       }else if (id === 5) {
         this.$refs.overall8_ref.toggle(event);
       }
@@ -1629,8 +1642,7 @@ export default {
       else if(id === 0){
         this.$refs.overall90_ref.toggle(event);
       }else if(id === 1){
-        this.overall_list = this.elector_road_list;
-        this.$refs.overal_ref.toggle(event);
+        this.$refs.overall3_ref.toggle(event);
       }
       console.log(id)
       if (id === 4) {
