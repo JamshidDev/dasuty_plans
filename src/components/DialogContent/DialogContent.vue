@@ -139,6 +139,16 @@
           <span :style="{maxWidth: '250px'}">Электр энергиясидан иқтисодий самарадорлик</span>
           <span>1125 кВт</span>
         </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+
+          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи</span>
+          <span>87.3 тн</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+
+          <span :style="{maxWidth: '250px'}">Жами иқтисод, млн.сўм</span>
+          <span>1513,7</span>
+        </div>
       </div>
     </span>
 	<span v-if="is_route2">
@@ -169,6 +179,16 @@
           <span>{{$t('SecondPage.distance')}}</span>
           <span>490 {{$t('SecondPage.km')}}</span>
         </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+
+          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи</span>
+          <span>149.7 тн</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+
+          <span :style="{maxWidth: '250px'}">Жами иқтисод, млн.сўм</span>
+          <span>2657,7</span>
+        </div>
       </div>
     </span>
 	<span v-if="is_route3">
@@ -197,6 +217,16 @@
           <span>{{$t('SecondPage.distance')}}</span>
           <span>742 {{$t('SecondPage.km')}}</span>
         </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+
+          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи</span>
+          <span>228.7 тн</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+
+          <span :style="{maxWidth: '250px'}">Жами иқтисод, млн.сўм</span>
+          <span>3710,0</span>
+        </div>
       </div>
     </span>
 	<span v-if="is_route4">
@@ -224,6 +254,16 @@
          <div class="flex justify-content-between text-sm mt-3 font-bold">
           <span>{{$t('SecondPage.distance')}}</span>
           <span>562 {{$t('SecondPage.km')}}</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+
+          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи</span>
+          <span>39.5 тн</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+
+          <span :style="{maxWidth: '250px'}">Жами иқтисод, млн.сўм</span>
+          <span>703,1</span>
         </div>
       </div>
     </span>
