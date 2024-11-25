@@ -574,12 +574,12 @@ export default {
         {
           id: 1,
           label: "Бухоро-Мискин",
-          value: `594`,
+          value: `465`,
         },
         {
           id: 2,
           label: "Умумий",
-          value: `4061 km (54%)`,
+          value: `3932 km (52%)`,
         },
       ],
       wagon_list: [

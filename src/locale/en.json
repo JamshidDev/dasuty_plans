@@ -3,7 +3,8 @@
     "lang": "en",
     "MainContents": "CONTENTS OF THE PRESENTATION",
     "FirstContent": "UZBEKISTAN RAILWAYS",
-    "SecondContent": "Works being carried out in digitalization"
+    "SecondContent": "Works being carried out in digitalization",
+    "ThirdContent": "Gallery"
   },
   "SecondPage": {
     "themeName": "Map of railways of Uzbekistan",

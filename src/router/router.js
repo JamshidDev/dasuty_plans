@@ -247,7 +247,16 @@ const routes = [
                     pageNUmber:24,
                 }
             },
-
+            {
+                path: "/fourteenth-screen",
+                name: "fourteenth-screen",
+                component: function () {
+                    return import("../pages/FourteenthScreen/FourteenthScreen.vue");
+                },
+                meta:{
+                    pageNUmber:25,
+                }
+            },
             // {
             //     path: "/eticket",
             //     name: "eticket",

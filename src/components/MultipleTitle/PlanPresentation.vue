@@ -74,6 +74,12 @@ export default {
 
           text: this.$t('firstPage.SecondContent')
         },
+        {
+          id: "7",
+          path: "fourteenth-screen",
+
+          text: this.$t('firstPage.ThirdContent')
+        },
         // {
         //   id: 7,
         //   path: "first-screen",

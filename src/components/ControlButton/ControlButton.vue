@@ -113,12 +113,16 @@ export default {
         },
         {
           index: 7,
-          name: "third-screen"
+          name: "fourteenth-screen"
         },
-        {
-          index: 8,
-          name: "vols"
-        },
+        // {
+        //   index: 7,
+        //   name: "third-screen"
+        // },
+        // {
+        //   index: 8,
+        //   name: "vols"
+        // },
       ],
       page_index: 0,
       page_number: 1,
