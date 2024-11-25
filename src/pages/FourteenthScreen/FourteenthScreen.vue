@@ -115,6 +115,8 @@ const images = computed(() => gallery.filter(i => i.type === 'image').map(i => (
   margin-top: 110px;
   margin-bottom: 20px;
   align-items: stretch;
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 .item {
