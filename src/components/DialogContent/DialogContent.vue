@@ -129,25 +129,31 @@
           <span>{{$t('SecondPage.distance')}}</span>
           <span>852 км</span>
         </div>
-        <div class="flex justify-content-between text-sm mt-3 font-bold">
+<!--        <div class="flex justify-content-between text-sm mt-3 font-bold">-->
 
-          <span :style="{maxWidth: '250px'}">Дизел топливасидан иқтисодий самарадорлик</span>
-          <span>281,25 тн</span>
+<!--          <span :style="{maxWidth: '250px'}">Дизел топливасидан иқтисодий самарадорлик</span>-->
+<!--          <span>281,25 тн</span>-->
+<!--        </div>-->
+<!--        <div class="flex justify-content-between text-sm mt-3 font-bold">-->
+
+<!--          <span :style="{maxWidth: '250px'}">Электр энергиясидан иқтисодий самарадорлик</span>-->
+<!--          <span>1125 кВт</span>-->
+<!--        </div>-->
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+          <span>Тежалган вагон харажатлари, млн.сўм</span>
+          <span>397.8</span>
         </div>
         <div class="flex justify-content-between text-sm mt-3 font-bold">
-
-          <span :style="{maxWidth: '250px'}">Электр энергиясидан иқтисодий самарадорлик</span>
-          <span>1125 кВт</span>
+          <span>Тежалган локомотив харажатлари, млн.сўм</span>
+          <span>24.2</span>
         </div>
         <div class="flex justify-content-between text-sm mt-3 font-bold">
-
-          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи</span>
-          <span>87.3 тн</span>
+          <span>Тежалган вақт, (вагон/соат)</span>
+          <span>361 284</span>
         </div>
         <div class="flex justify-content-between text-sm mt-3 font-bold">
-
-          <span :style="{maxWidth: '250px'}">Жами иқтисод, млн.сўм</span>
-          <span>1513,7</span>
+          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи. млн.сўм</span>
+          <span>1 091,8</span>
         </div>
       </div>
     </span>
@@ -180,14 +186,20 @@
           <span>490 {{$t('SecondPage.km')}}</span>
         </div>
         <div class="flex justify-content-between text-sm mt-3 font-bold">
-
-          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи</span>
-          <span>149.7 тн</span>
+          <span>Тежалган вагон харажатлари, млн.сўм</span>
+          <span>770.3</span>
         </div>
         <div class="flex justify-content-between text-sm mt-3 font-bold">
-
-          <span :style="{maxWidth: '250px'}">Жами иқтисод, млн.сўм</span>
-          <span>2657,7</span>
+          <span>Тежалган локомотив харажатлари, млн.сўм</span>
+          <span>16.5</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+          <span>Тежалган вақт, (вагон/соат)</span>
+          <span>699600</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи .млн.сўм</span>
+          <span>1 870,9</span>
         </div>
       </div>
     </span>
@@ -218,15 +230,22 @@
           <span>742 {{$t('SecondPage.km')}}</span>
         </div>
         <div class="flex justify-content-between text-sm mt-3 font-bold">
-
-          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи</span>
-          <span>228.7 тн</span>
+          <span>Тежалган вагон харажатлари, млн.сўм</span>
+          <span>825.2</span>
         </div>
         <div class="flex justify-content-between text-sm mt-3 font-bold">
-
-          <span :style="{maxWidth: '250px'}">Жами иқтисод, млн.сўм</span>
-          <span>3710,0</span>
+          <span>Тежалган локомотив харажатлари, млн.сўм</span>
+          <span>26.4</span>
         </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+          <span>Тежалган вақт, (вагон/соат)</span>
+          <span>749520</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи. млн.сўм</span>
+          <span>2858.4</span>
+        </div>
+
       </div>
     </span>
 	<span v-if="is_route4">
@@ -256,15 +275,22 @@
           <span>562 {{$t('SecondPage.km')}}</span>
         </div>
         <div class="flex justify-content-between text-sm mt-3 font-bold">
-
-          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи</span>
-          <span>39.5 тн</span>
+          <span>Тежалган вагон харажатлари, млн.сўм</span>
+          <span>192.4</span>
         </div>
         <div class="flex justify-content-between text-sm mt-3 font-bold">
-
-          <span :style="{maxWidth: '250px'}">Жами иқтисод, млн.сўм</span>
-          <span>703,1</span>
+          <span>Тежалган локомотив харажатлари, млн.сўм</span>
+          <span>16.5</span>
         </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+          <span>Тежалган вақт, (вагон/соат)</span>
+          <span>174720</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+          <span :style="{maxWidth: '250px'}">Тежалган ёқилғи. млн.сўм</span>
+          <span>494,2</span>
+        </div>
+
       </div>
     </span>
 	

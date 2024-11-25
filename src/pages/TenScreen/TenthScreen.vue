@@ -7,7 +7,7 @@ import animationData from "../../components/LottieJSON/animate-comp.json";
 
 const animated = ref(false)
 const el = ref(null)
-const totalP = ref(96)
+const totalP = ref(95)
 const animEl = ref(null)
 
 const arr1 = [
