@@ -69,7 +69,6 @@ const onHide = () => (visibleRef.value = false)
 
 const images = computed(() => gallery.filter(i => i.type === 'image').map(i => ({
   src: i.src,
-  title: i.src,
 })) || [])
 </script>
 
