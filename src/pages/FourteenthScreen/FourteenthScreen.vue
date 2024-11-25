@@ -115,8 +115,30 @@ const images = computed(() => gallery.filter(i => i.type === 'image').map(i => (
   margin-top: 110px;
   margin-bottom: 20px;
   align-items: stretch;
-  max-height: 85vh;
+  max-height: 80vh;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #e6e6e6;
+
+  /* Custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #e6e6e6; /* Light gray background */
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888; /* Medium gray */
+    border-radius: 6px;
+    border: 2px solid #e6e6e6; /* Creates a padding effect */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker gray when hovered */
+  }
 }
 
 .item {
