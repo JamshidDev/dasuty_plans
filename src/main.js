@@ -17,6 +17,8 @@ import ProgressBar from "primevue/progressbar";
 import Timeline from 'primevue/timeline';
 import CircleProgress from 'vue3-circle-progress'
 import Vue3Autocounter from 'vue3-autocounter';
+import VueVideoPlayer from '@videojs-player/vue'
+import 'video.js/dist/video-js.css'
 
 import AOS from 'aos'
 
@@ -54,6 +56,7 @@ app.use(PrimeVue);
 app.use(AOS)
 app.use(router);
 app.use(Donut);
+app.use(VueVideoPlayer)
 
 app.component(VueCountdown.name, VueCountdown);
 app.component("OverlayPanel", OverlayPanel);

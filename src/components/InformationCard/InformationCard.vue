@@ -100,16 +100,16 @@
     <div class="grid w-full">
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="12183" :title="$t('SecondPage.HigherEdu')" :percent="19"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="33071" :title="$t('SecondPage.SecEdu')" :percent="51"></EducationChart>
-          <EducationChart :color="`blue`" :amount="21354" :title="$t('SecondPage.VocEdu')" :percent="33"></EducationChart>
+          <EducationChart :color="`green`" :amount="12183" :title="$t('SecondPage.HigherEdu')" :percent="18"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="33071" :title="$t('SecondPage.SecEdu')" :percent="50"></EducationChart>
+          <EducationChart :color="`blue`" :amount="21354" :title="$t('SecondPage.VocEdu')" :percent="32"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="14837" :title="$t('SecondPage.till31')" :percent="23"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="31876" :title="$t('SecondPage.till45')" :percent="49"></EducationChart>
-          <EducationChart :color="`blue`" :amount="19895" :title="$t('SecondPage.upTo46')" :percent="31"></EducationChart>
+          <EducationChart :color="`green`" :amount="14837" :title="$t('SecondPage.till31')" :percent="22"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="31876" :title="$t('SecondPage.till45')" :percent="48"></EducationChart>
+          <EducationChart :color="`blue`" :amount="19895" :title="$t('SecondPage.upTo46')" :percent="30"></EducationChart>
         </div>
       </div>
       <div class="col-6">
