@@ -23,7 +23,7 @@ const arr1 = [
         rate: 8
     },
     {offset: 5, name: 'RELAY CONTROL', deadline: '31.07.2024', url: 'http://relay.itdevs.uz/', value: 100, rate: 12},
-    {offset: -2, name: 'VIRTUAL OFFICE', deadline: '31.03.2025', url: '/', value: 50, rate: 2},
+    {offset: -2, name: 'VIRTUAL OFFICE', deadline: '31.03.2025', url: '/', value: 57, rate: 2},
     // {offset: -16, name: 'ERP', value: 30, deadline: '31.03.2025', url: '/', rate: 2},
 ]
 
