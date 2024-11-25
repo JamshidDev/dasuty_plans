@@ -1471,7 +1471,6 @@ export default {
 	mounted() {
 		this.selected_mtu_list = this.mtu_data[0];
 		
-		
 	}
 }
 </script>
