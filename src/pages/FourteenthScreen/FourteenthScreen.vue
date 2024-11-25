@@ -74,32 +74,35 @@ const images = computed(() => gallery.filter(i => i.type === 'image').map(i => (
 </script>
 
 <template>
-  <VueEasyLightbox
-      :imgs="images"
-      :index="indexRef"
-      :visible="visibleRef"
-      @hide="onHide"
-  />
+  <div>
+    <VueEasyLightbox
+        :imgs="images"
+        :index="indexRef"
+        :visible="visibleRef"
+        @hide="onHide"
+    />
 
 
-  <div
-      class="w-full overflow-y-auto min-h-full relative flex flex-column justify-content-center align-items-center mt-0">
-    <TitleText :title="$t('firstPage.ThirdContent')"/>
+    <div
+        class="w-full overflow-y-auto min-h-full relative flex flex-column justify-content-center align-items-center mt-0">
+      <TitleText :title="$t('firstPage.ThirdContent')"/>
 
-    <div class='wrapper'>
+      <div class='wrapper'>
 
-      <div v-for="(item, idx) in gallery" :key="idx" class="item">
-        <VideoPlayer
-            v-if="item.type === 'video'"
-            :loop="true"
-            :src="item.src"
-            class="video"
-            controls
-        />
+        <div v-for="(item, idx) in gallery" :key="idx" class="item">
+          <VideoPlayer
+              v-if="item.type === 'video'"
+              :loop="true"
+              :src="item.src"
+              class="video"
+              controls
+          />
 
-        <img v-else :alt="item.src" :src="item.src" class="image" @click="showImg(item.index)">
+          <img v-else :alt="item.src" :src="item.src" class="image" @click="showImg(item.index)">
+        </div>
       </div>
     </div>
+
   </div>
 </template>
 
