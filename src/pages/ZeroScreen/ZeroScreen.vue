@@ -420,9 +420,9 @@ export default {
         toshkentRJU.addEventListener("click", () => {
             if (this.active_map) {
                 this.general_info_show = false;
-              // this.go_push_element(-1580, -428, 2.5);
-              this.go_push_element(-5310, -1537, 6);
-                // this.$refs.dialog_ref.open_dialog(0)
+              this.go_push_element(-1580, -428, 2.5);
+              // this.go_push_element(-5310, -1537, 6);
+                this.$refs.dialog_ref.open_dialog(0)
             }
         })
         kokandRJU.addEventListener("click", () => {

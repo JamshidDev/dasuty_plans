@@ -127,7 +127,17 @@
          <div class="flex justify-content-between text-sm mt-3 font-bold">
 
           <span>{{$t('SecondPage.distance')}}</span>
-          <span>852 {{$t('SecondPage.km')}}</span>
+          <span>852 км</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+
+          <span :style="{maxWidth: '250px'}">Дизел топливасидан иқтисодий самарадорлик</span>
+          <span>281,25 тн</span>
+        </div>
+        <div class="flex justify-content-between text-sm mt-3 font-bold">
+
+          <span :style="{maxWidth: '250px'}">Электр энергиясидан иқтисодий самарадорлик</span>
+          <span>1125 кВт</span>
         </div>
       </div>
     </span>
