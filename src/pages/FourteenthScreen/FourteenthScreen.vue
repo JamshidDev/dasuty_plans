@@ -81,7 +81,6 @@ const images = computed(() => gallery.filter(i => i.type === 'image').map(i => (
         @hide="onHide"
     />
 
-
     <div
         class="w-full overflow-y-auto min-h-full relative flex flex-column justify-content-center align-items-center mt-0">
       <TitleText :title="$t('firstPage.ThirdContent')"/>
@@ -97,7 +96,13 @@ const images = computed(() => gallery.filter(i => i.type === 'image').map(i => (
               controls
           />
 
-          <img v-else :alt="item.src" :src="item.src" class="image" @click="showImg(item.index)">
+          <img
+              v-else
+              :alt="item.src"
+              :src="item.src"
+              class="image cursor-pointer"
+              @click="showImg(item.index)"
+          >
         </div>
       </div>
     </div>
