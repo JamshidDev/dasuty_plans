@@ -148,7 +148,7 @@ onMounted(() => {
         <div class='wrapper'>
           <div class="absolute" style="bottom:60px; left:20px">
             <div class="flex align-items-center">
-              <span class="font-bold text-base text-red-500 mr-2"> 0 - 56% </span> <i class='bx bxs-square text-red-500 shadow-1 text-xl'></i>
+              <span class="font-bold text-base text-red-500 mr-2"> 0 - 56% </span><a href="http://vo-service.dasuty.com/projects/list" target="_blank"><i class='bx bxs-square text-red-500 shadow-1 text-xl'></i></a>
             </div>
             <div class="flex align-items-center mt-2">
               <span class="font-bold text-base text-yellow-500 mr-2"> 56% - 72% </span> <i class='bx bxs-square text-yellow-500 shadow-1 text-xl'></i>
@@ -186,7 +186,6 @@ onMounted(() => {
             <div class='center-side flex justify-content-center align-items-center mb-8' ref='el'>
                 <div class='relative'>
                     <div ref='animEl' class='anim-el'/>
-
                     <div class='fake-thumb flex justify-content-center align-items-center'/>
                     <div v-if='el' class='thumb-container' :style='{zIndex: totalP > 90 ? 15 : 1}'>
                         <div class='seconds'
