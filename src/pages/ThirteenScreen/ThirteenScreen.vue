@@ -168,21 +168,21 @@ onUnmounted(() => {
         <img src='/images/users-success.png' alt='users' />
         <span>
 
-          {{$t('SixthPage.FirstCardOption_1')}} <span style='color:#11A832' class='font-semibold'>20 615</span> {{$t('SecondPage.countLive')}}
+          {{$t('SixthPage.FirstCardOption_1')}} <span style='color:#11A832' class='font-semibold'>20 649</span> {{$t('SecondPage.countLive')}}
         </span>
       </div>
       <div class='text-2xl font-medium flex align-items-center gap-2'>
         <img src='/images/user-type-success.png' alt='user-type' />
         <span>
 
-          {{$t('SixthPage.FirstCardOption_2')}} <span style='color:#11A832' class='font-semibold cursor-pointer' @click='toggle($event, 7)'>97</span>
+          {{$t('SixthPage.FirstCardOption_2')}} <span style='color:#11A832' class='font-semibold cursor-pointer' @click='toggle($event, 7)'>108</span>
         </span>
       </div>
       <div class='text-2xl font-medium flex align-items-center gap-2'>
         <img src='/images/client-success.png' alt='client' />
         <span>
 
-          {{$t('SixthPage.FirstCardOption_3')}} <span style='color:#11A832' class='font-semibold'>11 858</span> {{$t('SecondPage.countLive')}}
+          {{$t('SixthPage.FirstCardOption_3')}} <span style='color:#11A832' class='font-semibold'>10 458</span> {{$t('SecondPage.countLive')}}
         </span>
       </div>
     </div>

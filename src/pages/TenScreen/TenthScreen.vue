@@ -11,18 +11,50 @@ const totalP = ref(95)
 const animEl = ref(null)
 
 const arr1 = [
-    {offset: -12, name: 'HRM', deadline: '01.08.2024', url: 'https://exodim.railway.uz', value: 100, rate: 25},
-    {offset: 0, name: 'RAIL OBSERVER', deadline: '01.07.2024', url: 'https://railwayobserver.uz', value: 100, rate: 18},
-    {offset: 6, name: 'ONK', deadline: '10.08.2024', url: 'https://kmo.railwayinfra.uz/statistika', value: 100,  rate: 20},
+    {
+      offset: -12,
+      name: 'HRM',
+      deadline: '01.08.2024',
+      url: 'https://exodim.railway.uz',
+      value: 100,
+      rate: 25,
+      subtitle: 'ПҚ-357 3-е илова 21 банд'
+    },
+    {
+      offset: 0,
+      name: 'RAIL OBSERVER',
+      deadline: '01.07.2024',
+      url: 'https://railwayobserver.uz',
+      value: 100,
+      rate: 18,
+      subtitle: 'ПҚ-329 3 илова 16 банд'
+    },
+    {
+      offset: 6,
+      name: 'ONK',
+      deadline: '10.08.2024',
+      url: 'https://kmo.railwayinfra.uz/statistika',
+      value: 100,
+      rate: 20,
+      subtitle: 'ПҚ-329 3 илова 15 банд'
+    },
     {
         offset: 7.5,
         name: 'TEZKOR TELEGRAF',
         deadline: '25.09.2024',
         url: 'https://tt.railwayinfra.uz',
         value: 100,
-        rate: 8
+        rate: 8,
+        subtitle: 'ПҚ-329 3 илова 14 банд'
     },
-    {offset: 5, name: 'RELAY CONTROL', deadline: '31.07.2024', url: 'http://relay.itdevs.uz/', value: 100, rate: 12},
+    {
+      offset: 5,
+      name: 'RELAY CONTROL',
+      deadline: '31.07.2024',
+      url: 'http://relay.itdevs.uz/',
+      value: 100,
+      rate: 12,
+    },
     {
       offset: -2,
       name: 'METROLOGIYA',
@@ -31,16 +63,48 @@ const arr1 = [
       value: 100,
       rate: 2
     },
-    {offset: -16, name: 'VIRTUAL OFFICE', deadline: '31.03.2025', url: '/', value: 57, rate: 2},
+    {offset: -16, name: 'VIRTUAL OFFICE', deadline: '31.03.2025', url: 'https://cabinet.dasuty.com/', value: 57, rate: 2},
     // {offset: -16, name: 'ERP', value: 30, deadline: '31.03.2025', url: '/', rate: 2},
 ]
 
 const arr2 = [
-    {offset: -12, name: 'E-NAKL', deadline: '10.08.2024', url: 'https://e-nakl.railway.uz', value: 100, rate: 17},
+    {
+      offset: -12,
+      name: 'E-NAKL',
+      deadline: '10.08.2024',
+      url: 'https://e-nakl.railway.uz',
+      value: 100,
+      rate: 17,
+      subtitle: 'ПФ-6079 19 илова 23 банд'
+    },
     {offset: 0, name: 'TRAIN LOCATION', deadline: '15.08.2024', url: 'https://tracking.railway.uz', value: 100, rate: 30},
-    {offset: 6, name: 'UZGPS', deadline: '21.12.2024', url: 'https://utysmpo.uzgps.uz', value: 94, rate: 25},
-    {offset: 7.5, name: 'SMART DEPO', deadline: '10.12.2024', url: 'https://uzdepo.uz/dashboard/', value: 92, rate: 25},
-    {offset: 5, name: 'E-TICKET', deadline: '10.10.2024', url: 'https://eticket.railway.uz', value: 95, rate: 25},
+    {
+      offset: 6,
+      name: 'UZGPS',
+      deadline: '21.12.2024',
+      url: 'https://utysmpo.uzgps.uz',
+      value: 94,
+      rate: 25,
+      subtitle: 'ПФ-6079 19 илова 21 банд'
+    },
+    {
+      offset: 7.5,
+      name: 'SMART DEPO',
+      deadline: '10.12.2024',
+      url: 'https://uzdepo.uz/dashboard/',
+      value: 92,
+      rate: 25,
+      subtitle: 'ПҚ-357 3-е илова 21 банд'
+    },
+    {
+      offset: 5,
+      name: 'E-TICKET',
+      deadline: '10.10.2024',
+      url: 'https://eticket.railway.uz',
+      value: 95,
+      rate: 25,
+      subtitle: 'ПҚ-357 3-е илова 6 банд'
+    },
     {
       offset: -2,
       name: 'RSX',
@@ -93,7 +157,7 @@ onMounted(() => {
           </div>
 
           </div>
-            <div class='left-side flex align-items-end flex-column gap-6 mb-8'>
+            <div class='left-side flex align-items-end flex-column gap-5 mb-8'>
                 <div v-for='item in arr1' class='project-item'
                    :style='{right: `${item.offset}%`}'>
                     <div class="flex gap-2 justify-content-between">
@@ -113,10 +177,10 @@ onMounted(() => {
                                class='flex-grow-1 custom-progress-bar'
                                :class='{primary: item.value > 72, warning: item.value > 56 && item.value < 72, danger: item.value < 56}'
                                :value='animated ? item.value : 0'
-
                            />
                        </a>
                     </div>
+                  <span class="block text-right" style="color:#1A1A1A">{{ item.subtitle ?? '' }}</span>
                 </div>
             </div>
             <div class='center-side flex justify-content-center align-items-center mb-8' ref='el'>
@@ -145,7 +209,7 @@ onMounted(() => {
                     />
                 </div>
             </div>
-            <div class='right-side flex align-items-start flex-column gap-6 mb-8'>
+            <div class='right-side flex align-items-start flex-column gap-5 mb-8'>
                 <div v-for='item in arr2' class='project-item'
                    :style='{left: `${item.offset}%`}'>
                     <div class="flex gap-2 justify-content-between">
@@ -167,6 +231,7 @@ onMounted(() => {
                            />
                        </a>
                     </div>
+                  <span style="color:#1A1A1A">{{ item.subtitle ?? '' }}</span>
                 </div>
             </div>
         </div>
