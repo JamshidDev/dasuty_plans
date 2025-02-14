@@ -650,10 +650,10 @@ vue@^3, vue@^3.0.0, vue@^3.0.5, vue@^3.2.0, vue@^3.2.25, vue@^3.4.21, vue@3.4.21
     "@vue/server-renderer" "3.4.21"
     "@vue/shared" "3.4.21"
 
-vue3-autocounter@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/vue3-autocounter/-/vue3-autocounter-1.0.6.tgz"
-  integrity sha512-jOgCD2WaOjt/tOAAGKDm2DTyQRdKyfqJv5ElUz/vR0ZJgUd4yDd6UX6+2YU3LQpY4qoFNZkzLloAfALAqK041g==
+vue3-autocounter@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/vue3-autocounter/-/vue3-autocounter-1.0.8.tgz"
+  integrity sha512-9izeMgLej8Y9dAJ9CBLOyk3XZHizqyUTnbLmDdHrtCbinAopCDar0Ucs7D0jV2pMQ1fxRUPak0W4xWws+6E13w==
 
 vue3-circle-progress@^1.0.7:
   version "1.0.7"
