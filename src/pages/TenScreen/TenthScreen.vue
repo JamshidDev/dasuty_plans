@@ -14,7 +14,7 @@ const arr1 = [
     {
       offset: -12,
       name: 'HRM',
-      deadline: '01.08.2024',
+      deadline: '',
       url: 'https://exodim.railway.uz',
       value: 100,
       rate: 25,
@@ -23,7 +23,7 @@ const arr1 = [
     {
       offset: 0,
       name: 'RAIL OBSERVER',
-      deadline: '01.07.2024',
+      deadline: '',
       url: 'https://railwayobserver.uz',
       value: 100,
       rate: 18,
@@ -32,7 +32,7 @@ const arr1 = [
     {
       offset: 6,
       name: 'ONK',
-      deadline: '10.08.2024',
+      deadline: '',
       url: 'https://kmo.railwayinfra.uz/statistika',
       value: 100,
       rate: 20,
@@ -41,7 +41,7 @@ const arr1 = [
     {
         offset: 7.5,
         name: 'TEZKOR TELEGRAF',
-        deadline: '25.09.2024',
+        deadline: '',
         url: 'https://tt.railwayinfra.uz',
         value: 100,
         rate: 8,
@@ -50,7 +50,7 @@ const arr1 = [
     {
       offset: 5,
       name: 'RELAY CONTROL',
-      deadline: '31.07.2024',
+      deadline: '',
       url: 'http://relay.itdevs.uz/',
       value: 100,
       rate: 12,
@@ -58,12 +58,12 @@ const arr1 = [
     {
       offset: -2,
       name: 'METROLOGIYA',
-      deadline: '30.11.2024',
+      deadline: '',
       url: 'https://metrolog.railwayinfra.uz/',
       value: 100,
       rate: 2
     },
-    {offset: -16, name: 'VIRTUAL OFFICE', deadline: '31.03.2025', url: 'https://cabinet.dasuty.com/', value: 57, rate: 2},
+    {offset: -16, name: 'VIRTUAL OFFICE', deadline: '', url: 'https://cabinet.dasuty.com/', value: 57, rate: 2},
     // {offset: -16, name: 'ERP', value: 30, deadline: '31.03.2025', url: '/', rate: 2},
 ]
 
@@ -71,50 +71,50 @@ const arr2 = [
     {
       offset: -12,
       name: 'E-NAKL',
-      deadline: '10.08.2024',
+      deadline: '',
       url: 'https://e-nakl.railway.uz',
       value: 100,
       rate: 17,
       subtitle: 'ПФ-6079 19 илова 23 банд'
     },
-    {offset: 0, name: 'TRAIN LOCATION', deadline: '15.08.2024', url: 'https://tracking.railway.uz', value: 100, rate: 30},
+    {offset: 0, name: 'TRAIN LOCATION', deadline: '', url: 'https://tracking.railway.uz', value: 100, rate: 30},
     {
       offset: 6,
       name: 'UZGPS',
-      deadline: '21.12.2024',
+      deadline: '',
       url: 'https://utysmpo.uzgps.uz',
-      value: 94,
+      value: 100,
       rate: 25,
       subtitle: 'ПФ-6079 19 илова 21 банд'
     },
     {
       offset: 7.5,
       name: 'SMART DEPO',
-      deadline: '10.12.2024',
+      deadline: '',
       url: 'https://uzdepo.uz/dashboard/',
-      value: 92,
+      value: 100,
       rate: 25,
       subtitle: 'ПҚ-357 3-е илова 21 банд'
     },
     {
       offset: 5,
       name: 'E-TICKET',
-      deadline: '10.10.2024',
+      deadline: '',
       url: 'https://eticket.railway.uz',
-      value: 95,
+      value: 100,
       rate: 25,
       subtitle: 'ПҚ-357 3-е илова 6 банд'
     },
     {
       offset: -2,
       name: 'RSX',
-      deadline: '30.10.2024',
+      deadline: '',
       url: 'https://rsx.railwayinfra.uz/',
       value: 100,
       rate: 10
     },
     // {offset: -2, name: 'TUNNEL', deadline: '24.12.2024', url: 'https://tunnelmodpro.uz', value: 93, rate: 10},
-    {offset: -16, name: 'E-NAKL MOBILE', deadline: '30.08.2024', url: '/', value: 100, rate: 2},
+    {offset: -16, name: 'E-NAKL MOBILE', deadline: '', url: '/', value: 100, rate: 2},
 ]
 
 onMounted(() => {

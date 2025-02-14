@@ -16,7 +16,7 @@ import Checkbox from 'primevue/checkbox';
 import ProgressBar from "primevue/progressbar";
 import Timeline from 'primevue/timeline';
 import CircleProgress from 'vue3-circle-progress'
-import Vue3Autocounter from 'vue3-autocounter';
+// import Vue3Autocounter from 'vue3-autocounter';
 import VueVideoPlayer from '@videojs-player/vue'
 import 'video.js/dist/video-js.css'
 
@@ -70,6 +70,6 @@ app.component("Dialog", Dialog);
 
 
 app.component('CircleProgress', CircleProgress)
-app.component('AutoCounter', Vue3Autocounter)
+// app.component('AutoCounter', Vue3Autocounter)
 
 app.mount('#app')
