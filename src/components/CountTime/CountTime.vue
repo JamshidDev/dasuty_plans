@@ -1,7 +1,8 @@
 <template>
-  <div class="absolute w-full flex justify-content-center left-0 p-4 cursor-pointer" style="top: 45px;">
+  <div class="absolute w-full flex justify-content-center bottom-0 left-0 p-4 cursor-pointer">
     <vue-countdown :time="count_time" v-slot="{ days, hours, minutes, seconds }">
       <div class="flex gap-2">
+
         <div class="flex flex-column">
           <div class="button_content font-bold shadow-2">
             {{ days }}
@@ -69,10 +70,10 @@ export default {
   background: rgba(13, 32, 122, 0.69);
   background-filter: blur(12px);
   border: 1px solid #27272a;
-  padding: 5px 7px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-size:24px;
-  min-width:60px;
+  min-width:80px;
   text-align:center;
 }
 </style>

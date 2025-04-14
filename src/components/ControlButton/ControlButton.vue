@@ -7,7 +7,7 @@
   height: 40px;">
       <i class='bx bx-chevron-left text-white text-4xl'></i>
     </div>
-    <div @click="$router.push({name : 'tenth-screen'})" class="premium_bg" style="width: 80px;
+    <div @click="$router.push({name : 'eighth-screen'})" class="premium_bg" style="width: 80px;
   height: 40px;">
       <i class='bx bx-home text-white text-4xl'></i>
     </div>
@@ -85,18 +85,14 @@ export default {
         // },
         {
           index: 2,
-          name: "tenth-screen"
-        },
-        {
-          index: 3,
           name: "eleventh-screen"
         },
         {
-          index: 4,
+          index: 3,
           name: "twelfth-screen"
         },
         {
-          index: 5,
+          index: 4,
           name: "thirteen-screen"
         },
         // {
@@ -107,6 +103,10 @@ export default {
         //   index: 6,
         //   name: "second-screen"
         // },
+        {
+          index: 5,
+          name: "tenth-screen"
+        },
         {
           index: 6,
           name: "nst-infra"

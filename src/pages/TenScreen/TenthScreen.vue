@@ -145,7 +145,6 @@ onMounted(() => {
     <div class="w-full min-h-full relative flex flex-column justify-content-center align-items-center mt-0">
 
         <TitleText :title="$t('ThirdPage.ThemeTitle')"/>
-        <CountTime class='special-countTime '></CountTime>
 
         <div class='wrapper'>
           <div class="absolute" style="bottom:60px; left:20px">
