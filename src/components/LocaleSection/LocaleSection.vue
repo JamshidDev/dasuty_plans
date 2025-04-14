@@ -1,14 +1,15 @@
 <template>
   <div class="locale-section">
-    <button @click="setLocale('en')" class="button-29">
-      <img class="flag_img" src="../../assets/img/locale/united-states.png" alt="">
-    </button>
     <button @click="setLocale('uz')" class="button-29">
       <img class="flag_img" src="../../assets/img/locale/uz.png" alt="">
     </button>
     <button @click="setLocale('ru')" class="button-29">
       <img class="flag_img" src="../../assets/img/locale/russia.png" alt="">
     </button>
+    <button @click="setLocale('en')" class="button-29">
+      <img class="flag_img" src="../../assets/img/locale/united-states.png" alt="">
+    </button>
+
   </div>
 </template>
 

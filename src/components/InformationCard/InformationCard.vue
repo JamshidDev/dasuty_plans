@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="col-12">
-        <div class="grid overflow-y-auto overflow-x-hidden px-1" style="height:360px">
+        <div class="grid overflow-y-auto overflow-x-hidden px-1" style="height:360px; max-height:400px">
           <div class="col-12 px-0 pb-2" v-show="active_card">
             <div class="grid">
               <div v-for="item in general_data" :key="item.id" class="col-4 cursor-pointer">
@@ -21,7 +21,7 @@
                      class="card_box p-2 border-round shadow-1 min-h-full "
                 >
                   <span v-show="[5,4, 3].includes(item.id)">
-                    <div  class="flex justify-content-between">
+                    <div class="flex justify-content-between">
                     <div class="title font-bold">
                       <NumberAnimation :amount="item.value"></NumberAnimation>
                       <span> {{ item.extension_value }}</span>
@@ -72,12 +72,13 @@
       <div v-for="item in overall_list" :key="item.id" class="col-12 py-1">
         <div class="flex flex-column">
           <div class="flex justify-content-between border-round min-h-full">
-            <span :class="item.id ===15 && 'text-blue-500'" @click="open_modal($event, item.id)" ><i class='bx bxs-circle text-sm mr-2'></i>
+            <span :class="item.id ===15 && 'text-blue-500'" @click="open_modal($event, item.id)"><i
+                class='bx bxs-circle text-sm mr-2'></i>
               <Checkbox @change="control_overall2($event, item.id)"
                         class="mr-2 p-inputtext-sm"
                         v-if="[1,6].includes(item.id) && selected_data_id ===6"
                         v-model="item.active"
-                        :binary="true" /> <span class="cursor-pointer">{{ item.label }}</span></span>
+                        :binary="true"/> <span class="cursor-pointer">{{ item.label }}</span></span>
             <span class="font-bold">{{ item.value }}</span>
           </div>
         </div>
@@ -100,26 +101,33 @@
     <div class="grid w-full">
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="12183" :title="$t('SecondPage.HigherEdu')" :percent="18"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="33071" :title="$t('SecondPage.SecEdu')" :percent="50"></EducationChart>
-          <EducationChart :color="`blue`" :amount="21354" :title="$t('SecondPage.VocEdu')" :percent="32"></EducationChart>
+          <EducationChart :color="`green`" :amount="12183" :title="$t('SecondPage.HigherEdu')"
+                          :percent="18"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="33071" :title="$t('SecondPage.SecEdu')"
+                          :percent="50"></EducationChart>
+          <EducationChart :color="`blue`" :amount="21354" :title="$t('SecondPage.VocEdu')"
+                          :percent="32"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
-          <EducationChart :color="`green`" :amount="14837" :title="$t('SecondPage.till31')" :percent="22"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="31876" :title="$t('SecondPage.till45')" :percent="48"></EducationChart>
-          <EducationChart :color="`blue`" :amount="19895" :title="$t('SecondPage.upTo46')" :percent="30"></EducationChart>
+          <EducationChart :color="`green`" :amount="14837" :title="$t('SecondPage.till31')"
+                          :percent="22"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="31876" :title="$t('SecondPage.till45')"
+                          :percent="48"></EducationChart>
+          <EducationChart :color="`blue`" :amount="19895" :title="$t('SecondPage.upTo46')"
+                          :percent="30"></EducationChart>
         </div>
       </div>
       <div class="col-6">
         <div class="shadow-1 border-200 border-1 p-2 border-round flex flex-column row-gap-1">
           <EducationChart :color="`green`" :amount="53156" :title="$t('SecondPage.men')" :percent="83"></EducationChart>
-          <EducationChart :color="`yellow`" :amount="11280" :title="$t('SecondPage.women')" :percent="17"></EducationChart>
+          <EducationChart :color="`yellow`" :amount="11280" :title="$t('SecondPage.women')"
+                          :percent="17"></EducationChart>
         </div>
       </div>
       <div class="col-6 flex justify-content-end align-items-end pb-3">
-        <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">{{$t('SecondPage.More')}} <i
+        <a class="text-sm text-blue-600" href="https://exodim.railway.uz" target="_blank">{{ $t('SecondPage.More') }} <i
             class='bx bx-right-top-arrow-circle ml-2'></i></a>
       </div>
     </div>
@@ -178,7 +186,7 @@
 
   <OverlayPanel ref="overall90_ref" style="width:400px">
     <div class="grid">
-      <div  class="col-12 py-1 ">
+      <div class="col-12 py-1 ">
         <div class="flex flex-column">
           <div class="flex justify-content-between border-round min-h-full no-underline">
             <span><i class='bx bxs-circle text-sm mr-2'></i>1. {{ $t('SecondPage.MainRoad') }}</span>
@@ -193,9 +201,9 @@
             <span class="font-bold">475 {{ $t('SecondPage.km') }}</span>
           </div>
           <div class="mt-4 flex justify-content-between border-round min-h-full no-underline">
-          <span><i class='bx bxs-circle text-sm mr-2'></i>2. {{ $t('SecondPage.ResSendWay') }}</span>
-          <span class="font-bold">2 172 {{ $t('SecondPage.km') }}</span>
-        </div>
+            <span><i class='bx bxs-circle text-sm mr-2'></i>2. {{ $t('SecondPage.ResSendWay') }}</span>
+            <span class="font-bold">2 172 {{ $t('SecondPage.km') }}</span>
+          </div>
 
 
         </div>
@@ -203,10 +211,11 @@
     </div>
   </OverlayPanel>
 
-  <span v-if="stik_dialog" >
-    <div :class="active_stik_dialog && 'active_dialog'" class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden " >
-      <h2 class="w-full text-center my-0 text-500 font-bold  pt-1 pb-1 relative">{{selected_stik.name}}
-        <i  class='bx bx-x absolute top-0 right-0 mt-1 mr-2 text-3xl cursor-pointer' @click="close_dialog"></i>
+  <span v-if="stik_dialog">
+    <div :class="active_stik_dialog && 'active_dialog'"
+         class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden ">
+      <h2 class="w-full text-center my-0 text-500 font-bold  pt-1 pb-1 relative">{{ selected_stik.name }}
+        <i class='bx bx-x absolute top-0 right-0 mt-1 mr-2 text-3xl cursor-pointer' @click="close_dialog"></i>
       </h2>
       <table class="w-full">
         <thead>
@@ -214,20 +223,25 @@
             <th style="width:150px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
 
-                {{ $t('SecondPage.Cargo') }} <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >{{ $t('SecondPage.tonn') }}</span>
+                {{ $t('SecondPage.Cargo') }} <span class="text-sm font-medium text-blue-500 absolute "
+                                                   style="bottom:0px; right:4px;font-size:10px; font-style:italic">{{
+                  $t('SecondPage.tonn')
+                }}</span>
               </div>
             </th>
 
              <th style="width:150px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
 
-                {{ $t('SecondPage.Wagon') }} <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
+                {{ $t('SecondPage.Wagon') }} <span class="text-sm font-medium text-blue-500 absolute "
+                                                   style="bottom:0px; right:4px;font-size:10px; font-style:italic"></span>
               </div>
             </th>
              <th style="width:150px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative font-bold">
 
-                {{ $t('SecondPage.Train') }} <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" ></span>
+                {{ $t('SecondPage.Train') }} <span class="text-sm font-medium text-blue-500 absolute "
+                                                   style="bottom:0px; right:4px;font-size:10px; font-style:italic"></span>
               </div>
             </th>
           </tr>
@@ -236,16 +250,20 @@
             <tr v-for="item in selected_stik.data" :id="item.id">
               <td v-for="sub_item in item.data" :key="sub_item.name">
                  <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
-                    <div class="font-bold mb-2 text-red-600">{{ sub_item.count}}<span
+                    <div class="font-bold mb-2 text-red-600">{{ sub_item.count }}<span
                         class="text-sm font-medium"></span></div>
-                    <div class="text-sm font-bold w-full text-right text-500">{{item.year}}</div>
+                    <div class="text-sm font-bold w-full text-right text-500">{{ item.year }}</div>
               </div>
               </td>
             </tr>
         <tr>
               <td colspan="3">
-                 <div :class="selected_stik.is_increment? 'bg-green-100' : 'bg-red-100'" class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
-                    <div :class="selected_stik.is_increment? 'text-green-600' : 'text-red-600'"  class="font-bold mb-2  text-center text-xl">{{selected_stik.percent}} <i :class="selected_stik.is_increment? 'bxs-arrow-from-bottom' : 'bxs-arrow-from-top'" class='bx  text-xl'></i></div>
+                 <div :class="selected_stik.is_increment? 'bg-green-100' : 'bg-red-100'"
+                      class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
+                    <div :class="selected_stik.is_increment? 'text-green-600' : 'text-red-600'"
+                         class="font-bold mb-2  text-center text-xl">{{ selected_stik.percent }} <i
+                        :class="selected_stik.is_increment? 'bxs-arrow-from-bottom' : 'bxs-arrow-from-top'"
+                        class='bx  text-xl'></i></div>
 
               </div>
               </td>
@@ -255,10 +273,12 @@
     </div>
   </span>
 
-  <span v-show="general_stik_dialog" >
-    <div :class="general_stik_dialog && 'active_dialog'" class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden" >
-      <h2 class="w-full text-center my-0 text-500 font-bold  pt-1 pb-1 relative">{{general_stik_list?.name}}
-        <i  class='bx bx-x absolute top-0 right-0 mt-1 mr-2 text-3xl cursor-pointer' @click="general_stik_dialog=false"></i>
+  <span v-show="general_stik_dialog">
+    <div :class="general_stik_dialog && 'active_dialog'"
+         class="stiks_dialog shadow-1 border-1 border-300 border-round pb-1 bg-white border-1 border-300 border-round overflow-hidden">
+      <h2 class="w-full text-center my-0 text-500 font-bold  pt-1 pb-1 relative">{{ general_stik_list?.name }}
+        <i class='bx bx-x absolute top-0 right-0 mt-1 mr-2 text-3xl cursor-pointer'
+           @click="general_stik_dialog=false"></i>
       </h2>
       <table class="w-full">
         <thead>
@@ -266,33 +286,48 @@
             <th style="width:200px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
 
-                {{ $t('SecondPage.Export') }} <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0; right:4px;font-size:10px; font-style:italic" >{{ $t('SecondPage.mlnTonn') }}</span>
+                {{ $t('SecondPage.Export') }} <span class="text-sm font-medium text-blue-500 absolute "
+                                                    style="bottom:0; right:4px;font-size:10px; font-style:italic">{{
+                  $t('SecondPage.mlnTonn')
+                }}</span>
               </div>
             </th>
 
              <th style="width:200px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
 
-                {{ $t('SecondPage.Import') }} <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >{{ $t('SecondPage.mlnTonn') }}</span>
+                {{ $t('SecondPage.Import') }} <span class="text-sm font-medium text-blue-500 absolute "
+                                                    style="bottom:0px; right:4px;font-size:10px; font-style:italic">{{
+                  $t('SecondPage.mlnTonn')
+                }}</span>
               </div>
             </th>
              <th style="width:200px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
 
-                {{ $t('SecondPage.Transit') }} <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >{{ $t('SecondPage.mlnTonn') }}</span>
+                {{ $t('SecondPage.Transit') }} <span class="text-sm font-medium text-blue-500 absolute "
+                                                     style="bottom:0px; right:4px;font-size:10px; font-style:italic">{{
+                  $t('SecondPage.mlnTonn')
+                }}</span>
               </div>
             </th>
 
               <th style="width:200px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
 
-                {{ $t('SecondPage.Local') }} <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >{{ $t('SecondPage.mlnTonn') }}</span>
+                {{ $t('SecondPage.Local') }} <span class="text-sm font-medium text-blue-500 absolute "
+                                                   style="bottom:0px; right:4px;font-size:10px; font-style:italic">{{
+                  $t('SecondPage.mlnTonn')
+                }}</span>
               </div>
             </th>
              <th style="width:200px">
               <div class="bg-gray p-2 border-1 border-200 border-round text-500 relative">
 
-                {{ $t('SecondPage.CargoTransportation') }} <span class="text-sm font-medium text-blue-500 absolute " style="bottom:0px; right:4px;font-size:10px; font-style:italic" >{{ $t('SecondPage.mlnTonn') }}</span>
+                {{ $t('SecondPage.CargoTransportation') }} <span class="text-sm font-medium text-blue-500 absolute "
+                                                                 style="bottom:0px; right:4px;font-size:10px; font-style:italic">{{
+                  $t('SecondPage.mlnTonn')
+                }}</span>
               </div>
             </th>
 
@@ -302,16 +337,20 @@
             <tr v-for="item in general_stik_list.data" :id="item.id">
               <td v-for="sub_item in item.data" :key="sub_item.name">
                  <div class="bg-white p-2 border-1 border-300 shadow-1 border-round">
-                    <div class="font-bold mb-2 text-red-600">{{ sub_item.count}}<span
+                    <div class="font-bold mb-2 text-red-600">{{ sub_item.count }}<span
                         class="text-sm font-medium"></span></div>
-                    <div class="text-sm font-bold w-full text-right text-500 font-italic">{{item.year}}</div>
+                    <div class="text-sm font-bold w-full text-right text-500 font-italic">{{ item.year }}</div>
               </div>
               </td>
             </tr>
         <tr>
               <td colspan="5">
-                 <div :class="general_stik_list.is_increment? 'bg-green-100' : 'bg-red-100'" class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
-                    <div :class="general_stik_list.is_increment? 'text-green-600' : 'text-red-600'"  class="font-bold mb-2  text-center text-xl">{{general_stik_list.percent}} <i :class="general_stik_list.is_increment? 'bxs-arrow-from-bottom' : 'bxs-arrow-from-top'" class='bx  text-xl'></i></div>
+                 <div :class="general_stik_list.is_increment? 'bg-green-100' : 'bg-red-100'"
+                      class=" p-2 border-1 border-300 shadow-1 border-round  py-2">
+                    <div :class="general_stik_list.is_increment? 'text-green-600' : 'text-red-600'"
+                         class="font-bold mb-2  text-center text-xl">{{ general_stik_list.percent }} <i
+                        :class="general_stik_list.is_increment? 'bxs-arrow-from-bottom' : 'bxs-arrow-from-top'"
+                        class='bx  text-xl'></i></div>
 
               </div>
               </td>
@@ -328,10 +367,10 @@ import EducationChart from "@/components/InformationCard/EducationChart.vue";
 
 export default {
   name: "InformationCard",
-  props:{
-    switch_data:{
-      type:Object,
-      default:null,
+  props: {
+    switch_data: {
+      type: Object,
+      default: null,
     }
   },
   components: {
@@ -409,7 +448,7 @@ export default {
           id: 6,
           label: this.$t('SecondPage.Stations'),
           value: "38",
-          active:false,
+          active: false,
         },
         {
           id: 0,
@@ -422,7 +461,7 @@ export default {
 
           label: this.$t('SecondPage.SortingStat'),
           value: "15 ",
-          active:false,
+          active: false,
         }, {
           id: 2,
 
@@ -432,7 +471,7 @@ export default {
         {
           id: 3,
 
-            label: this.$t('SecondPage.LoadStat'),
+          label: this.$t('SecondPage.LoadStat'),
           value: "60",
         },
         {
@@ -622,90 +661,89 @@ export default {
         },
 
       ],
-      jdpas:[
+      jdpas: [
         {
-          id:0,
-          label:this.$t('SecondPage.UsingWag'),
+          id: 0,
+          label: this.$t('SecondPage.UsingWag'),
           value: 322,
         },
         {
-          id:1,
-          label:this.$t('SecondPage.SetWagons'),
-          value:163,
-        },
-    ],
-      other_wagon_list:[
-        {
-          id:0,
-          label:this.$t('SecondPage.Zernovoz'),
-          value:1353,
-        },
-        {
-          id:1,
-          label:this.$t('SecondPage.Sementovoz'),
-          value:1905,
-        },
-        {
-          id:2,
-          label:this.$t('SecondPage.Menerelovoz'),
-          value:360,
-        },
-        {
-          id:3,
-          label:this.$t('SecondPage.FitingPlat'),
-          value:1079,
-        },
-        {
-          id:4,
-          label:this.$t('SecondPage.Xopper'),
-          value:205,
-        },
-
-
-
-        {
-          id:5,
-          label:this.$t('SecondPage.Dumpkar'),
-          value:170,
-        },
-
-        {
-          id:6,
-          label:this.$t('SecondPage.Avtomobilovoz'),
-          value:232,
-        },
-        {
-          id:7,
-          label:this.$t('SecondPage.Transporter'),
-          value:57,
-        },
-
-        {
-          id:8,
-          label:this.$t('SecondPage.AndOtherWag'),
-          value:180,
+          id: 1,
+          label: this.$t('SecondPage.SetWagons'),
+          value: 163,
         },
       ],
-      mtu_wagon_list:[
+      other_wagon_list: [
         {
-          id:0,
-          label:this.$t('SecondPage.WDFTashkent'),
-          value:2980,
+          id: 0,
+          label: this.$t('SecondPage.Zernovoz'),
+          value: 1353,
         },
         {
-          id:1,
-          label:this.$t('SecondPage.WDFKokand'),
-          value:4331,
+          id: 1,
+          label: this.$t('SecondPage.Sementovoz'),
+          value: 1905,
         },
         {
-          id:2,
-          label:this.$t('SecondPage.WDFBukhara'),
-          value:6430,
+          id: 2,
+          label: this.$t('SecondPage.Menerelovoz'),
+          value: 360,
         },
         {
-          id:3,
-          label:this.$t('SecondPage.WDFKarshi'),
-          value:5295,
+          id: 3,
+          label: this.$t('SecondPage.FitingPlat'),
+          value: 1079,
+        },
+        {
+          id: 4,
+          label: this.$t('SecondPage.Xopper'),
+          value: 205,
+        },
+
+
+        {
+          id: 5,
+          label: this.$t('SecondPage.Dumpkar'),
+          value: 170,
+        },
+
+        {
+          id: 6,
+          label: this.$t('SecondPage.Avtomobilovoz'),
+          value: 232,
+        },
+        {
+          id: 7,
+          label: this.$t('SecondPage.Transporter'),
+          value: 57,
+        },
+
+        {
+          id: 8,
+          label: this.$t('SecondPage.AndOtherWag'),
+          value: 180,
+        },
+      ],
+      mtu_wagon_list: [
+        {
+          id: 0,
+          label: this.$t('SecondPage.WDFTashkent'),
+          value: 2980,
+        },
+        {
+          id: 1,
+          label: this.$t('SecondPage.WDFKokand'),
+          value: 4331,
+        },
+        {
+          id: 2,
+          label: this.$t('SecondPage.WDFBukhara'),
+          value: 6430,
+        },
+        {
+          id: 3,
+          label: this.$t('SecondPage.WDFKarshi'),
+          value: 5295,
         }
 
       ],
@@ -715,10 +753,10 @@ export default {
       status: false,
       active_card: true,
       sorted_station: false,
-      stik_dialog:false,
-      general_stik_dialog:false,
+      stik_dialog: false,
+      general_stik_dialog: false,
 
-      active_stik_dialog:false,
+      active_stik_dialog: false,
 
 
       station_line_list: [
@@ -866,517 +904,517 @@ export default {
         },
 
       ],
-      stik_data_list:[
+      stik_data_list: [
         {
-          id:'stik1',
+          id: 'stik1',
 
-          name:this.$t('SecondPage.stik1'),
-          percent:'+23%',
-          is_increment:true,
-          data:[
+          name: this.$t('SecondPage.stik1'),
+          percent: '+23%',
+          is_increment: true,
+          data: [
             {
               year: this.$t('SecondPage.year22'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'32 232 341',
+                  count: '32 232 341',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'546 311',
+                  count: '546 311',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'9 584',
-                },
-              ]
-            },
-            {
-
-              year: this.$t('SecondPage.year23'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:'39 598 991',
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:'671 169',
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:'11 775',
-                },
-              ]
-            },
-          ]
-        },
-        {
-          id:'stik2',
-          name:this.$t('SecondPage.stik2'),
-          percent:'0%',
-          is_increment:true,
-          data:[
-            {
-              year: this.$t('SecondPage.year22'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:0,
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:0,
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:0,
-                },
-              ]
-            },
-            {
-              year: this.$t('SecondPage.year23'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:0,
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:0,
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:0,
-                },
-              ]
-            },
-          ]
-        },
-        {
-          id:'stik3',
-          name:this.$t('SecondPage.stik3'),
-          percent:'-15%',
-          is_increment:false,
-          data:[
-            {
-              year: this.$t('SecondPage.year22'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:'2 274 864',
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:'38 557',
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:'676',
+                  count: '9 584',
                 },
               ]
             },
             {
 
               year: this.$t('SecondPage.year23'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'1 940 506',
+                  count: '39 598 991',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'32 889',
+                  count: '671 169',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'577',
+                  count: '11 775',
                 },
               ]
             },
           ]
         },
         {
-          id:'stik4',
-          name:this.$t('SecondPage.stik4'),
-          percent:'-55%',
-          is_increment:false,
-          data:[
+          id: 'stik2',
+          name: this.$t('SecondPage.stik2'),
+          percent: '0%',
+          is_increment: true,
+          data: [
             {
               year: this.$t('SecondPage.year22'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'151 838',
+                  count: 0,
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'2 573',
+                  count: 0,
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'45',
+                  count: 0,
+                },
+              ]
+            },
+            {
+              year: this.$t('SecondPage.year23'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: 0,
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: 0,
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: 0,
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id: 'stik3',
+          name: this.$t('SecondPage.stik3'),
+          percent: '-15%',
+          is_increment: false,
+          data: [
+            {
+              year: this.$t('SecondPage.year22'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '2 274 864',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '38 557',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '676',
                 },
               ]
             },
             {
 
               year: this.$t('SecondPage.year23'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'66 682',
+                  count: '1 940 506',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'1 130',
+                  count: '32 889',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'20',
+                  count: '577',
                 },
               ]
             },
           ]
         },
         {
-          id:'stik5',
-          name:this.$t('SecondPage.stik5'),
-          percent:'+92%',
-          is_increment:true,
-          data:[
+          id: 'stik4',
+          name: this.$t('SecondPage.stik4'),
+          percent: '-55%',
+          is_increment: false,
+          data: [
             {
               year: this.$t('SecondPage.year22'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'79 880',
+                  count: '151 838',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'1 353',
+                  count: '2 573',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'24',
-                },
-              ]
-            },
-            {
-              year: this.$t('SecondPage.year23'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:'154 101',
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:'2 611',
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:'46',
-                },
-              ]
-            },
-          ]
-        },
-        {
-          id:'stik6',
-
-          name:this.$t('SecondPage.stik6'),
-          percent:'+31%',
-          is_increment:true,
-          data:[
-            {
-              year: this.$t('SecondPage.year22'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:'2 633 839',
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:'44 641',
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:'783',
-                },
-              ]
-            },
-            {
-              year: this.$t('SecondPage.year23'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:'3 464 705',
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:'58 723',
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:'1 030',
-                },
-              ]
-            },
-          ]
-        },
-        {
-          id:'stik7',
-          name:this.$t('SecondPage.stik7'),
-          percent:'+20%',
-          is_increment:true,
-
-          data:[
-            {
-              year: this.$t('SecondPage.year22'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:'439 117',
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:'7 443',
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:'131',
-                },
-              ]
-            },
-            {
-              year: this.$t('SecondPage.year23'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:'522 676',
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:'8 858',
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:'155',
-                },
-              ]
-            },
-          ]
-        },
-        {
-          id:'stik8',
-
-          name:this.$t('SecondPage.stik8'),
-          percent:'+10%',
-          is_increment:true,
-          data:[
-            {
-
-              year: this.$t('SecondPage.year22'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:'2 447 322',
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:'41 480',
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:'728',
-                },
-              ]
-            },
-            {
-              year: this.$t('SecondPage.year23'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:'2 694 630',
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:'45 671',
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:'801',
-                },
-              ]
-            },
-          ]
-        },
-        {
-          id:'stik9',
-          name:this.$t('SecondPage.stik9'),
-          percent:'+2%',
-          is_increment:true,
-          data:[
-            {
-
-              year: this.$t('SecondPage.year22'),
-              data:[
-                {
-                  name: this.$t('SecondPage.Cargo'),
-                  count:'4 058 174',
-                },
-                {
-                  name: this.$t('SecondPage.Wagon'),
-                  count:'68 782',
-                },
-                {
-                  name: this.$t('SecondPage.Train'),
-                  count:'1 207',
+                  count: '45',
                 },
               ]
             },
             {
 
               year: this.$t('SecondPage.year23'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'4 154 021',
+                  count: '66 682',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'70 407',
+                  count: '1 130',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'1 235',
+                  count: '20',
                 },
               ]
             },
           ]
         },
         {
-          id:'stik10',
-          name:this.$t('SecondPage.stik10'),
-          percent:'-7%',
-          is_increment:false,
-          data:[
+          id: 'stik5',
+          name: this.$t('SecondPage.stik5'),
+          percent: '+92%',
+          is_increment: true,
+          data: [
             {
               year: this.$t('SecondPage.year22'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'16 836',
+                  count: '79 880',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'285',
+                  count: '1 353',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'5',
+                  count: '24',
                 },
               ]
             },
             {
               year: this.$t('SecondPage.year23'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'15 680',
+                  count: '154 101',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'266',
+                  count: '2 611',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'5',
+                  count: '46',
                 },
               ]
             },
           ]
         },
         {
-          id:'stik11',
-          name:this.$t('SecondPage.stik11'),
-          percent:'+7%',
-          is_increment:true,
-          data:[
+          id: 'stik6',
+
+          name: this.$t('SecondPage.stik6'),
+          percent: '+31%',
+          is_increment: true,
+          data: [
             {
               year: this.$t('SecondPage.year22'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'142 518',
+                  count: '2 633 839',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'2 415',
+                  count: '44 641',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '783',
+                },
+              ]
+            },
+            {
+              year: this.$t('SecondPage.year23'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '3 464 705',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '58 723',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '1 030',
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id: 'stik7',
+          name: this.$t('SecondPage.stik7'),
+          percent: '+20%',
+          is_increment: true,
+
+          data: [
+            {
+              year: this.$t('SecondPage.year22'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '439 117',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '7 443',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '131',
+                },
+              ]
+            },
+            {
+              year: this.$t('SecondPage.year23'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '522 676',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '8 858',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '155',
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id: 'stik8',
+
+          name: this.$t('SecondPage.stik8'),
+          percent: '+10%',
+          is_increment: true,
+          data: [
+            {
+
+              year: this.$t('SecondPage.year22'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '2 447 322',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '41 480',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '728',
+                },
+              ]
+            },
+            {
+              year: this.$t('SecondPage.year23'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '2 694 630',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '45 671',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '801',
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id: 'stik9',
+          name: this.$t('SecondPage.stik9'),
+          percent: '+2%',
+          is_increment: true,
+          data: [
+            {
+
+              year: this.$t('SecondPage.year22'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '4 058 174',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '68 782',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '1 207',
+                },
+              ]
+            },
+            {
+
+              year: this.$t('SecondPage.year23'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '4 154 021',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '70 407',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '1 235',
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id: 'stik10',
+          name: this.$t('SecondPage.stik10'),
+          percent: '-7%',
+          is_increment: false,
+          data: [
+            {
+              year: this.$t('SecondPage.year22'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '16 836',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '285',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '5',
+                },
+              ]
+            },
+            {
+              year: this.$t('SecondPage.year23'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '15 680',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '266',
+                },
+                {
+                  name: this.$t('SecondPage.Train'),
+                  count: '5',
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id: 'stik11',
+          name: this.$t('SecondPage.stik11'),
+          percent: '+7%',
+          is_increment: true,
+          data: [
+            {
+              year: this.$t('SecondPage.year22'),
+              data: [
+                {
+                  name: this.$t('SecondPage.Cargo'),
+                  count: '142 518',
+                },
+                {
+                  name: this.$t('SecondPage.Wagon'),
+                  count: '2 415',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
 
-                  count:'42',
+                  count: '42',
                 },
               ]
             },
             {
               year: this.$t('SecondPage.year23'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'152 939',
+                  count: '152 939',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'2 592',
+                  count: '2 592',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'45',
+                  count: '45',
                 },
               ]
             },
           ]
         },
         {
-          id:'stik12',
-          name:this.$t('SecondPage.stik12'),
-          percent:'-57%',
-          is_increment:false,
-          data:[
+          id: 'stik12',
+          name: this.$t('SecondPage.stik12'),
+          percent: '-57%',
+          is_increment: false,
+          data: [
             {
               year: this.$t('SecondPage.year22'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'151 838',
+                  count: '151 838',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'2 573',
+                  count: '2 573',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'45',
+                  count: '45',
                 },
               ]
             },
             {
               year: this.$t('SecondPage.year23'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'66 682',
+                  count: '66 682',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'1 130',
+                  count: '1 130',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'20',
+                  count: '20',
                 },
               ]
             },
@@ -1384,170 +1422,170 @@ export default {
         },
         {
 
-          id:this.$t('SecondPage.stik13'),
-          name:'Учкурган',
-          percent:'+72%',
-          is_increment:true,
-          data:[
+          id: this.$t('SecondPage.stik13'),
+          name: 'Учкурган',
+          percent: '+72%',
+          is_increment: true,
+          data: [
             {
               year: this.$t('SecondPage.year22'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'284 507',
+                  count: '284 507',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'4 822',
+                  count: '4 822',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'85',
+                  count: '85',
                 },
               ]
             },
             {
 
               year: this.$t('SecondPage.year23'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'489 416',
+                  count: '489 416',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'8 295',
+                  count: '8 295',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'146',
+                  count: '146',
                 },
               ]
             },
           ]
         },
         {
-          id:'stik14',
+          id: 'stik14',
 
-          name:this.$t('SecondPage.stik14'),
-          percent:'0%',
-          is_increment:true,
-          data:[
+          name: this.$t('SecondPage.stik14'),
+          percent: '0%',
+          is_increment: true,
+          data: [
             {
               year: this.$t('SecondPage.year22'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:0,
+                  count: 0,
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:0,
+                  count: 0,
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:85,
+                  count: 85,
                 },
               ]
             },
             {
               year: this.$t('SecondPage.year23'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:0,
+                  count: 0,
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:0,
+                  count: 0,
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:0,
+                  count: 0,
                 },
               ]
             },
           ]
         },
         {
-          id:'stik15',
-          name:this.$t('SecondPage.stik15'),
-          percent:'+2%',
-          is_increment:true,
-          data:[
+          id: 'stik15',
+          name: this.$t('SecondPage.stik15'),
+          percent: '+2%',
+          is_increment: true,
+          data: [
             {
               year: this.$t('SecondPage.year22'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'4 204 113',
+                  count: '4 204 113',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'71 256',
+                  count: '71 256',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'1 250',
+                  count: '1 250',
                 },
               ]
             },
             {
               year: this.$t('SecondPage.year23'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'4 263 648',
+                  count: '4 263 648',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'72 265',
+                  count: '72 265',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:'1 267',
+                  count: '1 267',
                 },
               ]
             },
           ]
         },
         {
-          id:'stik16',
-          name:this.$t('SecondPage.stik16'),
-          percent:'+50%',
-          is_increment:true,
-          data:[
+          id: 'stik16',
+          name: this.$t('SecondPage.stik16'),
+          percent: '+50%',
+          is_increment: true,
+          data: [
             {
               year: this.$t('SecondPage.year22'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'1 238 571',
+                  count: '1 238 571',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'20 992',
+                  count: '20 992',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:368,
+                  count: 368,
                 },
               ]
             },
             {
               year: this.$t('SecondPage.year23'),
-              data:[
+              data: [
                 {
                   name: this.$t('SecondPage.Cargo'),
-                  count:'1 847 310',
+                  count: '1 847 310',
                 },
                 {
                   name: this.$t('SecondPage.Wagon'),
-                  count:'31 310',
+                  count: '31 310',
                 },
                 {
                   name: this.$t('SecondPage.Train'),
-                  count:549,
+                  count: 549,
                 },
               ]
             },
@@ -1555,67 +1593,67 @@ export default {
         },
       ],
 
-      general_stik_list:{
-        id:'0',
+      general_stik_list: {
+        id: '0',
 
-        name:this.$t('SecondPage.OveralIndic'),
-        percent:'+7%',
-        is_increment:true,
-        data:[
+        name: this.$t('SecondPage.OveralIndic'),
+        percent: '+7%',
+        is_increment: true,
+        data: [
           {
 
-            year:this.$t('SecondPage.year22'),
-            data:[
+            year: this.$t('SecondPage.year22'),
+            data: [
               {
-                name:this.$t('SecondPage.Export'),
-                count:'10.9',
+                name: this.$t('SecondPage.Export'),
+                count: '10.9',
               },
               {
-                name:this.$t('SecondPage.Import'),
-                count:'19.5',
+                name: this.$t('SecondPage.Import'),
+                count: '19.5',
               },
               {
-                name:this.$t('SecondPage.Transit'),
-                count:'10.2',
+                name: this.$t('SecondPage.Transit'),
+                count: '10.2',
               },
               {
-                name:this.$t('SecondPage.Local'),
-                count:'61.7',
+                name: this.$t('SecondPage.Local'),
+                count: '61.7',
               },
               {
-                name:this.$t('SecondPage.CargoTransportation'),
-                count:'102,3',
+                name: this.$t('SecondPage.CargoTransportation'),
+                count: '102,3',
               },
             ]
           },
           {
-            year:this.$t('SecondPage.year23'),
-            data:[
+            year: this.$t('SecondPage.year23'),
+            data: [
               {
-                name:this.$t('SecondPage.Export'),
-                count:'12.4',
+                name: this.$t('SecondPage.Export'),
+                count: '12.4',
               },
               {
-                name:this.$t('SecondPage.Import'),
-                count:'24.6',
+                name: this.$t('SecondPage.Import'),
+                count: '24.6',
               },
               {
-                name:this.$t('SecondPage.Transit'),
-                count:'11.6',
+                name: this.$t('SecondPage.Transit'),
+                count: '11.6',
               },
               {
-                name:this.$t('SecondPage.Local'),
-                count:'60.8',
+                name: this.$t('SecondPage.Local'),
+                count: '60.8',
               },
               {
-                name:this.$t('SecondPage.CargoTransportation'),
-                count:'109,4',
+                name: this.$t('SecondPage.CargoTransportation'),
+                count: '109,4',
               },
             ]
           },
         ]
       },
-      selected_stik:null,
+      selected_stik: null,
     }
   },
   methods: {
@@ -1633,15 +1671,15 @@ export default {
         this.$refs.overal_ref.toggle(event);
       } else if (id === 7) {
         this.$refs.overall7_ref.toggle(event);
-      }else if (id === 5) {
+      } else if (id === 5) {
         this.$refs.overall8_ref.toggle(event);
       }
-      // else if (id === 3) {
-      //   this.general_stik_dialog = true;
+          // else if (id === 3) {
+          //   this.general_stik_dialog = true;
       // }
-      else if(id === 0){
+      else if (id === 0) {
         this.$refs.overall90_ref.toggle(event);
-      }else if(id === 1){
+      } else if (id === 1) {
         this.$refs.overall3_ref.toggle(event);
       }
       console.log(id)
@@ -1655,23 +1693,20 @@ export default {
       }
     },
 
-    open_modal( event ,id){
-      if(id===15){
+    open_modal(event, id) {
+      if (id === 15) {
         this.$refs.overall4_ref.toggle(event);
-      }
-    else
-      if(id===16){
+      } else if (id === 16) {
         this.$refs.overall21_ref.toggle(event);
       }
     },
     control_overall2(event, id) {
-        if(id === 1){
-          this.$refs.overall2_ref.toggle(event);
-          this.$emit("changeMap", 'sorts');
-        }else if(id === 6){
-          this.$emit("changeTrainStation", this.station_list[0].active? 'vokzals': 'of');
-        }
-
+      if (id === 1) {
+        this.$refs.overall2_ref.toggle(event);
+        this.$emit("changeMap", 'sorts');
+      } else if (id === 6) {
+        this.$emit("changeTrainStation", this.station_list[0].active ? 'vokzals' : 'of');
+      }
 
 
     },
@@ -1686,8 +1721,8 @@ export default {
         this.general_data[4].show_map = false;
         this.general_data[5].show_map = false;
         this.general_data[6].show_map = false;
-        this.station_list[0].active =false;
-        this.station_list[2].active =false;
+        this.station_list[0].active = false;
+        this.station_list[2].active = false;
 
       }
 
@@ -1715,28 +1750,27 @@ export default {
       }
     },
 
-    show_dialog(stik_id){
-      this.selected_stik = this.stik_data_list.filter((item)=> item.id ===stik_id)[0];
+    show_dialog(stik_id) {
+      this.selected_stik = this.stik_data_list.filter((item) => item.id === stik_id)[0];
       console.log(this.selected_stik)
 
 
-      this.stik_dialog=true;
-      setTimeout(()=>{
+      this.stik_dialog = true;
+      setTimeout(() => {
         this.active_stik_dialog = true;
-      },100)
+      }, 100)
     },
-    close_dialog(){
+    close_dialog() {
       this.$emit("closeInfoMap")
-      this.active_stik_dialog=false;
-      setTimeout(()=>{
+      this.active_stik_dialog = false;
+      setTimeout(() => {
         this.stik_dialog = false;
-      },300)
+      }, 300)
     },
 
-    show_general_dialog(){
+    show_general_dialog() {
       this.general_stik_dialog = true;
     },
-
 
 
   },
@@ -1750,7 +1784,7 @@ export default {
 
 .information-card {
   width: 600px;
-  height: 320px;
+  height: 350px;
   position: absolute;
   transform-origin: 0 0;
   transform: scale(1) translate(0px, 0px);
@@ -1780,12 +1814,12 @@ export default {
   top: 0;
   right: 0;
   opacity: 0;
-  transition:all 0.225s linear;
-  transform:translateY(-100px);
+  transition: all 0.225s linear;
+  transform: translateY(-100px);
 }
 
-.active_dialog{
+.active_dialog {
   opacity: 1;
-  transform:translateY(0px);
+  transform: translateY(0px);
 }
 </style>
