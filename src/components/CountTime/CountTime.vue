@@ -69,10 +69,10 @@ export default {
   background: rgba(13, 32, 122, 0.69);
   background-filter: blur(12px);
   border: 1px solid #27272a;
-  padding: 10px 20px;
+  padding: 5px 7px;
   border-radius: 8px;
   font-size:24px;
-  min-width:80px;
+  min-width:60px;
   text-align:center;
 }
 </style>
