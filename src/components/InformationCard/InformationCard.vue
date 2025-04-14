@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="col-12">
-        <div class="grid overflow-y-auto overflow-x-hidden px-1" style="height:360px; max-height:400px">
+        <div class="grid overflow-y-auto overflow-x-hidden px-1" style="height:360px">
           <div class="col-12 px-0 pb-2" v-show="active_card">
             <div class="grid">
               <div v-for="item in general_data" :key="item.id" class="col-4 cursor-pointer">
@@ -1784,7 +1784,7 @@ export default {
 
 .information-card {
   width: 600px;
-  height: 350px;
+  height: 320px;
   position: absolute;
   transform-origin: 0 0;
   transform: scale(1) translate(0px, 0px);
