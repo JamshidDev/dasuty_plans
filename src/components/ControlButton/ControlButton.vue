@@ -144,11 +144,11 @@ export default {
         });
 
         this.nextRouteName = this.page_list.filter(function (el) {
-          return el.index === currentRoute[0].index + 1;
+          return el.index === currentRoute[0]?.index + 1;
         })[0]?.name;
 
         this.prevRouteName = this.page_list.filter(function (el) {
-          return el.index === currentRoute[0].index - 1;
+          return el.index === currentRoute[0]?.index - 1;
         })[0]?.name;
 
         this.nextBtn = !!this.nextRouteName

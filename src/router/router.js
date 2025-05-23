@@ -257,6 +257,16 @@ const routes = [
                     pageNUmber:25,
                 }
             },
+            {
+                path: "/train-line",
+                name: "train-line",
+                component: function () {
+                    return import("../pages/TrainLine/TrainLine.vue");
+                },
+                meta:{
+                    pageNUmber:26,
+                }
+            },
             // {
             //     path: "/eticket",
             //     name: "eticket",
