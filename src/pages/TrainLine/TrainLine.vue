@@ -282,14 +282,24 @@ onMounted(() => {
               class="col-6 px-2 py-1 border-1 border-gray-200 bg-gray-50 border-round flex cursor-pointer flex align-items-center justify-content-between text-gray-600">
             <i class='bx bxs-grid-alt'></i>
             Олдинги ҳолат
-
           </div>
           <div
               @click="actions.phase2start"
               class="col px-2 py-1 border-1 border-gray-200 bg-gray-50 border-round flex cursor-pointer flex align-items-center justify-content-between text-gray-600">
             <i class='bx bxs-grid-alt'></i>
             Ҳозирги ҳолат
-
+          </div>
+          <div
+              @click="actions.phase1return"
+              class="col-6 px-2 py-1 border-1 border-gray-200 bg-gray-50 border-round flex cursor-pointer flex align-items-center justify-content-between text-gray-600">
+            <i class='bx bxs-grid-alt'></i>
+            Олдинги ҳолат (қайтиш)
+          </div>
+          <div
+              @click="actions.phase2return"
+              class="col px-2 py-1 border-1 border-gray-200 bg-gray-50 border-round flex cursor-pointer flex align-items-center justify-content-between text-gray-600">
+            <i class='bx bxs-grid-alt'></i>
+            Ҳозирги ҳолат (қайтиш)
           </div>
 
         </div>
