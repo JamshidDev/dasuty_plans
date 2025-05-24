@@ -272,19 +272,44 @@ onMounted(() => {
 
 <template>
   <div class="map-box">
-    <div id="map" style="height: 100vh"></div>
-    <div class="control-panel">
-<!--      <button @click="actions.phase1start">phase 1 start</button>-->
-<!--      <button @click="actions.phase1return">phase 1 return</button>-->
-<!--      <button @click="actions.phase2start">phase 2 start</button>-->
-<!--      <button @click="actions.phase2return">phase 2 return</button>-->
-      <MenuCard />
+    <div id="map" style="height: 90vh"></div>
+    <MenuCard />
+    <div class="train_line-container block border-1 border-gray-300 shadow-2 bg-white border-round-lg">
+      <div class="">
+        <div class="w-full px-2 grid pt-2 grid-nogutter gap-2">
+          <div
+              @click="actions.phase1start"
+              class="col-6 px-2 py-1 border-1 border-gray-200 bg-gray-50 border-round flex cursor-pointer flex align-items-center justify-content-between text-gray-600">
+            <i class='bx bxs-grid-alt'></i>
+            Олдинги ҳолат
+
+          </div>
+          <div
+              @click="actions.phase2start"
+              class="col px-2 py-1 border-1 border-gray-200 bg-gray-50 border-round flex cursor-pointer flex align-items-center justify-content-between text-gray-600">
+            <i class='bx bxs-grid-alt'></i>
+            Ҳозирги ҳолат
+
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 
 <style>
+
+.train_line-container{
+  width:600px;
+  height:100px;
+  position:fixed;
+  bottom:6px;
+  left:6px;
+  z-index:1000;
+}
+
 .map-box {
   overflow: hidden;
   width: 100%;

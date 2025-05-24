@@ -71,14 +71,17 @@ export default {
         {
           id: "2-6",
           path: "tenth-screen",
-
           text: this.$t('firstPage.SecondContent')
         },
         {
           id: "7",
           path: "fourteenth-screen",
-
           text: this.$t('firstPage.ThirdContent')
+        },
+        {
+          id: "8",
+          path: "train-line",
+          text: "2025 - йилда амалга оширилган лойиҳалар"
         },
         // {
         //   id: 7,

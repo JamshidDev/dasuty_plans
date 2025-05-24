@@ -177,8 +177,10 @@ export default {
 .menu__card-container{
   width:600px;
   height:100px;
-  position:fixed;
-  bottom:6px;
+    position:fixed;
+  bottom:110px;
   left:6px;
+  z-index:1000;
+
 }
 </style>
