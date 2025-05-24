@@ -141,7 +141,9 @@ export default {
         <div
             class="col-12 cursor-pointer flex bg-gray-50">
           <div style="width:100px" class="text-blue-500 text-sm">Капитал:</div>
-          <div class="font-bold text-right" style="width:calc(100% - 100px)">{{item.finance}} <span class="font-medium text-gray-400 inline-block">млрд сўм</span></div>
+          <div class="font-bold text-right flex align-items-center gap-2 justify-content-end" style="width:calc(100% - 100px)">{{item.finance}} <span class="font-medium text-gray-400 inline-block mr-4">млрд сўм</span>
+            <i v-if="item?.url" @click.stop="openFile(item)" class='bx bx-link-external text-xl'></i>
+          </div>
         </div>
       </template>
     </div>
@@ -155,17 +157,17 @@ export default {
       <template v-if="selectedData">
         <div
             class="col-12 cursor-pointer flex bg-gray-50">
-          <div style="width:200px" class="text-blue-500 text-sm">Yo'l xo'jaligi:</div>
+          <div style="width:200px" class="text-blue-500 text-sm">Йўл хўжалиги:</div>
           <div class="font-bold text-right" style="width:calc(100% - 200px)">{{selectedData.routeCapital}} <span class="font-medium text-gray-400 inline-block">млрд сўм</span></div>
         </div>
         <div
             class="col-12 cursor-pointer flex bg-gray-50">
-          <div style="width:200px" class="text-blue-500 text-sm">Energiya xo'jaligi:</div>
+          <div style="width:200px" class="text-blue-500 text-sm">Энергия хўжалиги:</div>
           <div class="font-bold text-right" style="width:calc(100% - 200px)">{{selectedData.energyCapital}} <span class="font-medium text-gray-400 inline-block">млрд сўм</span></div>
         </div>
         <div
             class="col-12 cursor-pointer flex bg-gray-50">
-          <div style="width:200px" class="text-blue-500 text-sm">Aloqa xo'jaligi:</div>
+          <div style="width:200px" class="text-blue-500 text-sm">Алоқа хўжалиги:</div>
           <div class="font-bold text-right" style="width:calc(100% - 200px)">{{selectedData.signalCapital}} <span class="font-medium text-gray-400 inline-block">млн сўм</span></div>
         </div>
       </template>

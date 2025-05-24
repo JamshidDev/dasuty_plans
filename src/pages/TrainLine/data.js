@@ -29,6 +29,9 @@ import station28 from "@/assets/data/stations/19.pdf"
 import station29 from "@/assets/data/stations/29.pdf"
 
 import schemeGraphic from "@/assets/data/scheme/11111111.png"
+import presentation_one from "@/assets/data/presentation/presentation_one.png"
+import presentation_two from "@/assets/data/presentation/presentation_two.png"
+import presentation_three from "@/assets/data/presentation/presentation_three.png"
 
 export const pcStation = [
     {
@@ -176,18 +179,22 @@ export const newProject = [
     {
         name: "Озодлик Оқ олтин Гулистон электрлаштирилган темир йўл линияси",
         finance: 2293.2,
+        url:presentation_one,
     },
     {
         name: "Тошкент Янги Чиноз темир йўл оралиғида электрлаштирилган учинчи тез юрар темир йўл қурилиши",
         finance: 1671.87,
+        url:presentation_two,
     },
     {
         name: "Ховос Даштобод электрлаштирилган темир йўл линияси қурилиши",
         finance: 324.8,
+        url:presentation_three,
     },
     {
-        name: "Иккита разъезд, разъезд-10 ва разъезд-19 қурилиши",
+        name: "Разъезд-10 ва разъезд-19 қурилиши",
         finance: 60,
+        url:null,
     },
 ]
 
