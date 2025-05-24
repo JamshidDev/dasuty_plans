@@ -176,7 +176,7 @@ export default {
 <style scoped lang="scss">
 .menu__card-container{
   width:600px;
-  height:300px;
+  height:100px;
   position:fixed;
   bottom:6px;
   left:6px;
