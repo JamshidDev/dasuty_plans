@@ -7,7 +7,7 @@ import L from 'leaflet'
 import './leaflet.motion.min.js'
 import PathFinder from 'geojson-path-finder'
 import * as turf from '@turf/turf'
-import { expensiveTrain, ordinaryTrain } from './icons.js'
+import { expensiveTrain, ordinaryTrain, mapPin } from './icons.js'
 import MenuCard from "@/pages/TrainLine/ui/MenuCard.vue"
 
 const pathFinder = new PathFinder(geoJson);
@@ -85,11 +85,11 @@ const intersection = {
 const depoes = [
   {
     name: "Xiva",
-    location: [41.457136982923494, 60.34790039062501]
+    location: [41.37913379554578, 60.37948608398438]
   },
   {
     name: "Buxoro",
-    location: [39.82191004668272, 64.34815387725831]
+    location: [39.72174031585906, 64.53369140625001]
   },
   {
     name: "Samarqand",
@@ -97,11 +97,11 @@ const depoes = [
   },
   {
     name: "Qarshi",
-    location: [38.06219172306828, 65.64193725585939]
+    location: [38.82758646208098, 65.76416015625001]
   },
   {
     name: "Toshkent",
-    location: [41.19431726315258, 69.26879882812501]
+    location: [41.2918959, 69.2687889]
   },
 ]
 
@@ -163,12 +163,11 @@ function initialMap() {
   depoes.forEach(depo => {
     L.marker(depo.location, {
       icon: L.divIcon({
-        html: `
-          <p class="depo-name">${depo.name}</p>
-        `,
-        iconAnchor: [80,70]
+        html: mapPin,
+        iconAnchor: [25,50],
+        className: "depo-icon"
       }),
-      iconSize: L.point(2000, 24)
+      iconSize: L.point(0,0)
     }).addTo(map);
   })
 }
@@ -179,10 +178,8 @@ function init() {
   const startIntersectionInNetwork = turf.nearestPoint(startIntersection, points)
   const endIntersectionInNetwork = turf.nearestPoint(finishIntersection, points)
   const intersectionPath = pathFinder.findPath(startIntersectionInNetwork, endIntersectionInNetwork);
-
   intersection.data = intersectionPath.path.map((coord) => ({lat: coord[1], lng: coord[0]}))
-
-  stationPaths.forEach(stationPath => {
+  stationPaths.forEach((stationPath, pathIdx) => {
     stationPath.motionPaths.push([...intersection.data])
     const start = turf.point(stationPath.start.toReversed())
     const finish = turf.point(stationPath.end.toReversed())
@@ -190,51 +187,72 @@ function init() {
     const endInNetwork = turf.nearestPoint(finish, points)
     const path = pathFinder.findPath(startInNetwork, endInNetwork);
     const fixedPathLineData = path.path.map((coord) => ({lat: coord[1], lng: coord[0]}))
-
     stationPath.motionPaths.push(fixedPathLineData)
-    stationPath.forwardMotionSequence = L.motion.seq(stationPath.motionPaths.map((line, idx)=>{
-      return L.motion.polyline(line, {
-        color: stationPath.lineColor,
-        weight: 7
-      }, {
-        easing: L.Motion.Ease.easeInOutQuart
-      }, {
-        removeOnEnd: idx!=stationPath.motionPaths.length-1,
-        icon: L.divIcon({html: stationPath?.icon ? `<div style="color: ${stationPath.lineColor}">${stationPath?.icon}</div>` : "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24), iconAnchor: stationPath.iconAnchor})
-      }).motionDuration(3000)
-    }))
-    stationPath.backwardMotionSequence = L.motion.seq(stationPath.motionPaths.toReversed().map((line, idx)=>{
-      return L.motion.polyline(line.toReversed(), {
-        color: stationPath.lineColor,
-        weight: 7
-      }, {
-        easing: L.Motion.Ease.easeInOutQuart
-      }, {
-        removeOnEnd: idx!=stationPath.motionPaths.length-1,
-        icon: L.divIcon({html: stationPath?.icon ? `<div style="color: ${stationPath.lineColor}">${stationPath?.icon}</div>` : "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24), iconAnchor: stationPath.iconAnchor})
-      }).motionDuration(3000)
-    }))
   });
 }
 
 const actions = {
   clearLayers() {
-    stationPaths.forEach((stationPath) => {
-      const { forwardMotionSequence, backwardMotionSequence } = stationPath;
-
-      if (forwardMotionSequence && map.hasLayer(forwardMotionSequence)) {
-        forwardMotionSequence.motionStop?.();
-        map.removeLayer(forwardMotionSequence);
+    map.eachLayer((layer) => {
+      if(layer?.options?.isMotionPolyline){
+        console.log(layer)
+        map.removeLayer(layer)
       }
-
-      if (backwardMotionSequence && map.hasLayer(backwardMotionSequence)) {
-        backwardMotionSequence.motionStop?.();
-        map.removeLayer(backwardMotionSequence);
-      }
-    });
+    })
+  },
+  generateMotion(){
+    stationPaths.forEach((stationPath, pathIdx) => {
+      stationPath.forwardMotionSequence = L.motion.seq(stationPath.motionPaths.map((line, idx)=>{
+        return L.motion.polyline(line, {
+          color: stationPath.lineColor,
+          weight: 7,
+          isMotionPolyline: true
+        }, {
+          easing: L.Motion.Ease.easeInOutQuart
+        }, {
+          removeOnEnd: idx!=stationPath.motionPaths.length-1,
+          icon: L.divIcon({
+            html: `<div
+                      style="color: ${stationPath.lineColor};">
+                        ${stationPath?.icon}
+                        ${
+                            idx!=0 ? `<span class="train-icon-badge">${stationPath.pair*2}</span>` : ''
+                        }
+                    </div>`,
+            iconSize: L.point(27.5, 24),
+            iconAnchor: stationPath.iconAnchor,
+            className: !pathIdx ? 'expensive-train-icon' : 'cheap-train-icon'
+          })
+        }).motionDuration(3000)
+      }))
+      stationPath.backwardMotionSequence = L.motion.seq(stationPath.motionPaths.toReversed().map((line, idx)=>{
+        return L.motion.polyline(line.toReversed(), {
+          color: stationPath.lineColor,
+          weight: 7,
+          isMotionPolyline: true
+        }, {
+          easing: L.Motion.Ease.easeInOutQuart
+        }, {
+          removeOnEnd: idx!=stationPath.motionPaths.length-1,
+          icon: L.divIcon({
+            html:`<div
+                      style="color: ${stationPath.lineColor}">
+                        ${stationPath?.icon}
+                        ${
+                            idx!=1 ? `<span class="train-icon-badge">${stationPath.pair*2}</span>` : ''
+                        }
+                    </div>`,
+            iconSize: L.point(27.5, 24),
+            iconAnchor: stationPath.iconAnchor,
+            className: !pathIdx ? 'expensive-train-icon' : 'cheap-train-icon'
+          })
+        }).motionDuration(3000)
+      }))
+    })
   },
   phase1start(){
     this.clearLayers()
+    this.generateMotion()
     for(let i=1;i<stationPaths.length;i++){
       stationPaths[i].forwardMotionSequence.addTo(map)
       stationPaths[i].forwardMotionSequence.motionStart()
@@ -242,6 +260,7 @@ const actions = {
   },
   phase1return(){
     this.clearLayers()
+    this.generateMotion()
     for(let i=1;i<stationPaths.length;i++){
       stationPaths[i].backwardMotionSequence.addTo(map)
       stationPaths[i].backwardMotionSequence.motionStart()
@@ -249,6 +268,7 @@ const actions = {
   },
   phase2start(){
     this.clearLayers()
+    this.generateMotion()
     for(let i=0;i<stationPaths.length;i++){
       stationPaths[i].forwardMotionSequence.addTo(map)
       stationPaths[i].forwardMotionSequence.motionStart()
@@ -256,6 +276,7 @@ const actions = {
   },
   phase2return(){
     this.clearLayers()
+    this.generateMotion()
     for(let i=0;i<stationPaths.length;i++){
       stationPaths[i].backwardMotionSequence.addTo(map)
       stationPaths[i].backwardMotionSequence.motionStart()
@@ -326,17 +347,16 @@ onMounted(() => {
   position: relative;
 }
 
-.control-panel{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2000;
-  height: 200px;
-  background: black;
+.depo-icon{
+  z-index: 550 !important;
+}
+
+.expensive-train-icon{
+  z-index: 1000 !important;
+}
+
+.cheap-train-icon{
+  z-index: 900 !important;
 }
 
 .leaflet-div-icon {
@@ -358,4 +378,21 @@ onMounted(() => {
   padding: 10px;
   font-weight: bold;
 }
+
+.train-icon-badge{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background: blue;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
 </style>
