@@ -193,9 +193,9 @@ function init() {
 
 const actions = {
   clearLayers() {
+    this.clearTimedEvent()
     map.eachLayer((layer) => {
       if(layer?.options?.isMotionPolyline){
-        console.log(layer)
         map.removeLayer(layer)
       }
     })
@@ -257,6 +257,7 @@ const actions = {
 
     })
   },
+  timedEvent: null, 
   phase1start(){
     this.clearLayers()
     this.generateMotion(false)
@@ -264,6 +265,9 @@ const actions = {
       stationPaths[i].forwardMotionSequence.addTo(map)
       stationPaths[i].forwardMotionSequence.motionStart()
     }
+    this.timedEvent = setTimeout(()=>{
+      this.phase1return()
+    }, 6500)
   },
   phase1return(){
     this.clearLayers()
@@ -272,6 +276,9 @@ const actions = {
       stationPaths[i].backwardMotionSequence.addTo(map)
       stationPaths[i].backwardMotionSequence.motionStart()
     }
+    this.timedEvent = setTimeout(()=>{
+      this.phase1start()
+    }, 6500)
   },
   phase2start(){
     this.clearLayers()
@@ -280,6 +287,9 @@ const actions = {
       stationPaths[i].forwardMotionSequence.addTo(map)
       stationPaths[i].forwardMotionSequence.motionStart()
     }
+    this.timedEvent = setTimeout(()=>{
+      this.phase2return()
+    }, 6500)
   },
   phase2return(){
     this.clearLayers()
@@ -287,6 +297,15 @@ const actions = {
     for(let i=0;i<stationPaths.length;i++){
       stationPaths[i].backwardMotionSequence.addTo(map)
       stationPaths[i].backwardMotionSequence.motionStart()
+    }
+    this.timedEvent = setTimeout(()=>{
+      this.phase2start()
+    }, 6500)
+  },
+  clearTimedEvent(){
+    if(this.timedEvent){
+      clearTimeout(this.timedEvent)
+      this.timedEvent = null
     }
   }
 }
@@ -315,21 +334,13 @@ onMounted(() => {
               @click="actions.phase2start"
               class="col px-2 py-1 border-1 border-gray-200 bg-gray-50 border-round flex cursor-pointer flex align-items-center justify-content-between text-gray-600">
             <i class='bx bxs-grid-alt'></i>
-            Ҳозирги ҳолат
+            Кейинги холат
           </div>
           <div
-              @click="actions.phase1return"
-              class="col-6 px-2 py-1 border-1 border-gray-200 bg-gray-50 border-round flex cursor-pointer flex align-items-center justify-content-between text-gray-600">
-            <i class='bx bxs-grid-alt'></i>
-            Олдинги ҳолат (қайтиш)
+              @click="actions.clearLayers"
+              class="cursor-pointer" style="background-color: rgba(0, 0, 0, 0.1);">
+              &nbsp;
           </div>
-          <div
-              @click="actions.phase2return"
-              class="col px-2 py-1 border-1 border-gray-200 bg-gray-50 border-round flex cursor-pointer flex align-items-center justify-content-between text-gray-600">
-            <i class='bx bxs-grid-alt'></i>
-            Ҳозирги ҳолат (қайтиш)
-          </div>
-
         </div>
       </div>
     </div>
@@ -341,7 +352,7 @@ onMounted(() => {
 
 .train_line-container{
   width:600px;
-  height:100px;
+  height:50px;
   position:fixed;
   bottom:6px;
   left:6px;

@@ -180,7 +180,7 @@ export default {
   width:600px;
   height:100px;
     position:fixed;
-  bottom:110px;
+  bottom:65px;
   left:6px;
   z-index:1000;
 
