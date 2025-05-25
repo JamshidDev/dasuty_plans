@@ -9,6 +9,7 @@ import PathFinder from 'geojson-path-finder'
 import * as turf from '@turf/turf'
 import { expensiveTrain, ordinaryTrain, mapPin } from './icons.js'
 import MenuCard from "@/pages/TrainLine/ui/MenuCard.vue"
+import PassengerCard from "@/pages/TrainLine/ui/PassengerCard.vue"
 
 const pathFinder = new PathFinder(geoJson);
 const points = turf.explode(geoJson)
@@ -321,6 +322,7 @@ onMounted(() => {
   <div class="map-box">
     <div id="map" style="height: 90vh"></div>
     <MenuCard />
+    <PassengerCard />
     <div class="train_line-container block border-1 border-gray-300 shadow-2 bg-white border-round-lg">
       <div class="">
         <div class="w-full px-2 grid pt-2 grid-nogutter gap-2">
