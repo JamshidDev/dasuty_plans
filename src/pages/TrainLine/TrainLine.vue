@@ -66,7 +66,7 @@ const stationPaths = [
     forwardMotionSequence: null,
     backwardMotionSequence: null,
     time: 1,
-    pair: 0,
+    pair: 1,
     icon: ordinaryTrain,
     hasOwnPath: false,
     lineColor: "#e3323e",
@@ -79,7 +79,7 @@ const intersection = {
   wayName: "Tashkent - Samarkand",
   lineColor: "#203b27",
   data: [],
-  motion: null
+  motion: null,
 }
 
 const depoes = [
@@ -200,8 +200,9 @@ const actions = {
       }
     })
   },
-  generateMotion(){
+  generateMotion( all ){
     stationPaths.forEach((stationPath, pathIdx) => {
+      
       stationPath.forwardMotionSequence = L.motion.seq(stationPath.motionPaths.map((line, idx)=>{
         return L.motion.polyline(line, {
           color: stationPath.lineColor,
@@ -216,7 +217,9 @@ const actions = {
                       style="color: ${stationPath.lineColor};">
                         ${stationPath?.icon}
                         ${
-                            idx!=0 ? `<span class="train-icon-badge">${stationPath.pair*2}</span>` : ''
+                            idx!=0 ? 
+                            `<span class="train-icon-badge">${stationPath.pair*2}</span>` : 
+                            `<span class="train-icon-badge">${(all ? 9 : 6) *2}</span>`
                         }
                     </div>`,
             iconSize: L.point(27.5, 24),
@@ -225,6 +228,7 @@ const actions = {
           })
         }).motionDuration(3000)
       }))
+      
       stationPath.backwardMotionSequence = L.motion.seq(stationPath.motionPaths.toReversed().map((line, idx)=>{
         return L.motion.polyline(line.toReversed(), {
           color: stationPath.lineColor,
@@ -239,7 +243,9 @@ const actions = {
                       style="color: ${stationPath.lineColor}">
                         ${stationPath?.icon}
                         ${
-                            idx!=1 ? `<span class="train-icon-badge">${stationPath.pair*2}</span>` : ''
+                            idx!=1 ? 
+                            `<span class="train-icon-badge">${stationPath.pair*2}</span>` : 
+                            `<span class="train-icon-badge">${(all ? 9 : 6) *2}</span>`
                         }
                     </div>`,
             iconSize: L.point(27.5, 24),
@@ -248,11 +254,12 @@ const actions = {
           })
         }).motionDuration(3000)
       }))
+
     })
   },
   phase1start(){
     this.clearLayers()
-    this.generateMotion()
+    this.generateMotion(false)
     for(let i=1;i<stationPaths.length;i++){
       stationPaths[i].forwardMotionSequence.addTo(map)
       stationPaths[i].forwardMotionSequence.motionStart()
@@ -260,7 +267,7 @@ const actions = {
   },
   phase1return(){
     this.clearLayers()
-    this.generateMotion()
+    this.generateMotion(false)
     for(let i=1;i<stationPaths.length;i++){
       stationPaths[i].backwardMotionSequence.addTo(map)
       stationPaths[i].backwardMotionSequence.motionStart()
@@ -268,7 +275,7 @@ const actions = {
   },
   phase2start(){
     this.clearLayers()
-    this.generateMotion()
+    this.generateMotion(true)
     for(let i=0;i<stationPaths.length;i++){
       stationPaths[i].forwardMotionSequence.addTo(map)
       stationPaths[i].forwardMotionSequence.motionStart()
@@ -276,7 +283,7 @@ const actions = {
   },
   phase2return(){
     this.clearLayers()
-    this.generateMotion()
+    this.generateMotion(true)
     for(let i=0;i<stationPaths.length;i++){
       stationPaths[i].backwardMotionSequence.addTo(map)
       stationPaths[i].backwardMotionSequence.motionStart()
