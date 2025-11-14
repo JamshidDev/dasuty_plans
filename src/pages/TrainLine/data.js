@@ -176,6 +176,7 @@ export const MTU_Three = pcStation.filter((v) => v.id >= 22) // Buxoro MTU
 export const schemeUrl = schemeGraphic
 
 export const newProject = [
+
     {
         name: "ОЗОДЛИК-ЯНГИЕР ЯНГИ ЭЛЕКТРЛАШТИРИЛГАН ТЕМИР ЙЎЛ ЛИНИЯСИ ҚУРИЛИШИ",
         finance: 2839.2,

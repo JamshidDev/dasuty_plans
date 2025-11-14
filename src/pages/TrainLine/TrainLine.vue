@@ -14,6 +14,7 @@ import PassengerCard from "@/pages/TrainLine/ui/PassengerCard.vue"
 const pathFinder = new PathFinder(geoJson);
 const points = turf.explode(geoJson)
 let map = null
+const passengerRef = ref(null)
 
 
 const stationPaths = [
@@ -193,7 +194,8 @@ function init() {
 }
 
 const actions = {
-  clearLayers() {
+  clearLayers()
+  {
     this.clearTimedEvent()
     map.eachLayer((layer) => {
       if(layer?.options?.isMotionPolyline){
@@ -260,6 +262,7 @@ const actions = {
   },
   timedEvent: null, 
   phase1start(){
+    passengerRef.value.controlModalEv(true,true)
     this.clearLayers()
     this.generateMotion(false)
     for(let i=1;i<stationPaths.length;i++){
@@ -282,6 +285,7 @@ const actions = {
     }, 6500)
   },
   phase2start(){
+    passengerRef.value.controlModalEv(true,false)
     this.clearLayers()
     this.generateMotion(true)
     for(let i=0;i<stationPaths.length;i++){
@@ -311,6 +315,7 @@ const actions = {
   }
 }
 
+
 onMounted(() => {
   initialMap()
   init()
@@ -322,7 +327,7 @@ onMounted(() => {
   <div class="map-box">
     <div id="map" style="height: 90vh"></div>
     <MenuCard />
-    <PassengerCard />
+    <PassengerCard ref="passengerRef" />
     <div class="train_line-container block border-1 border-gray-300 shadow-2 bg-white border-round-lg">
       <div class="">
         <div class="w-full px-2 grid pt-2 grid-nogutter gap-2">
