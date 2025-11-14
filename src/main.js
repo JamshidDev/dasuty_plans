@@ -16,6 +16,10 @@ import Checkbox from 'primevue/checkbox';
 import ProgressBar from "primevue/progressbar";
 import Timeline from 'primevue/timeline';
 import CircleProgress from 'vue3-circle-progress'
+import Carousel from 'primevue/carousel';
+import Button from 'primevue/button';
+
+
 // import Vue3Autocounter from 'vue3-autocounter';
 import VueVideoPlayer from '@videojs-player/vue'
 import 'video.js/dist/video-js.css'
@@ -66,6 +70,7 @@ app.component("Checkbox", Checkbox);
 app.component("ProgressBar", ProgressBar);
 app.component("ProgressBar", ProgressBar);
 app.component("Dialog", Dialog);
+app.component("Button", Button);
 
 
 

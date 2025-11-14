@@ -52,7 +52,7 @@
         </div>
 
         <DialogContent ref="dialog_ref" @closeDialog="closed_modal"></DialogContent>
-      <StationReportModal  ref="stationReportRef"/>
+        <StationReportModal  ref="stationReportRef"/>
         <OptikInfoModal v-if="optik_modal_visble"></OptikInfoModal>
         <SchemaButton v-show="show_button_schema && general_info_show"
                       @action_draw="draw_schema($event)"></SchemaButton>
@@ -258,7 +258,14 @@ export default {
 	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.new_draw_train();
                 this.$refs.dialog_ref.new_timeline_start();
-            } else if (action === 'close') {
+            }else if (action === 'new-train-three') {
+              this.$refs.dialog_ref.close_timeline();
+              this.$refs.dialog_ref.new_timeline_three_start();
+            }else if (action === 'old-train-three') {
+              this.$refs.dialog_ref.close_timeline();
+              this.$refs.dialog_ref.old_timeline_three_start();
+            }
+            else if (action === 'close') {
 	            this.go_push_element(38.6, -60, 1.2);
                 this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.clear_all();
