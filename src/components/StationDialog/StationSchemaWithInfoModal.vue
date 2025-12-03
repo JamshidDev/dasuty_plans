@@ -10,7 +10,7 @@ const indexRef = ref('uzbekistan')
 const dataObject = ref( {
   'oqkoprik': {
     name:'Оқ кўприк',
-    image:'/public/schema/png/OKKOPRIK.png',
+    image:'/schema/png/OKKOPRIK.png',
     problems:[
       {
         id:1,
@@ -53,7 +53,7 @@ const dataObject = ref( {
   },
   'chuqursoy': {
     name:'Чуқурсой',
-    image:'/public/schema/png/chuquq-22.png',
+    image:'/schema/png/chuquq-22.png',
     problems:[
       {
         id:1,
@@ -103,7 +103,7 @@ const dataObject = ref( {
   },
   'chuqursoyKeles': {
     name:'Келес-Чуқурсой перегони',
-    image:'/public/schema/png/Chuqursoy.png',
+    image:'/schema/png/Chuqursoy.png',
     problems:[
       {
         id:1,
@@ -135,7 +135,7 @@ const dataObject = ref( {
   },
   'nazarbek': {
     name:'Назарбек-Далагузар перегони',
-    image:'/public/schema/png/Chuqursoy.png',
+    image:'/schema/png/Chuqursoy.png',
     problems:[
       {
         id:1,
@@ -167,7 +167,7 @@ const dataObject = ref( {
   },
   'uzbekistan': {
     name:'Ўзбекистон',
-    image:'/public/schema/png/UZB.png',
+    image:'/schema/png/UZB.png',
     problems:[
       {
         id:1,
