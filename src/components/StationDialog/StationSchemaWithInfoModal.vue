@@ -317,7 +317,9 @@ defineExpose({
       </div>
       <div class="col-12">
         <div class="bg-yellow-50 p-2 border-round-2xl flex flex-column text-yellow-600">
-          <span class="bg-yellow-100  text-yellow-600 border-round-2xl px-2  border-1 border-yellow-300 mb-2 mx-auto">Маълумот сифатида</span>
+          <span class="bg-yellow-100  text-yellow-600 border-round-2xl px-2  border-1 border-yellow-300 mb-2 mx-auto">Кунлик ўртача тайёр поездлар:
+
+</span>
           <template v-for="item in selectedData.info">
             <p class="text-yellow-600 mb-2"><span class="mr-2"></span> {{item.text}}</p>
           </template>
