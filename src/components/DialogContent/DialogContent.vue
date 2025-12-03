@@ -306,7 +306,7 @@
           </div>
         </div>
          <div class="relative overflow-hidden w-full min-h-full">
-            <Timeline v-if="is_show_one" class="w-full" :value="timeline_three_text">
+            <Timeline v-if="is_show_one" class="w-full" :value="timeline_three">
               <template #opposite="slotProps">
         <small class="text-blue-600 font-bold">{{ slotProps.item.date }}</small>
     </template>
@@ -437,6 +437,33 @@ export default {
         {status: 'Ангрен', date: '20 соат', icon: 'pi pi-shopping-cart', show: false, stroke: false,},
         {status: 'Поп', date: '9  соат', icon: 'pi pi-shopping-cart', show: false, stroke: false,},
         {status: 'Кукон', date: '5 соат', icon: 'pi pi-cog', show: false, stroke: false,},
+      ],
+      timeline_three: [
+        {status: 'Оккуприк', date: '10 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Келес', date: '10 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Чукурсой', date: '10 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Салар', date: '20 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Тошкент', date: '15 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Хамза', date: '15 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Тукимачи', date: '15 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Сергели', date: '10 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Жалоир', date: '10 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Кучлук', date: '25 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Тойтепа', date: '20 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Озодлик', date: '20 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Ахангаран', date: '20 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Акча', date: '28 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Аблик', date: '28 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Кул', date: '30 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Ангрен', date: '20 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Орзу', date: '30 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Чодак', date: '30 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Кон', date: '25 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Темирйулобод', date: '20 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Кошминор', date: '20 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Поп', date: '20 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
+        {status: 'Бувайда', date: '25 минут', icon: 'pi pi-cog', show: false, stroke: false},
+        {status: 'Кукон', date: '40 минут', icon: 'pi pi-shopping-cart', show: false, stroke: false},
       ],
       timeline_three_index:[0,1,2,3,4,],
 
@@ -1588,23 +1615,24 @@ export default {
     async old_timeline_three_start() {
       this.time_line_tree_dialog = true
       this.is_show_one = true
-      for (let i = 0; i < this.timeline_three_text.length; i++) {
-        this.timeline_three_text[i].show = false
+      for (let i = 0; i < this.timeline_three.length; i++) {
+        this.timeline_three[i].show = false
       }
       clearTimeout(this.timeline_timeout)
       this.show_animation = true
+
 
       await new Promise(resolve => {
         this.timeline_timeout = setTimeout(resolve, 600)
         return this.timeline_timeout
       })
 
-      for (let i = 0; i < this.timeline_three_text.length; i++) {
+      for (let i = 0; i < this.timeline_three.length; i++) {
 
         if (i > 0) {
-          this.timeline_three_text[this.timeline_three_index[i - 1]].show = false
+          this.timeline_three[i - 1].show = false
         }
-        this.timeline_three_text[this.timeline_three_index[i]].show = true
+        this.timeline_three[i].show = true
         await new Promise(resolve => {
           this.timeline_timeout = setTimeout(resolve, 600)
           return this.timeline_timeout

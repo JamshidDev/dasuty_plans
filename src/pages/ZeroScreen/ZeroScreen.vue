@@ -5,10 +5,10 @@
         <!--    </div>-->
 
         <TitleText :title="$t('SecondPage.themeName')"></TitleText>
-<!--            <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">-->
+            <div class="flex gap-4 text-lg font-normal absolute z-5" style="top:10px; left:10px; width:400px">
 
-<!--                    X:{{pointX}} Y:{{pointY}} Zoom:{{scale}}-->
-<!--            </div>-->
+                    X:{{Number(pointX).toFixed(2)}} Y:{{Number(pointY).toFixed()}} Zoom:{{Number(scale).toFixed(1)}}
+            </div>
         <div id="zoom-container" ref="zoom_container" class="w-full border-round relative"
              style="height:88vh; overflow: hidden;">
             <div id="trigger-zoom-element" ref="trigger_zoom_element"
@@ -56,12 +56,14 @@
         <OptikInfoModal v-if="optik_modal_visble"></OptikInfoModal>
         <SchemaButton v-show="show_button_schema && general_info_show"
                       @action_draw="draw_schema($event)"></SchemaButton>
+      <StationSchemaWithInfoModal ref="stationSchemaWithInfoRef" />
         <span v-show="general_info_show">
 
 
       <InformationCard @changeTrainStation="draw_train_station($event)" ref="information_modal_ref"
                        @closeInfoMap="close_info_map()" @listenMap="listen_map($event)"
                        @changeCard="change_card($event)" @changeMap="change_visible($event)"></InformationCard>
+
     </span>
         <div v-if="$route.name ==='zero-screen'" class="fixed flex gap-2 absolute"
              style="bottom:10px; left:620px; z-index:10">
@@ -87,6 +89,7 @@ import SchemaButton from "@/components/TrainSchemaButton/SchemaButton.vue";
 import TitleText from "@/components/TitleText/TitleText.vue";
 import OptikInfoModal from "../../components/OptikInfoModal/OptikInfoModal.vue";
 import StationReportModal from "@/components/StationDialog/StationReportModal.vue";
+import StationSchemaWithInfoModal from "@/components/StationDialog/StationSchemaWithInfoModal.vue";
 
 export default {
     components: {
@@ -100,6 +103,7 @@ export default {
         RiplleIcon,
         OptikInfoModal,
       StationReportModal,
+      StationSchemaWithInfoModal,
 
     },
 
@@ -199,14 +203,41 @@ export default {
         initialStationEvent(){
           this.stationId.forEach((v)=>{
             const element = document.getElementById(v.id)
+            if(!element){
+              console.log(v.id)
+            }
             element.addEventListener('click', ()=>{
               console.log(v.name)
               this.removeAllClass()
               element.classList.add('animated-svg-2')
               this.$refs.stationReportRef.onClose()
-              this.$refs.stationReportRef.openReport(v.id)
+              // this.$refs.stationReportRef.openReport(v.id)
+              this.$refs.stationSchemaWithInfoRef.openStationSchemaModal()
             })
           })
+        },
+        initialStationEv(){
+          const idList = ['st_720000','loc3_4', 'st_uzbekistan', 'loc4_17', 'st_oqkoprik', 'loc1_2', 'loc1_14']
+          idList.forEach((id)=>{
+            const element = document.getElementById(id)
+            console.log(id)
+            if(!element){
+              console.log(id)
+              return
+            }
+            element.addEventListener('click', ()=>{
+              if(id === 'st_720000' || id === 'loc3_4'){
+                this.$refs.stationSchemaWithInfoRef.openStationSchemaModal('chuqursoy')
+              }else if(id === 'st_uzbekistan' || id === 'loc4_17'){
+                this.$refs.stationSchemaWithInfoRef.openStationSchemaModal('uzbekistan')
+              }else if(id === 'st_oqkoprik' || id === 'loc1_2' || id === 'loc1_14'){
+                this.$refs.stationSchemaWithInfoRef.openStationSchemaModal('oqkoprik')
+              }
+
+
+            })
+          })
+
         },
         go_push_element(pointX, pointY, scale) {
             this.pointX = pointX;
@@ -247,14 +278,26 @@ export default {
 
 
         draw_schema(action) {
+          console.log(action)
             this.optik_modal_visble = action==='optik'
 
             if (action === 'old-train') {
 	            this.go_push_element(-452, -343, 1.7);
 	            this.$refs.dialog_ref.close_timeline();
-                this.$refs.railway_map_ref.old_draw_train();
+
+              this.$refs.railway_map_ref.old_draw_train();
+                //old_draw_train
                 this.$refs.dialog_ref.old_timeline_start();
-            } else if (action === 'new-train') {
+            }
+            else if(action === 'saryagach-xavast'){
+              this.go_push_element(-1340, -429, 2.5);
+              this.$refs.railway_map_ref.drawTrain2026();
+            }
+          else if(action === 'saryagach-angren'){
+            this.go_push_element(-1086, -458, 2.5);
+            this.$refs.railway_map_ref.draw2Train2026();
+          }
+            else if (action === 'new-train') {
 	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.new_draw_train();
                 this.$refs.dialog_ref.new_timeline_start();
@@ -269,7 +312,9 @@ export default {
 	            this.go_push_element(38.6, -60, 1.2);
                 this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.clear_all();
-              this.$refs.railway_map_ref.all_hidden_train_station();
+                this.$refs.railway_map_ref.all_hidden_train_station();
+                this.$refs.stationSchemaWithInfoRef.closeEv()
+                this.removeAllClass()
             } else if (action === 'route1') {
 	            this.go_push_element(-791, -513, 2);
 	            this.$refs.dialog_ref.close_timeline();
@@ -445,7 +490,8 @@ export default {
       // this.go_push_element(-5310, -1537, 6);
       // this.general_info_show = false;
 
-      this.initialStationEvent()
+      // this.initialStationEvent()
+      this.initialStationEv()
 
     }
 }
