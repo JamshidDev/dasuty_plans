@@ -124,7 +124,7 @@ export default {
             optik_modal_visble:false,
 
             show_patok_icon: false,
-            show_button_schema: false,
+            show_button_schema: true,
 
             switch_details: {
                 wagon: false,
@@ -296,7 +296,10 @@ export default {
           else if(action === 'saryagach-angren'){
             this.go_push_element(-1086, -458, 2.5);
             this.$refs.railway_map_ref.draw2Train2026();
-          }
+          }else if(action === 'saryagach-xavast-angren'){
+              this.go_push_element(-1086, -458, 2.5);
+              this.$refs.railway_map_ref.runTogetherTrain();
+            }
             else if (action === 'new-train') {
 	            this.$refs.dialog_ref.close_timeline();
                 this.$refs.railway_map_ref.new_draw_train();

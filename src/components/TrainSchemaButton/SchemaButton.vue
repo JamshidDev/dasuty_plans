@@ -1,5 +1,4 @@
 
-
 <template>
     <div class="schema-button-container shadow-2 px-4 py-2  overflow-hidden">
       <swiper
@@ -9,7 +8,7 @@
           @swiper="onSwiper"
       >
         <swiper-slide v-for="item in slideItems" :key="item.id">
-          <template v-if="item.id === 1">
+          <template v-if="item.id === 2">
             <div class="grid ">
               <div class="col-12 flex justify-content-between align-items-center border-bottom-1 border-200">
                 <div @click="nextSlide" class="m-0 font-bold text-sm"> Бошқарув тугмалари
@@ -81,7 +80,7 @@
               </div>
             </div>
           </template>
-          <template v-if="item.id === 2">
+          <template v-if="item.id === 1">
             <div class="grid ">
               <div class="col-12 flex justify-content-between align-items-center border-bottom-1 border-200">
                 <div @click="nextSlide" class="m-0 font-bold text-sm">Янги тақдимот
@@ -127,6 +126,12 @@
                   <div class="col-6">
                     <div  @click="action_emit('saryagach-angren')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
                       Сарагач -> Ангрен
+                      <i class='bx bx-show text-500 text-2xl'></i>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div  @click="action_emit('saryagach-xavast-angren')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
+                      Умумий муаммолар
                       <i class='bx bx-show text-500 text-2xl'></i>
                     </div>
                   </div>

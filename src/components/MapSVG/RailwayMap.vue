@@ -3598,6 +3598,9 @@ export default {
       first_timeout2026:null,
       second_timeout2026:null,
 
+      first_2timeout2026:null,
+      second_2timeout2026:null,
+
     }
   },
   methods: {
@@ -3970,8 +3973,8 @@ export default {
       }
     },
     clear2AllElement2026(){
-      clearTimeout(this.first_timeout2026);
-      clearTimeout(this.second_timeout2026);
+      clearTimeout(this.first_2timeout2026);
+      clearTimeout(this.second_2timeout2026);
 
       for (let path_id of this.train2LineElementIds2026) {
         let location = document.getElementById(path_id);
@@ -3982,9 +3985,18 @@ export default {
         location.style.visibility = 'hidden';
       }
     },
-    async drawTrain2026(){
+    runTogetherTrain(){
       this.clear2AllElement2026()
       this.clearAllElement2026()
+      this.drawTrain2026(false)
+      this.draw2Train2026(false)
+    },
+    async drawTrain2026(clear=true){
+      if(clear){
+        this.clear2AllElement2026()
+        this.clearAllElement2026()
+      }
+
       await new Promise(resolve => {
         this.first_timeout2026 = setTimeout(resolve, 200);
         return this.first_timeout2026
@@ -3996,7 +4008,7 @@ export default {
         location.style.visibility = 'visible';
 
         await new Promise(resolve => {
-          const time = i === 4? 4000 : 300
+          const time = i === 4? 1500 : 300
           this.second_timeout2026 = setTimeout(resolve, time);
           return this.second_timeout2026;
         });
@@ -4022,12 +4034,15 @@ export default {
       }
 
     },
-    async draw2Train2026(){
-      this.clear2AllElement2026()
-      this.clearAllElement2026()
+    async draw2Train2026(clear=true){
+      if(clear){
+        this.clear2AllElement2026()
+        this.clearAllElement2026()
+      }
+
       await new Promise(resolve => {
-        this.first_timeout2026 = setTimeout(resolve, 400);
-        return this.first_timeout2026
+        this.first_2timeout2026 = setTimeout(resolve, 400);
+        return this.first_2timeout2026
       });
       for (let i = 0; i < this.train2LocElementIds2026.length; i++) {
 
@@ -4036,13 +4051,13 @@ export default {
         location.style.visibility = 'visible';
 
         await new Promise(resolve => {
-          this.second_timeout2026 = setTimeout(resolve, 300);
-          return this.second_timeout2026;
+          this.second_2timeout2026 = setTimeout(resolve, 300);
+          return this.second_2timeout2026;
         });
         await new Promise(resolve => {
-          const time = i === 3? 4000 : 300
-          this.second_timeout2026 = setTimeout(resolve, time);
-          return this.second_timeout2026;
+          const time = i === 3? 1500 : 300
+          this.second_2timeout2026 = setTimeout(resolve, time);
+          return this.second_2timeout2026;
         });
 
         //   draw line
@@ -4060,8 +4075,8 @@ export default {
           path_element.style.strokeDashoffset = '0';
         }
         await new Promise(resolve => {
-          this.second_timeout2026 = setTimeout(resolve, i===3? 1200 : 300);
-          return this.second_timeout2026;
+          this.second_2timeout2026 = setTimeout(resolve, i===3? 1200 : 300);
+          return this.second_2timeout2026;
         });
 
       }
