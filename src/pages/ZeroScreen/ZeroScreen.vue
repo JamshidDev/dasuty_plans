@@ -299,6 +299,7 @@ export default {
           }else if(action === 'saryagach-xavast-angren'){
               this.go_push_element(-1086, -458, 2.5);
               this.$refs.railway_map_ref.runTogetherTrain();
+              this.$refs.stationSchemaWithInfoRef.openStationSchemaModal('general')
             }
             else if (action === 'new-train') {
 	            this.$refs.dialog_ref.close_timeline();

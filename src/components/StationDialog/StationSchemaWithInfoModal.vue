@@ -146,6 +146,20 @@ const dataObject = ref( {
       },
     ]
   },
+  'general': {
+    name:'Умумий муаммолар',
+    problems:[
+      {
+        id:1,
+        text:`- Локомотивлар парки поездлар оқимига нисбатан кам.
+- Локомотив парки 85 тани ташкил қилади.
+- Поездлар оқими кўпайганлиги сабабли кунлик локомативлар 110 та локомативни талаб этилади.
+- Натижада “Ўзбекистон темир йўллари” АЖ худудида бир кунда ўртача 300 тадан 320 тагача тайёр поезларни ва 110тадан 120тагача поездлар локомотивлар етишмаслиги натижасида жўнатилмасдан қолиб кетмоқда`
+},
+    ],
+    suggestions:[],
+    info:[]
+  },
 
 })
 
@@ -201,13 +215,13 @@ defineExpose({
       class="shadow-"
   >
     <div class="grid">
-      <div class="col-12">
+      <div class="col-12" v-if="selectedData.image">
         <img @click="openImage" class="cursor-pointer w-full border-1 border-blue-50 border-round-2xl" :src="selectedData.image" alt="">
       </div>
       <div class="col-12">
         <div class="bg-red-50 p-2 border-round-2xl flex flex-column text-red-600">
-          <span class="bg-red-100  text-red-600 border-round-2xl px-2  border-1 border-red-300 mb-2 mx-auto">Муаммолар</span>
-          <span class="font-bold pl-2">{{selectedData.name}}</span>
+          <span v-if="indexRef !== 'general'" class="bg-red-100  text-red-600 border-round-2xl px-2  border-1 border-red-300 mb-2 mx-auto">Муаммолар</span>
+          <span class="font-bold pl-2" v-if="indexRef !== 'general'">{{selectedData.name}}</span>
           <template v-for="item in selectedData.problems">
             <p class="text-red-600 mb-2"><span class="mr-2">{{item.id}}.</span> {{item.text}}</p>
           </template>
@@ -226,7 +240,7 @@ defineExpose({
         </div>
       </div>
       <div class="col-12">
-        <div class="bg-green-50 p-2 border-round-2xl flex flex-column text-green-600">
+        <div class="bg-green-50 p-2 border-round-2xl flex flex-column text-green-600" v-if="indexRef !== 'general'">
           <span class="bg-green-100  text-green-600 border-round-2xl px-2  border-1 border-green-300 mb-2 mx-auto">Таклифлар</span>
           <span class="font-bold pl-2">{{selectedData.name}}</span>
           <template v-for="item in selectedData.suggestions">
@@ -246,7 +260,7 @@ defineExpose({
           </template>
         </div>
       </div>
-      <div class="col-12">
+      <div class="col-12" v-if="indexRef !== 'general'">
         <div class="bg-yellow-50 p-2 border-round-2xl flex flex-column text-yellow-600">
           <span class="bg-yellow-100  text-yellow-600 border-round-2xl px-2  border-1 border-yellow-300 mb-2 mx-auto">Кунлик ўртача тайёр поездлар:
 
