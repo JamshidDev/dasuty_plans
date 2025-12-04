@@ -151,11 +151,21 @@ const dataObject = ref( {
     problems:[
       {
         id:1,
-        text:`- Локомотивлар парки поездлар оқимига нисбатан кам.
-- Локомотив парки 85 тани ташкил қилади.
-- Поездлар оқими кўпайганлиги сабабли кунлик локомативлар 110 та локомативни талаб этилади.
-- Натижада “Ўзбекистон темир йўллари” АЖ худудида бир кунда ўртача 300 тадан 320 тагача тайёр поезларни ва 110тадан 120тагача поездлар локомотивлар етишмаслиги натижасида жўнатилмасдан қолиб кетмоқда`
-},
+        text:`- Локомотивлар парки поездлар оқимига нисбатан кам.`,
+      },
+      {
+        id:2,
+        text:`- Локомотив парки 85 тани ташкил қилади.`,
+      },
+      {
+        id:3,
+        text:`- Поездлар оқими кўпайганлиги сабабли кунлик локомативлар 110 та локомативни талаб этилади.`,
+      },
+      {
+        id:4,
+        text:`- Натижада “Ўзбекистон темир йўллари” АЖ худудида бир кунда ўртача 300 тадан 320 тагача тайёр поезларни ва 110тадан 120тагача поездлар локомотивлар етишмаслиги натижасида жўнатилмасдан қолиб кетмоқда`,
+      },
+
     ],
     suggestions:[],
     info:[]
@@ -223,7 +233,7 @@ defineExpose({
           <span v-if="indexRef !== 'general'" class="bg-red-100  text-red-600 border-round-2xl px-2  border-1 border-red-300 mb-2 mx-auto">Муаммолар</span>
           <span class="font-bold pl-2" v-if="indexRef !== 'general'">{{selectedData.name}}</span>
           <template v-for="item in selectedData.problems">
-            <p class="text-red-600 mb-2"><span class="mr-2">{{item.id}}.</span> {{item.text}}</p>
+            <p class="text-red-600 mb-2"><span class="mr-2">{{indexRef !== 'general'? item.id+'. ' : ''}}</span> {{item.text}}</p>
           </template>
           <template v-if="indexRef === 'chuqursoy'">
             <span class="font-bold pl-2">{{dataObject.chuqursoyKeles.name}}</span>
