@@ -4041,7 +4041,7 @@ export default {
       }
 
       await new Promise(resolve => {
-        this.first_2timeout2026 = setTimeout(resolve, 400);
+        this.first_2timeout2026 = setTimeout(resolve, 200);
         return this.first_2timeout2026
       });
       for (let i = 0; i < this.train2LocElementIds2026.length; i++) {
@@ -4050,10 +4050,6 @@ export default {
         let location = document.getElementById(this.train2LocElementIds2026[i]);
         location.style.visibility = 'visible';
 
-        await new Promise(resolve => {
-          this.second_2timeout2026 = setTimeout(resolve, 300);
-          return this.second_2timeout2026;
-        });
         await new Promise(resolve => {
           const time = i === 3? 1500 : 300
           this.second_2timeout2026 = setTimeout(resolve, time);

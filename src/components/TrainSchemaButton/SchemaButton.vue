@@ -129,7 +129,7 @@
                       <i class='bx bx-show text-500 text-2xl'></i>
                     </div>
                   </div>
-                  <div class="col-6">
+                  <div class="col-12">
                     <div  @click="action_emit('saryagach-xavast-angren')" class="w-full flex gap-2 justify-content-between align-items-center border-round px-2 py-1 border-1 border-300 cursor-pointer text-sm shadow-1 active:bg-blue-100">
                       Умумий муаммолар
                       <i class='bx bx-show text-500 text-2xl'></i>
