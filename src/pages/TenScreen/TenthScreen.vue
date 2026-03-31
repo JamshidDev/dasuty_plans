@@ -77,7 +77,7 @@ const arr2 = [
       rate: 17,
       subtitle: 'ПФ-6079 19 илова 23 банд'
     },
-    {offset: 0, name: 'TRAIN LOCATION', deadline: '', url: 'https://tracking.railway.uz', value: 100, rate: 30},
+    // {offset: 0, name: 'TRAIN LOCATION', deadline: '', url: 'https://tracking.railway.uz', value: 100, rate: 30},
     {
       offset: 6,
       name: 'UZGPS',
@@ -107,14 +107,14 @@ const arr2 = [
     },
     {
       offset: -2,
-      name: 'RSX',
+      name: 'NBT',
       deadline: '',
-      url: 'https://rsx.railwayinfra.uz/',
+      url: 'https://nbt.railway.uz/',
       value: 100,
       rate: 10
     },
     // {offset: -2, name: 'TUNNEL', deadline: '24.12.2024', url: 'https://tunnelmodpro.uz', value: 93, rate: 10},
-    {offset: -16, name: 'E-NAKL MOBILE', deadline: '', url: '/', value: 100, rate: 2},
+    {offset: -16, name: 'E-NAKL MOBILE', deadline: '', url: 'https://play.google.com/store/apps/details?id=uz.uztemiryolaj.e_nakl&pcampaignid=web_share', value: 100, rate: 2},
 ]
 
 onMounted(() => {
