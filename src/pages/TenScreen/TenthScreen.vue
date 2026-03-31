@@ -63,7 +63,7 @@ const arr1 = [
       value: 100,
       rate: 2
     },
-    {offset: -16, name: 'VIRTUAL OFFICE', deadline: '', url: 'https://cabinet.dasuty.com/', value: 57, rate: 2},
+    {offset: -16, name: 'RAILWAY AI', deadline: '', url: 'https://uel.das-uty.uz', value: 80, rate: 2},
     // {offset: -16, name: 'ERP', value: 30, deadline: '31.03.2025', url: '/', rate: 2},
 ]
 
