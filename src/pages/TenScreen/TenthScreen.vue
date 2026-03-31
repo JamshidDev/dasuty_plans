@@ -15,7 +15,7 @@ const arr1 = [
       offset: -12,
       name: 'HRM',
       deadline: '',
-      url: 'https://exodim.railway.uz',
+      url: 'https://hrm.railway.uz',
       value: 100,
       rate: 25,
       subtitle: 'ПҚ-357 3-е илова 21 банд'
