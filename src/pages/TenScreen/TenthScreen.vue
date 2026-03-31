@@ -24,7 +24,7 @@ const arr1 = [
       offset: 0,
       name: 'RAIL OBSERVER',
       deadline: '',
-      url: 'https://railwayobserver.uz',
+      url: 'https://obs.railwayinfra.uz',
       value: 100,
       rate: 18,
       subtitle: 'ПҚ-329 3 илова 16 банд'
@@ -51,7 +51,7 @@ const arr1 = [
       offset: 5,
       name: 'RELAY CONTROL',
       deadline: '',
-      url: 'http://relay.itdevs.uz/',
+      url: 'https://cabinet.dasuty.com',
       value: 100,
       rate: 12,
     },
@@ -59,7 +59,7 @@ const arr1 = [
       offset: -2,
       name: 'METROLOGIYA',
       deadline: '',
-      url: 'https://metrolog.railwayinfra.uz/',
+      url: 'https://metrolog.railwayinfra.uz',
       value: 100,
       rate: 2
     },
